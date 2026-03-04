@@ -1,0 +1,806 @@
+{
+	"total": 18,
+	"items": [
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "2t2k6RhmmPe58ES3d8R9Kg",
+				"type": "Asset",
+				"createdAt": "2024-02-06T12:30:38.356Z",
+				"updatedAt": "2024-02-06T12:30:38.356Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 4,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Solwee",
+				"description": "Solwee logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+					"details": {
+						"size": 9530,
+						"image": {
+							"width": 280,
+							"height": 60
+						}
+					},
+					"fileName": "Solwee.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "3xMVsymcZx0kTd6j89GczV",
+				"type": "Asset",
+				"createdAt": "2021-02-01T17:24:48.497Z",
+				"updatedAt": "2023-12-04T14:49:59.950Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 15,
+				"revision": 2,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Profile Picture",
+				"description": "Profile picture",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/3xMVsymcZx0kTd6j89GczV/3e95b96f97e852001b97eae27b8be3c3/profile.jpeg",
+					"details": {
+						"size": 554771,
+						"image": {
+							"width": 1798,
+							"height": 1798
+						}
+					},
+					"fileName": "profile.jpeg",
+					"contentType": "image/jpeg"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "6SMh0pnpUevHb19rWDwglt",
+				"type": "Asset",
+				"createdAt": "2023-04-03T20:30:31.225Z",
+				"updatedAt": "2023-04-03T20:30:31.225Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 5,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "DEAP logo",
+				"description": "DEAP logo icon",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/6SMh0pnpUevHb19rWDwglt/76e93cbe105eb89d5a96cf23925d7b75/photo.png",
+					"details": {
+						"size": 5040,
+						"image": {
+							"width": 88,
+							"height": 88
+						}
+					},
+					"fileName": "photo.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "elfvmudtrgKIaAPhPlB5f",
+				"type": "Asset",
+				"createdAt": "2020-09-24T16:24:32.988Z",
+				"updatedAt": "2023-03-28T16:34:09.540Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 15,
+				"revision": 3,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Obytkujeme Logo",
+				"description": "Obytkujeme Logo icon",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
+					"details": {
+						"size": 1078892,
+						"image": {
+							"width": 1024,
+							"height": 1024
+						}
+					},
+					"fileName": "logo.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "6rkOXCpyvuekYIgy6U6gGu",
+				"type": "Asset",
+				"createdAt": "2020-09-22T17:35:12.519Z",
+				"updatedAt": "2023-01-11T16:52:06.746Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 17,
+				"revision": 6,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Gatsby logo",
+				"description": "Gatsby logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/6rkOXCpyvuekYIgy6U6gGu/d447f86878f9394e23859b0e0131aea0/1_t5EnAu3eSWJA0rmZ9v3xuw.png",
+					"details": {
+						"size": 111702,
+						"image": {
+							"width": 1600,
+							"height": 1600
+						}
+					},
+					"fileName": "1*t5EnAu3eSWJA0rmZ9v3xuw.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "u3Um4zkMrAaQioyq4oSIW",
+				"type": "Asset",
+				"createdAt": "2020-09-22T17:35:12.298Z",
+				"updatedAt": "2023-01-11T16:52:06.317Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 17,
+				"revision": 6,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Facebook logo",
+				"description": "Facebook logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/u3Um4zkMrAaQioyq4oSIW/b01e03902665ad0d52a2bf042350bdb8/600px-Facebook_logo__28square_29.png",
+					"details": {
+						"size": 13209,
+						"image": {
+							"width": 600,
+							"height": 600
+						}
+					},
+					"fileName": "600px-Facebook_logo_%28square%29.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "6nf3rNaaVaUqYcoAcciSeC",
+				"type": "Asset",
+				"createdAt": "2020-09-22T17:35:12.015Z",
+				"updatedAt": "2023-01-11T16:52:05.902Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 27,
+				"revision": 7,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Mate Logo",
+				"description": "Mate Logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/6nf3rNaaVaUqYcoAcciSeC/31956eda334587e4d8e8697ba34fb9c8/Mate_Logo.png",
+					"details": {
+						"size": 52527,
+						"image": {
+							"width": 946,
+							"height": 948
+						}
+					},
+					"fileName": "Mate Logo.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "3AorRmtWOsGQ4o8gK0YWKG",
+				"type": "Asset",
+				"createdAt": "2020-09-22T17:35:11.805Z",
+				"updatedAt": "2023-01-11T16:52:05.599Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 25,
+				"revision": 7,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Google Logo",
+				"description": "Logo from Google",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/3AorRmtWOsGQ4o8gK0YWKG/eeb8efecf4cd0ec3c11d38a092c9ab91/google_PNG19630.png",
+					"details": {
+						"size": 39228,
+						"image": {
+							"width": 1000,
+							"height": 1000
+						}
+					},
+					"fileName": "google_PNG19630.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "29yX0dTepmPEu0MzZf7IHl",
+				"type": "Asset",
+				"createdAt": "2022-08-10T19:52:14.365Z",
+				"updatedAt": "2022-08-10T20:41:11.814Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 15,
+				"revision": 3,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Koala42",
+				"description": "Koala42 logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/29yX0dTepmPEu0MzZf7IHl/6275ca9fffbfc9d1f84f185aecb5aaa8/koala-logo.png",
+					"details": {
+						"size": 21599,
+						"image": {
+							"width": 400,
+							"height": 400
+						}
+					},
+					"fileName": "koala-logo.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "1QzZ3ij44juRqO26hnLxWg",
+				"type": "Asset",
+				"createdAt": "2022-08-07T11:02:29.109Z",
+				"updatedAt": "2022-08-07T11:02:29.109Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 6,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "CV",
+				"description": "Curriculum vitae",
+				"file": {
+					"url": "//assets.ctfassets.net/438qxelhyozd/1QzZ3ij44juRqO26hnLxWg/a40b91c4dc17da56d3107cf4a1854484/Resume-Jan-Molcik.pdf",
+					"details": {
+						"size": 91463
+					},
+					"fileName": "Resume-Jan-Molcik.pdf",
+					"contentType": "application/pdf"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "4ONq9KgjDLevgnj05whr04",
+				"type": "Asset",
+				"createdAt": "2022-08-07T11:00:11.124Z",
+				"updatedAt": "2022-08-07T11:00:11.124Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 5,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Hark",
+				"description": "Hark company image",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/4ONq9KgjDLevgnj05whr04/23da771cea81b5507322c1c6f560f916/1646135333581",
+					"details": {
+						"size": 2311,
+						"image": {
+							"width": 100,
+							"height": 100
+						}
+					},
+					"fileName": "1646135333581",
+					"contentType": "image/jpeg"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "7MnhIdYQCSgKjw8UP7Kwc3",
+				"type": "Asset",
+				"createdAt": "2022-08-06T11:46:04.274Z",
+				"updatedAt": "2022-08-06T11:46:04.274Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 6,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Numbrs Logo",
+				"description": "Numbrs Web Client Logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+					"details": {
+						"size": 20965,
+						"image": {
+							"width": 768,
+							"height": 768
+						}
+					},
+					"fileName": "numbrs-logo.jpeg",
+					"contentType": "image/jpeg"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "1uBB3gpxCIuv5qjUX2vz3Z",
+				"type": "Asset",
+				"createdAt": "2021-08-16T20:36:16.630Z",
+				"updatedAt": "2021-08-16T20:36:16.630Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 7,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "aView-logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
+					"details": {
+						"size": 5908,
+						"image": {
+							"width": 156,
+							"height": 55
+						}
+					},
+					"fileName": "aView-logo.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "5wFs1VB1EjFxBOSrM5J53k",
+				"type": "Asset",
+				"createdAt": "2021-04-11T13:04:42.229Z",
+				"updatedAt": "2021-04-11T13:05:29.135Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 7,
+				"revision": 2,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Poohead Logo",
+				"description": "Poohead project asset",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/5wFs1VB1EjFxBOSrM5J53k/f24ccafbfe1a503f89f7f263cacfbc11/card-game.png",
+					"details": {
+						"size": 23532,
+						"image": {
+							"width": 512,
+							"height": 512
+						}
+					},
+					"fileName": "card-game.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "7nzWMoprChlkbHcSZo63eL",
+				"type": "Asset",
+				"createdAt": "2021-02-01T17:30:28.635Z",
+				"updatedAt": "2021-02-01T17:30:28.635Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 7,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "CV",
+				"description": "Curriculum vitae",
+				"file": {
+					"url": "//assets.ctfassets.net/438qxelhyozd/7nzWMoprChlkbHcSZo63eL/d0363aed3bc672aca8b2d536a48972e3/JanMolcik_CV.pdf",
+					"details": {
+						"size": 112885
+					},
+					"fileName": "JanMolcik_CV.pdf",
+					"contentType": "application/pdf"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "1tXbmpNZU2E8FraPOWhrMt",
+				"type": "Asset",
+				"createdAt": "2020-10-14T17:15:49.952Z",
+				"updatedAt": "2020-10-14T17:26:31.901Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 8,
+				"revision": 2,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Icon",
+				"description": "Icon for web page.",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/1tXbmpNZU2E8FraPOWhrMt/975871df4bb248506a6a0ab636b5df7b/android-chrome-512x512.png",
+					"details": {
+						"size": 48174,
+						"image": {
+							"width": 512,
+							"height": 512
+						}
+					},
+					"fileName": "android-chrome-512x512.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "5eOzEytW0WMAP2uhYtRZiU",
+				"type": "Asset",
+				"createdAt": "2020-09-24T17:38:43.032Z",
+				"updatedAt": "2020-09-24T17:38:43.032Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 9,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "HS Logo",
+				"description": "HS AI Competition Logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
+					"details": {
+						"size": 61029,
+						"image": {
+							"width": 1024,
+							"height": 1024
+						}
+					},
+					"fileName": "hearthstone_brain.png",
+					"contentType": "image/png"
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "5PJrVXXOsRTMlEGUNkNs3G",
+				"type": "Asset",
+				"createdAt": "2020-09-24T11:29:08.794Z",
+				"updatedAt": "2020-09-24T11:29:08.794Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 6,
+				"revision": 1,
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Qapline Logo",
+				"description": "Qapline Logo",
+				"file": {
+					"url": "//images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
+					"details": {
+						"size": 31038,
+						"image": {
+							"width": 224,
+							"height": 95
+						}
+					},
+					"fileName": "qapline_logo.png",
+					"contentType": "image/png"
+				}
+			}
+		}
+	]
+}

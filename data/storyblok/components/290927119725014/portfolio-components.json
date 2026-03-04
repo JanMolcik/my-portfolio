@@ -1,0 +1,118 @@
+[
+	{
+		"name": "feature",
+		"display_name": null,
+		"description": null,
+		"created_at": "2026-03-04T08:13:53.704Z",
+		"updated_at": "2026-03-04T08:13:53.704Z",
+		"id": 151234288459712,
+		"schema": {
+			"name": {
+				"type": "text",
+				"id": "1jIfagJjQNyMi2sM9Bvxrw"
+			}
+		},
+		"image": null,
+		"preview_field": null,
+		"is_root": false,
+		"preview_tmpl": null,
+		"is_nestable": true,
+		"all_presets": [],
+		"preset_id": null,
+		"real_name": "feature",
+		"component_group_uuid": null,
+		"color": null,
+		"icon": null,
+		"internal_tags_list": [],
+		"internal_tag_ids": [],
+		"content_type_asset_preview": null,
+		"metadata": {}
+	},
+	{
+		"name": "grid",
+		"display_name": null,
+		"description": null,
+		"created_at": "2026-03-04T08:13:53.691Z",
+		"updated_at": "2026-03-04T08:13:53.691Z",
+		"id": 151234288410559,
+		"schema": {
+			"columns": {
+				"type": "bloks",
+				"id": "Q0jQMF0uQx20HorFW-rctQ"
+			}
+		},
+		"image": null,
+		"preview_field": null,
+		"is_root": false,
+		"preview_tmpl": null,
+		"is_nestable": true,
+		"all_presets": [],
+		"preset_id": null,
+		"real_name": "grid",
+		"component_group_uuid": null,
+		"color": null,
+		"icon": null,
+		"internal_tags_list": [],
+		"internal_tag_ids": [],
+		"content_type_asset_preview": null,
+		"metadata": {}
+	},
+	{
+		"name": "page",
+		"display_name": null,
+		"description": null,
+		"created_at": "2026-03-04T08:13:53.664Z",
+		"updated_at": "2026-03-04T08:13:53.664Z",
+		"id": 151234288299965,
+		"schema": {
+			"body": {
+				"type": "bloks",
+				"id": "2hR1JYslQReXUpHFDSF-iQ"
+			}
+		},
+		"image": null,
+		"preview_field": null,
+		"is_root": true,
+		"preview_tmpl": null,
+		"is_nestable": false,
+		"all_presets": [],
+		"preset_id": null,
+		"real_name": "page",
+		"component_group_uuid": null,
+		"color": null,
+		"icon": null,
+		"internal_tags_list": [],
+		"internal_tag_ids": [],
+		"content_type_asset_preview": null,
+		"metadata": {}
+	},
+	{
+		"name": "teaser",
+		"display_name": null,
+		"description": null,
+		"created_at": "2026-03-04T08:13:53.679Z",
+		"updated_at": "2026-03-04T08:13:53.679Z",
+		"id": 151234288357310,
+		"schema": {
+			"headline": {
+				"type": "text",
+				"id": "Q4orKAALSJaeK7mwfM2DYA"
+			}
+		},
+		"image": null,
+		"preview_field": null,
+		"is_root": false,
+		"preview_tmpl": null,
+		"is_nestable": true,
+		"all_presets": [],
+		"preset_id": null,
+		"real_name": "teaser",
+		"component_group_uuid": null,
+		"color": null,
+		"icon": null,
+		"internal_tags_list": [],
+		"internal_tag_ids": [],
+		"content_type_asset_preview": null,
+		"metadata": {}
+	}
+]

@@ -1,0 +1,405 @@
+{
+	"total": 4,
+	"items": [
+		{
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "socialLink",
+				"type": "ContentType",
+				"createdAt": "2020-09-22T17:35:01.804Z",
+				"updatedAt": "2023-01-11T16:51:57.084Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"revision": 6
+			},
+			"displayField": "name",
+			"name": "Social Link",
+			"description": "Social Link to display with a font awesome icon.",
+			"fields": [
+				{
+					"id": "name",
+					"name": "Name",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "url",
+					"name": "URL",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "fontAwesomeIcon",
+					"name": "Font Awesome Icon",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				}
+			]
+		},
+		{
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "project",
+				"type": "ContentType",
+				"createdAt": "2020-09-22T17:35:01.288Z",
+				"updatedAt": "2023-01-11T16:51:56.605Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"revision": 6
+			},
+			"displayField": "name",
+			"name": "Project",
+			"description": "Project description",
+			"fields": [
+				{
+					"id": "name",
+					"name": "Name",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "publishedDate",
+					"name": "PublishedDate",
+					"type": "Date",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "logo",
+					"name": "Logo",
+					"type": "Link",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"linkType": "Asset"
+				},
+				{
+					"id": "repositoryUrl",
+					"name": "RepositoryUrl",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "description",
+					"name": "Description",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "projectUrl",
+					"name": "ProjectUrl",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "type",
+					"name": "Type",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				}
+			]
+		},
+		{
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "about",
+				"type": "ContentType",
+				"createdAt": "2020-09-22T17:35:02.192Z",
+				"updatedAt": "2022-08-10T22:23:03.216Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"revision": 6
+			},
+			"displayField": "name",
+			"name": "About",
+			"description": "All information related to personal data.",
+			"fields": [
+				{
+					"id": "name",
+					"name": "Name",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "description",
+					"name": "Description",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "roles",
+					"name": "Roles",
+					"type": "Array",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"items": {
+						"type": "Symbol",
+						"validations": []
+					}
+				},
+				{
+					"id": "socialLinks",
+					"name": "Social Links",
+					"type": "Array",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"items": {
+						"type": "Link",
+						"validations": [
+							{
+								"linkContentType": ["socialLink"]
+							}
+						],
+						"linkType": "Entry"
+					}
+				},
+				{
+					"id": "profile",
+					"name": "Profile",
+					"type": "Link",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"linkType": "Asset"
+				},
+				{
+					"id": "aboutMe",
+					"name": "About me",
+					"type": "Text",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "experience",
+					"name": "Experience",
+					"type": "Array",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"items": {
+						"type": "Link",
+						"validations": [],
+						"linkType": "Entry"
+					}
+				},
+				{
+					"id": "mediumUser",
+					"name": "Medium User",
+					"type": "Symbol",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "projects",
+					"name": "Projects",
+					"type": "Array",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"items": {
+						"type": "Link",
+						"validations": [
+							{
+								"linkContentType": ["project"]
+							}
+						],
+						"linkType": "Entry"
+					}
+				},
+				{
+					"id": "cv",
+					"name": "CV",
+					"type": "Link",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"linkType": "Asset"
+				},
+				{
+					"id": "icon",
+					"name": "Icon",
+					"type": "Link",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"linkType": "Asset"
+				}
+			]
+		},
+		{
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "experience",
+				"type": "ContentType",
+				"createdAt": "2022-08-06T11:20:45.498Z",
+				"updatedAt": "2022-08-07T13:40:36.592Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"revision": 7
+			},
+			"displayField": "title",
+			"name": "Experience",
+			"description": "Work experience",
+			"fields": [
+				{
+					"id": "title",
+					"name": "Title",
+					"type": "Symbol",
+					"localized": false,
+					"required": true,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "companyName",
+					"name": "Company Name",
+					"type": "Symbol",
+					"localized": false,
+					"required": true,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "image",
+					"name": "Image",
+					"type": "Link",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"linkType": "Asset"
+				},
+				{
+					"id": "description",
+					"name": "Description",
+					"type": "Text",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "startDate",
+					"name": "Start Date",
+					"type": "Date",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "endDate",
+					"name": "End Date",
+					"type": "Date",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false
+				},
+				{
+					"id": "skills",
+					"name": "Skills",
+					"type": "Array",
+					"localized": false,
+					"required": false,
+					"disabled": false,
+					"omitted": false,
+					"items": {
+						"type": "Symbol",
+						"validations": []
+					}
+				}
+			]
+		}
+	]
+}

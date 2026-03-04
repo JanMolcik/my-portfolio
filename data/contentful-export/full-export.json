@@ -1,0 +1,2206 @@
+{
+	"meta": {
+		"exportedAt": "2026-03-04T08:09:32.474Z",
+		"spaceId": "438qxelhyozd",
+		"environment": "master",
+		"source": "delivery",
+		"counts": {
+			"content_types": 4,
+			"locales": 1,
+			"entries": 17,
+			"assets": 18
+		}
+	},
+	"data": {
+		"content_types": {
+			"total": 4,
+			"items": [
+				{
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "socialLink",
+						"type": "ContentType",
+						"createdAt": "2020-09-22T17:35:01.804Z",
+						"updatedAt": "2023-01-11T16:51:57.084Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"revision": 6
+					},
+					"displayField": "name",
+					"name": "Social Link",
+					"description": "Social Link to display with a font awesome icon.",
+					"fields": [
+						{
+							"id": "name",
+							"name": "Name",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "url",
+							"name": "URL",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "fontAwesomeIcon",
+							"name": "Font Awesome Icon",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						}
+					]
+				},
+				{
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "project",
+						"type": "ContentType",
+						"createdAt": "2020-09-22T17:35:01.288Z",
+						"updatedAt": "2023-01-11T16:51:56.605Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"revision": 6
+					},
+					"displayField": "name",
+					"name": "Project",
+					"description": "Project description",
+					"fields": [
+						{
+							"id": "name",
+							"name": "Name",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "publishedDate",
+							"name": "PublishedDate",
+							"type": "Date",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "logo",
+							"name": "Logo",
+							"type": "Link",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"linkType": "Asset"
+						},
+						{
+							"id": "repositoryUrl",
+							"name": "RepositoryUrl",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "description",
+							"name": "Description",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "projectUrl",
+							"name": "ProjectUrl",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "type",
+							"name": "Type",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						}
+					]
+				},
+				{
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "about",
+						"type": "ContentType",
+						"createdAt": "2020-09-22T17:35:02.192Z",
+						"updatedAt": "2022-08-10T22:23:03.216Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"revision": 6
+					},
+					"displayField": "name",
+					"name": "About",
+					"description": "All information related to personal data.",
+					"fields": [
+						{
+							"id": "name",
+							"name": "Name",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "description",
+							"name": "Description",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "roles",
+							"name": "Roles",
+							"type": "Array",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"items": {
+								"type": "Symbol",
+								"validations": []
+							}
+						},
+						{
+							"id": "socialLinks",
+							"name": "Social Links",
+							"type": "Array",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"items": {
+								"type": "Link",
+								"validations": [
+									{
+										"linkContentType": ["socialLink"]
+									}
+								],
+								"linkType": "Entry"
+							}
+						},
+						{
+							"id": "profile",
+							"name": "Profile",
+							"type": "Link",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"linkType": "Asset"
+						},
+						{
+							"id": "aboutMe",
+							"name": "About me",
+							"type": "Text",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "experience",
+							"name": "Experience",
+							"type": "Array",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"items": {
+								"type": "Link",
+								"validations": [],
+								"linkType": "Entry"
+							}
+						},
+						{
+							"id": "mediumUser",
+							"name": "Medium User",
+							"type": "Symbol",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "projects",
+							"name": "Projects",
+							"type": "Array",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"items": {
+								"type": "Link",
+								"validations": [
+									{
+										"linkContentType": ["project"]
+									}
+								],
+								"linkType": "Entry"
+							}
+						},
+						{
+							"id": "cv",
+							"name": "CV",
+							"type": "Link",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"linkType": "Asset"
+						},
+						{
+							"id": "icon",
+							"name": "Icon",
+							"type": "Link",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"linkType": "Asset"
+						}
+					]
+				},
+				{
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "experience",
+						"type": "ContentType",
+						"createdAt": "2022-08-06T11:20:45.498Z",
+						"updatedAt": "2022-08-07T13:40:36.592Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"revision": 7
+					},
+					"displayField": "title",
+					"name": "Experience",
+					"description": "Work experience",
+					"fields": [
+						{
+							"id": "title",
+							"name": "Title",
+							"type": "Symbol",
+							"localized": false,
+							"required": true,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "companyName",
+							"name": "Company Name",
+							"type": "Symbol",
+							"localized": false,
+							"required": true,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "image",
+							"name": "Image",
+							"type": "Link",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"linkType": "Asset"
+						},
+						{
+							"id": "description",
+							"name": "Description",
+							"type": "Text",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "startDate",
+							"name": "Start Date",
+							"type": "Date",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "endDate",
+							"name": "End Date",
+							"type": "Date",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false
+						},
+						{
+							"id": "skills",
+							"name": "Skills",
+							"type": "Array",
+							"localized": false,
+							"required": false,
+							"disabled": false,
+							"omitted": false,
+							"items": {
+								"type": "Symbol",
+								"validations": []
+							}
+						}
+					]
+				}
+			]
+		},
+		"locales": {
+			"total": 1,
+			"items": [
+				{
+					"code": "en-US",
+					"name": "English (United States)",
+					"default": true,
+					"fallbackCode": null,
+					"sys": {
+						"id": "4ENWhjJlUNPFIjhxhn0QQz",
+						"type": "Locale",
+						"version": 1
+					}
+				}
+			]
+		},
+		"entries": {
+			"total": 17,
+			"items": [
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "QIw6MuDy41MvtsIFugnJY",
+						"type": "Entry",
+						"createdAt": "2023-12-04T14:21:32.245Z",
+						"updatedAt": "2026-03-04T08:08:38.420Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 127,
+						"revision": 5,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "experience"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Senior Frontend Web Developer - DEAP",
+						"companyName": "Digital Energy Advisory Platform (DEAP) · Contract",
+						"image": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "6SMh0pnpUevHb19rWDwglt"
+							}
+						},
+						"description": "Engaged as a team member on a short-term contractual basis, contributing to the implementation and delivery of the initial version of a web comparator for Czech gas and electricity suppliers, utilizing user consumption history as a fundamental metric.\n\n__Key Qualifications & Responsibilities__\n* Managing my work priorities, project tasks and workflow with Jira\n* Keeping the source code synchronized with git\n* Implementing application using React (v17) with Typescript, Redux for state management, Formik for handling forms submission, PrimeFaces for reusable UI components\n* Styling with Sass and PrimeFaces\n* Estimating tasks' implementation cost to help project manager plan ahead",
+						"startDate": "2023-04-01T12:00+02:00",
+						"endDate": "2023-07-31T12:00+00:00",
+						"skills": ["Typescript", "Redux", "React"]
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "WTEM9HEcF7AZirvfVU817",
+						"type": "Entry",
+						"createdAt": "2024-02-06T13:06:44.802Z",
+						"updatedAt": "2024-02-22T10:55:41.520Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 30,
+						"revision": 4,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "experience"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Senior Frontend Web Developer - Solwee",
+						"companyName": "Solwee · Contract",
+						"image": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "2t2k6RhmmPe58ES3d8R9Kg"
+							}
+						},
+						"description": "I spearheaded the development of a prototype web application utilizing Next.js, Sass, and Typescript, adhering to a prepared visual design. Implementing a sophisticated application architecture rooted in the principles of atomic design, I prioritized the reusability of components to ensure effortless structural modifications, empowering the client to seamlessly adapt pages to their integration processes.\n\nLeveraging Git, I facilitated seamless collaboration by synchronizing codebases with GitHub repositories, fostering transparency and enabling efficient communication with the client. For streamlined deployment and real-time progress updates, I harnessed the power of Vercel, ensuring continuous synchronization with the client to swiftly incorporate requested changes.\n\nMoreover, I crafted the application to be fully responsive, seamlessly adaptable across a spectrum of devices ranging from mobile phones and tablets to small laptops and widescreen desktop displays. This ensures optimal user experience across diverse platforms, reinforcing the application's versatility and accessibility.",
+						"startDate": "2023-11-01T00:00+00:00",
+						"endDate": "2024-01-15T00:00+00:00",
+						"skills": ["Git", "Sass", "Typescript", "Vercel", "Next.js"]
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "1S8ST6kPWgL98MUE7BkNmV",
+						"type": "Entry",
+						"createdAt": "2024-02-06T13:26:47.707Z",
+						"updatedAt": "2024-02-06T13:38:42.606Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 32,
+						"revision": 4,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "project"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Photobank",
+						"publishedDate": "2024-01-01T12:00+00:00",
+						"logo": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "2t2k6RhmmPe58ES3d8R9Kg"
+							}
+						},
+						"description": "Nexj.js photo library prototype application. Styled with Sass, coded with Typescript, following atomic design. Responsive with 7 breakpoints. Deployments with Vercel.",
+						"projectUrl": "https://photobank-prototype.vercel.app/ctk",
+						"type": "Web App (Next.js)"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "6Y7EIx73nUCWuoIWcsuM00",
+						"type": "Entry",
+						"createdAt": "2020-09-22T17:35:16.785Z",
+						"updatedAt": "2024-02-06T13:34:22.601Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 151,
+						"revision": 21,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "project"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Obytkujeme",
+						"publishedDate": "2023-01-08T00:00+01:00",
+						"logo": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "elfvmudtrgKIaAPhPlB5f"
+							}
+						},
+						"description": "Nexj.js motorhome booking website with landing page, gallery, bookings calendar and admin panel. Incremental Static Regeneration. Deployments with Vercel.",
+						"projectUrl": "https://www.obytkujeme.cz/",
+						"type": "Web App (Next.js)"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "5lzMxuCX84uYqmgGmU8iKU",
+						"type": "Entry",
+						"createdAt": "2020-09-22T17:35:15.314Z",
+						"updatedAt": "2024-02-06T13:32:51.453Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 307,
+						"revision": 61,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "about"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Jan Molčík",
+						"description": "FE Web Developer",
+						"roles": [
+							"React 🚀",
+							"Card Games 🃏",
+							"Redux",
+							"Next.js 🔥",
+							"Server-side Rendering",
+							"Tailwind CSS 📝"
+						],
+						"socialLinks": [
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "4SrlLN9bt6Yew2UyGgM06a"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "114ApRkJZq640w8G2GwM8w"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "4J6WFTjoMUCmQKuKAaOsqE"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "2y6HqlOKN316pIUirqONBx"
+								}
+							}
+						],
+						"profile": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "3xMVsymcZx0kTd6j89GczV"
+							}
+						},
+						"aboutMe": "Hello 👋 My name is Jan Molčík. I am a computer programmer with a master's degree in Computer Science and 4+ years of experience in Web Development. I am [Next.js](https://nextjs.org/) specialist and passionate about other modern web JS frameworks such as [React](https://react.dev/) or [Angular](https://angular.io/), state managers such as [Redux](https://redux.js.org/) or [Zustand](https://github.com/pmndrs/zustand) and CSS frameworks such as [Mantine](https://mantine.dev/) or [Tailwind](https://tailwindui.com/). I live in Porto, Portugal and currently freelancing as Senior Frontend Developer on various projects.",
+						"experience": [
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "WTEM9HEcF7AZirvfVU817"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "QIw6MuDy41MvtsIFugnJY"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "393oonzXZw8u1hVpnqndZO"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "1jtJ7QaZUc9GhsZt7ndqqV"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "1Rto3U1g3sTCzGLY8TDwLK"
+								}
+							}
+						],
+						"projects": [
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "5paxSRHbAkmgMc4WSW8S66"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "2GKNR2f4z6IwAg6a2MmKCc"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "6Eby5J7DzhAXIBO6ib832p"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "SzGET2EcNVB8Je8v7BsgL"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "3K3B8rGeMpNIHlAXpcuOxc"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "6Y7EIx73nUCWuoIWcsuM00"
+								}
+							},
+							{
+								"sys": {
+									"type": "Link",
+									"linkType": "Entry",
+									"id": "1S8ST6kPWgL98MUE7BkNmV"
+								}
+							}
+						],
+						"icon": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "1tXbmpNZU2E8FraPOWhrMt"
+							}
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "SzGET2EcNVB8Je8v7BsgL",
+						"type": "Entry",
+						"createdAt": "2021-08-16T20:36:27.789Z",
+						"updatedAt": "2023-12-04T14:53:56.911Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 34,
+						"revision": 7,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "project"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "aView",
+						"publishedDate": "2021-01-01T12:00+00:00",
+						"logo": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "1uBB3gpxCIuv5qjUX2vz3Z"
+							}
+						},
+						"description": "Developed client for product data and digital catalogue management using Angular 7+. State management with Epics middleware (RxJS, redux-observable).",
+						"projectUrl": "https://harksolutions.co.uk/aview/",
+						"type": "Web App (Angular)"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "393oonzXZw8u1hVpnqndZO",
+						"type": "Entry",
+						"createdAt": "2022-08-06T12:11:44.537Z",
+						"updatedAt": "2023-12-04T14:24:03.262Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 75,
+						"revision": 17,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "experience"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Frontend Web Developer - Numbrs",
+						"companyName": "Numbrs Bitcoin Account · Remote",
+						"image": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "7MnhIdYQCSgKjw8UP7Kwc3"
+							}
+						},
+						"description": "__Key Qualifications & Responsibilities__\n\n* Developing and managing Next.js application (web client for bitcoin wallet)\n* Overtook Next.js project with designed components, adding additional features and functionalities and hooking up to REST API services\n* Maintaining atomic design structure of the project\n* Using tools like: React with Typescript, React Functional Components with React Hooks, custom hooks and Context API, Next.js routing, page management and custom API proxy, Tailwind CSS framework\n* CI/CD - experienced with git, Atlassian Bitbucket, Jenkins\n* Experienced with workflow managers such as Jira, Trello, Basecamp\n* VS Code as primary IDE",
+						"startDate": "2021-11-01T12:00+02:00",
+						"endDate": "2023-03-31T12:00+02:00",
+						"skills": [
+							"Next.js",
+							"Tailwind CSS",
+							"Typescript",
+							"React",
+							"Bitcoinjs-lib"
+						]
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "3K3B8rGeMpNIHlAXpcuOxc",
+						"type": "Entry",
+						"createdAt": "2022-08-06T11:48:27.560Z",
+						"updatedAt": "2023-03-28T18:08:44.201Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 102,
+						"revision": 7,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "project"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Bitcoin Wallet",
+						"publishedDate": "2022-02-22T00:00+02:00",
+						"logo": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "7MnhIdYQCSgKjw8UP7Kwc3"
+							}
+						},
+						"description": "Next.js web client for Bitcoin Wallet with typescript, react functional components, hooks and context API. HD Wallet, BIP84, BIP87, P2WPKH, P2WSH",
+						"projectUrl": "https://www.numbrs.com/",
+						"type": "Web App (Next.js)"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "6Eby5J7DzhAXIBO6ib832p",
+						"type": "Entry",
+						"createdAt": "2021-04-11T13:16:45.322Z",
+						"updatedAt": "2023-03-28T18:08:26.721Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 71,
+						"revision": 6,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "project"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Poohead Card Game",
+						"publishedDate": "2020-11-11T08:00+01:00",
+						"logo": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "5wFs1VB1EjFxBOSrM5J53k"
+							}
+						},
+						"repositoryUrl": "https://gitlab.com/JanMolcik/dullhead",
+						"description": "Online multiplayer card game 'shithead'. Client developed with React and node server running game engine library BoardGame.io.",
+						"projectUrl": "http://www.poohead.uk/",
+						"type": "Web App (React)"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "5paxSRHbAkmgMc4WSW8S66",
+						"type": "Entry",
+						"createdAt": "2020-09-22T17:35:17.675Z",
+						"updatedAt": "2023-01-11T17:03:22.285Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 111,
+						"revision": 18,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "project"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Qapline",
+						"publishedDate": "2018-01-01T00:00+01:00",
+						"logo": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "5PJrVXXOsRTMlEGUNkNs3G"
+							}
+						},
+						"description": "Web ERP system for logistics company. Refactored original decentralized two-way data binding and implemented new state management using Redux.",
+						"projectUrl": "https://koala42.com/portfolio/qapline/",
+						"type": "Web App (Angular)"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "4J6WFTjoMUCmQKuKAaOsqE",
+						"type": "Entry",
+						"createdAt": "2020-09-22T17:35:15.660Z",
+						"updatedAt": "2023-01-11T17:00:57.380Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 26,
+						"revision": 13,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "socialLink"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "LinkedIn",
+						"url": "https://linkedin.com/in/jan-molcik",
+						"fontAwesomeIcon": "linkedin"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "114ApRkJZq640w8G2GwM8w",
+						"type": "Entry",
+						"createdAt": "2020-09-22T17:35:16.287Z",
+						"updatedAt": "2023-01-11T17:00:39.451Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 23,
+						"revision": 11,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "socialLink"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Contact me",
+						"url": "https://molcikjan.typeform.com/to/gZDCGfgd",
+						"fontAwesomeIcon": "envelope"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "2GKNR2f4z6IwAg6a2MmKCc",
+						"type": "Entry",
+						"createdAt": "2020-09-22T17:35:17.335Z",
+						"updatedAt": "2023-01-11T16:59:57.353Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 101,
+						"revision": 17,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "project"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Hearthstone AI",
+						"publishedDate": "2020-08-01T00:00+01:00",
+						"logo": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "5eOzEytW0WMAP2uhYtRZiU"
+							}
+						},
+						"repositoryUrl": "https://github.com/JanMolcik/HearthstoneAICompetition",
+						"description": "I designed Hearthstone AI Agent for my Master's Thesis using the state-of-the-art Monte Carlo Tree Search algorithm for game state evaluation.",
+						"projectUrl": "https://hearthstoneai.github.io/index.html",
+						"type": "Card Game AI (C#)"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "4SrlLN9bt6Yew2UyGgM06a",
+						"type": "Entry",
+						"createdAt": "2020-09-22T17:35:14.958Z",
+						"updatedAt": "2023-01-11T16:58:47.164Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 19,
+						"revision": 10,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "socialLink"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "Github",
+						"url": "https://github.com/JanMolcik",
+						"fontAwesomeIcon": "github"
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "1Rto3U1g3sTCzGLY8TDwLK",
+						"type": "Entry",
+						"createdAt": "2022-08-10T19:55:57.407Z",
+						"updatedAt": "2022-10-09T12:10:27.709Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 36,
+						"revision": 8,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "experience"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Frontend Web Developer - Koala",
+						"companyName": "Koala42 · Part-time",
+						"image": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "29yX0dTepmPEu0MzZf7IHl"
+							}
+						},
+						"description": "__Key Qualifications & Responsibilities__\n* Developing ERP System for Truck Transport Management in Angular 2+\n* Streamlined real-time data processing using reactive programming (RxJS, AngularFire)\n* Restructured original decentralized component-based state and implemented centralized \nstate management using Redux state container and middleware for API service calls\n* Developing 3D-model configuration system for playground pieces customization in React",
+						"startDate": "2018-04-01T12:00+02:00",
+						"endDate": "2020-09-01T12:00+02:00",
+						"skills": ["Angular", "Typescript", "Redux", "React", "RxJS"]
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "1jtJ7QaZUc9GhsZt7ndqqV",
+						"type": "Entry",
+						"createdAt": "2022-08-06T19:19:17.801Z",
+						"updatedAt": "2022-10-09T12:09:58.574Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 45,
+						"revision": 7,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "experience"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Frontend Web Developer - Hark",
+						"companyName": "Hark Solutions · Full-time",
+						"image": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Asset",
+								"id": "4ONq9KgjDLevgnj05whr04"
+							}
+						},
+						"description": "__Key Qualifications & Responsibilities__\n\n* Developing Front End Web Application using Angular 2+ for product data management and digital catalogue creation\n* Custom centralized state management (reducers, actions, selectors) with Epics middleware (RxJS, redux-observable)\n* CI/CD - SVN, AWS (S3 buckets, EC2 instances, Lambda functions), setting up Jenkins Pipelines and SCM triggers (simple bash scripts)\n* Occasional SASS style sheets updating\n* Implemented Microsoft Teams Bot that allows users to access product data outside of the Portal application (web client)\n* Developed ExpressJS API with database access using mysql2 for custom integration for one of our clients",
+						"startDate": "2020-11-23T00:00+02:00",
+						"endDate": "2021-10-31T00:00+02:00",
+						"skills": ["Angular", "RxJS", "Tailwind CSS", "AWS", "SVN"]
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "2y6HqlOKN316pIUirqONBx",
+						"type": "Entry",
+						"createdAt": "2021-11-05T14:16:42.162Z",
+						"updatedAt": "2021-11-05T14:16:42.162Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 4,
+						"revision": 1,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "socialLink"
+							}
+						},
+						"locale": "en-US"
+					},
+					"fields": {
+						"name": "GitLab",
+						"url": "https://gitlab.com/JanMolcik",
+						"fontAwesomeIcon": "gitlab"
+					}
+				}
+			]
+		},
+		"assets": {
+			"total": 18,
+			"items": [
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "2t2k6RhmmPe58ES3d8R9Kg",
+						"type": "Asset",
+						"createdAt": "2024-02-06T12:30:38.356Z",
+						"updatedAt": "2024-02-06T12:30:38.356Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 4,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Solwee",
+						"description": "Solwee logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+							"details": {
+								"size": 9530,
+								"image": {
+									"width": 280,
+									"height": 60
+								}
+							},
+							"fileName": "Solwee.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "3xMVsymcZx0kTd6j89GczV",
+						"type": "Asset",
+						"createdAt": "2021-02-01T17:24:48.497Z",
+						"updatedAt": "2023-12-04T14:49:59.950Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 15,
+						"revision": 2,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Profile Picture",
+						"description": "Profile picture",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/3xMVsymcZx0kTd6j89GczV/3e95b96f97e852001b97eae27b8be3c3/profile.jpeg",
+							"details": {
+								"size": 554771,
+								"image": {
+									"width": 1798,
+									"height": 1798
+								}
+							},
+							"fileName": "profile.jpeg",
+							"contentType": "image/jpeg"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "6SMh0pnpUevHb19rWDwglt",
+						"type": "Asset",
+						"createdAt": "2023-04-03T20:30:31.225Z",
+						"updatedAt": "2023-04-03T20:30:31.225Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 5,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "DEAP logo",
+						"description": "DEAP logo icon",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/6SMh0pnpUevHb19rWDwglt/76e93cbe105eb89d5a96cf23925d7b75/photo.png",
+							"details": {
+								"size": 5040,
+								"image": {
+									"width": 88,
+									"height": 88
+								}
+							},
+							"fileName": "photo.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "elfvmudtrgKIaAPhPlB5f",
+						"type": "Asset",
+						"createdAt": "2020-09-24T16:24:32.988Z",
+						"updatedAt": "2023-03-28T16:34:09.540Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 15,
+						"revision": 3,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Obytkujeme Logo",
+						"description": "Obytkujeme Logo icon",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
+							"details": {
+								"size": 1078892,
+								"image": {
+									"width": 1024,
+									"height": 1024
+								}
+							},
+							"fileName": "logo.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "6rkOXCpyvuekYIgy6U6gGu",
+						"type": "Asset",
+						"createdAt": "2020-09-22T17:35:12.519Z",
+						"updatedAt": "2023-01-11T16:52:06.746Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 17,
+						"revision": 6,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Gatsby logo",
+						"description": "Gatsby logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/6rkOXCpyvuekYIgy6U6gGu/d447f86878f9394e23859b0e0131aea0/1_t5EnAu3eSWJA0rmZ9v3xuw.png",
+							"details": {
+								"size": 111702,
+								"image": {
+									"width": 1600,
+									"height": 1600
+								}
+							},
+							"fileName": "1*t5EnAu3eSWJA0rmZ9v3xuw.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "u3Um4zkMrAaQioyq4oSIW",
+						"type": "Asset",
+						"createdAt": "2020-09-22T17:35:12.298Z",
+						"updatedAt": "2023-01-11T16:52:06.317Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 17,
+						"revision": 6,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Facebook logo",
+						"description": "Facebook logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/u3Um4zkMrAaQioyq4oSIW/b01e03902665ad0d52a2bf042350bdb8/600px-Facebook_logo__28square_29.png",
+							"details": {
+								"size": 13209,
+								"image": {
+									"width": 600,
+									"height": 600
+								}
+							},
+							"fileName": "600px-Facebook_logo_%28square%29.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "6nf3rNaaVaUqYcoAcciSeC",
+						"type": "Asset",
+						"createdAt": "2020-09-22T17:35:12.015Z",
+						"updatedAt": "2023-01-11T16:52:05.902Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 27,
+						"revision": 7,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Mate Logo",
+						"description": "Mate Logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/6nf3rNaaVaUqYcoAcciSeC/31956eda334587e4d8e8697ba34fb9c8/Mate_Logo.png",
+							"details": {
+								"size": 52527,
+								"image": {
+									"width": 946,
+									"height": 948
+								}
+							},
+							"fileName": "Mate Logo.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "3AorRmtWOsGQ4o8gK0YWKG",
+						"type": "Asset",
+						"createdAt": "2020-09-22T17:35:11.805Z",
+						"updatedAt": "2023-01-11T16:52:05.599Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 25,
+						"revision": 7,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Google Logo",
+						"description": "Logo from Google",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/3AorRmtWOsGQ4o8gK0YWKG/eeb8efecf4cd0ec3c11d38a092c9ab91/google_PNG19630.png",
+							"details": {
+								"size": 39228,
+								"image": {
+									"width": 1000,
+									"height": 1000
+								}
+							},
+							"fileName": "google_PNG19630.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "29yX0dTepmPEu0MzZf7IHl",
+						"type": "Asset",
+						"createdAt": "2022-08-10T19:52:14.365Z",
+						"updatedAt": "2022-08-10T20:41:11.814Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 15,
+						"revision": 3,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Koala42",
+						"description": "Koala42 logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/29yX0dTepmPEu0MzZf7IHl/6275ca9fffbfc9d1f84f185aecb5aaa8/koala-logo.png",
+							"details": {
+								"size": 21599,
+								"image": {
+									"width": 400,
+									"height": 400
+								}
+							},
+							"fileName": "koala-logo.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "1QzZ3ij44juRqO26hnLxWg",
+						"type": "Asset",
+						"createdAt": "2022-08-07T11:02:29.109Z",
+						"updatedAt": "2022-08-07T11:02:29.109Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 6,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "CV",
+						"description": "Curriculum vitae",
+						"file": {
+							"url": "//assets.ctfassets.net/438qxelhyozd/1QzZ3ij44juRqO26hnLxWg/a40b91c4dc17da56d3107cf4a1854484/Resume-Jan-Molcik.pdf",
+							"details": {
+								"size": 91463
+							},
+							"fileName": "Resume-Jan-Molcik.pdf",
+							"contentType": "application/pdf"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "4ONq9KgjDLevgnj05whr04",
+						"type": "Asset",
+						"createdAt": "2022-08-07T11:00:11.124Z",
+						"updatedAt": "2022-08-07T11:00:11.124Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 5,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Hark",
+						"description": "Hark company image",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/4ONq9KgjDLevgnj05whr04/23da771cea81b5507322c1c6f560f916/1646135333581",
+							"details": {
+								"size": 2311,
+								"image": {
+									"width": 100,
+									"height": 100
+								}
+							},
+							"fileName": "1646135333581",
+							"contentType": "image/jpeg"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "7MnhIdYQCSgKjw8UP7Kwc3",
+						"type": "Asset",
+						"createdAt": "2022-08-06T11:46:04.274Z",
+						"updatedAt": "2022-08-06T11:46:04.274Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 6,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Numbrs Logo",
+						"description": "Numbrs Web Client Logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+							"details": {
+								"size": 20965,
+								"image": {
+									"width": 768,
+									"height": 768
+								}
+							},
+							"fileName": "numbrs-logo.jpeg",
+							"contentType": "image/jpeg"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "1uBB3gpxCIuv5qjUX2vz3Z",
+						"type": "Asset",
+						"createdAt": "2021-08-16T20:36:16.630Z",
+						"updatedAt": "2021-08-16T20:36:16.630Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 7,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "aView-logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
+							"details": {
+								"size": 5908,
+								"image": {
+									"width": 156,
+									"height": 55
+								}
+							},
+							"fileName": "aView-logo.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "5wFs1VB1EjFxBOSrM5J53k",
+						"type": "Asset",
+						"createdAt": "2021-04-11T13:04:42.229Z",
+						"updatedAt": "2021-04-11T13:05:29.135Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 7,
+						"revision": 2,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Poohead Logo",
+						"description": "Poohead project asset",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/5wFs1VB1EjFxBOSrM5J53k/f24ccafbfe1a503f89f7f263cacfbc11/card-game.png",
+							"details": {
+								"size": 23532,
+								"image": {
+									"width": 512,
+									"height": 512
+								}
+							},
+							"fileName": "card-game.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "7nzWMoprChlkbHcSZo63eL",
+						"type": "Asset",
+						"createdAt": "2021-02-01T17:30:28.635Z",
+						"updatedAt": "2021-02-01T17:30:28.635Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 7,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "CV",
+						"description": "Curriculum vitae",
+						"file": {
+							"url": "//assets.ctfassets.net/438qxelhyozd/7nzWMoprChlkbHcSZo63eL/d0363aed3bc672aca8b2d536a48972e3/JanMolcik_CV.pdf",
+							"details": {
+								"size": 112885
+							},
+							"fileName": "JanMolcik_CV.pdf",
+							"contentType": "application/pdf"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "1tXbmpNZU2E8FraPOWhrMt",
+						"type": "Asset",
+						"createdAt": "2020-10-14T17:15:49.952Z",
+						"updatedAt": "2020-10-14T17:26:31.901Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 8,
+						"revision": 2,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Icon",
+						"description": "Icon for web page.",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/1tXbmpNZU2E8FraPOWhrMt/975871df4bb248506a6a0ab636b5df7b/android-chrome-512x512.png",
+							"details": {
+								"size": 48174,
+								"image": {
+									"width": 512,
+									"height": 512
+								}
+							},
+							"fileName": "android-chrome-512x512.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "5eOzEytW0WMAP2uhYtRZiU",
+						"type": "Asset",
+						"createdAt": "2020-09-24T17:38:43.032Z",
+						"updatedAt": "2020-09-24T17:38:43.032Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 9,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "HS Logo",
+						"description": "HS AI Competition Logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
+							"details": {
+								"size": 61029,
+								"image": {
+									"width": 1024,
+									"height": 1024
+								}
+							},
+							"fileName": "hearthstone_brain.png",
+							"contentType": "image/png"
+						}
+					}
+				},
+				{
+					"metadata": {
+						"tags": [],
+						"concepts": []
+					},
+					"sys": {
+						"space": {
+							"sys": {
+								"type": "Link",
+								"linkType": "Space",
+								"id": "438qxelhyozd"
+							}
+						},
+						"id": "5PJrVXXOsRTMlEGUNkNs3G",
+						"type": "Asset",
+						"createdAt": "2020-09-24T11:29:08.794Z",
+						"updatedAt": "2020-09-24T11:29:08.794Z",
+						"environment": {
+							"sys": {
+								"id": "master",
+								"type": "Link",
+								"linkType": "Environment"
+							}
+						},
+						"publishedVersion": 6,
+						"revision": 1,
+						"locale": "en-US"
+					},
+					"fields": {
+						"title": "Qapline Logo",
+						"description": "Qapline Logo",
+						"file": {
+							"url": "//images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
+							"details": {
+								"size": 31038,
+								"image": {
+									"width": 224,
+									"height": 95
+								}
+							},
+							"fileName": "qapline_logo.png",
+							"contentType": "image/png"
+						}
+					}
+				}
+			]
+		}
+	}
+}

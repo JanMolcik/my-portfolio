@@ -1,0 +1,963 @@
+{
+	"total": 17,
+	"items": [
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "QIw6MuDy41MvtsIFugnJY",
+				"type": "Entry",
+				"createdAt": "2023-12-04T14:21:32.245Z",
+				"updatedAt": "2026-03-04T08:08:38.420Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 127,
+				"revision": 5,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "experience"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Senior Frontend Web Developer - DEAP",
+				"companyName": "Digital Energy Advisory Platform (DEAP) · Contract",
+				"image": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "6SMh0pnpUevHb19rWDwglt"
+					}
+				},
+				"description": "Engaged as a team member on a short-term contractual basis, contributing to the implementation and delivery of the initial version of a web comparator for Czech gas and electricity suppliers, utilizing user consumption history as a fundamental metric.\n\n__Key Qualifications & Responsibilities__\n* Managing my work priorities, project tasks and workflow with Jira\n* Keeping the source code synchronized with git\n* Implementing application using React (v17) with Typescript, Redux for state management, Formik for handling forms submission, PrimeFaces for reusable UI components\n* Styling with Sass and PrimeFaces\n* Estimating tasks' implementation cost to help project manager plan ahead",
+				"startDate": "2023-04-01T12:00+02:00",
+				"endDate": "2023-07-31T12:00+00:00",
+				"skills": ["Typescript", "Redux", "React"]
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "WTEM9HEcF7AZirvfVU817",
+				"type": "Entry",
+				"createdAt": "2024-02-06T13:06:44.802Z",
+				"updatedAt": "2024-02-22T10:55:41.520Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 30,
+				"revision": 4,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "experience"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Senior Frontend Web Developer - Solwee",
+				"companyName": "Solwee · Contract",
+				"image": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "2t2k6RhmmPe58ES3d8R9Kg"
+					}
+				},
+				"description": "I spearheaded the development of a prototype web application utilizing Next.js, Sass, and Typescript, adhering to a prepared visual design. Implementing a sophisticated application architecture rooted in the principles of atomic design, I prioritized the reusability of components to ensure effortless structural modifications, empowering the client to seamlessly adapt pages to their integration processes.\n\nLeveraging Git, I facilitated seamless collaboration by synchronizing codebases with GitHub repositories, fostering transparency and enabling efficient communication with the client. For streamlined deployment and real-time progress updates, I harnessed the power of Vercel, ensuring continuous synchronization with the client to swiftly incorporate requested changes.\n\nMoreover, I crafted the application to be fully responsive, seamlessly adaptable across a spectrum of devices ranging from mobile phones and tablets to small laptops and widescreen desktop displays. This ensures optimal user experience across diverse platforms, reinforcing the application's versatility and accessibility.",
+				"startDate": "2023-11-01T00:00+00:00",
+				"endDate": "2024-01-15T00:00+00:00",
+				"skills": ["Git", "Sass", "Typescript", "Vercel", "Next.js"]
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "1S8ST6kPWgL98MUE7BkNmV",
+				"type": "Entry",
+				"createdAt": "2024-02-06T13:26:47.707Z",
+				"updatedAt": "2024-02-06T13:38:42.606Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 32,
+				"revision": 4,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "project"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Photobank",
+				"publishedDate": "2024-01-01T12:00+00:00",
+				"logo": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "2t2k6RhmmPe58ES3d8R9Kg"
+					}
+				},
+				"description": "Nexj.js photo library prototype application. Styled with Sass, coded with Typescript, following atomic design. Responsive with 7 breakpoints. Deployments with Vercel.",
+				"projectUrl": "https://photobank-prototype.vercel.app/ctk",
+				"type": "Web App (Next.js)"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "6Y7EIx73nUCWuoIWcsuM00",
+				"type": "Entry",
+				"createdAt": "2020-09-22T17:35:16.785Z",
+				"updatedAt": "2024-02-06T13:34:22.601Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 151,
+				"revision": 21,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "project"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Obytkujeme",
+				"publishedDate": "2023-01-08T00:00+01:00",
+				"logo": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "elfvmudtrgKIaAPhPlB5f"
+					}
+				},
+				"description": "Nexj.js motorhome booking website with landing page, gallery, bookings calendar and admin panel. Incremental Static Regeneration. Deployments with Vercel.",
+				"projectUrl": "https://www.obytkujeme.cz/",
+				"type": "Web App (Next.js)"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "5lzMxuCX84uYqmgGmU8iKU",
+				"type": "Entry",
+				"createdAt": "2020-09-22T17:35:15.314Z",
+				"updatedAt": "2024-02-06T13:32:51.453Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 307,
+				"revision": 61,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "about"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Jan Molčík",
+				"description": "FE Web Developer",
+				"roles": [
+					"React 🚀",
+					"Card Games 🃏",
+					"Redux",
+					"Next.js 🔥",
+					"Server-side Rendering",
+					"Tailwind CSS 📝"
+				],
+				"socialLinks": [
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "4SrlLN9bt6Yew2UyGgM06a"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "114ApRkJZq640w8G2GwM8w"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "4J6WFTjoMUCmQKuKAaOsqE"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "2y6HqlOKN316pIUirqONBx"
+						}
+					}
+				],
+				"profile": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "3xMVsymcZx0kTd6j89GczV"
+					}
+				},
+				"aboutMe": "Hello 👋 My name is Jan Molčík. I am a computer programmer with a master's degree in Computer Science and 4+ years of experience in Web Development. I am [Next.js](https://nextjs.org/) specialist and passionate about other modern web JS frameworks such as [React](https://react.dev/) or [Angular](https://angular.io/), state managers such as [Redux](https://redux.js.org/) or [Zustand](https://github.com/pmndrs/zustand) and CSS frameworks such as [Mantine](https://mantine.dev/) or [Tailwind](https://tailwindui.com/). I live in Porto, Portugal and currently freelancing as Senior Frontend Developer on various projects.",
+				"experience": [
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "WTEM9HEcF7AZirvfVU817"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "QIw6MuDy41MvtsIFugnJY"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "393oonzXZw8u1hVpnqndZO"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "1jtJ7QaZUc9GhsZt7ndqqV"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "1Rto3U1g3sTCzGLY8TDwLK"
+						}
+					}
+				],
+				"projects": [
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "5paxSRHbAkmgMc4WSW8S66"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "2GKNR2f4z6IwAg6a2MmKCc"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "6Eby5J7DzhAXIBO6ib832p"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "SzGET2EcNVB8Je8v7BsgL"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "3K3B8rGeMpNIHlAXpcuOxc"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "6Y7EIx73nUCWuoIWcsuM00"
+						}
+					},
+					{
+						"sys": {
+							"type": "Link",
+							"linkType": "Entry",
+							"id": "1S8ST6kPWgL98MUE7BkNmV"
+						}
+					}
+				],
+				"icon": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "1tXbmpNZU2E8FraPOWhrMt"
+					}
+				}
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "SzGET2EcNVB8Je8v7BsgL",
+				"type": "Entry",
+				"createdAt": "2021-08-16T20:36:27.789Z",
+				"updatedAt": "2023-12-04T14:53:56.911Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 34,
+				"revision": 7,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "project"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "aView",
+				"publishedDate": "2021-01-01T12:00+00:00",
+				"logo": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "1uBB3gpxCIuv5qjUX2vz3Z"
+					}
+				},
+				"description": "Developed client for product data and digital catalogue management using Angular 7+. State management with Epics middleware (RxJS, redux-observable).",
+				"projectUrl": "https://harksolutions.co.uk/aview/",
+				"type": "Web App (Angular)"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "393oonzXZw8u1hVpnqndZO",
+				"type": "Entry",
+				"createdAt": "2022-08-06T12:11:44.537Z",
+				"updatedAt": "2023-12-04T14:24:03.262Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 75,
+				"revision": 17,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "experience"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Frontend Web Developer - Numbrs",
+				"companyName": "Numbrs Bitcoin Account · Remote",
+				"image": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "7MnhIdYQCSgKjw8UP7Kwc3"
+					}
+				},
+				"description": "__Key Qualifications & Responsibilities__\n\n* Developing and managing Next.js application (web client for bitcoin wallet)\n* Overtook Next.js project with designed components, adding additional features and functionalities and hooking up to REST API services\n* Maintaining atomic design structure of the project\n* Using tools like: React with Typescript, React Functional Components with React Hooks, custom hooks and Context API, Next.js routing, page management and custom API proxy, Tailwind CSS framework\n* CI/CD - experienced with git, Atlassian Bitbucket, Jenkins\n* Experienced with workflow managers such as Jira, Trello, Basecamp\n* VS Code as primary IDE",
+				"startDate": "2021-11-01T12:00+02:00",
+				"endDate": "2023-03-31T12:00+02:00",
+				"skills": [
+					"Next.js",
+					"Tailwind CSS",
+					"Typescript",
+					"React",
+					"Bitcoinjs-lib"
+				]
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "3K3B8rGeMpNIHlAXpcuOxc",
+				"type": "Entry",
+				"createdAt": "2022-08-06T11:48:27.560Z",
+				"updatedAt": "2023-03-28T18:08:44.201Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 102,
+				"revision": 7,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "project"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Bitcoin Wallet",
+				"publishedDate": "2022-02-22T00:00+02:00",
+				"logo": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "7MnhIdYQCSgKjw8UP7Kwc3"
+					}
+				},
+				"description": "Next.js web client for Bitcoin Wallet with typescript, react functional components, hooks and context API. HD Wallet, BIP84, BIP87, P2WPKH, P2WSH",
+				"projectUrl": "https://www.numbrs.com/",
+				"type": "Web App (Next.js)"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "6Eby5J7DzhAXIBO6ib832p",
+				"type": "Entry",
+				"createdAt": "2021-04-11T13:16:45.322Z",
+				"updatedAt": "2023-03-28T18:08:26.721Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 71,
+				"revision": 6,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "project"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Poohead Card Game",
+				"publishedDate": "2020-11-11T08:00+01:00",
+				"logo": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "5wFs1VB1EjFxBOSrM5J53k"
+					}
+				},
+				"repositoryUrl": "https://gitlab.com/JanMolcik/dullhead",
+				"description": "Online multiplayer card game 'shithead'. Client developed with React and node server running game engine library BoardGame.io.",
+				"projectUrl": "http://www.poohead.uk/",
+				"type": "Web App (React)"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "5paxSRHbAkmgMc4WSW8S66",
+				"type": "Entry",
+				"createdAt": "2020-09-22T17:35:17.675Z",
+				"updatedAt": "2023-01-11T17:03:22.285Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 111,
+				"revision": 18,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "project"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Qapline",
+				"publishedDate": "2018-01-01T00:00+01:00",
+				"logo": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "5PJrVXXOsRTMlEGUNkNs3G"
+					}
+				},
+				"description": "Web ERP system for logistics company. Refactored original decentralized two-way data binding and implemented new state management using Redux.",
+				"projectUrl": "https://koala42.com/portfolio/qapline/",
+				"type": "Web App (Angular)"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "4J6WFTjoMUCmQKuKAaOsqE",
+				"type": "Entry",
+				"createdAt": "2020-09-22T17:35:15.660Z",
+				"updatedAt": "2023-01-11T17:00:57.380Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 26,
+				"revision": 13,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "socialLink"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "LinkedIn",
+				"url": "https://linkedin.com/in/jan-molcik",
+				"fontAwesomeIcon": "linkedin"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "114ApRkJZq640w8G2GwM8w",
+				"type": "Entry",
+				"createdAt": "2020-09-22T17:35:16.287Z",
+				"updatedAt": "2023-01-11T17:00:39.451Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 23,
+				"revision": 11,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "socialLink"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Contact me",
+				"url": "https://molcikjan.typeform.com/to/gZDCGfgd",
+				"fontAwesomeIcon": "envelope"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "2GKNR2f4z6IwAg6a2MmKCc",
+				"type": "Entry",
+				"createdAt": "2020-09-22T17:35:17.335Z",
+				"updatedAt": "2023-01-11T16:59:57.353Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 101,
+				"revision": 17,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "project"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Hearthstone AI",
+				"publishedDate": "2020-08-01T00:00+01:00",
+				"logo": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "5eOzEytW0WMAP2uhYtRZiU"
+					}
+				},
+				"repositoryUrl": "https://github.com/JanMolcik/HearthstoneAICompetition",
+				"description": "I designed Hearthstone AI Agent for my Master's Thesis using the state-of-the-art Monte Carlo Tree Search algorithm for game state evaluation.",
+				"projectUrl": "https://hearthstoneai.github.io/index.html",
+				"type": "Card Game AI (C#)"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "4SrlLN9bt6Yew2UyGgM06a",
+				"type": "Entry",
+				"createdAt": "2020-09-22T17:35:14.958Z",
+				"updatedAt": "2023-01-11T16:58:47.164Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 19,
+				"revision": 10,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "socialLink"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "Github",
+				"url": "https://github.com/JanMolcik",
+				"fontAwesomeIcon": "github"
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "1Rto3U1g3sTCzGLY8TDwLK",
+				"type": "Entry",
+				"createdAt": "2022-08-10T19:55:57.407Z",
+				"updatedAt": "2022-10-09T12:10:27.709Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 36,
+				"revision": 8,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "experience"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Frontend Web Developer - Koala",
+				"companyName": "Koala42 · Part-time",
+				"image": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "29yX0dTepmPEu0MzZf7IHl"
+					}
+				},
+				"description": "__Key Qualifications & Responsibilities__\n* Developing ERP System for Truck Transport Management in Angular 2+\n* Streamlined real-time data processing using reactive programming (RxJS, AngularFire)\n* Restructured original decentralized component-based state and implemented centralized \nstate management using Redux state container and middleware for API service calls\n* Developing 3D-model configuration system for playground pieces customization in React",
+				"startDate": "2018-04-01T12:00+02:00",
+				"endDate": "2020-09-01T12:00+02:00",
+				"skills": ["Angular", "Typescript", "Redux", "React", "RxJS"]
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "1jtJ7QaZUc9GhsZt7ndqqV",
+				"type": "Entry",
+				"createdAt": "2022-08-06T19:19:17.801Z",
+				"updatedAt": "2022-10-09T12:09:58.574Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 45,
+				"revision": 7,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "experience"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"title": "Frontend Web Developer - Hark",
+				"companyName": "Hark Solutions · Full-time",
+				"image": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Asset",
+						"id": "4ONq9KgjDLevgnj05whr04"
+					}
+				},
+				"description": "__Key Qualifications & Responsibilities__\n\n* Developing Front End Web Application using Angular 2+ for product data management and digital catalogue creation\n* Custom centralized state management (reducers, actions, selectors) with Epics middleware (RxJS, redux-observable)\n* CI/CD - SVN, AWS (S3 buckets, EC2 instances, Lambda functions), setting up Jenkins Pipelines and SCM triggers (simple bash scripts)\n* Occasional SASS style sheets updating\n* Implemented Microsoft Teams Bot that allows users to access product data outside of the Portal application (web client)\n* Developed ExpressJS API with database access using mysql2 for custom integration for one of our clients",
+				"startDate": "2020-11-23T00:00+02:00",
+				"endDate": "2021-10-31T00:00+02:00",
+				"skills": ["Angular", "RxJS", "Tailwind CSS", "AWS", "SVN"]
+			}
+		},
+		{
+			"metadata": {
+				"tags": [],
+				"concepts": []
+			},
+			"sys": {
+				"space": {
+					"sys": {
+						"type": "Link",
+						"linkType": "Space",
+						"id": "438qxelhyozd"
+					}
+				},
+				"id": "2y6HqlOKN316pIUirqONBx",
+				"type": "Entry",
+				"createdAt": "2021-11-05T14:16:42.162Z",
+				"updatedAt": "2021-11-05T14:16:42.162Z",
+				"environment": {
+					"sys": {
+						"id": "master",
+						"type": "Link",
+						"linkType": "Environment"
+					}
+				},
+				"publishedVersion": 4,
+				"revision": 1,
+				"contentType": {
+					"sys": {
+						"type": "Link",
+						"linkType": "ContentType",
+						"id": "socialLink"
+					}
+				},
+				"locale": "en-US"
+			},
+			"fields": {
+				"name": "GitLab",
+				"url": "https://gitlab.com/JanMolcik",
+				"fontAwesomeIcon": "gitlab"
+			}
+		}
+	]
+}

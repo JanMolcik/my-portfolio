@@ -1,0 +1,12 @@
+{
+	"exportedAt": "2026-03-04T08:09:32.474Z",
+	"spaceId": "438qxelhyozd",
+	"environment": "master",
+	"source": "delivery",
+	"counts": {
+		"content_types": 4,
+		"locales": 1,
+		"entries": 17,
+		"assets": 18
+	}
+}
