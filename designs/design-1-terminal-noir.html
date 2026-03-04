@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jan Molčík — Terminal Noir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #0f0f0f;
+    --green: #00ff41;
+    --cyan: #00d4ff;
+    --white: #e8e8e8;
+    --dim: #555;
+    --border: #1a1a1a;
+    --glow-green: 0 0 10px #00ff4166, 0 0 30px #00ff4122;
+    --glow-cyan: 0 0 10px #00d4ff66, 0 0 30px #00d4ff22;
+    --font-mono: 'JetBrains Mono', 'Share Tech Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* GRID OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* SCANLINE */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.15) 2px,
+      rgba(0,0,0,0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 48px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    color: var(--green);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-shadow: var(--glow-green);
+  }
+
+  .nav-logo span { color: var(--cyan); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+  }
+
+  nav a {
+    color: var(--dim);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  nav a::before { content: '//'; color: var(--green); margin-right: 4px; opacity: 0; transition: opacity 0.2s; }
+  nav a:hover { color: var(--green); }
+  nav a:hover::before { opacity: 1; }
+
+  /* SECTIONS */
+  section { position: relative; z-index: 1; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+
+  /* SECTION HEADER */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 48px;
+    text-shadow: var(--glow-green);
+  }
+
+  .section-label::before { content: '> '; color: var(--cyan); }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--green), transparent); width: 80px; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+  }
+
+  .hero-inner { width: 100%; }
+
+  .hero-pre {
+    font-size: 12px;
+    color: var(--dim);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .hero-pre .prompt { color: var(--green); text-shadow: var(--glow-green); }
+
+  .hero-name {
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .hero-name .cursor {
+    display: inline-block;
+    width: 4px;
+    height: 0.9em;
+    background: var(--green);
+    vertical-align: middle;
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    box-shadow: var(--glow-green);
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  .hero-role {
+    font-size: 20px;
+    color: var(--cyan);
+    text-shadow: var(--glow-cyan);
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-role span { color: var(--dim); }
+
+  .hero-tagline {
+    max-width: 520px;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: var(--bg);
+    font-weight: 700;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    box-shadow: var(--glow-green);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(0,212,255,0.1);
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--green);
+    text-shadow: var(--glow-green);
+  }
+
+  .stat-label { font-size: 10px; letter-spacing: 0.15em; color: var(--dim); text-transform: uppercase; }
+
+  /* ABOUT */
+  #about { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+
+  .about-avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 320px;
+    background: var(--border);
+    border: 1px solid var(--green);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    font-size: 80px;
+    box-shadow: var(--glow-green);
+    overflow: hidden;
+  }
+
+  .about-avatar::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px dashed rgba(0,255,65,0.2);
+  }
+
+  .about-avatar-label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-size: 10px;
+    color: var(--green);
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+  }
+
+  .about-content h3 { font-size: 11px; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+
+  .about-bio { color: #aaa; font-size: 13px; line-height: 1.9; margin-bottom: 32px; }
+
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .skill-tag {
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .skill-tag:hover { border-color: var(--cyan); background: rgba(0,212,255,0.08); box-shadow: var(--glow-cyan); }
+
+  /* PROJECTS */
+  #projects { padding: 120px 0; }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--border); }
+
+  .project-card {
+    background: var(--bg);
+    padding: 28px;
+    position: relative;
+    transition: all 0.3s;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: 0;
+    background: var(--green);
+    transition: height 0.3s;
+    box-shadow: var(--glow-green);
+  }
+
+  .project-card:hover { background: #0d0d0d; }
+  .project-card:hover::before { height: 100%; }
+
+  .project-type {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 12px;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+  }
+
+  .project-card:hover .project-type { border-color: var(--green); color: var(--green); }
+
+  .project-name { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+
+  .file-path { font-size: 10px; color: var(--dim); margin-bottom: 12px; letter-spacing: 0.05em; }
+  .file-path span { color: var(--cyan); }
+
+  .project-desc { font-size: 12px; color: #888; line-height: 1.7; margin-bottom: 20px; }
+
+  .tech-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+
+  .tech-tag {
+    font-size: 10px;
+    color: var(--green);
+    padding: 2px 6px;
+    background: rgba(0,255,65,0.05);
+    border: 1px solid rgba(0,255,65,0.2);
+    letter-spacing: 0.05em;
+  }
+
+  .project-links { display: flex; gap: 16px; }
+
+  .project-link {
+    font-size: 11px;
+    color: var(--dim);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .project-link:hover { color: var(--cyan); }
+  .project-link::before { content: '→'; transition: transform 0.2s; }
+  .project-link:hover::before { transform: translateX(4px); }
+
+  /* EXPERIENCE */
+  #experience { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); }
+
+  .commit-log { position: relative; }
+
+  .commit-log::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 20px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--green), transparent);
+  }
+
+  .commit-entry { display: flex; gap: 32px; margin-bottom: 48px; position: relative; }
+
+  .commit-dot {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--green);
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+  }
+
+  .commit-dot:hover { background: rgba(0,255,65,0.1); box-shadow: var(--glow-green); }
+
+  .commit-hash { font-size: 10px; color: var(--cyan); letter-spacing: 0.1em; margin-bottom: 4px; }
+  .commit-date { font-size: 10px; color: var(--dim); margin-bottom: 12px; }
+
+  .commit-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .commit-company { font-size: 13px; color: var(--green); margin-bottom: 10px; text-shadow: var(--glow-green); }
+  .commit-desc { font-size: 12px; color: #888; line-height: 1.7; margin-bottom: 12px; max-width: 580px; }
+
+  .diff-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .diff-add {
+    font-size: 10px;
+    padding: 2px 8px;
+    background: rgba(0,255,65,0.08);
+    border: 1px solid rgba(0,255,65,0.3);
+    color: var(--green);
+    letter-spacing: 0.05em;
+  }
+
+  /* CONTACT */
+  #contact { padding: 120px 0; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+
+  .contact-intro { font-size: 13px; color: #888; line-height: 1.9; margin-bottom: 32px; }
+
+  .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.2s;
+  }
+
+  .contact-line:hover { padding-left: 8px; color: var(--green); }
+  .contact-line:hover .contact-icon { color: var(--green); text-shadow: var(--glow-green); }
+
+  .contact-icon { width: 32px; font-size: 14px; color: var(--cyan); transition: all 0.2s; }
+  .contact-handle { font-size: 13px; letter-spacing: 0.05em; }
+  .contact-meta { margin-left: auto; font-size: 10px; color: var(--dim); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .cv-download {
+    display: block;
+    margin-top: 32px;
+    padding: 16px 24px;
+    border: 1px solid var(--green);
+    color: var(--green);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cv-download::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+    z-index: -1;
+  }
+
+  .cv-download:hover { color: var(--bg); }
+  .cv-download:hover::before { transform: scaleX(1); }
+
+  /* TERMINAL WINDOW */
+  .terminal-window {
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .terminal-bar {
+    padding: 10px 16px;
+    background: #141414;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .td-red { background: #ff5f57; }
+  .td-yellow { background: #febc2e; }
+  .td-green { background: #28c840; }
+
+  .terminal-title { margin-left: auto; margin-right: auto; font-size: 11px; color: var(--dim); letter-spacing: 0.05em; }
+
+  .terminal-body { padding: 20px; font-size: 12px; color: #888; line-height: 2; }
+  .terminal-body .cmd { color: var(--green); }
+  .terminal-body .out { color: #aaa; }
+  .terminal-body .comment { color: var(--dim); }
+  .terminal-body .path { color: var(--cyan); }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--green); }
+
+  /* GLITCH on hover */
+  @keyframes glitch {
+    0%   { clip-path: inset(0 0 95% 0); transform: translateX(-3px); }
+    25%  { clip-path: inset(30% 0 50% 0); transform: translateX(3px); }
+    50%  { clip-path: inset(60% 0 20% 0); transform: translateX(-2px); }
+    75%  { clip-path: inset(80% 0 5% 0); transform: translateX(2px); }
+    100% { clip-path: inset(0 0 95% 0); transform: translateX(0); }
+  }
+
+  .project-card:hover .project-name { animation: glitch 0.4s ease; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    nav ul { display: none; }
+    .container { padding: 0 24px; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">jan<span>@</span>molcik:~$</div>
+  <ul>
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="hero-pre"><span class="prompt">~/portfolio $</span> ./introduce.sh</p>
+      <h1 class="hero-name" id="typedName"><span class="cursor"></span></h1>
+      <p class="hero-role">Frontend &amp; Fullstack Developer<span> // Next.js · TypeScript · Node.js</span></p>
+      <p class="hero-tagline">
+        I build performant, accessible web applications with clean architecture and obsessive attention to detail.
+        Passionate about developer experience and meaningful UI engineering.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">$ ls ./projects</a>
+        <a href="#contact" class="btn btn-secondary">$ ping --me</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-value">3+</div>
+          <div class="stat-label">Years exp.</div>
+        </div>
+        <div>
+          <div class="stat-value">12+</div>
+          <div class="stat-label">Projects shipped</div>
+        </div>
+        <div>
+          <div class="stat-value">∞</div>
+          <div class="stat-label">Commits pushed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">about.md</div>
+    <div class="about-grid">
+      <div>
+        <div class="about-avatar">
+          <span>JM</span>
+          <span class="about-avatar-label">// profile_pic.jpg</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <h3>whoami</h3>
+        <p class="about-bio">
+          Frontend-focused fullstack developer based in Czech Republic. I specialize in building
+          modern web experiences with React and Next.js, with a strong emphasis on TypeScript,
+          performance, and clean component architecture.<br><br>
+          My background spans from crafting pixel-perfect UIs to architecting scalable Node.js
+          backends. I care deeply about developer experience — whether that's writing good tests,
+          maintaining clean codebases, or building intuitive APIs.
+        </p>
+        <h3>tech.json</h3>
+        <div class="skills-grid">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Storyblok</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">GraphQL</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">Playwright</span>
+          <span class="skill-tag">Vitest</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Vercel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">ls ./projects</div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-type">client work</div>
+        <h3 class="project-name">Photobank</h3>
+        <div class="file-path">~/<span>projects</span>/photobank</div>
+        <p class="project-desc">
+          A full-featured stock photo platform with advanced search, licensing management,
+          and contributor dashboards. Built for scale with ISR caching and edge delivery.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">S3</span>
+          <span class="tech-tag">Stripe</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">live demo</a>
+          <a href="#" class="project-link">source</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">client work</div>
+        <h3 class="project-name">Obytkujeme</h3>
+        <div class="file-path">~/<span>projects</span>/obytkujeme</div>
+        <p class="project-desc">
+          Real estate listing platform with property search, interactive maps, and
+          mortgage calculators. Headless CMS-driven content with SSG and on-demand revalidation.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">Storyblok</span>
+          <span class="tech-tag">Mapbox</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Prisma</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">live demo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">open source</div>
+        <h3 class="project-name">Portfolio v2</h3>
+        <div class="file-path">~/<span>projects</span>/portfolio</div>
+        <p class="project-desc">
+          This portfolio site — rebuilt from scratch on Next.js App Router with Storyblok CMS,
+          harness-first engineering, and a fully automated tester-agent CI pipeline.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">Storyblok</span>
+          <span class="tech-tag">Playwright</span>
+          <span class="tech-tag">Zod</span>
+          <span class="tech-tag">Vercel</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">github</a>
+          <a href="#" class="project-link">live</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">git log --oneline</div>
+    <div class="commit-log">
+
+      <div class="commit-entry">
+        <div class="commit-dot">⬡</div>
+        <div>
+          <div class="commit-hash">commit a3f9c12 — present</div>
+          <div class="commit-date">2024-01 → present</div>
+          <h3 class="commit-title">Frontend Developer (Contract)</h3>
+          <div class="commit-company">Solwee s.r.o.</div>
+          <p class="commit-desc">
+            Architecting and delivering high-quality frontend solutions for B2B clients.
+            Leading migration from legacy monolith to Next.js App Router with TypeScript strict mode.
+            Established testing harness with Playwright and Vitest for deterministic CI.
+          </p>
+          <div class="diff-tags">
+            <span class="diff-add">+React</span>
+            <span class="diff-add">+Next.js</span>
+            <span class="diff-add">+TypeScript</span>
+            <span class="diff-add">+Playwright</span>
+            <span class="diff-add">+Storyblok</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="commit-entry">
+        <div class="commit-dot">⬡</div>
+        <div>
+          <div class="commit-hash">commit b7d2e89 — 2023</div>
+          <div class="commit-date">2022-06 → 2023-12</div>
+          <h3 class="commit-title">Frontend Developer</h3>
+          <div class="commit-company">Agency / Product Studio</div>
+          <p class="commit-desc">
+            Developed responsive web applications across multiple client verticals including
+            fintech, e-commerce, and real estate. Introduced component-driven development
+            with Storybook and improved team's TypeScript adoption.
+          </p>
+          <div class="diff-tags">
+            <span class="diff-add">+React</span>
+            <span class="diff-add">+Tailwind</span>
+            <span class="diff-add">+GraphQL</span>
+            <span class="diff-add">+Storybook</span>
+            <span class="diff-add">+Node.js</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">ping --me</div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">
+          Available for freelance contracts and interesting full-time opportunities.
+          I respond to all messages — don't be shy.
+        </p>
+
+        <a href="mailto:jan@molcik.dev" class="contact-line">
+          <span class="contact-icon">✉</span>
+          <span class="contact-handle">jan@molcik.dev</span>
+          <span class="contact-meta">email</span>
+        </a>
+        <a href="https://github.com/janmo" class="contact-line">
+          <span class="contact-icon">⌥</span>
+          <span class="contact-handle">github.com/janmo</span>
+          <span class="contact-meta">github</span>
+        </a>
+        <a href="https://linkedin.com/in/janmo" class="contact-line">
+          <span class="contact-icon">⊞</span>
+          <span class="contact-handle">linkedin.com/in/janmo</span>
+          <span class="contact-meta">linkedin</span>
+        </a>
+        <a href="https://twitter.com/janmo" class="contact-line">
+          <span class="contact-icon">✗</span>
+          <span class="contact-handle">@janmo</span>
+          <span class="contact-meta">x / twitter</span>
+        </a>
+
+        <a href="#" class="cv-download">↓ download cv.pdf</a>
+      </div>
+
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <div class="terminal-dot td-red"></div>
+          <div class="terminal-dot td-yellow"></div>
+          <div class="terminal-dot td-green"></div>
+          <div class="terminal-title">contact.sh</div>
+        </div>
+        <div class="terminal-body">
+          <p class="comment"># Send me a message</p>
+          <p><span class="path">~/contact</span> $ <span class="cmd">cat availability.txt</span></p>
+          <p class="out">Status: <span style="color:#00ff41">OPEN</span> for contracts</p>
+          <p class="out">Timezone: CET (UTC+1)</p>
+          <p class="out">Response: ~24h</p>
+          <br>
+          <p><span class="path">~/contact</span> $ <span class="cmd">curl -X POST /api/message \</span></p>
+          <p class="cmd">&nbsp;&nbsp;-d '&#123;"from":"you","subject":"hey"&#125;'</p>
+          <br>
+          <p class="out">&#123;</p>
+          <p class="out">&nbsp;&nbsp;"status": 200,</p>
+          <p class="out">&nbsp;&nbsp;"message": "I'll get back to you soon!"</p>
+          <p class="out">&#125;</p>
+          <br>
+          <p><span class="path">~/contact</span> $ <span class="cmd">_</span><span class="cursor" style="width:8px;height:14px;display:inline-block;background:#00ff41;vertical-align:middle;animation:blink 1s step-end infinite"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>jan@molcik:~$</span> portfolio v2 — Next.js + Storyblok
+  <span style="color:#555">// built with obsession · © 2026</span>
+</footer>
+
+<script>
+  // Typing animation for hero name
+  const nameEl = document.getElementById('typedName');
+  const name = 'Jan Molčík';
+  let i = 0;
+  function typeNext() {
+    if (i <= name.length) {
+      nameEl.innerHTML = name.slice(0, i) + '<span class="cursor"></span>';
+      i++;
+      setTimeout(typeNext, i === 1 ? 800 : 80 + Math.random() * 60);
+    }
+  }
+  setTimeout(typeNext, 600);
+
+  // Intersection observer for fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.style.opacity = '1';
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.project-card, .commit-entry').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transition = 'opacity 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
