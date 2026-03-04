@@ -121,6 +121,7 @@ This document translates specification into epics and user stories that teams ca
 | `E7-S3` | As QA, I want E2E smoke coverage for critical flows, so that end-user behavior remains stable. | Playwright smoke flows cover `/`, valid/invalid project slug, writing slug, preview path. | `E4-S2`, `E6-S1` | `G-C` |
 | `E7-S4` | As release manager, I want tester-agent artifacts on each change, so that exploratory findings are visible and enforceable. | `artifacts/tester-agent/*-report.md` generated; P0/P1 findings block merge. | `E7-S3` | `G-C` |
 | `E7-S5` | As UI owner, I want visual parity checks against terminal-noir baseline, so that design drift is prevented. | `EVAL-007` checks `/`, `/projects/[slug]`, and `/writing/[slug]` snapshots/assertions against approved design baseline. | `E4-S1`, `E4-S2` | `G-C` |
+| `E7-S6` | As platform owner, I want queue-driven ralph loop orchestration for locally fragmented markdown tickets, so that one agent can run after another inside Docker sandbox with deterministic verification. | Ticket files + matrix are generated from spec; queue is generated from active ticket statuses; sequential runner emits task brief/prompt/log artifacts; Docker wrapper is executable; failed verification marks item as failed in queue state. | `E7-S2`, `E8-S1` | `G-A` |
 
 ### E8 CI/CD, Environments, Secrets
 

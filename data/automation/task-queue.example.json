@@ -1,0 +1,30 @@
+{
+	"version": "v1",
+	"source": "local-markdown-ticket-system",
+	"generatedAt": "2026-03-04T00:00:00.000Z",
+	"filters": {
+		"statuses": ["ready", "in_progress"]
+	},
+	"items": [
+		{
+			"id": "E4-S2",
+			"type": "user_story",
+			"title": "Project detail route parity",
+			"goal": "Implement /projects/[slug] route behavior and visual parity aligned with route policy matrix.",
+			"scope": [
+				"Route rendering and metadata behavior for valid and invalid project slugs",
+				"Design parity checks for project detail template"
+			],
+			"nonGoals": ["Storyblok schema redesign"],
+			"invariants": ["INV-2", "INV-3", "INV-A1", "INV-A3"],
+			"acceptance": [
+				"Route policy matrix expectations for /projects/[slug] are satisfied",
+				"Metadata is canonical and non-indexable on 404 paths",
+				"Normative gate manifest passes"
+			],
+			"status": "pending",
+			"attempts": 0,
+			"source": "tickets/user-stories/E4-S2.md"
+		}
+	]
+}
