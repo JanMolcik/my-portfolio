@@ -38,6 +38,7 @@ Install a deterministic harness loop that catches drift between specification, i
 - Differential checks for draft vs published payload behavior.
 - Visual regression checks against approved design baseline assets.
 - Exploratory tester-agent run for unknown unknowns.
+- Queue-driven ralph loop checks for sequential local-ticket execution in sandbox mode.
 
 ## Invariant Traceability Matrix (required)
 
@@ -53,6 +54,7 @@ Install a deterministic harness loop that catches drift between specification, i
 | `INV-A2` Validated payload flow | Architecture/unit checks proving render path goes through validation layer | `ARCH-DATAFLOW-001` |
 | `INV-A3` Centralized SEO generation | Import/conformance check for reusable SEO module usage | `ARCH-SEO-001` |
 | `INV-A4` Critical module test coverage | Coverage/conformance check for critical module -> at least one conformance or contract test | `ARCH-COVERAGE-001` |
+| `INV-A5` Ralph/ticket loop architecture | Harness checks for queue-driven sequential runner, Docker wrapper, and local ticket/matrix wiring | `HARNESS-RALPH-001`, `HARNESS-TICKETING-001` |
 
 - `Doc -> Code` gate: every invariant in docs must appear in the traceability artifact.
 - `Code -> Doc` gate: every critical conformance test must reference at least one invariant.
@@ -91,6 +93,35 @@ playwright-cli -s=tester snapshot
 playwright-cli -s=tester screenshot --filename=artifacts/tester-agent/home.png
 playwright-cli -s=tester close
 ```
+
+## Ralph Loop Contract (enablement)
+
+- Queue source is generated from local markdown tickets:
+  - runtime: `artifacts/ralph/task-queue.json`
+  - generator: `scripts/tickets-to-queue.mjs`
+- Runner scripts:
+  - `scripts/ralph-loop.mjs`
+  - `scripts/ralph-docker-loop.sh`
+  - `scripts/ralph-agent-runner.sh`
+  - `docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md`
+- Docker sandbox image definition:
+  - `docker/ralph-sandbox/Dockerfile`
+- Loop behavior:
+  - process pending queue item(s) sequentially
+  - generate per-item task brief/prompt/log artifacts
+  - enforce AGENTS-read acknowledgement token in agent output (strict by default)
+  - run verification command after each agent execution
+  - persist status transitions (`pending` -> `in_progress` -> `done|failed`) in queue JSON
+
+## Local Ticketing Contract (recommended)
+
+- Fragment stage: `scripts/spec-fragmenter.mjs` creates epic/user-story ticket files from canonical spec backlog (without overwriting edited tickets).
+- Sync stage: `scripts/tickets-sync.mjs` builds matrix overview at `tickets/MATRIX.md`.
+- Queue stage: `scripts/tickets-to-queue.mjs` maps active ticket statuses into queue manifest.
+- Suggested operator flow:
+  1. `pnpm tickets:build`
+  2. `pnpm ralph:once` or `pnpm ralph:loop`
+  3. `pnpm tickets:sync`
 
 ## Drift Gates
 

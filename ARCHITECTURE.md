@@ -19,7 +19,8 @@ Defines structural constraints for the new portfolio repository (`Next.js App Ro
 - `src/lib/validation/*`: runtime schema validation (Zod) for Storyblok payloads.
 - `src/components/*`: shared design-system components.
 - `tests/*`: unit, integration, contract, conformance, and E2E tests.
-- `scripts/*`: CI utilities, harness runner, tester-agent runner, and reporting scripts.
+- `scripts/*`: CI utilities, harness runner, tester-agent runner, ralph-loop runner, and reporting scripts.
+- `docker/ralph-sandbox/*`: sandbox image for sequential queue-driven agent execution.
 - `docs/spec/*`: canonical behavior and workflow contracts.
 
 ## Dependency Direction
@@ -50,6 +51,7 @@ Defines structural constraints for the new portfolio repository (`Next.js App Ro
 - `INV-A2`: Storyblok payloads are validated before rendering.
 - `INV-A3`: SEO metadata generation is centralized and reusable, not duplicated per route.
 - `INV-A4`: Every critical module has at least one conformance or contract test.
+- `INV-A5`: Agent loop orchestration remains queue-driven, sequential, anchored to canonical prompt source (`AGENTS.md`), and fed by local markdown ticket matrix/queue scripts.
 
 ## Enforcement
 
@@ -57,6 +59,7 @@ Defines structural constraints for the new portfolio repository (`Next.js App Ro
 - TypeScript project references and strict mode.
 - CI gate fails on structural lint violations.
 - Architecture conformance test checks imports for forbidden edges.
+- Harness conformance tests `HARNESS-RALPH-001` and `HARNESS-TICKETING-001` check ralph loop scripts/docker wiring and local ticket/matrix contract.
 
 ## Change Protocol
 

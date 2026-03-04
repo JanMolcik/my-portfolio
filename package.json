@@ -21,7 +21,19 @@
 		"test:security": "vitest run --config vitest.config.ts tests/security",
 		"test:e2e": "playwright test --config=playwright.config.ts",
 		"test:harness": "vitest run --config vitest.config.ts tests/harness",
-		"tester-agent:run": "node scripts/tester-agent-run.mjs"
+		"tester-agent:run": "node scripts/tester-agent-run.mjs",
+		"tickets:fragment": "node scripts/spec-fragmenter.mjs",
+		"tickets:sync": "node scripts/tickets-sync.mjs",
+		"tickets:queue": "node scripts/tickets-to-queue.mjs",
+		"tickets:build": "pnpm run tickets:fragment && pnpm run tickets:sync && pnpm run tickets:queue",
+		"ralph:once": "pnpm run tickets:queue && node scripts/ralph-loop.mjs --once",
+		"ralph:loop": "pnpm run tickets:queue && node scripts/ralph-loop.mjs",
+		"ralph:once:codex": "RALPH_ENGINE=codex RALPH_AGENT_CMD_TEMPLATE='bash scripts/ralph-agent-runner.sh \"{{TASK_PROMPT_FILE}}\"' pnpm run ralph:once",
+		"ralph:loop:codex": "RALPH_ENGINE=codex RALPH_AGENT_CMD_TEMPLATE='bash scripts/ralph-agent-runner.sh \"{{TASK_PROMPT_FILE}}\"' pnpm run ralph:loop",
+		"ralph:once:claude": "RALPH_ENGINE=claude RALPH_AGENT_CMD_TEMPLATE='bash scripts/ralph-agent-runner.sh \"{{TASK_PROMPT_FILE}}\"' pnpm run ralph:once",
+		"ralph:loop:claude": "RALPH_ENGINE=claude RALPH_AGENT_CMD_TEMPLATE='bash scripts/ralph-agent-runner.sh \"{{TASK_PROMPT_FILE}}\"' pnpm run ralph:loop",
+		"ralph:docker:build": "docker build -f docker/ralph-sandbox/Dockerfile -t my-portfolio-ralph:latest .",
+		"ralph:docker:loop": "bash scripts/ralph-docker-loop.sh"
 	},
 	"dependencies": {
 		"@storyblok/react": "^5.4.22",

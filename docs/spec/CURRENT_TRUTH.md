@@ -1,5 +1,37 @@
 # CURRENT_TRUTH.md
 
+## Eighth-Pass Ralph Loop Enablement (2026-03-04)
+
+Maturity: M2
+Confidence: High
+
+Findings:
+1. Queue-driven ralph loop orchestration is now implemented for sequential ticket execution (`scripts/ralph-loop.mjs`).
+2. Docker sandbox wrapper and image baseline are now present (`scripts/ralph-docker-loop.sh`, `docker/ralph-sandbox/Dockerfile`) for AFK-compatible execution.
+3. Iteration protocol now defines executable ralph contract: queue schema template, required artifacts, command-template placeholders, and fail-fast rules.
+4. Architecture contract now includes `INV-A5` for sequential/canonical-prompt loop behavior, backed by harness test `HARNESS-RALPH-001`.
+5. `test:spec-consistency` now guards ralph contract drift (required scripts/files/package scripts when ralph protocol section is declared).
+6. Local markdown ticket scripts are implemented for spec fragmentation, matrix sync, and queue generation (`scripts/spec-fragmenter.mjs`, `scripts/tickets-sync.mjs`, `scripts/tickets-to-queue.mjs`).
+
+Mode: Bootstrap
+
+Planned edits:
+1. Replace generic agent command template with pinned production runner profile(s) and explicit timeout/retry policy.
+2. Add per-item rollback and retry classification (`REQ`, `CTX`, `CODE`) in queue state transitions.
+3. Expand verification command profile to support story-type-specific gates (frontend-heavy vs backend/security-heavy).
+4. Add lightweight ticket CLI helper for creating and updating bug tickets with invariant tags and reproduction template.
+
+Verification plan:
+1. Keep full normative gate sequence green after each queue/loop contract update.
+2. Keep `HARNESS-RALPH-001` and `test:spec-consistency` passing for all ralph files/contracts.
+3. Run first HITL queue execution with `pnpm ralph:once` before enabling unattended loop batches.
+4. Validate Docker loop path with real agent command template in sandboxed run.
+
+Remaining gaps:
+1. Docker image intentionally does not bundle specific agent CLI; runner command is provided via `RALPH_AGENT_CMD_TEMPLATE`.
+2. Spec fragmenter currently uses create-if-missing mode; reconciliation mode for changed source stories is not implemented yet.
+3. Operational route handlers and portfolio schema v1 runtime mapping remain outstanding implementation priorities.
+
 ## Seventh-Pass Gatekeeper Enforcement (2026-03-04)
 
 Maturity: M2
@@ -172,6 +204,7 @@ Remaining gaps:
 - Deterministic gate source-of-truth: `HARNESS.md` normative gate manifest is authoritative for `INV-5`.
 - Code-quality guard strategy: `cq` must run after every edit batch (including Biome formatting), and `cq:check` is required for merge/CI verification.
 - Package manager strategy: `pnpm` is the canonical package manager for local development, CI, and deployment workflows.
+- Ralph execution strategy: locally fragmented markdown tickets are processed through queue-driven sequential loop with optional Docker sandbox wrapper (`ralph:*` scripts).
 
 ## Drift Rules
 

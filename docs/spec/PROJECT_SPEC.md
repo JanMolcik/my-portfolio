@@ -11,6 +11,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Achieve strong technical SEO baseline (metadata, sitemap, robots, structured data, canonical URLs).
 - Use harness-first engineering so agent-driven changes are deterministic and test-enforced.
 - Run a tester-agent loop after every change using `playwright-cli` for manual E2E exploration + bug reporting.
+- Enable queue-driven ralph loop execution for fragmented local markdown tickets (epics, user stories, bug reports) in Docker sandbox mode.
 
 ## Non-Goals
 
@@ -42,6 +43,8 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Runtime content validation is mandatory.
 - No route may silently degrade to fully dynamic rendering without explicit architectural exception.
 - Tester-agent run is mandatory for every code change before merge.
+- Fragmented local markdown tickets must be consumable via queue manifest for sequential ralph loop execution (`one agent after another`).
+- Local ticket scripts must support fragmentation (`spec -> tickets`), matrix sync, and queue generation workflow.
 - Dynamic rendering exceptions are limited to operational route handlers (`/api/preview`, `/api/exit-preview`, `/api/revalidate/storyblok`).
 - One design proposal from `designs/*.html` must be selected as source-of-truth before UI implementation starts.
 - Production pages must preserve approved visual direction (layout, typography, color system, motion) unless a new proposal is approved in `designs/`.
@@ -213,6 +216,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Security tests for preview and webhook authorization, fail-closed behavior, and idempotency (`INV-4`, `INV-5`).
 - E2E tests for critical user journeys (`INV-2`, `INV-3`, `INV-5`).
 - Tester-agent exploratory run using `playwright-cli`, with markdown bug report artifact (`INV-5`).
+- Ralph loop runner scripts and Docker wrapper must stay executable for queue-driven story execution.
 - Invariant traceability artifact is mandatory (`INV-* -> test IDs` and inverse mapping), missing links fail CI.
 - Visual parity checks (snapshot or targeted DOM/style assertions) against approved `designs/` proposal are required for critical templates (`/`, `/projects/[slug]`, `/writing/[slug]`).
 - `test:spec-consistency` is mandatory and must fail on precedence mismatch, missing traceability artifact, missing hidden-set fixtures, or unresolved invariant/test references.

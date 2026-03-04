@@ -19,6 +19,7 @@ If any layer disagrees with a higher layer, treat it as drift and fail CI.
 - Delivery backlog (epics and user stories): [`docs/spec/EPICS_AND_USER_STORIES.md`](docs/spec/EPICS_AND_USER_STORIES.md)
 - Bootstrap reference baseline: [`blueprints/blueprint-core-nextjs-ts/README.md`](blueprints/blueprint-core-nextjs-ts/README.md)
 - Iteration and bug-fix protocol: [`docs/spec/AGENT_ITERATION_PROTOCOL.md`](docs/spec/AGENT_ITERATION_PROTOCOL.md)
+- Ralph loop task prompt contract: [`docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md`](docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md)
 - Harness and evaluation policy: [`docs/spec/HARNESS.md`](docs/spec/HARNESS.md)
 - Behavior/spec contract changelog: [`docs/spec/SPEC_CHANGELOG.md`](docs/spec/SPEC_CHANGELOG.md)
 - Architecture constraints: [`ARCHITECTURE.md`](ARCHITECTURE.md)
@@ -28,3 +29,4 @@ If any layer disagrees with a higher layer, treat it as drift and fail CI.
 - Any architecture change must update `ARCHITECTURE.md` and structural checks in the same PR.
 - Any behavior contract change must update `PROJECT_SPEC.md`, conformance tests, and `SPEC_CHANGELOG.md` in the same PR.
 - Every bug fix must add or update a regression guard test.
+- `CLAUDE.md` must remain a lightweight compatibility shim that points to this file (`AGENTS.md`) as canonical prompt root.

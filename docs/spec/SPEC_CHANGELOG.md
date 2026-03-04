@@ -36,3 +36,13 @@
 - Added required invariant traceability artifact at `tests/conformance/invariant-traceability.json` with bidirectional invariant/test mapping.
 - Added CI workflow `.github/workflows/ci.yml` that runs normative gates in authoritative manifest order from `HARNESS.md`.
 - Added bootstrap tester-agent report artifact generation at `artifacts/tester-agent/*-report.md` with required report sections and blocking severity exit behavior.
+- Added queue-driven ralph loop execution contract for locally fragmented markdown tickets (`pnpm ralph:once`, `pnpm ralph:loop`) with per-item task brief/prompt/log artifacts.
+- Added Docker sandbox enablement for sequential ralph runs (`docker/ralph-sandbox/Dockerfile`, `scripts/ralph-docker-loop.sh`, `pnpm ralph:docker:*` scripts).
+- Added architecture invariant `INV-A5` for ralph loop behavior and harness guard `HARNESS-RALPH-001`.
+- Extended `test:spec-consistency` to enforce ralph loop contract drift checks when protocol section is declared.
+- Added local markdown ticket system (`tickets/*`) with templates for epics, user stories, and bugs plus generated matrix overview (`tickets/MATRIX.md`).
+- Added spec fragmentation + matrix/queue tooling scripts (`spec-fragmenter`, `tickets-sync`, `tickets-to-queue`) and package workflow commands (`tickets:*`).
+- Added harness guard `HARNESS-TICKETING-001` and extended traceability for `INV-A5` to include local ticketing wiring checks.
+- Added dedicated ralph task prompt contract file (`docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md`) with placeholder schema, fail-fast template resolution in loop runner, and harness/spec-consistency drift enforcement.
+- Simplified ralph prompt root to `AGENTS.md` (no duplicate canonical source list in prompt body), added strict `AGENTS_ACK` output enforcement in loop runner, and introduced `CLAUDE.md` compatibility shim that delegates to `AGENTS.md`.
+- Added engine wrapper `scripts/ralph-agent-runner.sh` with `RALPH_ENGINE=codex|claude` switch, plus ready-to-run pnpm shortcuts (`ralph:*:codex`, `ralph:*:claude`) and Docker env passthrough for consistent ACK-aware execution.

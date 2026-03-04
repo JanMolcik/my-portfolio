@@ -5,6 +5,7 @@ import path from 'node:path';
 const PROJECT_SPEC_PATH = 'docs/spec/PROJECT_SPEC.md';
 const ARCHITECTURE_PATH = 'ARCHITECTURE.md';
 const HARNESS_PATH = 'docs/spec/HARNESS.md';
+const AGENT_PROTOCOL_PATH = 'docs/spec/AGENT_ITERATION_PROTOCOL.md';
 const CURRENT_TRUTH_PATH = 'docs/spec/CURRENT_TRUTH.md';
 const TRACEABILITY_PATH = 'tests/conformance/invariant-traceability.json';
 const HIDDEN_SET_PATH = 'data/evals/hidden-set-v1.json';
@@ -79,6 +80,7 @@ async function main() {
 		ensureFileExists(PROJECT_SPEC_PATH, errors),
 		ensureFileExists(ARCHITECTURE_PATH, errors),
 		ensureFileExists(HARNESS_PATH, errors),
+		ensureFileExists(AGENT_PROTOCOL_PATH, errors),
 		ensureFileExists(CURRENT_TRUTH_PATH, errors),
 		ensureFileExists(TRACEABILITY_PATH, errors),
 		ensureFileExists(HIDDEN_SET_PATH, errors),
@@ -92,11 +94,13 @@ async function main() {
 		projectSpecContent,
 		architectureContent,
 		harnessContent,
+		agentProtocolContent,
 		currentTruthContent,
 	] = await Promise.all([
 		readFile(PROJECT_SPEC_PATH, 'utf8'),
 		readFile(ARCHITECTURE_PATH, 'utf8'),
 		readFile(HARNESS_PATH, 'utf8'),
+		readFile(AGENT_PROTOCOL_PATH, 'utf8'),
 		readFile(CURRENT_TRUTH_PATH, 'utf8'),
 	]);
 
@@ -127,6 +131,95 @@ async function main() {
 			errors.push(
 				`Missing package.json script required by HARNESS manifest: ${scriptName}`,
 			);
+		}
+	}
+
+	if (
+		agentProtocolContent.includes(
+			'## Ralph Loop Contract (Spec Fragment -> Queue -> Docker)',
+		)
+	) {
+		const ralphContractFiles = [
+			'scripts/ralph-loop.mjs',
+			'scripts/ralph-docker-loop.sh',
+			'scripts/ralph-agent-runner.sh',
+			'docker/ralph-sandbox/Dockerfile',
+			'scripts/tickets-to-queue.mjs',
+			'docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md',
+			'CLAUDE.md',
+		];
+		for (const filePath of ralphContractFiles) {
+			await ensureFileExists(
+				filePath,
+				errors,
+				`ralph contract file declared in AGENT_ITERATION_PROTOCOL: ${filePath}`,
+			);
+		}
+
+		const requiredRalphScripts = [
+			'ralph:once',
+			'ralph:loop',
+			'ralph:once:codex',
+			'ralph:loop:codex',
+			'ralph:once:claude',
+			'ralph:loop:claude',
+			'ralph:docker:build',
+			'ralph:docker:loop',
+		];
+		for (const scriptName of requiredRalphScripts) {
+			if (!packageScripts[scriptName]) {
+				errors.push(
+					`Missing package.json script required by Ralph loop contract: ${scriptName}`,
+				);
+			}
+		}
+
+		const [claudeShim, ralphTemplate] = await Promise.all([
+			readFile('CLAUDE.md', 'utf8'),
+			readFile('docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md', 'utf8'),
+		]);
+		if (!claudeShim.includes('AGENTS.md')) {
+			errors.push(
+				'CLAUDE.md must explicitly reference AGENTS.md as canonical root',
+			);
+		}
+		if (!ralphTemplate.includes('AGENTS.md')) {
+			errors.push(
+				'RALPH_TASK_PROMPT_TEMPLATE.md must reference AGENTS.md as canonical prompt root',
+			);
+		}
+	}
+
+	if (agentProtocolContent.includes('## Local Markdown Ticket Contract')) {
+		const ticketContractFiles = [
+			'scripts/spec-fragmenter.mjs',
+			'scripts/tickets-sync.mjs',
+			'scripts/tickets-to-queue.mjs',
+			'tickets/MATRIX.md',
+			'tickets/templates/epic.md',
+			'tickets/templates/user-story.md',
+			'tickets/templates/bug.md',
+		];
+		for (const filePath of ticketContractFiles) {
+			await ensureFileExists(
+				filePath,
+				errors,
+				`ticketing contract file declared in AGENT_ITERATION_PROTOCOL: ${filePath}`,
+			);
+		}
+
+		const requiredTicketScripts = [
+			'tickets:fragment',
+			'tickets:sync',
+			'tickets:queue',
+			'tickets:build',
+		];
+		for (const scriptName of requiredTicketScripts) {
+			if (!packageScripts[scriptName]) {
+				errors.push(
+					`Missing package.json script required by local ticket contract: ${scriptName}`,
+				);
+			}
 		}
 	}
 

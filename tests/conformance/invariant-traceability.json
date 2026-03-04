@@ -30,6 +30,9 @@
 		},
 		"INV-A4": {
 			"testIds": ["ARCH-COVERAGE-001"]
+		},
+		"INV-A5": {
+			"testIds": ["HARNESS-RALPH-001", "HARNESS-TICKETING-001"]
 		}
 	},
 	"tests": {
@@ -92,6 +95,14 @@
 		"ARCH-COVERAGE-001": {
 			"invariants": ["INV-A4"],
 			"path": "tests/harness/arch-coverage-001.spec.ts"
+		},
+		"HARNESS-RALPH-001": {
+			"invariants": ["INV-A5"],
+			"path": "tests/harness/harness-ralph-001.spec.ts"
+		},
+		"HARNESS-TICKETING-001": {
+			"invariants": ["INV-A5"],
+			"path": "tests/harness/harness-ticketing-001.spec.ts"
 		}
 	}
 }
