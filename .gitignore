@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+blueprints/**/node_modules/
+
+# build outputs
+.next/
+out/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# env files
+.env
+.env.*
+!.env.example
+
+# local artifacts and agent metadata
+artifacts/
+.claude/
+.storyblok/
+
+# system files
+.DS_Store
