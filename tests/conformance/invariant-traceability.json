@@ -1,0 +1,97 @@
+{
+	"version": "2026-03-04",
+	"invariants": {
+		"INV-1": {
+			"testIds": ["UNIT-VAL-001", "CONTRACT-SB-001"]
+		},
+		"INV-2": {
+			"testIds": ["INT-ROUTE-001", "INT-ROUTE-002", "ARCH-ROUTE-001"]
+		},
+		"INV-3": {
+			"testIds": ["INT-SEO-001", "INT-SEO-002"]
+		},
+		"INV-4": {
+			"testIds": ["CONTRACT-WEBHOOK-001", "INT-REVAL-001"]
+		},
+		"INV-5": {
+			"testIds": ["HARNESS-CI-001", "E2E-SMOKE-001"]
+		},
+		"INV-6": {
+			"testIds": ["HARNESS-POLICY-001", "UNIT-VAL-001"]
+		},
+		"INV-A1": {
+			"testIds": ["ARCH-ROUTE-001"]
+		},
+		"INV-A2": {
+			"testIds": ["ARCH-DATAFLOW-001"]
+		},
+		"INV-A3": {
+			"testIds": ["ARCH-SEO-001"]
+		},
+		"INV-A4": {
+			"testIds": ["ARCH-COVERAGE-001"]
+		}
+	},
+	"tests": {
+		"UNIT-VAL-001": {
+			"invariants": ["INV-1", "INV-6"],
+			"path": "tests/unit/unit-val-001.spec.ts"
+		},
+		"CONTRACT-SB-001": {
+			"invariants": ["INV-1"],
+			"path": "tests/contract/contract-sb-001.spec.ts"
+		},
+		"INT-ROUTE-001": {
+			"invariants": ["INV-2"],
+			"path": "tests/integration/int-route-001.spec.ts"
+		},
+		"INT-ROUTE-002": {
+			"invariants": ["INV-2"],
+			"path": "tests/integration/int-route-002.spec.ts"
+		},
+		"INT-SEO-001": {
+			"invariants": ["INV-3"],
+			"path": "tests/integration/int-seo-001.spec.ts"
+		},
+		"INT-SEO-002": {
+			"invariants": ["INV-3"],
+			"path": "tests/integration/int-seo-002.spec.ts"
+		},
+		"CONTRACT-WEBHOOK-001": {
+			"invariants": ["INV-4"],
+			"path": "tests/contract/contract-webhook-001.spec.ts"
+		},
+		"INT-REVAL-001": {
+			"invariants": ["INV-4"],
+			"path": "tests/integration/int-reval-001.spec.ts"
+		},
+		"HARNESS-CI-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-ci-001.spec.ts"
+		},
+		"E2E-SMOKE-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/e2e/e2e-smoke-001.spec.ts"
+		},
+		"HARNESS-POLICY-001": {
+			"invariants": ["INV-6"],
+			"path": "tests/harness/harness-policy-001.spec.ts"
+		},
+		"ARCH-ROUTE-001": {
+			"invariants": ["INV-A1", "INV-2"],
+			"path": "tests/harness/arch-route-001.spec.ts"
+		},
+		"ARCH-DATAFLOW-001": {
+			"invariants": ["INV-A2"],
+			"path": "tests/harness/arch-dataflow-001.spec.ts"
+		},
+		"ARCH-SEO-001": {
+			"invariants": ["INV-A3"],
+			"path": "tests/harness/arch-seo-001.spec.ts"
+		},
+		"ARCH-COVERAGE-001": {
+			"invariants": ["INV-A4"],
+			"path": "tests/harness/arch-coverage-001.spec.ts"
+		}
+	}
+}

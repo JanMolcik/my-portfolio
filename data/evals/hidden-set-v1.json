@@ -1,0 +1,76 @@
+{
+	"version": "v1",
+	"createdAt": "2026-03-03",
+	"source": "contentful-export-baseline+synthetic-mutations",
+	"status": "active",
+	"cases": [
+		{
+			"id": "HID-001",
+			"category": "schema",
+			"description": "Project payload with missing required slug/title fields must fail Zod validation.",
+			"fixture": "synthetic/project-missing-required.json",
+			"expected": "validation_error",
+			"invariants": ["INV-1", "INV-6"],
+			"testIds": ["UNIT-VAL-001", "CONTRACT-SB-001"]
+		},
+		{
+			"id": "HID-002",
+			"category": "assets",
+			"description": "Project payload with missing logo asset relation must render fallback and remain indexable only if SEO minimum is satisfied.",
+			"fixture": "synthetic/project-missing-logo.json",
+			"expected": "safe_fallback",
+			"invariants": ["INV-1", "INV-3"],
+			"testIds": ["CONTRACT-SB-001", "INT-SEO-001"]
+		},
+		{
+			"id": "HID-003",
+			"category": "content",
+			"description": "Writing payload with malformed rich text tree must fail closed with non-indexable metadata.",
+			"fixture": "synthetic/writing-malformed-richtext.json",
+			"expected": "fail_closed_non_indexable",
+			"invariants": ["INV-1", "INV-3"],
+			"testIds": ["UNIT-VAL-001", "INT-SEO-001"]
+		},
+		{
+			"id": "HID-004",
+			"category": "relations",
+			"description": "Home story with dangling project relation UUID must ignore missing relation and keep page render stable.",
+			"fixture": "synthetic/home-dangling-relation.json",
+			"expected": "stable_render_partial",
+			"invariants": ["INV-1", "INV-2"],
+			"testIds": ["CONTRACT-SB-001", "INT-ROUTE-001"]
+		},
+		{
+			"id": "HID-005",
+			"category": "locales",
+			"description": "Unexpected locale payload key should not crash mapping and must default to configured locale.",
+			"fixture": "synthetic/unexpected-locale.json",
+			"expected": "default_locale_fallback",
+			"invariants": ["INV-1"],
+			"testIds": ["CONTRACT-SB-001"]
+		},
+		{
+			"id": "HID-006",
+			"category": "limits",
+			"description": "Extreme text lengths in title/description must be normalized for metadata and JSON-LD output.",
+			"fixture": "synthetic/extreme-text-length.json",
+			"expected": "normalized_metadata",
+			"invariants": ["INV-3"],
+			"testIds": ["INT-SEO-001", "INT-SEO-002"]
+		},
+		{
+			"id": "HID-007",
+			"category": "dates",
+			"description": "Invalid date format in project/experience records must fail validation and not publish route.",
+			"fixture": "synthetic/invalid-dates.json",
+			"expected": "validation_error",
+			"invariants": ["INV-1", "INV-6"],
+			"testIds": ["UNIT-VAL-001", "CONTRACT-SB-001"]
+		}
+	],
+	"policy": {
+		"nightlyRun": true,
+		"requiredOnPR": false,
+		"promotionRule": "Any production regression reproduced by tester-agent must be added here within same bug-fix PR."
+	}
+}
