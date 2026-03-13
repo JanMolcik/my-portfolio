@@ -226,7 +226,7 @@ Verification plan:
 
 Remaining gaps:
 1. Repository is still pre-runtime at root level; hardened contracts are ready but not yet executable.
-2. CI workflows and protected branch rules remain to be implemented in GitHub/Vercel settings.
+2. Branch protection rules still need explicit verification in GitHub settings; CI workflow and Vercel Git auto-deployments are already active.
 3. Tester-agent and conformance runners are specified but not yet implemented in `scripts/*`.
 
 ## Third-Pass Audit (2026-03-03)
@@ -257,7 +257,7 @@ Verification plan:
 
 Remaining gaps:
 1. Runtime bootstrap and implementation are not yet executed (current state remains spec-first).
-2. CI workflows and secret wiring are not yet applied in repository settings.
+2. Branch protection still needs explicit verification in repository settings.
 3. Hidden set currently has v1 seed; real regression-derived cases will be appended as incidents occur.
 
 ## Active Decisions
@@ -271,10 +271,12 @@ Remaining gaps:
 - Design delivery strategy: implement and deploy UI from approved proposal in `designs/`.
 - Approved design baseline: `designs/design-1-terminal-noir.html`.
 - Hosting/deployment decision: `Vercel` + `GitHub Actions`, with setup via `vercel` CLI and GitHub auto-deployments (PR->Preview, `main`->Production).
+- Active deployment wiring: `main` auto-deploys to Vercel Production, `codex/staging` is the stable Vercel Preview alias used by Storyblok visual preview, and other branches remain ephemeral engineering previews.
 - Repository strategy: bootstrap and implement in-place in this repository (no separate target repo required).
 - Bootstrap implementation strategy: mandatory start from `blueprints/blueprint-core-nextjs-ts`; initial app shape may mirror blueprint before iterative portfolio-specific hardening.
 - Bootstrap waiver policy: temporary blueprint carry-over requires owner, <=14-day expiry, and explicit exit criteria.
 - Storyblok management strategy: use `storyblok` CLI as primary workflow for schema/content operations and type generation.
+- Storyblok preview strategy: editors preview draft content against the stable Vercel branch alias for `codex/staging`; Storyblok publish targets the production revalidation webhook on the Vercel production alias.
 - Deterministic gate source-of-truth: `HARNESS.md` normative gate manifest is authoritative for `INV-5`.
 - Code-quality guard strategy: `cq` must run after every edit batch (including Biome formatting), and `cq:check` is required for merge/CI verification.
 - Package manager strategy: `pnpm` is the canonical package manager for local development, CI, and deployment workflows.

@@ -28,6 +28,12 @@ Recommended preview URL template in Storyblok:
 https://<your-site>/api/preview?secret=<PREVIEW_SECRET>&slug={{full_slug}}
 ```
 
+Current configured stable preview target:
+
+```text
+https://my-portfolio-git-codex-staging-janmolciks-projects.vercel.app/api/preview?secret=<PREVIEW_SECRET>&slug={{full_slug}}
+```
+
 Optional exit-preview URL:
 
 ```text
@@ -45,6 +51,12 @@ Recommended production webhook target:
 
 ```text
 https://<your-site>/api/revalidate/storyblok?secret=<STORYBLOK_WEBHOOK_SECRET>
+```
+
+Current configured production webhook target:
+
+```text
+https://my-portfolio-teal-alpha-48.vercel.app/api/revalidate/storyblok?secret=<STORYBLOK_WEBHOOK_SECRET>
 ```
 
 Accepted webhook inputs are intentionally flexible:
@@ -68,6 +80,13 @@ These pieces are not stored in git and must be configured in hosting + Storyblok
 5. Storyblok preview URL
 6. Storyblok publish webhook URL
 7. Correct production domain in `NEXT_PUBLIC_SITE_URL`
+
+## Environment Strategy
+
+- `main` is the only production branch and auto-deploys to the Vercel production alias.
+- `codex/staging` is the stable preview branch and owns the Storyblok visual editor preview URL.
+- Other branches use ordinary Vercel preview deployments for engineering review, but Storyblok editors do not target them directly.
+- Storyblok `Publish` only affects published CMS data; it never deploys application code. Code changes reach production only through a successful Git-based Vercel deployment.
 
 Secret wiring reference: [ci-cd-secrets-rotation.md](/Users/janmo/Code/my-portfolio/docs/ops/ci-cd-secrets-rotation.md)
 
