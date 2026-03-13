@@ -49,7 +49,7 @@ Install a deterministic harness loop that catches drift between specification, i
 | `INV-3` SEO Baseline | Metadata integration tests + sitemap/robots assertions | `INT-SEO-001`, `INT-SEO-002` |
 | `INV-4` Revalidation Integrity | Webhook contract tests + targeted revalidation assertions | `CONTRACT-WEBHOOK-001`, `INT-REVAL-001` |
 | `INV-5` Deterministic Delivery | Full gate pipeline + tester-agent artifact presence check | `HARNESS-CI-001`, `E2E-SMOKE-001` |
-| `INV-6` Regression Guard | Policy check for bug-fix PRs requiring new or updated guard test | `HARNESS-POLICY-001` |
+| `INV-6` Regression Guard | Policy check for bug-fix PRs requiring new or updated guard test | `HARNESS-POLICY-001`, `SEC-CONTACT-001` |
 | `INV-A1` Architecture Static/ISR | Route policy conformance check against matrix in `PROJECT_SPEC.md` | `ARCH-ROUTE-001` |
 | `INV-A2` Validated payload flow | Architecture/unit checks proving render path goes through validation layer | `ARCH-DATAFLOW-001` |
 | `INV-A3` Centralized SEO generation | Import/conformance check for reusable SEO module usage | `ARCH-SEO-001` |

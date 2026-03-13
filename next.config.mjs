@@ -15,10 +15,11 @@ const contentSecurityPolicyDirectives = [
 	"form-action 'self'",
 	`frame-ancestors ${frameAncestorsDirective}`,
 	"img-src 'self' data: https://a.storyblok.com https://images.ctfassets.net",
-	"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.storyblok.com",
+	"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.storyblok.com https://challenges.cloudflare.com",
 	"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
 	"font-src 'self' data: https://fonts.gstatic.com",
-	"connect-src 'self' https://api.storyblok.com https://*.storyblok.com",
+	"connect-src 'self' https://api.storyblok.com https://*.storyblok.com https://challenges.cloudflare.com",
+	"frame-src 'self' https://challenges.cloudflare.com",
 	'upgrade-insecure-requests',
 ];
 

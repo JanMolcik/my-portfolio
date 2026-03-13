@@ -36,6 +36,7 @@ export type ProjectDomain = {
 	projectUrl: string;
 	repositoryUrl?: string;
 	type: string;
+	portfolioPriority?: number;
 	logoUrl?: string;
 	seo: SeoDomain;
 	stack: string[];
@@ -93,6 +94,19 @@ function asBoolean(value: unknown, fallback: boolean): boolean {
 		return value;
 	}
 	return fallback;
+}
+
+function asNumber(value: unknown): number | undefined {
+	if (typeof value === 'number' && Number.isFinite(value)) {
+		return value;
+	}
+	if (typeof value === 'string') {
+		const parsed = Number(value);
+		if (Number.isFinite(parsed)) {
+			return parsed;
+		}
+	}
+	return undefined;
 }
 
 function toAssetUrl(value: unknown): string | undefined {
@@ -220,6 +234,7 @@ export function mapProjectDtoToDomain(
 		projectUrl: asString(source.project_url) ?? '',
 		repositoryUrl: asString(source.repository_url),
 		type: asString(source.type) ?? '',
+		portfolioPriority: asNumber(source.portfolio_priority),
 		logoUrl: toAssetUrl(source.logo),
 		seo: mapSeoDtoToDomain(source.seo),
 		stack: toStringList(source.stack),
@@ -252,8 +267,8 @@ export function mapHomeDtoToDomain(dto: unknown): HomeDomain {
 	return {
 		headline: asString(source.headline) ?? '',
 		role: asString(source.role) ?? '',
-		heroIntro: toRichTextDomain(source.hero_intro ?? source.intro),
-		aboutIntro: toRichTextDomain(source.about_intro ?? source.intro),
+		heroIntro: toRichTextDomain(source.hero_intro),
+		aboutIntro: toRichTextDomain(source.about_intro),
 		roles: toStringList(source.roles),
 		availabilityNote:
 			asString(source.availability_note) ??

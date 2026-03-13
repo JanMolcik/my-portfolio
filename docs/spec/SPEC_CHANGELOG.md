@@ -1,9 +1,17 @@
 # SPEC_CHANGELOG.md
 
+## 2026-03-13
+
+- Added first-party contact intake contract with `/api/contact`, including Turnstile server-side verification, rate limiting, honeypot/timing bot traps, and Resend-backed delivery requirements.
+- Expanded runtime env contract and CI/Vercel secret wiring requirements for secure contact-form operation.
+- Updated CSP and route-policy documentation to allow Turnstile widget loading without weakening the static-first public route contract.
+- Removed legacy `page_home.intro` from the Storyblok schema so the CMS only exposes the actual source-of-truth fields `hero_intro` and `about_intro`.
+
 ## 2026-03-12
 
 - Extended `page_home` schema with CMS-managed `hero_intro`, `about_intro`, and availability copy fields so homepage positioning no longer depends on local runtime overrides.
 - Extended `page_project` schema with CMS-managed `stack[]` so project cards and case studies render project-specific tags instead of misleading global skill badges.
+- Extended `page_project` schema with CMS-managed `portfolio_priority` so homepage project ordering is deterministic and does not rely on relation reference order.
 - Updated the baseline Storyblok import contract to apply a curated portfolio copy layer after legacy Contentful mapping, keeping publishable CMS content aligned with hiring-focused portfolio messaging.
 
 ## 2026-03-06
@@ -73,3 +81,5 @@
 - Added engine wrapper `scripts/ralph-agent-runner.sh` with `RALPH_ENGINE=codex|claude` switch, plus ready-to-run pnpm shortcuts (`ralph:*:codex`, `ralph:*:claude`) and Docker env passthrough for consistent ACK-aware execution.
 - Separated native and Docker loop environments: Docker loop now defaults to isolated workspace mode with container-only `node_modules`/`.pnpm-store`, plus explicit `ralph:docker:loop:inplace` for direct repo writes when needed.
 - Hardened Docker agent runtime for subscription mode: sandbox image now bundles `codex` and `claude` CLIs, Docker loop auto-mounts Claude session auth (`~/.claude`, `~/.claude.json`) by default with explicit override envs, container user now defaults to host UID:GID (non-root), and `inplace` vs `isolated` dependency-volume behavior is explicitly separated.
+- Made `page_project.project_url` optional in Storyblok schema so archived or NDA-bound projects can render without fake live links, while homepage/detail CTA logic now falls back to `details` and/or `source` only.
+- Fixed Storyblok editor drift for content-managed CV data: `roles`, `stack`, `skills`, and `tags` now use multi-select schema fields; snapshot contracts now validate schema-vs-story shape; and Storyblok datetime values are pushed in editor-friendly `YYYY-MM-DD HH:mm` format instead of opaque ISO strings.

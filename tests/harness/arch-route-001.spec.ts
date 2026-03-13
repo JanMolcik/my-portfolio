@@ -48,6 +48,7 @@ const allowedDynamicExceptionRouteHandlers = new Set([
 	'src/app/api/exit-preview/route.ts',
 	'src/app/api/exit-preview/[...path]/route.ts',
 	'src/app/api/revalidate/storyblok/route.ts',
+	'src/app/api/contact/route.ts',
 ]);
 
 const dynamicExceptionSignals = [

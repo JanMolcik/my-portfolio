@@ -87,6 +87,7 @@ export type StoryblokProjectStory = {
 		project_url: string;
 		repository_url?: string;
 		type: string;
+		portfolio_priority?: number;
 		stack: string[];
 		logo?: string;
 		seo: StoryblokSeoMeta[];
@@ -357,6 +358,7 @@ export function mapLegacyProject(
 			project_url: projectUrl,
 			repository_url: repositoryUrl.length > 0 ? repositoryUrl : undefined,
 			type: projectType,
+			portfolio_priority: 999,
 			stack: [],
 			logo,
 			seo: [seoMeta],

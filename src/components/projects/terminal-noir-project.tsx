@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { getProjectExternalLinks } from '@/lib/projects/project-links';
+import { parseStoryblokDate } from '@/lib/storyblok/dates';
 import type { ProjectDomain, RichTextDomain } from '@/lib/storyblok/mappers';
 import styles from './terminal-noir-project.module.css';
 
@@ -44,8 +46,8 @@ function richTextToParagraphs(value?: RichTextDomain): string[] {
 }
 
 function formatDateLabel(value: string): string {
-	const parsed = new Date(value);
-	if (Number.isNaN(parsed.getTime())) {
+	const parsed = parseStoryblokDate(value);
+	if (!parsed) {
 		return value;
 	}
 	const year = parsed.getUTCFullYear();
@@ -61,6 +63,11 @@ export default function TerminalNoirProject({
 	const body = paragraphs.length > 0 ? paragraphs : [project.summary];
 	const tags = project.stack;
 	const cardLabel = project.type || 'project';
+	const externalLinks = getProjectExternalLinks({
+		slug: project.slug,
+		projectUrl: project.projectUrl,
+		repositoryUrl: project.repositoryUrl,
+	});
 
 	return (
 		<main className={styles.projectPage} data-testid="terminal-noir-project">
@@ -90,16 +97,20 @@ export default function TerminalNoirProject({
 							))}
 						</div>
 					) : null}
-					<div className={styles.links}>
-						<a href={project.projectUrl} rel="noreferrer" target="_blank">
-							live
-						</a>
-						{project.repositoryUrl ? (
-							<a href={project.repositoryUrl} rel="noreferrer" target="_blank">
-								source
-							</a>
-						) : null}
-					</div>
+					{externalLinks.length > 0 ? (
+						<div className={styles.links}>
+							{externalLinks.map((link) => (
+								<a
+									href={link.href}
+									key={`${project.slug}-${link.label}`}
+									rel="noreferrer"
+									target="_blank"
+								>
+									{link.label}
+								</a>
+							))}
+						</div>
+					) : null}
 				</div>
 
 				<div className={styles.mediaCard}>

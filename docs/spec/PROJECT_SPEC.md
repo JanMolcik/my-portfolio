@@ -26,6 +26,9 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 3. Configurancy model (ElectricSQL article, 2026-02-02) for explicit `affordances/invariants/constraints/rationale`.
 4. Harness engineering (OpenAI article) for eval-first loop and drift detection.
 5. Storyblok official blueprint baseline: `https://github.com/storyblok/blueprint-core-nextjs` (adapted locally to TypeScript).
+6. Cloudflare Turnstile official docs for client widget constraints and server-side token verification.
+7. Resend official docs for transactional email delivery.
+8. Upstash official docs for distributed serverless rate limiting.
 
 ## Core Affordances
 
@@ -47,6 +50,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Fragmented local markdown tickets must be consumable via queue manifest for sequential ralph loop execution (`one agent after another`).
 - Local ticket scripts must support fragmentation (`spec -> tickets`), matrix sync, and queue generation workflow.
 - Dynamic rendering exceptions are limited to operational route handlers (`/api/preview`, `/api/exit-preview`, `/api/revalidate/storyblok`).
+- Dynamic rendering exceptions are limited to operational route handlers (`/api/preview`, `/api/exit-preview`, `/api/revalidate/storyblok`, `/api/contact`).
 - One design proposal from `designs/*.html` must be selected as source-of-truth before UI implementation starts.
 - Production pages must preserve approved visual direction (layout, typography, color system, motion) unless a new proposal is approved in `designs/`.
 - Runtime bootstrap must start from `blueprints/blueprint-core-nextjs-ts` as the mandatory baseline template.
@@ -108,6 +112,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 | `/api/preview` | Storyblok Visual Editor preview action | Dynamic route handler (allowed exception) | `no-store` | Enables `draftMode` only after secret validation |
 | `/api/exit-preview` | Internal preview toggle | Dynamic route handler (allowed exception) | `no-store` | Disables `draftMode` |
 | `/api/revalidate/storyblok` | Storyblok publish webhook | Dynamic route handler (allowed exception) | `no-store` | Verifies secret and revalidates only affected route groups |
+| `/api/contact` | First-party contact intake | Dynamic route handler (allowed exception) | `no-store` | Verifies Turnstile token server-side, rate limits by client IP, and relays mail through Resend |
 
 ## Preview and Webhook Security Contract
 
@@ -120,10 +125,21 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Revalidation scope must be minimal: affected story route and dependent listing routes only.
 - All preview/webhook invocations must emit structured logs with decision (`accepted`, `rejected`, `ignored`).
 
+## Contact Intake Security Contract
+
+- `/api/contact` must remain a first-party endpoint on the portfolio domain; embedded third-party form redirects are not the primary path.
+- Every contact submission must pass Zod validation before any verification or delivery side effect.
+- Every contact submission must pass Cloudflare Turnstile server-side verification; client-side token presence alone is insufficient.
+- Contact intake must enforce per-IP rate limiting before email delivery.
+- Contact intake must include at least one low-cost bot trap in addition to Turnstile (`honeypot` and/or minimum submit delay).
+- Contact intake must fail closed when protection is unavailable in production.
+- Contact messages must be delivered through Resend or an equivalent server-side provider; client-direct email sending is forbidden.
+- Contact messages must not use Storyblok as storage and must not require durable database persistence in v1.
+
 ## Storyblok Content Model Contract
 
 - Story structure:
-  - `home` singleton story (`/`) with sections for intro, roles, social links, projects, experience.
+  - `home` singleton story (`/`) with sections for hero copy, about copy, roles, social links, projects, and experience.
   - `projects/*` folder for project detail stories.
   - `writing/*` folder for writing detail stories.
 - Required fields for indexable stories:
@@ -146,7 +162,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 ### Storyblok Schema (finalized v1)
 
 - `page_home` (singleton):
-  - `headline` (text, required), `role` (text, required), `intro` (richtext, required)
+  - `headline` (text, required), `role` (text, required)
   - `hero_intro` (richtext, required), `about_intro` (richtext, required)
   - `roles` (multi-option, required), `social_links` (blok list -> `item_social_link`, required)
   - `availability_note` (textarea, required), `availability_status` (text, required)
@@ -156,8 +172,9 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - `page_project`:
   - `title` (text, required), `slug` (text, required; unique by workflow under `projects/*`)
   - `summary` (textarea, required), `content` (richtext, optional)
-  - `published_date` (datetime, required), `project_url` (url, required), `repository_url` (url, optional)
-  - `type` (text, required), `stack` (multi-option, optional), `logo` (asset image, optional), `seo` (blok -> `seo_meta`, required)
+  - `published_date` (datetime, required), `project_url` (url, optional), `repository_url` (url, optional)
+  - `type` (text, required), `portfolio_priority` (number, optional for deterministic homepage ordering)
+  - `stack` (multi-option, optional), `logo` (asset image, optional), `seo` (blok -> `seo_meta`, required)
 - `page_writing`:
   - `title` (text, required), `slug` (text, required; unique by workflow under `writing/*`)
   - `excerpt` (textarea, required), `content` (richtext, required), `published_date` (datetime, required)
@@ -196,9 +213,16 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Required runtime env vars:
   - `NEXT_PUBLIC_SITE_URL`
   - `STORYBLOK_ACCESS_TOKEN` (published content)
-  - `STORYBLOK_PREVIEW_TOKEN` (draft content, server-side only)
-  - `PREVIEW_SECRET`
-  - `STORYBLOK_WEBHOOK_SECRET`
+- `STORYBLOK_PREVIEW_TOKEN` (draft content, server-side only)
+- `PREVIEW_SECRET`
+- `STORYBLOK_WEBHOOK_SECRET`
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
+- `TURNSTILE_SECRET_KEY`
+- `RESEND_API_KEY`
+- `CONTACT_FROM_EMAIL`
+- `CONTACT_TO_EMAIL`
+- `UPSTASH_REDIS_REST_URL` (optional, recommended for distributed production rate limiting)
+- `UPSTASH_REDIS_REST_TOKEN` (optional, recommended for distributed production rate limiting)
 - Secret management rules:
   - Secrets must be stored only in GitHub/Vercel secret stores (never committed).
   - Preview and webhook secrets must be rotated at least every 90 days.

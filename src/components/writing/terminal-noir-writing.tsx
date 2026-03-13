@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { RichTextDomain, WritingDomain } from '@/lib/storyblok/mappers';
+import { parseStoryblokDate } from '@/lib/storyblok/dates';
 import styles from './terminal-noir-writing.module.css';
 
 type TerminalNoirWritingProps = {
@@ -41,8 +42,8 @@ function richTextToParagraphs(value: RichTextDomain): string[] {
 }
 
 function formatDateLabel(value: string): string {
-	const parsed = new Date(value);
-	if (Number.isNaN(parsed.getTime())) {
+	const parsed = parseStoryblokDate(value);
+	if (!parsed) {
 		return value;
 	}
 	const year = parsed.getUTCFullYear();

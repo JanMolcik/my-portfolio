@@ -84,6 +84,7 @@ describe('UNIT-MAP-001', () => {
 				project_url: 'https://example.com',
 				repository_url: 'https://github.com/acme/portfolio',
 				type: 'web',
+				portfolio_priority: 3,
 				logo: { filename: 'https://cdn.example.com/logo.png' },
 				seo: [
 					{
@@ -108,6 +109,7 @@ describe('UNIT-MAP-001', () => {
 			projectUrl: 'https://example.com',
 			repositoryUrl: 'https://github.com/acme/portfolio',
 			type: 'web',
+			portfolioPriority: 3,
 			logoUrl: 'https://cdn.example.com/logo.png',
 			stack: [],
 			seo: {
@@ -187,7 +189,11 @@ describe('UNIT-MAP-001', () => {
 		const home = mapHomeDtoToDomain({
 			headline: 'Hello',
 			role: 'Engineer',
-			intro: {
+			hero_intro: {
+				type: 'doc',
+				content: [],
+			},
+			about_intro: {
 				type: 'doc',
 				content: [],
 			},

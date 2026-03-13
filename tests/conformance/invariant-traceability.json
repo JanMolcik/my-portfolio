@@ -44,7 +44,12 @@
 			]
 		},
 		"INV-6": {
-			"testIds": ["HARNESS-POLICY-001", "UNIT-VAL-001"]
+			"testIds": [
+				"HARNESS-POLICY-001",
+				"UNIT-VAL-001",
+				"SEC-CONTACT-001",
+				"E2E-CONTACT-001"
+			]
 		},
 		"INV-A1": {
 			"testIds": ["ARCH-ROUTE-001"]
@@ -132,6 +137,10 @@
 			"invariants": ["INV-5"],
 			"path": "tests/e2e/e2e-smoke-001.spec.ts"
 		},
+		"E2E-CONTACT-001": {
+			"invariants": ["INV-6"],
+			"path": "tests/e2e/e2e-contact-001.spec.ts"
+		},
 		"EVAL-007": {
 			"invariants": ["INV-5"],
 			"path": "tests/integration/int-visual-001.spec.ts"
@@ -147,6 +156,10 @@
 		"SEC-PUBLISHED-ONLY-001": {
 			"invariants": ["INV-2", "INV-4"],
 			"path": "tests/security/security-published-only-001.spec.ts"
+		},
+		"SEC-CONTACT-001": {
+			"invariants": ["INV-6"],
+			"path": "tests/security/security-contact-001.spec.ts"
 		},
 		"ARCH-ROUTE-001": {
 			"invariants": ["INV-A1", "INV-2"],

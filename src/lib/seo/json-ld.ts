@@ -1,5 +1,6 @@
 import type { HomePageModel } from '@/lib/storyblok/home-page';
 import type { ProjectDomain, WritingDomain } from '@/lib/storyblok/mappers';
+import { parseStoryblokDate } from '@/lib/storyblok/dates';
 
 type JsonLdNode = Record<string, unknown>;
 
@@ -35,8 +36,8 @@ function asIsoDate(value: string): string | undefined {
 	if (!value) {
 		return undefined;
 	}
-	const parsed = new Date(value);
-	if (Number.isNaN(parsed.getTime())) {
+	const parsed = parseStoryblokDate(value);
+	if (!parsed) {
 		return undefined;
 	}
 	return parsed.toISOString();

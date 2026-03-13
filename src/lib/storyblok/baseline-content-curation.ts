@@ -48,14 +48,14 @@ const curatedHome = {
 	availabilityTimezone: 'Europe/Prague',
 	availabilityResponseTime: 'within 48h',
 	featuredProjects: [
-		'curated:project:lipa-waste-collection-calendar',
 		'curated:project:shopsys-platform-core',
 		'curated:project:abugo-brand-platform-migration',
 		'legacy:project:3K3B8rGeMpNIHlAXpcuOxc',
-		'legacy:project:1S8ST6kPWgL98MUE7BkNmV',
-		'legacy:project:6Y7EIx73nUCWuoIWcsuM00',
 		'legacy:project:5paxSRHbAkmgMc4WSW8S66',
+		'curated:project:lipa-waste-collection-calendar',
 		'legacy:project:SzGET2EcNVB8Je8v7BsgL',
+		'legacy:project:6Y7EIx73nUCWuoIWcsuM00',
+		'legacy:project:1S8ST6kPWgL98MUE7BkNmV',
 		'legacy:project:6Eby5J7DzhAXIBO6ib832p',
 		'legacy:project:2GKNR2f4z6IwAg6a2MmKCc',
 	],
@@ -67,17 +67,21 @@ const curatedProjects: Record<
 		type: string;
 		summary: string;
 		content: StoryblokRichText;
+		priority: number;
 		stack: string[];
+		projectUrl?: string;
+		repositoryUrl?: string;
 	}
 > = {
 	'bitcoin-wallet': {
 		type: 'Fintech Web App',
+		priority: 4,
 		summary:
-			'Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface.',
+			'Frontend work on a former Bitcoin wallet web client, built with Next.js, TypeScript, React hooks, and product-grade fintech UI patterns.',
 		content: richTextParagraphs([
 			'I worked on a Next.js web client for a Bitcoin wallet product, extending an existing frontend and shipping additional functionality on top of an already designed component system.',
 			'The work combined product delivery with frontend structure: React functional components, hooks, Context API, routing, page management, and integration with API-driven wallet flows.',
-			'This project is strong evidence of my ability to work in fintech-grade frontend environments, contribute inside an existing product architecture, and keep complex UI flows maintainable as features grow.',
+			'The public product is no longer active and the codebase is private, so I keep this entry as a portfolio case-study detail rather than a live/source showcase.',
 		]),
 		stack: [
 			'Next.js',
@@ -87,9 +91,11 @@ const curatedProjects: Record<
 			'Tailwind CSS',
 			'Fintech UI',
 		],
+		projectUrl: '',
 	},
 	photobank: {
 		type: 'Product UI Prototype',
+		priority: 8,
 		summary:
 			'Responsive Next.js prototype for a photo library application, built with TypeScript, Sass, and atomic design principles across multiple breakpoints.',
 		content: richTextParagraphs([
@@ -108,6 +114,7 @@ const curatedProjects: Record<
 	},
 	obytkujeme: {
 		type: 'Booking Platform',
+		priority: 7,
 		summary:
 			'Next.js motorhome booking website with landing pages, gallery, booking calendar, and admin-facing functionality, deployed with Vercel and built with ISR in mind.',
 		content: richTextParagraphs([
@@ -126,6 +133,7 @@ const curatedProjects: Record<
 	},
 	qapline: {
 		type: 'Logistics ERP',
+		priority: 3,
 		summary:
 			'Angular-based ERP frontend for logistics workflows, where I helped refactor decentralized state handling into a more structured Redux-based architecture.',
 		content: richTextParagraphs([
@@ -137,6 +145,7 @@ const curatedProjects: Record<
 	},
 	aview: {
 		type: 'Catalogue Management App',
+		priority: 6,
 		summary:
 			'Angular client for product data and digital catalogue management, using RxJS and redux-observable style patterns for structured async state handling.',
 		content: richTextParagraphs([
@@ -148,6 +157,7 @@ const curatedProjects: Record<
 	},
 	'poohead-card-game': {
 		type: 'Interactive Multiplayer App',
+		priority: 9,
 		summary:
 			'Online multiplayer card game built with React on the client side and a Node-based game engine flow, focused on interactive frontend behavior.',
 		content: richTextParagraphs([
@@ -156,9 +166,11 @@ const curatedProjects: Record<
 			'This project is useful proof of range: I am comfortable not only with product dashboards and fintech interfaces, but also with interaction-heavy frontend experiences.',
 		]),
 		stack: ['React', 'Node.js', 'BoardGame.io', 'Interactive UI', 'Multiplayer Flows'],
+		projectUrl: '',
 	},
 	'hearthstone-ai': {
 		type: 'AI / Research Project',
+		priority: 10,
 		summary:
 			"Master's thesis project focused on designing a Hearthstone AI agent using Monte Carlo Tree Search for game-state evaluation.",
 		content: richTextParagraphs([
@@ -170,6 +182,7 @@ const curatedProjects: Record<
 	},
 	'abugo-brand-platform-migration': {
 		type: 'Multi-brand CMS Platform',
+		priority: 2,
 		summary:
 			'Current ABUGO migration initiative focused on a shared Next.js and Storyblok monorepo platform intended to become the single source of truth for multiple brand homepages through configurable apps and automation-heavy delivery.',
 		content: richTextParagraphs([
@@ -185,27 +198,34 @@ const curatedProjects: Record<
 			'Multi-brand CMS',
 			'Agentic Workflow',
 		],
+		projectUrl: '',
 	},
 	'shopsys-platform-core': {
 		type: 'E-commerce Frontend Platform',
+		priority: 1,
 		summary:
-			'Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows.',
+			'Shared e-commerce storefront platform at Shopsys built on Next.js Pages Router, React, TypeScript, URQL, and generated GraphQL operations, with Cypress and Vitest coverage for reusable project implementations.',
 		content: richTextParagraphs([
-			'At Shopsys, I work on a shared frontend core/platform built on Next.js Pages Router that serves as the implementation base for client projects.',
-			'The work is less about isolated feature tickets and more about platform-level frontend delivery: reusable foundations, maintainable patterns, and implementation workflows that other project teams can build on top of.',
-			'This project represents my day-to-day product engineering strength in a commercial setting: contributing inside a shared platform, improving the frontend baseline, and shipping work that has leverage beyond a single screen or campaign.',
+			'At Shopsys, I work on the shared storefront core used as the frontend base for multiple e-commerce implementations. The codebase is organized around Next.js Pages Router, React, TypeScript, Zustand, URQL, and generated GraphQL operations against the platform frontend API.',
+			'The work is platform-oriented rather than project-local: reusable order and payment flows, generated types, storefront architecture, Tailwind export for admin integration, and delivery that fits Dockerized development together with branch review deployments and GitHub Actions workflows.',
+			'My recent work has focused on GoPay and payment reliability: hardening return and confirmation flows, stabilizing payment-status handling and GTM deduplication, updating GraphQL operations and generated types, adding Vitest and Cypress regression coverage, and verifying iframe-sensitive changes on real HTTPS review branches with Playwright evidence.',
 		]),
 		stack: [
 			'Next.js Pages Router',
 			'React',
 			'TypeScript',
-			'E-commerce Platform',
-			'Frontend Architecture',
-			'Reusable Core',
+			'URQL',
+			'GraphQL Codegen',
+			'Cypress',
+			'Vitest',
+			'Docker Review Apps',
 		],
+		projectUrl: 'https://www.shopsys.cz/',
+		repositoryUrl: 'https://github.com/shopsys/shopsys',
 	},
 	'lipa-waste-collection-calendar': {
 		type: 'Municipal Service Web App',
+		priority: 5,
 		summary:
 			'Public-facing waste collection calendar for the municipality of Lipa, designed to make communal and sorted waste pickup dates clearer through focused calendar views and a simple annual data update workflow.',
 		content: richTextParagraphs([
@@ -226,24 +246,31 @@ const curatedProjects: Record<
 
 const curatedExperience: Record<string, StoryblokRichText> = {
 	'Frontend Developer - Shopsys': richTextParagraphs([
-		'Since June 6, 2024, I have worked as a frontend developer at Shopsys, contributing to a shared Next.js Pages Router core/platform used as the foundation for project implementations. More recently, I moved onto an ABUGO migration initiative where I stay hands-on in frontend development while also owning the codebase direction for a new Storyblok-based monorepo platform intended to become the single source of truth for multiple brands through configurable apps and automation-heavy workflows.',
+		'Since June 6, 2024, I have worked at Shopsys on a shared storefront/platform used as the frontend base for project implementations. The stack centers on Next.js Pages Router, React, TypeScript, Zustand, URQL, and GraphQL code generation inside a larger Symfony-based e-commerce platform.',
+		'My work spans reusable storefront architecture, order and payment flows, generated GraphQL operations, UI behavior, and regression coverage with Vitest and Cypress, all shipped through Dockerized development, review-branch deployments, and GitHub Actions workflows.',
+		'Most recently I have been driving GoPay and GTM-related reliability work: hardening return and callback flows, stabilizing payment state behavior, keeping generated types in sync, and validating iframe-touching changes on HTTPS review branches with Playwright evidence. In parallel, I also moved onto the ABUGO migration initiative where I stay hands-on in frontend while owning the codebase direction for a new Storyblok monorepo platform.',
 	]),
 	'Senior Frontend Web Developer - Solwee': richTextParagraphs([
-		'I led the frontend implementation of a prototype web application built with Next.js, TypeScript, and Sass, translating an existing visual direction into a structured, reusable UI system that stayed responsive across devices and easy for the client to evolve.',
+		'I led the frontend implementation of a Next.js prototype, translating an existing visual direction into a reusable and responsive UI system the client could extend with low friction.',
 	]),
 	'Senior Frontend Web Developer - DEAP': richTextParagraphs([
-		'I contributed to the first version of an energy-supplier comparison product, delivering React and TypeScript frontend work across state management, form flows, reusable UI integration, and fast-paced contract execution inside an active product team.',
+		'I helped deliver the first version of an energy comparison product, contributing React and TypeScript work across form flows, state management, and reusable UI inside a fast-moving product team.',
 	]),
 	'Frontend Web Developer - Numbrs': richTextParagraphs([
-		'I worked on a Next.js web client for a Bitcoin wallet product, taking over an existing codebase, extending it with new features, and keeping the frontend architecture coherent across hooks, Context API, routing, and API-driven product flows.',
+		'I worked on a Next.js Bitcoin wallet client, extending an existing codebase with new features while keeping hooks, Context API, routing, and API-driven flows coherent.',
 	]),
 	'Frontend Web Developer - Hark': richTextParagraphs([
-		'I worked on Angular-based business applications for product data and digital catalogue management, contributing across frontend delivery, reactive state patterns, integrations, and supporting tooling where the product needed broader engineering coverage.',
+		'I worked on Angular business applications for product data and digital catalogue management, contributing across reactive state patterns, integrations, and broader frontend delivery.',
 	]),
 	'Frontend Web Developer - Koala': richTextParagraphs([
-		'I worked on an ERP system for truck transport management, helping shift frontend complexity toward more centralized state management while also contributing React work on a 3D configuration interface.',
+		'I worked on a logistics ERP, helping move frontend complexity toward centralized state management while also contributing React work on a 3D configurator interface.',
 	]),
 };
+
+function shouldKeepCuratedSocialLink(url: string): boolean {
+	const normalizedUrl = url.trim().toLowerCase();
+	return !normalizedUrl.includes('typeform.com');
+}
 
 export function applyBaselineContentCuration(
 	bundle: StoryblokBaselineImportBundle,
@@ -264,6 +291,8 @@ export function applyBaselineContentCuration(
 			project_url: 'https://www.odpady-lipa.cz/',
 			repository_url: 'https://github.com/JanMolcik/rubbish-collection',
 			type: curatedProjects['lipa-waste-collection-calendar'].type,
+			portfolio_priority:
+				curatedProjects['lipa-waste-collection-calendar'].priority,
 			stack: curatedProjects['lipa-waste-collection-calendar'].stack,
 			seo: [
 				{
@@ -288,9 +317,11 @@ export function applyBaselineContentCuration(
 			summary: curatedProjects['shopsys-platform-core'].summary,
 			content: curatedProjects['shopsys-platform-core'].content,
 			published_date: '2024-06-06T00:00:00.000Z',
-			project_url: 'https://docs.shopsys.com/en/18.0/',
-			repository_url: 'https://github.com/shopsys/shopsys',
+			project_url: curatedProjects['shopsys-platform-core'].projectUrl ?? '',
+			repository_url:
+				curatedProjects['shopsys-platform-core'].repositoryUrl ?? '',
 			type: curatedProjects['shopsys-platform-core'].type,
+			portfolio_priority: curatedProjects['shopsys-platform-core'].priority,
 			stack: curatedProjects['shopsys-platform-core'].stack,
 			seo: [
 				{
@@ -316,8 +347,11 @@ export function applyBaselineContentCuration(
 			content:
 				curatedProjects['abugo-brand-platform-migration'].content,
 			published_date: '2026-02-20T00:00:00.000Z',
-			project_url: 'https://www.shopsys.cz/',
+			project_url:
+				curatedProjects['abugo-brand-platform-migration'].projectUrl ?? '',
 			type: curatedProjects['abugo-brand-platform-migration'].type,
+			portfolio_priority:
+				curatedProjects['abugo-brand-platform-migration'].priority,
 			stack: curatedProjects['abugo-brand-platform-migration'].stack,
 			seo: [
 				{
@@ -341,12 +375,14 @@ export function applyBaselineContentCuration(
 			description: curatedExperience['Frontend Developer - Shopsys'],
 			start_date: '2024-06-06T00:00:00.000Z',
 			skills: [
-				'Next.js',
-				'Pages Router',
-				'Storyblok',
-				'Monorepo',
+				'Next.js Pages Router',
+				'React',
+				'TypeScript',
+				'URQL',
+				'GraphQL Codegen',
+				'Cypress',
+				'Vitest',
 				'Platform Architecture',
-				'Automation',
 			],
 		},
 	};
@@ -384,6 +420,9 @@ export function applyBaselineContentCuration(
 	}
 
 	if (home) {
+		home.content.social_links = home.content.social_links.filter((link) =>
+			shouldKeepCuratedSocialLink(link.url),
+		);
 		home.content.role = curatedHome.role;
 		home.content.hero_intro = curatedHome.heroIntro;
 		home.content.about_intro = curatedHome.aboutIntro;
@@ -417,9 +456,18 @@ export function applyBaselineContentCuration(
 			content: {
 				...project.content,
 				type: override.type,
+				portfolio_priority: override.priority,
 				summary: override.summary,
 				content: override.content,
 				stack: override.stack,
+				project_url:
+					override.projectUrl !== undefined
+						? override.projectUrl
+						: project.content.project_url,
+				repository_url:
+					override.repositoryUrl !== undefined
+						? override.repositoryUrl
+						: project.content.repository_url,
 				seo: project.content.seo.map((seo, index) =>
 					index === 0
 						? {
@@ -447,8 +495,13 @@ export function applyBaselineContentCuration(
 		};
 	});
 
+	bundle.content.social_links = bundle.content.social_links.filter((link) =>
+		shouldKeepCuratedSocialLink(link.content.url),
+	);
+
 	bundle.summary.project_count = bundle.content.projects.length;
 	bundle.summary.experience_count = bundle.content.experience.length;
+	bundle.summary.social_link_count = bundle.content.social_links.length;
 
 	return bundle;
 }

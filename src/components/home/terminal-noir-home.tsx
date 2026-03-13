@@ -1,7 +1,11 @@
 import type { HomePageModel } from '@/lib/storyblok/home-page';
+import { getContactPublicConfig } from '@/lib/contact/config';
+import { getProjectCardLinks } from '@/lib/projects/project-links';
+import { parseStoryblokDate } from '@/lib/storyblok/dates';
 import { richTextToParagraphs } from '@/lib/storyblok/home-page';
 import { storyblokEditable, type SbBlokData } from '@storyblok/react/rsc';
 import * as crypto from 'crypto';
+import ContactForm from './contact-form';
 import styles from './terminal-noir-home.module.css';
 
 type TerminalNoirHomeProps = {
@@ -24,8 +28,8 @@ function formatDateLabel(value?: string): string {
 	if (!value) {
 		return 'present';
 	}
-	const parsed = new Date(value);
-	if (Number.isNaN(parsed.getTime())) {
+	const parsed = parseStoryblokDate(value);
+	if (!parsed) {
 		return value;
 	}
 	const year = parsed.getUTCFullYear();
@@ -57,8 +61,17 @@ function iconForContact(icon: string): string {
 function getPreferredContactLink(
 	links: TerminalNoirHomeProps['model']['socialLinks'],
 ) {
+	const directLinks = links.filter((link) => {
+		const normalizedUrl = link.url.trim().toLowerCase();
+		return !(
+			normalizedUrl.includes('typeform.com') ||
+			normalizedUrl.includes('tally.so') ||
+			normalizedUrl.includes('forms.gle')
+		);
+	});
+
 	return (
-		links.find((link) => {
+		directLinks.find((link) => {
 			const name = link.name.trim().toLowerCase();
 			const icon = link.icon.trim().toLowerCase();
 			return (
@@ -67,7 +80,13 @@ function getPreferredContactLink(
 				icon.includes('envelope') ||
 				icon.includes('mail')
 			);
-		}) ?? links[0]
+		}) ??
+		directLinks.find((link) => {
+			const normalizedUrl = link.url.trim().toLowerCase();
+			return normalizedUrl.includes('linkedin.com');
+		}) ??
+		directLinks[0] ??
+		links[0]
 	);
 }
 
@@ -96,7 +115,66 @@ export default function TerminalNoirHome({
 		},
 	];
 	const terminalPrimaryContact = getPreferredContactLink(model.socialLinks);
+	const contactPublicConfig = getContactPublicConfig();
+	const featuredProjects = model.projects.slice(0, 3);
+	const secondaryProjects = model.projects.slice(3);
+	const currentExperience = model.experience[0];
+	const previousExperience = model.experience.slice(1);
 	const year = new Date().getUTCFullYear();
+
+	function renderProjectCard(
+		project: TerminalNoirHomeProps['model']['projects'][number],
+		variant: 'lead' | 'featured' | 'compact',
+	) {
+		const cardClassName =
+			variant === 'lead'
+				? `${styles.projectCard} ${styles.projectCardLead}`
+				: variant === 'featured'
+					? `${styles.projectCard} ${styles.projectCardFeatured}`
+					: `${styles.projectCard} ${styles.projectCardCompact}`;
+
+		return (
+			<article className={cardClassName} key={project.slug}>
+				<div className={styles.projectType}>{project.type || 'project'}</div>
+				{variant === 'lead' ? (
+					<div className={styles.projectPriority}>priority case study</div>
+				) : variant === 'featured' ? (
+					<div className={styles.projectPriority}>featured build</div>
+				) : null}
+				<h3 className={styles.projectName}>{project.title || project.slug}</h3>
+				<div className={styles.filePath}>
+					~/projects/<span>{project.slug}</span>
+				</div>
+				<p className={styles.projectDesc}>{project.summary}</p>
+				{project.stack.length > 0 ? (
+					<div className={styles.techStack}>
+						{project.stack.map((tag) => (
+							<span className={styles.techTag} key={`${project.slug}-${tag}`}>
+								{tag}
+							</span>
+						))}
+					</div>
+				) : null}
+				<div className={styles.projectLinks}>
+					{getProjectCardLinks({
+						slug: project.slug,
+						projectUrl: project.projectUrl,
+						repositoryUrl: project.repositoryUrl,
+					}).map((link) => (
+						<a
+							className={styles.projectLink}
+							href={link.href}
+							key={`${project.slug}-${link.label}`}
+							rel={link.external ? 'noreferrer' : undefined}
+							target={link.external ? '_blank' : undefined}
+						>
+							{link.label}
+						</a>
+					))}
+				</div>
+			</article>
+		);
+	}
 
 	return (
 		<main className={styles.terminalNoir} data-testid="terminal-noir-home">
@@ -194,99 +272,152 @@ export default function TerminalNoirHome({
 			<section className={styles.projectsSection} id="projects">
 				<div className={styles.container}>
 					<div className={styles.sectionLabel}>ls ./projects</div>
-					<div className={styles.projectsGrid}>
-							{model.projects.map((project) => {
-								return (
-								<article className={styles.projectCard} key={project.slug}>
-									<div className={styles.projectType}>
-										{project.type || 'project'}
-									</div>
-									<h3 className={styles.projectName}>
-										{project.title || project.slug}
-									</h3>
-									<div className={styles.filePath}>
-										~/projects/<span>{project.slug}</span>
-									</div>
-									<p className={styles.projectDesc}>{project.summary}</p>
-									{project.stack.length > 0 ? (
-										<div className={styles.techStack}>
-											{project.stack.map((tag) => (
-												<span
-													className={styles.techTag}
-													key={`${project.slug}-${tag}`}
-												>
-													{tag}
-												</span>
-											))}
-										</div>
-									) : null}
-									<div className={styles.projectLinks}>
-										<a className={styles.projectLink} href={project.projectUrl}>
-											live
-										</a>
-										<a
-											className={styles.projectLink}
-											href={
-												project.repositoryUrl ?? `/projects/${project.slug}`
-											}
-										>
-											{project.repositoryUrl ? 'source' : 'details'}
-										</a>
-									</div>
-								</article>
-							);
-						})}
+					<div className={styles.projectsIntro}>
+						<p className={styles.projectsLead}>selected case studies</p>
+						<p className={styles.projectsBody}>
+							The first projects are the strongest signal for product teams and
+							hiring managers: platform ownership, migration scope, and
+							production-grade frontend systems.
+						</p>
 					</div>
+					<div className={styles.featuredProjectsGrid}>
+						{featuredProjects[0]
+							? renderProjectCard(featuredProjects[0], 'lead')
+							: null}
+						{featuredProjects.length > 1 ? (
+							<div className={styles.featuredProjectsSecondary}>
+								{featuredProjects
+									.slice(1)
+									.map((project) => renderProjectCard(project, 'featured'))}
+							</div>
+						) : null}
+					</div>
+					{secondaryProjects.length > 0 ? (
+						<>
+							<div className={styles.projectsSubsection}>
+								<p className={styles.projectsLead}>additional work</p>
+								<p className={styles.projectsBody}>
+									Broader delivery across internal tools, prototypes, booking
+									flows, interaction-heavy apps, and research work.
+								</p>
+							</div>
+							<div className={styles.projectsGrid}>
+								{secondaryProjects.map((project) => {
+									return renderProjectCard(project, 'compact');
+								})}
+							</div>
+						</>
+					) : null}
 				</div>
 			</section>
 
 			<section className={styles.experienceSection} id="experience">
 				<div className={styles.container}>
 					<div className={styles.sectionLabel}>git log --oneline</div>
-						<div className={styles.commitLog}>
-							{model.experience.map((entry) => {
-								const description =
-									richTextToParagraphs(entry.description)[0] ??
-									'Experience details pending content publication.';
-							const commitHash = crypto
-								.createHash('sha1')
-								.update(
-									`${entry.title}-${entry.companyName}-${entry.startDate}`,
-								)
-								.digest('hex')
-								.slice(0, 6);
-
-							return (
-								<article
-									className={styles.commitEntry}
-									key={`${entry.title}-${entry.startDate}`}
-								>
-									<div className={styles.commitDot}>⬡</div>
-									<div>
-										<div className={styles.commitHash}>commit {commitHash}</div>
-										<div className={styles.commitDate}>
-											{formatExperienceRange(entry.startDate, entry.endDate)}
-										</div>
-										<h3 className={styles.commitTitle}>{entry.title}</h3>
-										<div className={styles.commitCompany}>
-											{entry.companyName}
-										</div>
-										<p className={styles.commitDesc}>{description}</p>
-										<div className={styles.diffTags}>
-											{entry.skills.map((skill) => (
-												<span
-													className={styles.diffAdd}
-													key={`${entry.title}-${skill}`}
-												>
-													+{skill}
-												</span>
-											))}
-										</div>
-									</div>
-								</article>
-							);
-						})}
+					<div className={styles.experienceIntro}>
+						<p className={styles.projectsLead}>current role</p>
+						<p className={styles.projectsBody}>
+							The current role should read as the strongest hiring signal:
+							recent ownership, platform complexity, and the kind of frontend
+							scope I can lead inside product teams.
+						</p>
 					</div>
+					{currentExperience ? (
+						<article className={styles.currentRoleCard}>
+							<div className={styles.currentRoleMeta}>
+								<span className={styles.currentRoleBadge}>current focus</span>
+								<span className={styles.currentRoleRange}>
+									{formatExperienceRange(
+										currentExperience.startDate,
+										currentExperience.endDate,
+									)}
+								</span>
+							</div>
+							<h3 className={styles.currentRoleTitle}>
+								{currentExperience.title}
+							</h3>
+							<div className={styles.currentRoleCompany}>
+								{currentExperience.companyName}
+							</div>
+							<div className={styles.currentRoleBody}>
+								{richTextToParagraphs(currentExperience.description).map(
+									(paragraph) => (
+										<p key={paragraph}>{paragraph}</p>
+									),
+								)}
+							</div>
+							<div className={styles.currentRoleSkills}>
+								{currentExperience.skills.map((skill) => (
+									<span
+										className={styles.diffAdd}
+										key={`${currentExperience.title}-${skill}`}
+									>
+										+{skill}
+									</span>
+								))}
+							</div>
+						</article>
+					) : null}
+					{previousExperience.length > 0 ? (
+						<>
+							<div className={styles.experienceSubsection}>
+								<p className={styles.projectsLead}>previous roles</p>
+								<p className={styles.projectsBody}>
+									A compact timeline of earlier work across fintech, Angular
+									enterprise apps, prototypes, and contract delivery.
+								</p>
+							</div>
+							<div className={styles.commitLog}>
+								{previousExperience.map((entry) => {
+									const description =
+										richTextToParagraphs(entry.description)[0] ??
+										'Experience details pending content publication.';
+									const commitHash = crypto
+										.createHash('sha1')
+										.update(
+											`${entry.title}-${entry.companyName}-${entry.startDate}`,
+										)
+										.digest('hex')
+										.slice(0, 6);
+
+									return (
+										<article
+											className={styles.commitEntry}
+											key={`${entry.title}-${entry.startDate}`}
+										>
+											<div className={styles.commitDot}>⬡</div>
+											<div>
+												<div className={styles.commitHash}>
+													commit {commitHash}
+												</div>
+												<div className={styles.commitDate}>
+													{formatExperienceRange(
+														entry.startDate,
+														entry.endDate,
+													)}
+												</div>
+												<h3 className={styles.commitTitle}>{entry.title}</h3>
+												<div className={styles.commitCompany}>
+													{entry.companyName}
+												</div>
+												<p className={styles.commitDesc}>{description}</p>
+												<div className={styles.diffTags}>
+													{entry.skills.map((skill) => (
+														<span
+															className={styles.diffAdd}
+															key={`${entry.title}-${skill}`}
+														>
+															+{skill}
+														</span>
+													))}
+												</div>
+											</div>
+										</article>
+									);
+								})}
+							</div>
+						</>
+					) : null}
 				</div>
 			</section>
 
@@ -295,9 +426,7 @@ export default function TerminalNoirHome({
 					<div className={styles.sectionLabel}>ping --me</div>
 					<div className={styles.contactGrid}>
 						<div>
-							<p className={styles.contactIntro}>
-								{model.contactIntro}
-							</p>
+							<p className={styles.contactIntro}>{model.contactIntro}</p>
 							{model.socialLinks.map((link, index) => {
 								const editableBlok = socialLinkBloks[index];
 
@@ -321,7 +450,7 @@ export default function TerminalNoirHome({
 									className={styles.cvDownload}
 									href={terminalPrimaryContact.url}
 								>
-									↓ start a conversation
+									↓ direct fallback contact
 								</a>
 							) : null}
 						</div>
@@ -334,31 +463,29 @@ export default function TerminalNoirHome({
 								<div className={styles.terminalTitle}>contact.sh</div>
 							</div>
 							<div className={styles.terminalBody}>
-								<p className={styles.comment}># send a message</p>
-								<p>
-									<span className={styles.path}>~/contact</span> ${' '}
-									<span className={styles.cmd}>cat availability.txt</span>
-								</p>
-								<p className={styles.output}>
-									Status:{' '}
-									<span className={styles.outputHighlight}>
-										{model.contactStatus}
-									</span>
-								</p>
-								<p className={styles.output}>
-									Timezone: {model.contactTimezone}
-								</p>
-								<p className={styles.output}>
-									Response: {model.contactResponseTime}
-								</p>
-								<br />
-								<p>
-									<span className={styles.path}>~/contact</span> ${' '}
-									<span className={styles.cmd}>curl -X POST /api/message</span>
-								</p>
-								<p className={styles.output}>
-									target: {terminalPrimaryContact?.url ?? 'contact unavailable'}
-								</p>
+								<div className={styles.contactTerminalHeader}>
+									<p className={styles.comment}># secure intake</p>
+									<p>
+										<span className={styles.path}>~/contact</span> ${' '}
+										<span className={styles.cmd}>cat availability.txt</span>
+									</p>
+									<p className={styles.output}>
+										Status:{' '}
+										<span className={styles.outputHighlight}>
+											{model.contactStatus}
+										</span>
+									</p>
+									<p className={styles.output}>
+										Timezone: {model.contactTimezone}
+									</p>
+									<p className={styles.output}>
+										Response: {model.contactResponseTime}
+									</p>
+								</div>
+								<ContactForm
+									fallbackUrl={terminalPrimaryContact?.url ?? null}
+									siteKey={contactPublicConfig.turnstileSiteKey}
+								/>
 							</div>
 						</div>
 					</div>

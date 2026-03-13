@@ -59,16 +59,45 @@ describe('CONTRACT-IMPORT-001', () => {
 			home_count: 1,
 			project_count: 10,
 			experience_count: 6,
-			social_link_count: 4,
+			social_link_count: 3,
 		});
 		expect(bundle.diagnostics.missing_asset_ids).toEqual([]);
 		expect(bundle.content.home).not.toBeNull();
-		expect(bundle.content.home?.content.social_links.length).toBe(4);
+		expect(bundle.content.home?.content.social_links.length).toBe(3);
 		expect(bundle.content.home?.content.featured_projects.length).toBe(10);
 		expect(bundle.content.home?.content.experience.length).toBe(6);
 		expect(bundle.content.projects).toHaveLength(10);
 		expect(bundle.content.experience).toHaveLength(6);
-		expect(bundle.content.social_links).toHaveLength(4);
+		expect(bundle.content.social_links).toHaveLength(3);
+		expect(
+			bundle.content.projects.find(
+				(project) => project.slug === 'shopsys-platform-core',
+			)?.content.project_url,
+		).toBe('https://www.shopsys.cz/');
+		expect(
+			bundle.content.projects.find((project) => project.slug === 'qapline')?.content
+				.portfolio_priority,
+		).toBe(3);
+		expect(
+			bundle.content.projects.find(
+				(project) => project.slug === 'bitcoin-wallet',
+			)?.content.project_url,
+		).toBe('');
+		expect(
+			bundle.content.projects.find(
+				(project) => project.slug === 'bitcoin-wallet',
+			)?.content.portfolio_priority,
+		).toBe(4);
+		expect(
+			bundle.content.projects.find(
+				(project) => project.slug === 'abugo-brand-platform-migration',
+			)?.content.project_url,
+		).toBe('');
+		expect(
+			bundle.content.projects.find(
+				(project) => project.slug === 'poohead-card-game',
+			)?.content.project_url,
+		).toBe('');
 
 		expect(
 			bundle.content.projects

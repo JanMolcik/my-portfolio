@@ -15,6 +15,11 @@ jobs:
       STORYBLOK_PREVIEW_TOKEN: ${{ secrets.STORYBLOK_PREVIEW_TOKEN }}
       PREVIEW_SECRET: ${{ secrets.PREVIEW_SECRET }}
       STORYBLOK_WEBHOOK_SECRET: ${{ secrets.STORYBLOK_WEBHOOK_SECRET }}
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+      TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      CONTACT_FROM_EMAIL: ${{ secrets.CONTACT_FROM_EMAIL }}
+      CONTACT_TO_EMAIL: ${{ secrets.CONTACT_TO_EMAIL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,6 +47,11 @@ jobs:
             STORYBLOK_PREVIEW_TOKEN
             PREVIEW_SECRET
             STORYBLOK_WEBHOOK_SECRET
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY
+            TURNSTILE_SECRET_KEY
+            RESEND_API_KEY
+            CONTACT_FROM_EMAIL
+            CONTACT_TO_EMAIL
           )
           for required_var in "${required_vars[@]}"; do
             if [[ -z "${!required_var}" ]]; then

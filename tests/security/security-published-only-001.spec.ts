@@ -16,6 +16,11 @@ describe('SEC-PUBLISHED-ONLY-001', () => {
 		const spec = await readFile('docs/spec/PROJECT_SPEC.md', 'utf8');
 		expect(spec).toContain('PREVIEW_SECRET');
 		expect(spec).toContain('STORYBLOK_WEBHOOK_SECRET');
+		expect(spec).toContain('NEXT_PUBLIC_TURNSTILE_SITE_KEY');
+		expect(spec).toContain('TURNSTILE_SECRET_KEY');
+		expect(spec).toContain('RESEND_API_KEY');
+		expect(spec).toContain('CONTACT_FROM_EMAIL');
+		expect(spec).toContain('CONTACT_TO_EMAIL');
 		expect(spec).toContain('constant time');
 	});
 
@@ -29,6 +34,7 @@ describe('SEC-PUBLISHED-ONLY-001', () => {
 		expect(config).toContain('Referrer-Policy');
 		expect(config).toContain('Permissions-Policy');
 		expect(config).toContain('frame-ancestors');
+		expect(config).toContain('https://challenges.cloudflare.com');
 		expect(config).toContain('https://app.storyblok.com');
 	});
 
@@ -66,6 +72,7 @@ describe('SEC-PUBLISHED-ONLY-001', () => {
 			'src/app/api/preview/route.ts',
 			'src/app/api/exit-preview/route.ts',
 			'src/app/api/revalidate/storyblok/route.ts',
+			'src/app/api/contact/route.ts',
 		];
 
 		for (const routeFile of routeFiles) {

@@ -126,6 +126,17 @@ function orderRelationsByRefs<T>(
 	return ordered;
 }
 
+function sortProjectsByPortfolioPriority(projects: ProjectDomain[]): ProjectDomain[] {
+	return [...projects].sort((left, right) => {
+		const leftPriority = left.portfolioPriority ?? Number.MAX_SAFE_INTEGER;
+		const rightPriority = right.portfolioPriority ?? Number.MAX_SAFE_INTEGER;
+		if (leftPriority !== rightPriority) {
+			return leftPriority - rightPriority;
+		}
+		return 0;
+	});
+}
+
 function getFallbackSlug(story: StoryblokResolvedRelationStory): string {
 	if (typeof story.slug === 'string' && story.slug.trim().length > 0) {
 		return story.slug;
@@ -170,7 +181,9 @@ export function buildHomePageModel(
 		contactTimezone: home.availabilityTimezone,
 		contactResponseTime: home.availabilityResponseTime,
 		socialLinks: home.socialLinks,
-		projects: orderRelationsByRefs(projects, home.featuredProjectRefs),
+		projects: sortProjectsByPortfolioPriority(
+			orderRelationsByRefs(projects, home.featuredProjectRefs),
+		),
 		experience: orderRelationsByRefs(experience, home.experienceRefs),
 	};
 }
