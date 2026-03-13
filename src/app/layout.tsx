@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { JetBrains_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const jetBrainsMono = JetBrains_Mono({
@@ -34,7 +35,10 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="en">
-			<body className={jetBrainsMono.variable}>{children}</body>
+			<body className={jetBrainsMono.variable}>
+				{children}
+				<Analytics />
+			</body>
 		</html>
 	);
 }
