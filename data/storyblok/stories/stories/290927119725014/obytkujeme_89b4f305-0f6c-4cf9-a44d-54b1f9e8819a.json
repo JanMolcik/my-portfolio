@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:46.014Z",
-  "published_at": "2026-03-12T23:14:45.993Z",
+  "updated_at": "2026-03-13T14:31:43.601Z",
+  "published_at": "2026-03-13T14:31:43.581Z",
   "id": 152164408398269,
   "uuid": "89b4f305-0f6c-4cf9-a44d-54b1f9e8819a",
   "is_folder": false,
@@ -23,7 +23,7 @@
         "meta_description": "Next.js motorhome booking website with landing pages, gallery, booking calendar, and admin-facing functionality, deployed with Vercel and built with ISR in mind."
       }
     ],
-    "_uid": "52e868aa-e8d9-41bc-ac57-da83a8b00204",
+    "_uid": "e1b813a0-f153-486f-a56c-1f67a6f258a1",
     "logo": "https://images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
     "slug": "obytkujeme",
     "type": "Booking Platform",
@@ -71,7 +71,8 @@
     "summary": "Next.js motorhome booking website with landing pages, gallery, booking calendar, and admin-facing functionality, deployed with Vercel and built with ISR in mind.",
     "component": "page_project",
     "project_url": "https://www.obytkujeme.cz/",
-    "published_date": "2023-01-07T23:00:00.000Z"
+    "published_date": "2023-01-07 23:00",
+    "portfolio_priority": 7
   },
   "published": true,
   "slug": "obytkujeme",
@@ -92,8 +93,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
-    "timestamp": "1773357291"
+    "token": "2000cd82c0fbe9065a3f31c051aa128e6c8fa9d6",
+    "timestamp": "1773412308"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -127,7 +128,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286827639105,
+  "current_version_id": 154512179302190,
   "stage": null,
   "favourite_for_user_ids": []
 }

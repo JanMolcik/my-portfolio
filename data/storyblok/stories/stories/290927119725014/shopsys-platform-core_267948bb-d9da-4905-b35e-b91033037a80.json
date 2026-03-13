@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:45.583Z",
-  "published_at": "2026-03-12T23:14:45.565Z",
+  "updated_at": "2026-03-13T14:31:42.615Z",
+  "published_at": "2026-03-13T14:31:42.548Z",
   "id": 154285830931674,
   "uuid": "267948bb-d9da-4905-b35e-b91033037a80",
   "is_folder": false,
@@ -19,19 +19,21 @@
         "noindex": false,
         "component": "seo_meta",
         "meta_title": "Shopsys Platform Core",
-        "meta_description": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows."
+        "meta_description": "Shared e-commerce storefront platform at Shopsys built on Next.js Pages Router, React, TypeScript, URQL, and generated GraphQL operations, with Cypress and Vitest coverage for reusable project implementations."
       }
     ],
-    "_uid": "1af72581-b1c7-4dc8-a46a-0835c616a7da",
+    "_uid": "6abdb865-2278-43a7-b031-f0ebae5731b5",
     "slug": "shopsys-platform-core",
     "type": "E-commerce Frontend Platform",
     "stack": [
       "Next.js Pages Router",
       "React",
       "TypeScript",
-      "E-commerce Platform",
-      "Frontend Architecture",
-      "Reusable Core"
+      "URQL",
+      "GraphQL Codegen",
+      "Cypress",
+      "Vitest",
+      "Docker Review Apps"
     ],
     "title": "Shopsys Platform Core",
     "content": {
@@ -41,7 +43,7 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "At Shopsys, I work on a shared frontend core/platform built on Next.js Pages Router that serves as the implementation base for client projects.",
+              "text": "At Shopsys, I work on the shared storefront core used as the frontend base for multiple e-commerce implementations. The codebase is organized around Next.js Pages Router, React, TypeScript, Zustand, URQL, and generated GraphQL operations against the platform frontend API.",
               "type": "text"
             }
           ]
@@ -50,7 +52,7 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "The work is less about isolated feature tickets and more about platform-level frontend delivery: reusable foundations, maintainable patterns, and implementation workflows that other project teams can build on top of.",
+              "text": "The work is platform-oriented rather than project-local: reusable order and payment flows, generated types, storefront architecture, Tailwind export for admin integration, and delivery that fits Dockerized development together with branch review deployments and GitHub Actions workflows.",
               "type": "text"
             }
           ]
@@ -59,18 +61,19 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "This project represents my day-to-day product engineering strength in a commercial setting: contributing inside a shared platform, improving the frontend baseline, and shipping work that has leverage beyond a single screen or campaign.",
+              "text": "My recent work has focused on GoPay and payment reliability: hardening return and confirmation flows, stabilizing payment-status handling and GTM deduplication, updating GraphQL operations and generated types, adding Vitest and Cypress regression coverage, and verifying iframe-sensitive changes on real HTTPS review branches with Playwright evidence.",
               "type": "text"
             }
           ]
         }
       ]
     },
-    "summary": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows.",
+    "summary": "Shared e-commerce storefront platform at Shopsys built on Next.js Pages Router, React, TypeScript, URQL, and generated GraphQL operations, with Cypress and Vitest coverage for reusable project implementations.",
     "component": "page_project",
-    "project_url": "https://docs.shopsys.com/en/18.0/",
-    "published_date": "2024-06-06T00:00:00.000Z",
-    "repository_url": "https://github.com/shopsys/shopsys"
+    "project_url": "https://www.shopsys.cz/",
+    "published_date": "2024-06-06 00:00",
+    "repository_url": "https://github.com/shopsys/shopsys",
+    "portfolio_priority": 1
   },
   "published": true,
   "slug": "shopsys-platform-core",
@@ -91,8 +94,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "26fe68f4c9c4be041dd5122bcbfc631f876c5391",
-    "timestamp": "1773357288"
+    "token": "8289fbe54ce7030b1e12e47b27ba3e1b32aa0789",
+    "timestamp": "1773412306"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -126,7 +129,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286825886010,
+  "current_version_id": 154512171179804,
   "stage": null,
   "favourite_for_user_ids": []
 }

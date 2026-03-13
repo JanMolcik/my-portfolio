@@ -9,7 +9,7 @@
     "home_count": 1,
     "project_count": 10,
     "experience_count": 6,
-    "social_link_count": 4
+    "social_link_count": 3
   },
   "content": {
     "home": {
@@ -122,12 +122,6 @@
           },
           {
             "component": "item_social_link",
-            "name": "Contact me",
-            "url": "https://molcikjan.typeform.com/to/gZDCGfgd",
-            "icon": "envelope"
-          },
-          {
-            "component": "item_social_link",
             "name": "LinkedIn",
             "url": "https://linkedin.com/in/jan-molcik",
             "icon": "linkedin"
@@ -140,14 +134,14 @@
           }
         ],
         "featured_projects": [
-          "curated:project:lipa-waste-collection-calendar",
           "curated:project:shopsys-platform-core",
           "curated:project:abugo-brand-platform-migration",
           "legacy:project:3K3B8rGeMpNIHlAXpcuOxc",
-          "legacy:project:1S8ST6kPWgL98MUE7BkNmV",
-          "legacy:project:6Y7EIx73nUCWuoIWcsuM00",
           "legacy:project:5paxSRHbAkmgMc4WSW8S66",
+          "curated:project:lipa-waste-collection-calendar",
           "legacy:project:SzGET2EcNVB8Je8v7BsgL",
+          "legacy:project:6Y7EIx73nUCWuoIWcsuM00",
+          "legacy:project:1S8ST6kPWgL98MUE7BkNmV",
           "legacy:project:6Eby5J7DzhAXIBO6ib832p",
           "legacy:project:2GKNR2f4z6IwAg6a2MmKCc"
         ],
@@ -226,8 +220,9 @@
             ]
           },
           "published_date": "2026-02-20T00:00:00.000Z",
-          "project_url": "https://www.shopsys.cz/",
+          "project_url": "",
           "type": "Multi-brand CMS Platform",
+          "portfolio_priority": 2,
           "stack": [
             "Next.js App Router",
             "Storyblok",
@@ -255,7 +250,7 @@
           "component": "page_project",
           "title": "Shopsys Platform Core",
           "slug": "shopsys-platform-core",
-          "summary": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows.",
+          "summary": "Shared e-commerce storefront platform at Shopsys built on Next.js Pages Router, React, TypeScript, URQL, and generated GraphQL operations, with Cypress and Vitest coverage for reusable project implementations.",
           "content": {
             "type": "doc",
             "content": [
@@ -264,7 +259,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "At Shopsys, I work on a shared frontend core/platform built on Next.js Pages Router that serves as the implementation base for client projects."
+                    "text": "At Shopsys, I work on the shared storefront core used as the frontend base for multiple e-commerce implementations. The codebase is organized around Next.js Pages Router, React, TypeScript, Zustand, URQL, and generated GraphQL operations against the platform frontend API."
                   }
                 ]
               },
@@ -273,7 +268,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "The work is less about isolated feature tickets and more about platform-level frontend delivery: reusable foundations, maintainable patterns, and implementation workflows that other project teams can build on top of."
+                    "text": "The work is platform-oriented rather than project-local: reusable order and payment flows, generated types, storefront architecture, Tailwind export for admin integration, and delivery that fits Dockerized development together with branch review deployments and GitHub Actions workflows."
                   }
                 ]
               },
@@ -282,29 +277,32 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "This project represents my day-to-day product engineering strength in a commercial setting: contributing inside a shared platform, improving the frontend baseline, and shipping work that has leverage beyond a single screen or campaign."
+                    "text": "My recent work has focused on GoPay and payment reliability: hardening return and confirmation flows, stabilizing payment-status handling and GTM deduplication, updating GraphQL operations and generated types, adding Vitest and Cypress regression coverage, and verifying iframe-sensitive changes on real HTTPS review branches with Playwright evidence."
                   }
                 ]
               }
             ]
           },
           "published_date": "2024-06-06T00:00:00.000Z",
-          "project_url": "https://docs.shopsys.com/en/18.0/",
+          "project_url": "https://www.shopsys.cz/",
           "repository_url": "https://github.com/shopsys/shopsys",
           "type": "E-commerce Frontend Platform",
+          "portfolio_priority": 1,
           "stack": [
             "Next.js Pages Router",
             "React",
             "TypeScript",
-            "E-commerce Platform",
-            "Frontend Architecture",
-            "Reusable Core"
+            "URQL",
+            "GraphQL Codegen",
+            "Cypress",
+            "Vitest",
+            "Docker Review Apps"
           ],
           "seo": [
             {
               "component": "seo_meta",
               "meta_title": "Shopsys Platform Core",
-              "meta_description": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows.",
+              "meta_description": "Shared e-commerce storefront platform at Shopsys built on Next.js Pages Router, React, TypeScript, URQL, and generated GraphQL operations, with Cypress and Vitest coverage for reusable project implementations.",
               "noindex": false
             }
           ]
@@ -356,6 +354,7 @@
           "project_url": "https://www.odpady-lipa.cz/",
           "repository_url": "https://github.com/JanMolcik/rubbish-collection",
           "type": "Municipal Service Web App",
+          "portfolio_priority": 5,
           "stack": [
             "Next.js App Router",
             "TypeScript",
@@ -419,6 +418,7 @@
           "published_date": "2024-01-01T12:00:00.000Z",
           "project_url": "https://photobank-prototype.vercel.app/ctk",
           "type": "Product UI Prototype",
+          "portfolio_priority": 8,
           "stack": [
             "Next.js",
             "TypeScript",
@@ -498,6 +498,7 @@
           "published_date": "2023-01-07T23:00:00.000Z",
           "project_url": "https://www.obytkujeme.cz/",
           "type": "Booking Platform",
+          "portfolio_priority": 7,
           "stack": [
             "Next.js",
             "TypeScript",
@@ -577,6 +578,7 @@
           "published_date": "2021-01-01T12:00:00.000Z",
           "project_url": "https://harksolutions.co.uk/aview/",
           "type": "Catalogue Management App",
+          "portfolio_priority": 6,
           "stack": [
             "Angular",
             "RxJS",
@@ -617,7 +619,7 @@
           "component": "page_project",
           "title": "Bitcoin Wallet",
           "slug": "bitcoin-wallet",
-          "summary": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface.",
+          "summary": "Frontend work on a former Bitcoin wallet web client, built with Next.js, TypeScript, React hooks, and product-grade fintech UI patterns.",
           "content": {
             "type": "doc",
             "content": [
@@ -644,15 +646,16 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "This project is strong evidence of my ability to work in fintech-grade frontend environments, contribute inside an existing product architecture, and keep complex UI flows maintainable as features grow."
+                    "text": "The public product is no longer active and the codebase is private, so I keep this entry as a portfolio case-study detail rather than a live/source showcase."
                   }
                 ]
               }
             ]
           },
           "published_date": "2022-02-21T22:00:00.000Z",
-          "project_url": "https://www.numbrs.com/",
+          "project_url": "",
           "type": "Fintech Web App",
+          "portfolio_priority": 4,
           "stack": [
             "Next.js",
             "React",
@@ -673,7 +676,7 @@
             {
               "component": "seo_meta",
               "meta_title": "Bitcoin Wallet",
-              "meta_description": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface.",
+              "meta_description": "Frontend work on a former Bitcoin wallet web client, built with Next.js, TypeScript, React hooks, and product-grade fintech UI patterns.",
               "noindex": false,
               "og_image": {
                 "id": "7MnhIdYQCSgKjw8UP7Kwc3",
@@ -730,9 +733,10 @@
             ]
           },
           "published_date": "2020-11-11T07:00:00.000Z",
-          "project_url": "http://www.poohead.uk/",
+          "project_url": "",
           "repository_url": "https://gitlab.com/JanMolcik/dullhead",
           "type": "Interactive Multiplayer App",
+          "portfolio_priority": 9,
           "stack": [
             "React",
             "Node.js",
@@ -811,6 +815,7 @@
           "published_date": "2017-12-31T23:00:00.000Z",
           "project_url": "https://koala42.com/portfolio/qapline/",
           "type": "Logistics ERP",
+          "portfolio_priority": 3,
           "stack": [
             "Angular",
             "Redux",
@@ -890,6 +895,7 @@
           "project_url": "https://hearthstoneai.github.io/index.html",
           "repository_url": "https://github.com/JanMolcik/HearthstoneAICompetition",
           "type": "AI / Research Project",
+          "portfolio_priority": 10,
           "stack": [
             "C#",
             "AI",
@@ -940,7 +946,25 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Since June 6, 2024, I have worked as a frontend developer at Shopsys, contributing to a shared Next.js Pages Router core/platform used as the foundation for project implementations. More recently, I moved onto an ABUGO migration initiative where I stay hands-on in frontend development while also owning the codebase direction for a new Storyblok-based monorepo platform intended to become the single source of truth for multiple brands through configurable apps and automation-heavy workflows."
+                    "text": "Since June 6, 2024, I have worked at Shopsys on a shared storefront/platform used as the frontend base for project implementations. The stack centers on Next.js Pages Router, React, TypeScript, Zustand, URQL, and GraphQL code generation inside a larger Symfony-based e-commerce platform."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "My work spans reusable storefront architecture, order and payment flows, generated GraphQL operations, UI behavior, and regression coverage with Vitest and Cypress, all shipped through Dockerized development, review-branch deployments, and GitHub Actions workflows."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Most recently I have been driving GoPay and GTM-related reliability work: hardening return and callback flows, stabilizing payment state behavior, keeping generated types in sync, and validating iframe-touching changes on HTTPS review branches with Playwright evidence. In parallel, I also moved onto the ABUGO migration initiative where I stay hands-on in frontend while owning the codebase direction for a new Storyblok monorepo platform."
                   }
                 ]
               }
@@ -948,12 +972,14 @@
           },
           "start_date": "2024-06-06T00:00:00.000Z",
           "skills": [
-            "Next.js",
-            "Pages Router",
-            "Storyblok",
-            "Monorepo",
-            "Platform Architecture",
-            "Automation"
+            "Next.js Pages Router",
+            "React",
+            "TypeScript",
+            "URQL",
+            "GraphQL Codegen",
+            "Cypress",
+            "Vitest",
+            "Platform Architecture"
           ]
         }
       },
@@ -973,7 +999,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "I contributed to the first version of an energy-supplier comparison product, delivering React and TypeScript frontend work across state management, form flows, reusable UI integration, and fast-paced contract execution inside an active product team."
+                    "text": "I helped deliver the first version of an energy comparison product, contributing React and TypeScript work across form flows, state management, and reusable UI inside a fast-moving product team."
                   }
                 ]
               }
@@ -1012,7 +1038,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "I led the frontend implementation of a prototype web application built with Next.js, TypeScript, and Sass, translating an existing visual direction into a structured, reusable UI system that stayed responsive across devices and easy for the client to evolve."
+                    "text": "I led the frontend implementation of a Next.js prototype, translating an existing visual direction into a reusable and responsive UI system the client could extend with low friction."
                   }
                 ]
               }
@@ -1053,7 +1079,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "I worked on a Next.js web client for a Bitcoin wallet product, taking over an existing codebase, extending it with new features, and keeping the frontend architecture coherent across hooks, Context API, routing, and API-driven product flows."
+                    "text": "I worked on a Next.js Bitcoin wallet client, extending an existing codebase with new features while keeping hooks, Context API, routing, and API-driven flows coherent."
                   }
                 ]
               }
@@ -1094,7 +1120,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "I worked on an ERP system for truck transport management, helping shift frontend complexity toward more centralized state management while also contributing React work on a 3D configuration interface."
+                    "text": "I worked on a logistics ERP, helping move frontend complexity toward centralized state management while also contributing React work on a 3D configurator interface."
                   }
                 ]
               }
@@ -1135,7 +1161,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "I worked on Angular-based business applications for product data and digital catalogue management, contributing across frontend delivery, reactive state patterns, integrations, and supporting tooling where the product needed broader engineering coverage."
+                    "text": "I worked on Angular business applications for product data and digital catalogue management, contributing across reactive state patterns, integrations, and broader frontend delivery."
                   }
                 ]
               }
@@ -1171,17 +1197,6 @@
           "name": "LinkedIn",
           "url": "https://linkedin.com/in/jan-molcik",
           "icon": "linkedin"
-        }
-      },
-      {
-        "source_entry_id": "114ApRkJZq640w8G2GwM8w",
-        "relation_key": "legacy:socialLink:114ApRkJZq640w8G2GwM8w",
-        "content_type": "item_social_link",
-        "content": {
-          "component": "item_social_link",
-          "name": "Contact me",
-          "url": "https://molcikjan.typeform.com/to/gZDCGfgd",
-          "icon": "envelope"
         }
       },
       {

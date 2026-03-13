@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:46.697Z",
-  "published_at": "2026-03-12T23:14:46.680Z",
+  "updated_at": "2026-03-13T14:31:44.286Z",
+  "published_at": "2026-03-13T14:31:44.268Z",
   "id": 152164412158402,
   "uuid": "4689dbaa-be41-4ce3-8442-af8f537f05e1",
   "is_folder": false,
@@ -23,7 +23,7 @@
         "meta_description": "Master's thesis project focused on designing a Hearthstone AI agent using Monte Carlo Tree Search for game-state evaluation."
       }
     ],
-    "_uid": "60eddaf2-aafe-42f8-b9de-070646094ef9",
+    "_uid": "b78d9c49-db67-47c1-a4e0-3b2f91f6faba",
     "logo": "https://images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
     "slug": "hearthstone-ai",
     "type": "AI / Research Project",
@@ -69,8 +69,9 @@
     "summary": "Master's thesis project focused on designing a Hearthstone AI agent using Monte Carlo Tree Search for game-state evaluation.",
     "component": "page_project",
     "project_url": "https://hearthstoneai.github.io/index.html",
-    "published_date": "2020-07-31T23:00:00.000Z",
-    "repository_url": "https://github.com/JanMolcik/HearthstoneAICompetition"
+    "published_date": "2020-07-31 23:00",
+    "repository_url": "https://github.com/JanMolcik/HearthstoneAICompetition",
+    "portfolio_priority": 10
   },
   "published": true,
   "slug": "hearthstone-ai",
@@ -91,8 +92,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
-    "timestamp": "1773357289"
+    "token": "8289fbe54ce7030b1e12e47b27ba3e1b32aa0789",
+    "timestamp": "1773412306"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -126,7 +127,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286832333130,
+  "current_version_id": 154512182153014,
   "stage": null,
   "favourite_for_user_ids": []
 }

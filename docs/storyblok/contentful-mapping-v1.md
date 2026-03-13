@@ -19,7 +19,6 @@ This document defines the deterministic mapping contract used for legacy Content
 | --- | --- | --- |
 | `name` | `headline` | Direct string copy |
 | `description` | `role` | Direct string copy |
-| `aboutMe` | `intro` | Converted to one-paragraph richtext |
 | `aboutMe` | `hero_intro` | Seeded from legacy intro, then eligible for curated CMS copy |
 | `aboutMe` | `about_intro` | Seeded from legacy intro, then eligible for curated CMS copy |
 | `roles[]` | `roles[]` | String array copy |
@@ -44,6 +43,7 @@ This document defines the deterministic mapping contract used for legacy Content
 | `projectUrl` | `project_url` | Direct string copy |
 | `repositoryUrl` | `repository_url` | Optional direct string copy |
 | `type` | `type` | Direct string copy |
+| n/a | `portfolio_priority` | Seeded to fallback rank and then curated for deterministic homepage ordering |
 | n/a | `stack[]` | Seeded empty from legacy export, filled by curated baseline content |
 | `logo` asset | `logo` | Asset id copy |
 
@@ -77,6 +77,7 @@ Legacy Contentful export is a bootstrap source, not the final public portfolio c
 
 The baseline import workflow may apply a curated content layer after legacy mapping to:
 - replace migration-era placeholder copy with hiring-focused portfolio copy,
-- split home content into `hero_intro` and `about_intro`,
+- keep home content split into `hero_intro` and `about_intro` only,
+- assign deterministic `portfolio_priority` values for homepage project ordering,
 - populate project-specific `stack[]`,
 - keep the final publishable Storyblok payload aligned with the approved portfolio narrative.

@@ -121,6 +121,19 @@ function asString(value) {
 	return trimmed.length > 0 ? trimmed : undefined;
 }
 
+function asNumber(value) {
+	if (typeof value === 'number' && Number.isFinite(value)) {
+		return value;
+	}
+	if (typeof value === 'string') {
+		const parsed = Number(value.trim());
+		if (Number.isFinite(parsed)) {
+			return parsed;
+		}
+	}
+	return undefined;
+}
+
 function toAssetUrl(value) {
 	if (typeof value === 'string') {
 		return asString(value);
@@ -217,6 +230,21 @@ function sanitizeSocialLinks(blocks) {
 			};
 		})
 		.filter(Boolean);
+}
+
+function padDatePart(value) {
+	return String(value).padStart(2, '0');
+}
+
+function formatStoryblokDateTime(value) {
+	const parsed = new Date(value || '');
+	if (Number.isNaN(parsed.getTime())) {
+		return undefined;
+	}
+
+	return `${parsed.getUTCFullYear()}-${padDatePart(parsed.getUTCMonth() + 1)}-${padDatePart(
+		parsed.getUTCDate(),
+	)} ${padDatePart(parsed.getUTCHours())}:${padDatePart(parsed.getUTCMinutes())}`;
 }
 
 async function sleep(ms) {
@@ -380,11 +408,7 @@ async function publishStory({ token, spaceId, storyId, dryRun }) {
 }
 
 function ensureDate(value, fallback) {
-	const parsed = new Date(value || '');
-	if (Number.isNaN(parsed.getTime())) {
-		return fallback;
-	}
-	return parsed.toISOString();
+	return formatStoryblokDateTime(value) ?? fallback;
 }
 
 function pullStoriesSnapshot(spaceId) {
@@ -534,10 +558,10 @@ async function main() {
 				asString(projectContent.published_date),
 				'2024-01-01T12:00:00.000Z',
 			),
-			project_url:
-				asString(projectContent.project_url) || 'https://example.com',
+			project_url: asString(projectContent.project_url),
 			repository_url: asString(projectContent.repository_url),
 			type: asString(projectContent.type) || 'Web App',
+			portfolio_priority: asNumber(projectContent.portfolio_priority),
 			stack: Array.isArray(projectContent.stack)
 				? projectContent.stack.map((item) => asString(item)).filter(Boolean)
 				: [],
@@ -652,13 +676,8 @@ async function main() {
 		component: 'page_home',
 		headline: asString(homeBundle.content?.headline) || 'Portfolio',
 		role: asString(homeBundle.content?.role) || '',
-		intro: sanitizeRichText(homeBundle.content?.intro),
-		hero_intro: sanitizeRichText(
-			homeBundle.content?.hero_intro ?? homeBundle.content?.intro,
-		),
-		about_intro: sanitizeRichText(
-			homeBundle.content?.about_intro ?? homeBundle.content?.intro,
-		),
+		hero_intro: sanitizeRichText(homeBundle.content?.hero_intro),
+		about_intro: sanitizeRichText(homeBundle.content?.about_intro),
 		roles,
 		availability_note:
 			asString(homeBundle.content?.availability_note) ||

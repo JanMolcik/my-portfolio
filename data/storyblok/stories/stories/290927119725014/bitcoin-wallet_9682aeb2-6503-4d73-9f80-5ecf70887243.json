@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:46.286Z",
-  "published_at": "2026-03-12T23:14:46.268Z",
+  "updated_at": "2026-03-13T14:31:43.873Z",
+  "published_at": "2026-03-13T14:31:43.853Z",
   "id": 152164409778623,
   "uuid": "9682aeb2-6503-4d73-9f80-5ecf70887243",
   "is_folder": false,
@@ -20,10 +20,10 @@
         "og_image": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
         "component": "seo_meta",
         "meta_title": "Bitcoin Wallet",
-        "meta_description": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface."
+        "meta_description": "Frontend work on a former Bitcoin wallet web client, built with Next.js, TypeScript, React hooks, and product-grade fintech UI patterns."
       }
     ],
-    "_uid": "196ed55c-e826-4edb-804c-5d02ce32b248",
+    "_uid": "43c6c93c-fd3c-4acc-aad8-11b1179f51cd",
     "logo": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
     "slug": "bitcoin-wallet",
     "type": "Fintech Web App",
@@ -61,17 +61,17 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "This project is strong evidence of my ability to work in fintech-grade frontend environments, contribute inside an existing product architecture, and keep complex UI flows maintainable as features grow.",
+              "text": "The public product is no longer active and the codebase is private, so I keep this entry as a portfolio case-study detail rather than a live/source showcase.",
               "type": "text"
             }
           ]
         }
       ]
     },
-    "summary": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface.",
+    "summary": "Frontend work on a former Bitcoin wallet web client, built with Next.js, TypeScript, React hooks, and product-grade fintech UI patterns.",
     "component": "page_project",
-    "project_url": "https://www.numbrs.com/",
-    "published_date": "2022-02-21T22:00:00.000Z"
+    "published_date": "2022-02-21 22:00",
+    "portfolio_priority": 4
   },
   "published": true,
   "slug": "bitcoin-wallet",
@@ -92,8 +92,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
-    "timestamp": "1773357290"
+    "token": "2840817837df42879257248e0a68de0d5c8d84b0",
+    "timestamp": "1773412307"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -127,7 +127,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286828663107,
+  "current_version_id": 154512180465458,
   "stage": null,
   "favourite_for_user_ids": []
 }

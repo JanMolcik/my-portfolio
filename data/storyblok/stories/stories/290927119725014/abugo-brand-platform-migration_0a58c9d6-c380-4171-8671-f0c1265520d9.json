@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:44.868Z",
-  "published_at": "2026-03-12T23:14:44.849Z",
+  "updated_at": "2026-03-13T14:31:42.431Z",
+  "published_at": "2026-03-13T14:31:42.415Z",
   "id": 154283903329341,
   "uuid": "0a58c9d6-c380-4171-8671-f0c1265520d9",
   "is_folder": false,
@@ -22,7 +22,7 @@
         "meta_description": "Current ABUGO migration initiative focused on a shared Next.js and Storyblok monorepo platform intended to become the single source of truth for multiple brand homepages through configurable apps and automation-heavy delivery."
       }
     ],
-    "_uid": "a8595aa4-8e60-4b60-b1b7-666607237ece",
+    "_uid": "856dd951-0fbd-4fa2-b5b3-b3ecb49e348b",
     "slug": "abugo-brand-platform-migration",
     "type": "Multi-brand CMS Platform",
     "stack": [
@@ -68,8 +68,8 @@
     },
     "summary": "Current ABUGO migration initiative focused on a shared Next.js and Storyblok monorepo platform intended to become the single source of truth for multiple brand homepages through configurable apps and automation-heavy delivery.",
     "component": "page_project",
-    "project_url": "https://www.shopsys.cz/",
-    "published_date": "2026-02-20T00:00:00.000Z"
+    "published_date": "2026-02-20 00:00",
+    "portfolio_priority": 2
   },
   "published": true,
   "slug": "abugo-brand-platform-migration",
@@ -90,8 +90,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
-    "timestamp": "1773357289"
+    "token": "8289fbe54ce7030b1e12e47b27ba3e1b32aa0789",
+    "timestamp": "1773412306"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -125,7 +125,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286825378104,
+  "current_version_id": 154512168369943,
   "stage": null,
   "favourite_for_user_ids": []
 }

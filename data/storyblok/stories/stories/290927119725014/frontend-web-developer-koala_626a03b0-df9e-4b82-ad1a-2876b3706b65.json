@@ -7,13 +7,13 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:47.947Z",
-  "published_at": "2026-03-12T23:14:47.930Z",
+  "updated_at": "2026-03-13T14:31:45.057Z",
+  "published_at": "2026-03-13T14:31:45.040Z",
   "id": 152164415435206,
   "uuid": "626a03b0-df9e-4b82-ad1a-2876b3706b65",
   "is_folder": false,
   "content": {
-    "_uid": "59cd2834-98d1-4be9-98e9-8ecd2ce9505a",
+    "_uid": "4a2fd2c7-43e7-4028-8412-a2b71172e00f",
     "image": "https://images.ctfassets.net/438qxelhyozd/29yX0dTepmPEu0MzZf7IHl/6275ca9fffbfc9d1f84f185aecb5aaa8/koala-logo.png",
     "title": "Frontend Web Developer - Koala",
     "skills": [
@@ -23,9 +23,9 @@
       "React",
       "RxJS"
     ],
-    "end_date": "2020-09-01T10:00:00.000Z",
+    "end_date": "2020-09-01 10:00",
     "component": "item_experience",
-    "start_date": "2018-04-01T10:00:00.000Z",
+    "start_date": "2018-04-01 10:00",
     "description": {
       "type": "doc",
       "content": [
@@ -33,7 +33,7 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "I worked on an ERP system for truck transport management, helping shift frontend complexity toward more centralized state management while also contributing React work on a 3D configuration interface.",
+              "text": "I worked on a logistics ERP, helping move frontend complexity toward centralized state management while also contributing React work on a 3D configurator interface.",
               "type": "text"
             }
           ]
@@ -61,8 +61,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
-    "timestamp": "1773357290"
+    "token": "2840817837df42879257248e0a68de0d5c8d84b0",
+    "timestamp": "1773412307"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -96,7 +96,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286834991443,
+  "current_version_id": 154512187117375,
   "stage": null,
   "favourite_for_user_ids": []
 }

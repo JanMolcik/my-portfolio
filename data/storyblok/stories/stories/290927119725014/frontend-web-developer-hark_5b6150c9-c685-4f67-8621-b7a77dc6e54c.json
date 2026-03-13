@@ -7,13 +7,13 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:48.073Z",
-  "published_at": "2026-03-12T23:14:48.054Z",
+  "updated_at": "2026-03-13T14:31:45.214Z",
+  "published_at": "2026-03-13T14:31:45.190Z",
   "id": 152164416012743,
   "uuid": "5b6150c9-c685-4f67-8621-b7a77dc6e54c",
   "is_folder": false,
   "content": {
-    "_uid": "6b6496a6-ac7f-4d58-8558-be375b12fe76",
+    "_uid": "b165c3a1-84f1-4d24-873b-e0eda9590506",
     "image": "https://images.ctfassets.net/438qxelhyozd/4ONq9KgjDLevgnj05whr04/23da771cea81b5507322c1c6f560f916/1646135333581",
     "title": "Frontend Web Developer - Hark",
     "skills": [
@@ -23,9 +23,9 @@
       "AWS",
       "SVN"
     ],
-    "end_date": "2021-10-30T22:00:00.000Z",
+    "end_date": "2021-10-30 22:00",
     "component": "item_experience",
-    "start_date": "2020-11-22T22:00:00.000Z",
+    "start_date": "2020-11-22 22:00",
     "description": {
       "type": "doc",
       "content": [
@@ -33,7 +33,7 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "I worked on Angular-based business applications for product data and digital catalogue management, contributing across frontend delivery, reactive state patterns, integrations, and supporting tooling where the product needed broader engineering coverage.",
+              "text": "I worked on Angular business applications for product data and digital catalogue management, contributing across reactive state patterns, integrations, and broader frontend delivery.",
               "type": "text"
             }
           ]
@@ -61,8 +61,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
-    "timestamp": "1773357289"
+    "token": "8289fbe54ce7030b1e12e47b27ba3e1b32aa0789",
+    "timestamp": "1773412306"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -96,7 +96,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286835466580,
+  "current_version_id": 154512187592513,
   "stage": null,
   "favourite_for_user_ids": []
 }

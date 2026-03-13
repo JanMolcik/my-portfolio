@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:46.570Z",
-  "published_at": "2026-03-12T23:14:46.551Z",
+  "updated_at": "2026-03-13T14:31:44.146Z",
+  "published_at": "2026-03-13T14:31:44.125Z",
   "id": 152164411285953,
   "uuid": "1091bd93-907f-4b08-b409-63bd59ec6b29",
   "is_folder": false,
@@ -23,7 +23,7 @@
         "meta_description": "Angular-based ERP frontend for logistics workflows, where I helped refactor decentralized state handling into a more structured Redux-based architecture."
       }
     ],
-    "_uid": "fcbe44fb-51e9-4269-8730-84726a738eb4",
+    "_uid": "abab66fe-f472-4389-a535-42d79481ee37",
     "logo": "https://images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
     "slug": "qapline",
     "type": "Logistics ERP",
@@ -70,7 +70,8 @@
     "summary": "Angular-based ERP frontend for logistics workflows, where I helped refactor decentralized state handling into a more structured Redux-based architecture.",
     "component": "page_project",
     "project_url": "https://koala42.com/portfolio/qapline/",
-    "published_date": "2017-12-31T23:00:00.000Z"
+    "published_date": "2017-12-31 23:00",
+    "portfolio_priority": 3
   },
   "published": true,
   "slug": "qapline",
@@ -91,8 +92,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
-    "timestamp": "1773357289"
+    "token": "8289fbe54ce7030b1e12e47b27ba3e1b32aa0789",
+    "timestamp": "1773412306"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -126,7 +127,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286831837512,
+  "current_version_id": 154512181501748,
   "stage": null,
   "favourite_for_user_ids": []
 }

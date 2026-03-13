@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:46.146Z",
-  "published_at": "2026-03-12T23:14:46.130Z",
+  "updated_at": "2026-03-13T14:31:43.741Z",
+  "published_at": "2026-03-13T14:31:43.724Z",
   "id": 152164409188798,
   "uuid": "0db07901-1ffb-4e60-94fd-1785eb8ef391",
   "is_folder": false,
@@ -23,7 +23,7 @@
         "meta_description": "Angular client for product data and digital catalogue management, using RxJS and redux-observable style patterns for structured async state handling."
       }
     ],
-    "_uid": "08bfd714-adc3-47a0-84d2-6cda13e657b7",
+    "_uid": "c8b6a978-1607-4b6b-8c2b-a5925523c574",
     "logo": "https://images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
     "slug": "aview",
     "type": "Catalogue Management App",
@@ -70,7 +70,8 @@
     "summary": "Angular client for product data and digital catalogue management, using RxJS and redux-observable style patterns for structured async state handling.",
     "component": "page_project",
     "project_url": "https://harksolutions.co.uk/aview/",
-    "published_date": "2021-01-01T12:00:00.000Z"
+    "published_date": "2021-01-01 12:00",
+    "portfolio_priority": 6
   },
   "published": true,
   "slug": "aview",
@@ -91,8 +92,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
-    "timestamp": "1773357290"
+    "token": "2840817837df42879257248e0a68de0d5c8d84b0",
+    "timestamp": "1773412307"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -126,7 +127,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286828159298,
+  "current_version_id": 154512179920688,
   "stage": null,
   "favourite_for_user_ids": []
 }

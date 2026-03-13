@@ -7,13 +7,13 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:47.687Z",
-  "published_at": "2026-03-12T23:14:47.668Z",
+  "updated_at": "2026-03-13T14:31:44.777Z",
+  "published_at": "2026-03-13T14:31:44.759Z",
   "id": 152164413911492,
   "uuid": "672c3e7f-6f22-4023-b6c7-5b49d8b25c39",
   "is_folder": false,
   "content": {
-    "_uid": "29357e39-bf15-4bf9-b0b8-e4e88e7ca4ee",
+    "_uid": "b568bdac-3a82-4d7a-90aa-0b137af3619a",
     "image": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
     "title": "Senior Frontend Web Developer - Solwee",
     "skills": [
@@ -23,9 +23,9 @@
       "Vercel",
       "Next.js"
     ],
-    "end_date": "2024-01-15T00:00:00.000Z",
+    "end_date": "2024-01-15 00:00",
     "component": "item_experience",
-    "start_date": "2023-11-01T00:00:00.000Z",
+    "start_date": "2023-11-01 00:00",
     "description": {
       "type": "doc",
       "content": [
@@ -33,7 +33,7 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "I led the frontend implementation of a prototype web application built with Next.js, TypeScript, and Sass, translating an existing visual direction into a structured, reusable UI system that stayed responsive across devices and easy for the client to evolve.",
+              "text": "I led the frontend implementation of a Next.js prototype, translating an existing visual direction into a reusable and responsive UI system the client could extend with low friction.",
               "type": "text"
             }
           ]
@@ -61,8 +61,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
-    "timestamp": "1773357290"
+    "token": "2000cd82c0fbe9065a3f31c051aa128e6c8fa9d6",
+    "timestamp": "1773412308"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -96,7 +96,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286833766735,
+  "current_version_id": 154512186011453,
   "stage": null,
   "favourite_for_user_ids": []
 }

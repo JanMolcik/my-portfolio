@@ -22,6 +22,7 @@ type StoryblokField = {
 	restrict_components?: boolean;
 	component_whitelist?: string[];
 	maximum?: number;
+	options?: Array<{ name?: string; value?: string }>;
 };
 
 type StoryblokComponent = {
@@ -41,10 +42,9 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 	page_home: {
 		headline: { type: 'text', required: true },
 		role: { type: 'text', required: true },
-		intro: { type: 'richtext', required: true },
 		hero_intro: { type: 'richtext', required: true },
 		about_intro: { type: 'richtext', required: true },
-		roles: { type: 'option', required: true },
+		roles: { type: 'options', required: true },
 		availability_note: { type: 'textarea', required: true },
 		availability_status: { type: 'text', required: true },
 		availability_timezone: { type: 'text', required: true },
@@ -60,10 +60,11 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 		summary: { type: 'textarea', required: true },
 		content: { type: 'richtext', required: false },
 		published_date: { type: 'datetime', required: true },
-		project_url: { type: 'text', required: true },
+		project_url: { type: 'text', required: false },
 		repository_url: { type: 'text', required: false },
 		type: { type: 'text', required: true },
-		stack: { type: 'option', required: false },
+		portfolio_priority: { type: 'number', required: false },
+		stack: { type: 'options', required: false },
 		logo: { type: 'asset', required: false },
 		seo: { type: 'bloks', required: true },
 	},
@@ -74,7 +75,7 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 		content: { type: 'richtext', required: true },
 		published_date: { type: 'datetime', required: true },
 		cover_image: { type: 'asset', required: false },
-		tags: { type: 'option', required: false },
+		tags: { type: 'options', required: false },
 		seo: { type: 'bloks', required: true },
 	},
 	item_experience: {
@@ -83,7 +84,7 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 		description: { type: 'richtext', required: true },
 		start_date: { type: 'datetime', required: true },
 		end_date: { type: 'datetime', required: false },
-		skills: { type: 'option', required: true },
+		skills: { type: 'options', required: true },
 		image: { type: 'asset', required: false },
 	},
 	item_social_link: {
@@ -169,6 +170,31 @@ describe('CONTRACT-SB-SCHEMA-001', () => {
 		const seoMeta = byName.get('seo_meta');
 		expect(seoMeta?.schema?.meta_title?.required).toBe(true);
 		expect(seoMeta?.schema?.meta_description?.required).toBe(true);
+	});
+
+	it('keeps multi-select editor fields aligned with array-backed content values', async () => {
+		const raw = await readFile(SCHEMA_PATH, 'utf8');
+		const components = JSON.parse(raw) as StoryblokComponent[];
+		const byName = new Map(
+			components.map((component) => [component.name, component]),
+		);
+
+		expect(byName.get('page_home')?.schema?.roles?.type).toBe('options');
+		expect(
+			(byName.get('page_home')?.schema?.roles?.options ?? []).length,
+		).toBeGreaterThan(0);
+
+		expect(byName.get('page_project')?.schema?.stack?.type).toBe('options');
+		expect(
+			(byName.get('page_project')?.schema?.stack?.options ?? []).length,
+		).toBeGreaterThan(0);
+
+		expect(byName.get('item_experience')?.schema?.skills?.type).toBe(
+			'options',
+		);
+		expect(
+			(byName.get('item_experience')?.schema?.skills?.options ?? []).length,
+		).toBeGreaterThan(0);
 	});
 
 	it('keeps Storyblok components/migrations workflow artifacts executable by contract', async () => {

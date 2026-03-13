@@ -7,13 +7,13 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:47.823Z",
-  "published_at": "2026-03-12T23:14:47.805Z",
+  "updated_at": "2026-03-13T14:31:44.913Z",
+  "published_at": "2026-03-13T14:31:44.893Z",
   "id": 152164414517701,
   "uuid": "f901b3b6-ae0b-48c4-9f26-2fba5f5a382c",
   "is_folder": false,
   "content": {
-    "_uid": "ee4a60dc-c0b7-440e-ba60-307f2e1e81bc",
+    "_uid": "d8501bdc-8b63-417a-a683-bba90c83fc63",
     "image": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
     "title": "Frontend Web Developer - Numbrs",
     "skills": [
@@ -23,9 +23,9 @@
       "React",
       "Bitcoinjs-lib"
     ],
-    "end_date": "2023-03-31T10:00:00.000Z",
+    "end_date": "2023-03-31 10:00",
     "component": "item_experience",
-    "start_date": "2021-11-01T10:00:00.000Z",
+    "start_date": "2021-11-01 10:00",
     "description": {
       "type": "doc",
       "content": [
@@ -33,7 +33,7 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "I worked on a Next.js web client for a Bitcoin wallet product, taking over an existing codebase, extending it with new features, and keeping the frontend architecture coherent across hooks, Context API, routing, and API-driven product flows.",
+              "text": "I worked on a Next.js Bitcoin wallet client, extending an existing codebase with new features while keeping hooks, Context API, routing, and API-driven flows coherent.",
               "type": "text"
             }
           ]
@@ -61,8 +61,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
-    "timestamp": "1773357290"
+    "token": "2840817837df42879257248e0a68de0d5c8d84b0",
+    "timestamp": "1773412307"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -96,7 +96,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286834483537,
+  "current_version_id": 154512186552126,
   "stage": null,
   "favourite_for_user_ids": []
 }

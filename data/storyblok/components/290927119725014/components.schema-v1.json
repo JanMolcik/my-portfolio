@@ -13,10 +13,6 @@
 				"type": "text",
 				"required": true
 			},
-			"intro": {
-				"type": "richtext",
-				"required": true
-			},
 			"hero_intro": {
 				"type": "richtext",
 				"required": true
@@ -26,11 +22,26 @@
 				"required": true
 			},
 			"roles": {
-				"type": "option",
+				"type": "options",
 				"required": true,
 				"source": "internal",
 				"exclude_empty_option": true,
-				"options": []
+				"options": [
+					{ "name": "Angular", "value": "Angular" },
+					{ "name": "Design Systems", "value": "Design Systems" },
+					{ "name": "Frontend Architecture", "value": "Frontend Architecture" },
+					{ "name": "Monorepo", "value": "Monorepo" },
+					{ "name": "Next.js", "value": "Next.js" },
+					{ "name": "React", "value": "React" },
+					{ "name": "Redux", "value": "Redux" },
+					{ "name": "Responsive UI", "value": "Responsive UI" },
+					{ "name": "RxJS", "value": "RxJS" },
+					{ "name": "SSR / SSG / ISR", "value": "SSR / SSG / ISR" },
+					{ "name": "State Management", "value": "State Management" },
+					{ "name": "Storyblok", "value": "Storyblok" },
+					{ "name": "TypeScript", "value": "TypeScript" },
+					{ "name": "Vercel", "value": "Vercel" }
+				]
 			},
 			"availability_note": {
 				"type": "textarea",
@@ -105,8 +116,7 @@
 				"required": true
 			},
 			"project_url": {
-				"type": "text",
-				"required": true
+				"type": "text"
 			},
 			"repository_url": {
 				"type": "text"
@@ -115,11 +125,59 @@
 				"type": "text",
 				"required": true
 			},
+			"portfolio_priority": {
+				"type": "number"
+			},
 			"stack": {
-				"type": "option",
+				"type": "options",
 				"source": "internal",
 				"exclude_empty_option": true,
-				"options": []
+				"options": [
+					{ "name": "AI", "value": "AI" },
+					{ "name": "Agentic Workflow", "value": "Agentic Workflow" },
+					{ "name": "Angular", "value": "Angular" },
+					{ "name": "Atomic Design", "value": "Atomic Design" },
+					{ "name": "B2B Workflows", "value": "B2B Workflows" },
+					{ "name": "BoardGame.io", "value": "BoardGame.io" },
+					{ "name": "C#", "value": "C#" },
+					{ "name": "Calendar UI", "value": "Calendar UI" },
+					{ "name": "Calendar UX", "value": "Calendar UX" },
+					{ "name": "Civic Tech", "value": "Civic Tech" },
+					{ "name": "Context API", "value": "Context API" },
+					{ "name": "Cypress", "value": "Cypress" },
+					{ "name": "Docker Review Apps", "value": "Docker Review Apps" },
+					{ "name": "Enterprise UI", "value": "Enterprise UI" },
+					{ "name": "Fintech UI", "value": "Fintech UI" },
+					{ "name": "Game Systems", "value": "Game Systems" },
+					{ "name": "GraphQL Codegen", "value": "GraphQL Codegen" },
+					{ "name": "ISR", "value": "ISR" },
+					{ "name": "Interactive UI", "value": "Interactive UI" },
+					{ "name": "Internal Tools", "value": "Internal Tools" },
+					{ "name": "Monte Carlo Tree Search", "value": "Monte Carlo Tree Search" },
+					{ "name": "Multi-brand CMS", "value": "Multi-brand CMS" },
+					{ "name": "Multiplayer Flows", "value": "Multiplayer Flows" },
+					{ "name": "Next.js", "value": "Next.js" },
+					{ "name": "Next.js App Router", "value": "Next.js App Router" },
+					{ "name": "Next.js Pages Router", "value": "Next.js Pages Router" },
+					{ "name": "Node.js", "value": "Node.js" },
+					{ "name": "Platform Architecture", "value": "Platform Architecture" },
+					{ "name": "React", "value": "React" },
+					{ "name": "Redux", "value": "Redux" },
+					{ "name": "Responsive UI", "value": "Responsive UI" },
+					{ "name": "RxJS", "value": "RxJS" },
+					{ "name": "Sass", "value": "Sass" },
+					{ "name": "State Management", "value": "State Management" },
+					{ "name": "Static Deployment", "value": "Static Deployment" },
+					{ "name": "Storyblok", "value": "Storyblok" },
+					{ "name": "Tailwind CSS", "value": "Tailwind CSS" },
+					{ "name": "Turborepo", "value": "Turborepo" },
+					{ "name": "TypeScript", "value": "TypeScript" },
+					{ "name": "URQL", "value": "URQL" },
+					{ "name": "Vercel", "value": "Vercel" },
+					{ "name": "Vitest", "value": "Vitest" },
+					{ "name": "XLSX Parser", "value": "XLSX Parser" },
+					{ "name": "redux-observable", "value": "redux-observable" }
+				]
 			},
 			"logo": {
 				"type": "asset",
@@ -165,7 +223,7 @@
 				"filetypes": ["images"]
 			},
 			"tags": {
-				"type": "option",
+				"type": "options",
 				"source": "internal",
 				"exclude_empty_option": true,
 				"options": []
@@ -205,11 +263,32 @@
 				"type": "datetime"
 			},
 			"skills": {
-				"type": "option",
+				"type": "options",
 				"required": true,
 				"source": "internal",
 				"exclude_empty_option": true,
-				"options": []
+				"options": [
+					{ "name": "AWS", "value": "AWS" },
+					{ "name": "Angular", "value": "Angular" },
+					{ "name": "Bitcoinjs-lib", "value": "Bitcoinjs-lib" },
+					{ "name": "Cypress", "value": "Cypress" },
+					{ "name": "Git", "value": "Git" },
+					{ "name": "GraphQL Codegen", "value": "GraphQL Codegen" },
+					{ "name": "Next.js", "value": "Next.js" },
+					{ "name": "Next.js Pages Router", "value": "Next.js Pages Router" },
+					{ "name": "Platform Architecture", "value": "Platform Architecture" },
+					{ "name": "React", "value": "React" },
+					{ "name": "Redux", "value": "Redux" },
+					{ "name": "RxJS", "value": "RxJS" },
+					{ "name": "SVN", "value": "SVN" },
+					{ "name": "Sass", "value": "Sass" },
+					{ "name": "Tailwind CSS", "value": "Tailwind CSS" },
+					{ "name": "TypeScript", "value": "TypeScript" },
+					{ "name": "Typescript", "value": "Typescript" },
+					{ "name": "URQL", "value": "URQL" },
+					{ "name": "Vercel", "value": "Vercel" },
+					{ "name": "Vitest", "value": "Vitest" }
+				]
 			},
 			"image": {
 				"type": "asset",

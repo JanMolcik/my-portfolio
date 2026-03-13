@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:45.724Z",
-  "published_at": "2026-03-12T23:14:45.704Z",
+  "updated_at": "2026-03-13T14:31:42.754Z",
+  "published_at": "2026-03-13T14:31:42.739Z",
   "id": 154286826448179,
   "uuid": "88ea2047-1bcd-423e-b10f-7a7453f5f3bd",
   "is_folder": false,
@@ -22,7 +22,7 @@
         "meta_description": "Public-facing waste collection calendar for the municipality of Lipa, designed to make communal and sorted waste pickup dates clearer through focused calendar views and a simple annual data update workflow."
       }
     ],
-    "_uid": "7c64b47b-f02f-41a2-bc93-b54c4efac4de",
+    "_uid": "681ded18-20e8-4828-a8e0-d5d672e64619",
     "slug": "lipa-waste-collection-calendar",
     "type": "Municipal Service Web App",
     "stack": [
@@ -69,8 +69,9 @@
     "summary": "Public-facing waste collection calendar for the municipality of Lipa, designed to make communal and sorted waste pickup dates clearer through focused calendar views and a simple annual data update workflow.",
     "component": "page_project",
     "project_url": "https://www.odpady-lipa.cz/",
-    "published_date": "2026-03-01T00:00:00.000Z",
-    "repository_url": "https://github.com/JanMolcik/rubbish-collection"
+    "published_date": "2026-03-01 00:00",
+    "repository_url": "https://github.com/JanMolcik/rubbish-collection",
+    "portfolio_priority": 5
   },
   "published": true,
   "slug": "lipa-waste-collection-calendar",
@@ -91,8 +92,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "26fe68f4c9c4be041dd5122bcbfc631f876c5391",
-    "timestamp": "1773357288"
+    "token": "1d4fffce6d8bfa432536f14774b62d0cf07130ac",
+    "timestamp": "1773412305"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -126,7 +127,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286826512699,
+  "current_version_id": 154512171708190,
   "stage": null,
   "favourite_for_user_ids": []
 }

@@ -7,13 +7,13 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:47.563Z",
-  "published_at": "2026-03-12T23:14:47.547Z",
+  "updated_at": "2026-03-13T14:31:44.644Z",
+  "published_at": "2026-03-13T14:31:44.623Z",
   "id": 152164412793283,
   "uuid": "9048a698-0a28-4a5b-957a-2a405134d77d",
   "is_folder": false,
   "content": {
-    "_uid": "10f5d189-6912-473e-bc91-776d49fb3050",
+    "_uid": "61114c6a-9bd0-404d-b63a-e290cc0c1204",
     "image": "https://images.ctfassets.net/438qxelhyozd/6SMh0pnpUevHb19rWDwglt/76e93cbe105eb89d5a96cf23925d7b75/photo.png",
     "title": "Senior Frontend Web Developer - DEAP",
     "skills": [
@@ -21,9 +21,9 @@
       "Redux",
       "React"
     ],
-    "end_date": "2023-07-31T12:00:00.000Z",
+    "end_date": "2023-07-31 12:00",
     "component": "item_experience",
-    "start_date": "2023-04-01T10:00:00.000Z",
+    "start_date": "2023-04-01 10:00",
     "description": {
       "type": "doc",
       "content": [
@@ -31,7 +31,7 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "I contributed to the first version of an energy-supplier comparison product, delivering React and TypeScript frontend work across state management, form flows, reusable UI integration, and fast-paced contract execution inside an active product team.",
+              "text": "I helped deliver the first version of an energy comparison product, contributing React and TypeScript work across form flows, state management, and reusable UI inside a fast-moving product team.",
               "type": "text"
             }
           ]
@@ -59,8 +59,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
-    "timestamp": "1773357291"
+    "token": "2000cd82c0fbe9065a3f31c051aa128e6c8fa9d6",
+    "timestamp": "1773412308"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -94,7 +94,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286833267021,
+  "current_version_id": 154512185454396,
   "stage": null,
   "favourite_for_user_ids": []
 }

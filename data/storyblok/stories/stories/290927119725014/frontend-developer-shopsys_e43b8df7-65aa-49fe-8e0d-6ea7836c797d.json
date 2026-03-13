@@ -7,24 +7,26 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:46.843Z",
-  "published_at": "2026-03-12T23:14:46.827Z",
+  "updated_at": "2026-03-13T14:31:44.486Z",
+  "published_at": "2026-03-13T14:31:44.463Z",
   "id": 154284678435962,
   "uuid": "e43b8df7-65aa-49fe-8e0d-6ea7836c797d",
   "is_folder": false,
   "content": {
-    "_uid": "9101de05-1acf-45dc-99e6-d1d922946b05",
+    "_uid": "f796a221-7d01-4b8c-a9d3-42fbb758a5ff",
     "title": "Frontend Developer - Shopsys",
     "skills": [
-      "Next.js",
-      "Pages Router",
-      "Storyblok",
-      "Monorepo",
-      "Platform Architecture",
-      "Automation"
+      "Next.js Pages Router",
+      "React",
+      "TypeScript",
+      "URQL",
+      "GraphQL Codegen",
+      "Cypress",
+      "Vitest",
+      "Platform Architecture"
     ],
     "component": "item_experience",
-    "start_date": "2024-06-06T00:00:00.000Z",
+    "start_date": "2024-06-06 00:00",
     "description": {
       "type": "doc",
       "content": [
@@ -32,7 +34,25 @@
           "type": "paragraph",
           "content": [
             {
-              "text": "Since June 6, 2024, I have worked as a frontend developer at Shopsys, contributing to a shared Next.js Pages Router core/platform used as the foundation for project implementations. More recently, I moved onto an ABUGO migration initiative where I stay hands-on in frontend development while also owning the codebase direction for a new Storyblok-based monorepo platform intended to become the single source of truth for multiple brands through configurable apps and automation-heavy workflows.",
+              "text": "Since June 6, 2024, I have worked at Shopsys on a shared storefront/platform used as the frontend base for project implementations. The stack centers on Next.js Pages Router, React, TypeScript, Zustand, URQL, and GraphQL code generation inside a larger Symfony-based e-commerce platform.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "My work spans reusable storefront architecture, order and payment flows, generated GraphQL operations, UI behavior, and regression coverage with Vitest and Cypress, all shipped through Dockerized development, review-branch deployments, and GitHub Actions workflows.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Most recently I have been driving GoPay and GTM-related reliability work: hardening return and callback flows, stabilizing payment state behavior, keeping generated types in sync, and validating iframe-touching changes on HTTPS review branches with Playwright evidence. In parallel, I also moved onto the ABUGO migration initiative where I stay hands-on in frontend while owning the codebase direction for a new Storyblok monorepo platform.",
               "type": "text"
             }
           ]
@@ -60,8 +80,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
-    "timestamp": "1773357289"
+    "token": "8289fbe54ce7030b1e12e47b27ba3e1b32aa0789",
+    "timestamp": "1773412306"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -95,7 +115,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286832812363,
+  "current_version_id": 154512182685495,
   "stage": null,
   "favourite_for_user_ids": []
 }

@@ -5,10 +5,24 @@ import type { StoryblokAsset, StoryblokRichtext } from '../storyblok.d.ts';
 export interface PageHome {
   headline: string;
   role: string;
-  intro: StoryblokRichtext;
   hero_intro: StoryblokRichtext;
   about_intro: StoryblokRichtext;
-  roles: number | string;
+  roles: (
+    | "Angular"
+    | "Design Systems"
+    | "Frontend Architecture"
+    | "Monorepo"
+    | "Next.js"
+    | "React"
+    | "Redux"
+    | "Responsive UI"
+    | "RxJS"
+    | "SSR / SSG / ISR"
+    | "State Management"
+    | "Storyblok"
+    | "TypeScript"
+    | "Vercel"
+  )[];
   availability_note: string;
   availability_status: string;
   availability_timezone: string;
@@ -27,10 +41,56 @@ export interface PageProject {
   summary: string;
   content?: StoryblokRichtext;
   published_date: string;
-  project_url: string;
+  project_url?: string;
   repository_url?: string;
   type: string;
-  stack?: number | string;
+  portfolio_priority?: string;
+  stack?: (
+    | "AI"
+    | "Agentic Workflow"
+    | "Angular"
+    | "Atomic Design"
+    | "B2B Workflows"
+    | "BoardGame.io"
+    | "C#"
+    | "Calendar UI"
+    | "Calendar UX"
+    | "Civic Tech"
+    | "Context API"
+    | "Cypress"
+    | "Docker Review Apps"
+    | "Enterprise UI"
+    | "Fintech UI"
+    | "Game Systems"
+    | "GraphQL Codegen"
+    | "ISR"
+    | "Interactive UI"
+    | "Internal Tools"
+    | "Monte Carlo Tree Search"
+    | "Multi-brand CMS"
+    | "Multiplayer Flows"
+    | "Next.js"
+    | "Next.js App Router"
+    | "Next.js Pages Router"
+    | "Node.js"
+    | "Platform Architecture"
+    | "React"
+    | "Redux"
+    | "Responsive UI"
+    | "RxJS"
+    | "Sass"
+    | "State Management"
+    | "Static Deployment"
+    | "Storyblok"
+    | "Tailwind CSS"
+    | "Turborepo"
+    | "TypeScript"
+    | "URQL"
+    | "Vercel"
+    | "Vitest"
+    | "XLSX Parser"
+    | "redux-observable"
+  )[];
   logo?: StoryblokAsset;
   seo: SeoMeta[];
   component: "page_project";
@@ -44,7 +104,7 @@ export interface PageWriting {
   content: StoryblokRichtext;
   published_date: string;
   cover_image?: StoryblokAsset;
-  tags?: number | string;
+  tags?: (number | string)[];
   seo: SeoMeta[];
   component: "page_writing";
   _uid: string;
@@ -56,7 +116,28 @@ export interface ItemExperience {
   description: StoryblokRichtext;
   start_date: string;
   end_date?: string;
-  skills: number | string;
+  skills: (
+    | "AWS"
+    | "Angular"
+    | "Bitcoinjs-lib"
+    | "Cypress"
+    | "Git"
+    | "GraphQL Codegen"
+    | "Next.js"
+    | "Next.js Pages Router"
+    | "Platform Architecture"
+    | "React"
+    | "Redux"
+    | "RxJS"
+    | "SVN"
+    | "Sass"
+    | "Tailwind CSS"
+    | "TypeScript"
+    | "Typescript"
+    | "URQL"
+    | "Vercel"
+    | "Vitest"
+  )[];
   image?: StoryblokAsset;
   component: "item_experience";
   _uid: string;

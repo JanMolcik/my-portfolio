@@ -13,6 +13,7 @@ export default function migratePageProject(block) {
 	moveLegacyField(block, 'publishedDate', 'published_date');
 	moveLegacyField(block, 'projectUrl', 'project_url');
 	moveLegacyField(block, 'repositoryUrl', 'repository_url');
+	moveLegacyField(block, 'portfolioPriority', 'portfolio_priority');
 	moveLegacyField(block, 'techStack', 'stack');
 	moveLegacyField(block, 'projectStack', 'stack');
 

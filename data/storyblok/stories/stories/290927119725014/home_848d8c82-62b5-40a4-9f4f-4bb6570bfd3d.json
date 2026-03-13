@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:44.713Z",
-  "published_at": "2026-03-12T23:14:44.694Z",
+  "updated_at": "2026-03-13T14:31:42.299Z",
+  "published_at": "2026-03-13T14:31:42.284Z",
   "id": 151234288602679,
   "uuid": "848d8c82-62b5-40a4-9f4f-4bb6570bfd3d",
   "is_folder": false,
@@ -23,16 +23,8 @@
         "meta_description": "Frontend engineer building React, Next.js, Storyblok, and platform-driven product interfaces across fintech, B2B systems, and multi-brand CMS initiatives."
       }
     ],
-    "_uid": "0d49ebd0-23c3-4aad-afe8-62ab8b57bd7f",
+    "_uid": "734a9541-1f01-4226-b5cf-2961d144b3dc",
     "role": "Frontend Engineer",
-    "intro": {
-      "type": "doc",
-      "content": [
-        {
-          "type": "paragraph"
-        }
-      ]
-    },
     "roles": [
       "React",
       "Next.js",
@@ -141,22 +133,15 @@
         "component": "item_social_link"
       },
       {
-        "url": "https://molcikjan.typeform.com/to/gZDCGfgd",
-        "_uid": "025e2492-3c01-fd64-a994-91578f248bff",
-        "icon": "envelope",
-        "name": "Contact me",
-        "component": "item_social_link"
-      },
-      {
         "url": "https://linkedin.com/in/jan-molcik",
-        "_uid": "44a9471f-3e40-facf-f146-ce56f8e45ec0",
+        "_uid": "a01bd6af-b65e-e23b-2563-e326ebfdfc2f",
         "icon": "linkedin",
         "name": "LinkedIn",
         "component": "item_social_link"
       },
       {
         "url": "https://gitlab.com/JanMolcik",
-        "_uid": "5c3297f6-ce78-f6c0-56ad-d92f409d5b1c",
+        "_uid": "39e8b361-318c-3c8c-f0ee-e43aefd7b23e",
         "icon": "gitlab",
         "name": "GitLab",
         "component": "item_social_link"
@@ -164,14 +149,14 @@
     ],
     "availability_note": "Available for senior frontend roles, contract work, and product-focused collaborations. The best conversations for me are projects that need strong frontend ownership, clean implementation, and a product-minded engineering approach.",
     "featured_projects": [
-      "88ea2047-1bcd-423e-b10f-7a7453f5f3bd",
       "267948bb-d9da-4905-b35e-b91033037a80",
       "0a58c9d6-c380-4171-8671-f0c1265520d9",
       "9682aeb2-6503-4d73-9f80-5ecf70887243",
-      "6067a934-f942-4d12-a7aa-7c409472ee60",
-      "89b4f305-0f6c-4cf9-a44d-54b1f9e8819a",
       "1091bd93-907f-4b08-b409-63bd59ec6b29",
+      "88ea2047-1bcd-423e-b10f-7a7453f5f3bd",
       "0db07901-1ffb-4e60-94fd-1785eb8ef391",
+      "89b4f305-0f6c-4cf9-a44d-54b1f9e8819a",
+      "6067a934-f942-4d12-a7aa-7c409472ee60",
       "75798f48-8edb-43cf-b18b-71b59d61e9d1",
       "4689dbaa-be41-4ce3-8442-af8f537f05e1"
     ],
@@ -192,8 +177,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
-    "timestamp": "1773357291"
+    "token": "2000cd82c0fbe9065a3f31c051aa128e6c8fa9d6",
+    "timestamp": "1773412308"
   },
   "pinned": false,
   "breadcrumbs": [],
@@ -216,7 +201,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286836068693,
+  "current_version_id": 154512188116803,
   "stage": null,
   "favourite_for_user_ids": []
 }

@@ -7,8 +7,8 @@
   "deleted_at": null,
   "sort_by_date": null,
   "tag_list": [],
-  "updated_at": "2026-03-12T23:14:45.862Z",
-  "published_at": "2026-03-12T23:14:45.841Z",
+  "updated_at": "2026-03-13T14:31:43.436Z",
+  "published_at": "2026-03-13T14:31:43.419Z",
   "id": 152164407730620,
   "uuid": "6067a934-f942-4d12-a7aa-7c409472ee60",
   "is_folder": false,
@@ -23,7 +23,7 @@
         "meta_description": "Responsive Next.js prototype for a photo library application, built with TypeScript, Sass, and atomic design principles across multiple breakpoints."
       }
     ],
-    "_uid": "0b4ba61a-797d-4031-8690-db7aa16b3e4a",
+    "_uid": "5ceec21d-f32b-47d8-bd56-5631911d01c0",
     "logo": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
     "slug": "photobank",
     "type": "Product UI Prototype",
@@ -71,7 +71,8 @@
     "summary": "Responsive Next.js prototype for a photo library application, built with TypeScript, Sass, and atomic design principles across multiple breakpoints.",
     "component": "page_project",
     "project_url": "https://photobank-prototype.vercel.app/ctk",
-    "published_date": "2024-01-01T12:00:00.000Z"
+    "published_date": "2024-01-01 12:00",
+    "portfolio_priority": 8
   },
   "published": true,
   "slug": "photobank",
@@ -92,8 +93,8 @@
   "meta_data": null,
   "imported_at": null,
   "preview_token": {
-    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
-    "timestamp": "1773357291"
+    "token": "2000cd82c0fbe9065a3f31c051aa128e6c8fa9d6",
+    "timestamp": "1773412308"
   },
   "pinned": false,
   "breadcrumbs": [
@@ -127,7 +128,7 @@
   "is_scheduled": null,
   "scheduled_dates": null,
   "ideas": [],
-  "current_version_id": 154286827077952,
+  "current_version_id": 154512172232481,
   "stage": null,
   "favourite_for_user_ids": []
 }
