@@ -189,9 +189,7 @@ describe('CONTRACT-SB-SCHEMA-001', () => {
 			(byName.get('page_project')?.schema?.stack?.options ?? []).length,
 		).toBeGreaterThan(0);
 
-		expect(byName.get('item_experience')?.schema?.skills?.type).toBe(
-			'options',
-		);
+		expect(byName.get('item_experience')?.schema?.skills?.type).toBe('options');
 		expect(
 			(byName.get('item_experience')?.schema?.skills?.options ?? []).length,
 		).toBeGreaterThan(0);

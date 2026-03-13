@@ -48,6 +48,8 @@ export function getProjectCardLinks({
 	return links;
 }
 
-export function getProjectExternalLinks(input: ProjectLinkInput): ProjectLink[] {
+export function getProjectExternalLinks(
+	input: ProjectLinkInput,
+): ProjectLink[] {
 	return getProjectCardLinks(input).filter((link) => link.external);
 }

@@ -126,7 +126,9 @@ function orderRelationsByRefs<T>(
 	return ordered;
 }
 
-function sortProjectsByPortfolioPriority(projects: ProjectDomain[]): ProjectDomain[] {
+function sortProjectsByPortfolioPriority(
+	projects: ProjectDomain[],
+): ProjectDomain[] {
 	return [...projects].sort((left, right) => {
 		const leftPriority = left.portfolioPriority ?? Number.MAX_SAFE_INTEGER;
 		const rightPriority = right.portfolioPriority ?? Number.MAX_SAFE_INTEGER;

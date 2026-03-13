@@ -75,8 +75,8 @@ describe('CONTRACT-IMPORT-001', () => {
 			)?.content.project_url,
 		).toBe('https://www.shopsys.cz/');
 		expect(
-			bundle.content.projects.find((project) => project.slug === 'qapline')?.content
-				.portfolio_priority,
+			bundle.content.projects.find((project) => project.slug === 'qapline')
+				?.content.portfolio_priority,
 		).toBe(3);
 		expect(
 			bundle.content.projects.find(

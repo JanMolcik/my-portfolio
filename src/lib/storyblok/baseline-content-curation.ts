@@ -1,6 +1,4 @@
-import type {
-	StoryblokBaselineImportBundle,
-} from '@/lib/storyblok/contentful-import';
+import type { StoryblokBaselineImportBundle } from '@/lib/storyblok/contentful-import';
 import type { StoryblokRichText } from '@/lib/storyblok/contentful-mapping';
 
 function richTextParagraphs(paragraphs: string[]): StoryblokRichText {
@@ -141,7 +139,13 @@ const curatedProjects: Record<
 			'My contribution centered on improving frontend structure by replacing fragmented two-way binding patterns with a more centralized state-management approach using Redux.',
 			'This project shows the type of engineering work I bring to complex internal tools: untangling frontend state, improving predictability, and making the application easier to extend over time.',
 		]),
-		stack: ['Angular', 'Redux', 'Enterprise UI', 'State Management', 'B2B Workflows'],
+		stack: [
+			'Angular',
+			'Redux',
+			'Enterprise UI',
+			'State Management',
+			'B2B Workflows',
+		],
 	},
 	aview: {
 		type: 'Catalogue Management App',
@@ -153,7 +157,13 @@ const curatedProjects: Record<
 			'I worked on an Angular application using centralized state patterns and reactive tooling, including RxJS and Epics middleware.',
 			'The project reflects my strength in applications where frontend complexity comes from business workflows, asynchronous state, and the need for UI predictability.',
 		]),
-		stack: ['Angular', 'RxJS', 'redux-observable', 'TypeScript', 'Internal Tools'],
+		stack: [
+			'Angular',
+			'RxJS',
+			'redux-observable',
+			'TypeScript',
+			'Internal Tools',
+		],
 	},
 	'poohead-card-game': {
 		type: 'Interactive Multiplayer App',
@@ -165,7 +175,13 @@ const curatedProjects: Record<
 			'I built the client in React while integrating with a server-side game engine workflow, creating a user experience built around multiplayer game interaction rather than static content.',
 			'This project is useful proof of range: I am comfortable not only with product dashboards and fintech interfaces, but also with interaction-heavy frontend experiences.',
 		]),
-		stack: ['React', 'Node.js', 'BoardGame.io', 'Interactive UI', 'Multiplayer Flows'],
+		stack: [
+			'React',
+			'Node.js',
+			'BoardGame.io',
+			'Interactive UI',
+			'Multiplayer Flows',
+		],
 		projectUrl: '',
 	},
 	'hearthstone-ai': {
@@ -342,10 +358,8 @@ export function applyBaselineContentCuration(
 			component: 'page_project' as const,
 			title: 'ABUGO Brand Platform Migration',
 			slug: 'abugo-brand-platform-migration',
-			summary:
-				curatedProjects['abugo-brand-platform-migration'].summary,
-			content:
-				curatedProjects['abugo-brand-platform-migration'].content,
+			summary: curatedProjects['abugo-brand-platform-migration'].summary,
+			content: curatedProjects['abugo-brand-platform-migration'].content,
 			published_date: '2026-02-20T00:00:00.000Z',
 			project_url:
 				curatedProjects['abugo-brand-platform-migration'].projectUrl ?? '',
@@ -413,7 +427,8 @@ export function applyBaselineContentCuration(
 
 	if (
 		!bundle.content.experience.some(
-			(experience) => experience.content.title === currentExperience.content.title,
+			(experience) =>
+				experience.content.title === currentExperience.content.title,
 		)
 	) {
 		bundle.content.experience.unshift(currentExperience);
@@ -430,7 +445,8 @@ export function applyBaselineContentCuration(
 		home.content.availability_note = curatedHome.availabilityNote;
 		home.content.availability_status = curatedHome.availabilityStatus;
 		home.content.availability_timezone = curatedHome.availabilityTimezone;
-		home.content.availability_response_time = curatedHome.availabilityResponseTime;
+		home.content.availability_response_time =
+			curatedHome.availabilityResponseTime;
 		home.content.featured_projects = curatedHome.featuredProjects;
 		home.content.experience = [
 			'curated:experience:shopsys-2024',

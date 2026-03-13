@@ -687,8 +687,7 @@ async function main() {
 		availability_timezone:
 			asString(homeBundle.content?.availability_timezone) || 'Europe',
 		availability_response_time:
-			asString(homeBundle.content?.availability_response_time) ||
-			'within 48h',
+			asString(homeBundle.content?.availability_response_time) || 'within 48h',
 		social_links: socialLinks,
 		featured_projects: featuredProjects,
 		experience: experienceRefs,

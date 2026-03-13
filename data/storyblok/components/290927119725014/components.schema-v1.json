@@ -153,7 +153,10 @@
 					{ "name": "ISR", "value": "ISR" },
 					{ "name": "Interactive UI", "value": "Interactive UI" },
 					{ "name": "Internal Tools", "value": "Internal Tools" },
-					{ "name": "Monte Carlo Tree Search", "value": "Monte Carlo Tree Search" },
+					{
+						"name": "Monte Carlo Tree Search",
+						"value": "Monte Carlo Tree Search"
+					},
 					{ "name": "Multi-brand CMS", "value": "Multi-brand CMS" },
 					{ "name": "Multiplayer Flows", "value": "Multiplayer Flows" },
 					{ "name": "Next.js", "value": "Next.js" },

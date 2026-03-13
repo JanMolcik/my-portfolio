@@ -38,7 +38,9 @@ export function parseStoryblokDate(value?: string | null): Date | null {
 	return parsed;
 }
 
-export function formatStoryblokDateTime(value?: string | null): string | undefined {
+export function formatStoryblokDateTime(
+	value?: string | null,
+): string | undefined {
 	const parsed = parseStoryblokDate(value);
 	if (!parsed) {
 		return undefined;

@@ -91,7 +91,10 @@ export default function TerminalNoirProject({
 					{tags.length > 0 ? (
 						<div className={styles.stack}>
 							{tags.map((tag) => (
-								<span className={styles.stackTag} key={`${project.slug}-${tag}`}>
+								<span
+									className={styles.stackTag}
+									key={`${project.slug}-${tag}`}
+								>
 									{tag}
 								</span>
 							))}
