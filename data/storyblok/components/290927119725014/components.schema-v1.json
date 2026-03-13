@@ -1,0 +1,267 @@
+[
+	{
+		"name": "page_home",
+		"display_name": "Page Home",
+		"is_root": true,
+		"is_nestable": false,
+		"schema": {
+			"headline": {
+				"type": "text",
+				"required": true
+			},
+			"role": {
+				"type": "text",
+				"required": true
+			},
+			"intro": {
+				"type": "richtext",
+				"required": true
+			},
+			"hero_intro": {
+				"type": "richtext",
+				"required": true
+			},
+			"about_intro": {
+				"type": "richtext",
+				"required": true
+			},
+			"roles": {
+				"type": "option",
+				"required": true,
+				"source": "internal",
+				"exclude_empty_option": true,
+				"options": []
+			},
+			"availability_note": {
+				"type": "textarea",
+				"required": true
+			},
+			"availability_status": {
+				"type": "text",
+				"required": true
+			},
+			"availability_timezone": {
+				"type": "text",
+				"required": true
+			},
+			"availability_response_time": {
+				"type": "text",
+				"required": true
+			},
+			"social_links": {
+				"type": "bloks",
+				"required": true,
+				"restrict_components": true,
+				"component_whitelist": ["item_social_link"]
+			},
+			"featured_projects": {
+				"type": "options",
+				"required": true,
+				"source": "internal_stories",
+				"is_reference_type": true,
+				"use_uuid": true,
+				"filter_content_type": ["page_project"]
+			},
+			"experience": {
+				"type": "options",
+				"required": true,
+				"source": "internal_stories",
+				"is_reference_type": true,
+				"use_uuid": true,
+				"filter_content_type": ["item_experience"]
+			},
+			"seo": {
+				"type": "bloks",
+				"required": true,
+				"restrict_components": true,
+				"component_whitelist": ["seo_meta"],
+				"maximum": 1
+			}
+		}
+	},
+	{
+		"name": "page_project",
+		"display_name": "Page Project",
+		"is_root": true,
+		"is_nestable": false,
+		"schema": {
+			"title": {
+				"type": "text",
+				"required": true
+			},
+			"slug": {
+				"type": "text",
+				"required": true
+			},
+			"summary": {
+				"type": "textarea",
+				"required": true
+			},
+			"content": {
+				"type": "richtext"
+			},
+			"published_date": {
+				"type": "datetime",
+				"required": true
+			},
+			"project_url": {
+				"type": "text",
+				"required": true
+			},
+			"repository_url": {
+				"type": "text"
+			},
+			"type": {
+				"type": "text",
+				"required": true
+			},
+			"stack": {
+				"type": "option",
+				"source": "internal",
+				"exclude_empty_option": true,
+				"options": []
+			},
+			"logo": {
+				"type": "asset",
+				"filetypes": ["images"]
+			},
+			"seo": {
+				"type": "bloks",
+				"required": true,
+				"restrict_components": true,
+				"component_whitelist": ["seo_meta"],
+				"maximum": 1
+			}
+		}
+	},
+	{
+		"name": "page_writing",
+		"display_name": "Page Writing",
+		"is_root": true,
+		"is_nestable": false,
+		"schema": {
+			"title": {
+				"type": "text",
+				"required": true
+			},
+			"slug": {
+				"type": "text",
+				"required": true
+			},
+			"excerpt": {
+				"type": "textarea",
+				"required": true
+			},
+			"content": {
+				"type": "richtext",
+				"required": true
+			},
+			"published_date": {
+				"type": "datetime",
+				"required": true
+			},
+			"cover_image": {
+				"type": "asset",
+				"filetypes": ["images"]
+			},
+			"tags": {
+				"type": "option",
+				"source": "internal",
+				"exclude_empty_option": true,
+				"options": []
+			},
+			"seo": {
+				"type": "bloks",
+				"required": true,
+				"restrict_components": true,
+				"component_whitelist": ["seo_meta"],
+				"maximum": 1
+			}
+		}
+	},
+	{
+		"name": "item_experience",
+		"display_name": "Item Experience",
+		"is_root": true,
+		"is_nestable": true,
+		"schema": {
+			"title": {
+				"type": "text",
+				"required": true
+			},
+			"company_name": {
+				"type": "text",
+				"required": true
+			},
+			"description": {
+				"type": "richtext",
+				"required": true
+			},
+			"start_date": {
+				"type": "datetime",
+				"required": true
+			},
+			"end_date": {
+				"type": "datetime"
+			},
+			"skills": {
+				"type": "option",
+				"required": true,
+				"source": "internal",
+				"exclude_empty_option": true,
+				"options": []
+			},
+			"image": {
+				"type": "asset",
+				"filetypes": ["images"]
+			}
+		}
+	},
+	{
+		"name": "item_social_link",
+		"display_name": "Item Social Link",
+		"is_root": false,
+		"is_nestable": true,
+		"schema": {
+			"name": {
+				"type": "text",
+				"required": true
+			},
+			"url": {
+				"type": "text",
+				"required": true
+			},
+			"icon": {
+				"type": "text",
+				"required": true
+			}
+		}
+	},
+	{
+		"name": "seo_meta",
+		"display_name": "SEO Meta",
+		"is_root": false,
+		"is_nestable": true,
+		"schema": {
+			"meta_title": {
+				"type": "text",
+				"required": true
+			},
+			"meta_description": {
+				"type": "textarea",
+				"required": true
+			},
+			"canonical_url": {
+				"type": "text"
+			},
+			"og_image": {
+				"type": "asset",
+				"filetypes": ["images"]
+			},
+			"noindex": {
+				"type": "boolean",
+				"default_value": false
+			}
+		}
+	}
+]

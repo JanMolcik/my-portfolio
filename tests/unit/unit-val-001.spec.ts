@@ -41,4 +41,46 @@ describe('UNIT-VAL-001', () => {
 
 		process.env.NEXT_PUBLIC_SITE_URL = previous;
 	});
+
+	it('builds route-unique fallback metadata for indexable page families', () => {
+		const previous = process.env.NEXT_PUBLIC_SITE_URL;
+		process.env.NEXT_PUBLIC_SITE_URL = 'https://example.com';
+
+		const story = {
+			name: 'Shared Entry',
+			content: {},
+		} as StoryblokStory;
+
+		const homeMetadata = buildStoryMetadata(story, '/');
+		const projectMetadata = buildStoryMetadata(story, '/projects/shared-entry');
+		const writingMetadata = buildStoryMetadata(story, '/writing/shared-entry');
+
+		expect(homeMetadata.title).toBe('Shared Entry | Home');
+		expect(projectMetadata.title).toBe('Shared Entry | Project');
+		expect(writingMetadata.title).toBe('Shared Entry | Writing');
+
+		expect(homeMetadata.description).toBe('Home page for Shared Entry.');
+		expect(projectMetadata.description).toBe('Project page for Shared Entry.');
+		expect(writingMetadata.description).toBe('Writing page for Shared Entry.');
+
+		expect(homeMetadata.alternates?.canonical).toBe('https://example.com/');
+		expect(projectMetadata.alternates?.canonical).toBe(
+			'https://example.com/projects/shared-entry',
+		);
+		expect(writingMetadata.alternates?.canonical).toBe(
+			'https://example.com/writing/shared-entry',
+		);
+
+		expect(homeMetadata.openGraph?.images).toEqual([
+			{ url: 'https://example.com/favicon.ico' },
+		]);
+		expect(projectMetadata.openGraph?.images).toEqual([
+			{ url: 'https://example.com/favicon.ico' },
+		]);
+		expect(writingMetadata.openGraph?.images).toEqual([
+			{ url: 'https://example.com/favicon.ico' },
+		]);
+
+		process.env.NEXT_PUBLIC_SITE_URL = previous;
+	});
 });

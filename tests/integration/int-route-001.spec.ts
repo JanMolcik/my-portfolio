@@ -15,4 +15,47 @@ describe('INT-ROUTE-001', () => {
 			expect(source).toContain('export const revalidate = 3600;');
 		}
 	});
+
+	it('keeps home route bound to terminal-noir module and Storyblok home content model', async () => {
+		const homeRoute = await readFile('src/app/page.tsx', 'utf8');
+		const projectRoute = await readFile(
+			'src/app/projects/[slug]/page.tsx',
+			'utf8',
+		);
+		const writingRoute = await readFile(
+			'src/app/writing/[slug]/page.tsx',
+			'utf8',
+		);
+		const homeComponent = await readFile(
+			'src/components/home/terminal-noir-home.tsx',
+			'utf8',
+		);
+		const writingComponent = await readFile(
+			'src/components/writing/terminal-noir-writing.tsx',
+			'utf8',
+		);
+
+		expect(homeRoute).toContain('getPublishedHomeStory');
+		expect(homeRoute).toContain('buildHomePageModel');
+		expect(homeRoute).toContain('TerminalNoirHome');
+		expect(homeRoute).not.toContain('StoryblokStory');
+
+		expect(homeComponent).toContain('id="hero"');
+		expect(homeComponent).toContain('id="projects"');
+		expect(homeComponent).toContain('id="experience"');
+		expect(homeComponent).toContain('id="contact"');
+
+		expect(projectRoute).toContain('TerminalNoirProject');
+		expect(projectRoute).toContain('mapProjectDtoToDomain');
+		expect(projectRoute).toContain('notFound()');
+		expect(projectRoute).not.toContain('StoryblokStory');
+
+		expect(writingRoute).toContain('TerminalNoirWriting');
+		expect(writingRoute).toContain('mapWritingDtoToDomain');
+		expect(writingRoute).toContain('notFound()');
+		expect(writingRoute).not.toContain('StoryblokStory');
+
+		expect(writingComponent).toContain('data-testid="terminal-noir-writing"');
+		expect(writingComponent).toContain('cat article.md');
+	});
 });

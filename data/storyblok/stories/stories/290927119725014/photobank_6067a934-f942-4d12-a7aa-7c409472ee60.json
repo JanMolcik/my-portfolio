@@ -1,0 +1,133 @@
+{
+  "name": "Photobank",
+  "parent_id": 152164406559162,
+  "group_id": "41edd94e-8bfc-404c-ada6-08e9d0a3f431",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:33.600Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:45.862Z",
+  "published_at": "2026-03-12T23:14:45.841Z",
+  "id": 152164407730620,
+  "uuid": "6067a934-f942-4d12-a7aa-7c409472ee60",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "227295e8-ac0b-1e4c-06fd-0c829362d1f0",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+        "component": "seo_meta",
+        "meta_title": "Photobank",
+        "meta_description": "Responsive Next.js prototype for a photo library application, built with TypeScript, Sass, and atomic design principles across multiple breakpoints."
+      }
+    ],
+    "_uid": "0b4ba61a-797d-4031-8690-db7aa16b3e4a",
+    "logo": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+    "slug": "photobank",
+    "type": "Product UI Prototype",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Sass",
+      "Atomic Design",
+      "Responsive UI",
+      "Vercel"
+    ],
+    "title": "Photobank",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Photobank was a frontend prototype focused on structured UI delivery: reusable components, responsive layouts, and a clean design-system approach.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The application was built with Next.js, TypeScript, and Sass, following atomic design principles and supporting a broad range of screen sizes.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "This project represents the kind of work I do well: taking visual direction, translating it into a component-driven frontend, and keeping the implementation scalable as the interface grows.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Responsive Next.js prototype for a photo library application, built with TypeScript, Sass, and atomic design principles across multiple breakpoints.",
+    "component": "page_project",
+    "project_url": "https://photobank-prototype.vercel.app/ctk",
+    "published_date": "2024-01-01T12:00:00.000Z"
+  },
+  "published": true,
+  "slug": "photobank",
+  "path": null,
+  "full_slug": "projects/photobank",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
+    "timestamp": "1773357291"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:44.668Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": 0,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286827077952,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

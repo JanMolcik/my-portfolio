@@ -1,5 +1,30 @@
 # SPEC_CHANGELOG.md
 
+## 2026-03-12
+
+- Extended `page_home` schema with CMS-managed `hero_intro`, `about_intro`, and availability copy fields so homepage positioning no longer depends on local runtime overrides.
+- Extended `page_project` schema with CMS-managed `stack[]` so project cards and case studies render project-specific tags instead of misleading global skill badges.
+- Updated the baseline Storyblok import contract to apply a curated portfolio copy layer after legacy Contentful mapping, keeping publishable CMS content aligned with hiring-focused portfolio messaging.
+
+## 2026-03-06
+
+- Hardened Ralph loop with mandatory per-task visual guard execution before verify gates (`scripts/ralph-loop.mjs`), including enforced tester-agent env contract and dedicated visual log artifacts.
+- Upgraded tester-agent runner to enforce-mode workflow with deterministic route probing, per-route screenshots, evidence JSON output, Playwright log-change verification, and blocking failure semantics when evidence is missing.
+- Added harness contract assertions for visual-guard wiring and tester-agent enforce behavior (`HARNESS-RALPH-001`, `HARNESS-TESTER-AGENT-001`).
+- Updated canonical spec docs (`PROJECT_SPEC.md`, `HARNESS.md`, `AGENT_ITERATION_PROTOCOL.md`, `CURRENT_TRUTH.md`) to formalize tester-agent evidence requirements and loop-level guard enforcement.
+- Added `.playwright-cli/` to local ignore policy to prevent accidental git pollution from Playwright CLI runtime logs.
+
+## 2026-03-05
+
+- Added launch-readiness sign-off contract and evidence artifacts (`docs/ops/launch-readiness-signoff.md`, `artifacts/release/launch-readiness-signoff.md`) for `E9-S3`.
+- Added harness guard `HARNESS-LAUNCH-001` and traceability wiring so deterministic release checklist coverage is executable under `INV-5`.
+- Documented rollback command path (`vercel rollback <deployment-id-or-url>`) in the launch sign-off runbook.
+- Added Ralph auto-commit identity contract for Docker runs (`RALPH_GIT_USER_NAME`, `RALPH_GIT_USER_EMAIL`) and fallback author/committer wiring in loop runtime.
+- Added local sourceable Ralph env workflow (`.env.ralph.example`, `scripts/ralph-env.sh`, `ralph:env:*` package scripts) to avoid repetitive inline env setup.
+- Added commit-message quality contract for Ralph loop auto-commits in `AGENT_ITERATION_PROTOCOL.md` (Conventional Commit subject + structured body with task/why/changes/validation).
+- Upgraded Ralph loop auto-commit implementation to stage changes explicitly, infer descriptive commit type/scope/action from task+diff, and generate multi-paragraph commit messages.
+- Added harness guard `HARNESS-COMMIT-001` and traceability wiring for `INV-A5` to prevent regression back to non-descriptive story-title commit messages.
+
 ## 2026-03-03
 
 - Initialized canonical configurancy/spec stack for greenfield migration to `Next.js App Router + Storyblok`.
@@ -46,3 +71,5 @@
 - Added dedicated ralph task prompt contract file (`docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md`) with placeholder schema, fail-fast template resolution in loop runner, and harness/spec-consistency drift enforcement.
 - Simplified ralph prompt root to `AGENTS.md` (no duplicate canonical source list in prompt body), added strict `AGENTS_ACK` output enforcement in loop runner, and introduced `CLAUDE.md` compatibility shim that delegates to `AGENTS.md`.
 - Added engine wrapper `scripts/ralph-agent-runner.sh` with `RALPH_ENGINE=codex|claude` switch, plus ready-to-run pnpm shortcuts (`ralph:*:codex`, `ralph:*:claude`) and Docker env passthrough for consistent ACK-aware execution.
+- Separated native and Docker loop environments: Docker loop now defaults to isolated workspace mode with container-only `node_modules`/`.pnpm-store`, plus explicit `ralph:docker:loop:inplace` for direct repo writes when needed.
+- Hardened Docker agent runtime for subscription mode: sandbox image now bundles `codex` and `claude` CLIs, Docker loop auto-mounts Claude session auth (`~/.claude`, `~/.claude.json`) by default with explicit override envs, container user now defaults to host UID:GID (non-root), and `inplace` vs `isolated` dependency-volume behavior is explicitly separated.

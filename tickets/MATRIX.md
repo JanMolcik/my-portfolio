@@ -1,15 +1,15 @@
 # Ticket Matrix
 
-Generated at: 2026-03-04T16:33:30.632Z
+Generated at: 2026-03-05T09:24:23.682Z
 
 | ID | Type | Title | Status | Priority | Owner | Depends On | Invariants | File |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | E1 | epic | Runtime Foundation | backlog | P1 | unassigned | - | INV-5 | [E1.md](./epics/E1.md) |
-| E1-S1 | user_story | As a developer, I want Next.js App Router initialized in this repo from the local TS blueprint baseline, so that implementation can start in-place. | ready | P1 | unassigned | - | INV-5 | [E1-S1.md](./user-stories/E1-S1.md) |
-| E1-S2 | user_story | As a team lead, I want TypeScript strict + lint + formatting configured, so that quality is enforced from day 1. | ready | P1 | unassigned | E1-S1 | INV-5 | [E1-S2.md](./user-stories/E1-S2.md) |
-| E1-S3 | user_story | As an architect, I want dependency boundaries enforced, so that forbidden imports fail early. | ready | P1 | unassigned | E1-S1 | INV-5 | [E1-S3.md](./user-stories/E1-S3.md) |
-| E1-S4 | user_story | As QA, I want test framework scaffolding ready, so that conformance can be added incrementally. | ready | P1 | unassigned | E1-S1 | INV-5 | [E1-S4.md](./user-stories/E1-S4.md) |
-| E1-S5 | user_story | As a product owner, I want the blueprint used as initial start-state, so that teams have a shared and deterministic starting shape of the app. | ready | P1 | unassigned | E1-S1 | INV-5 | [E1-S5.md](./user-stories/E1-S5.md) |
+| E1-S1 | user_story | As a developer, I want Next.js App Router initialized in this repo from the local TS blueprint baseline, so that implementation can start in-place. | done | P1 | unassigned | - | INV-5 | [E1-S1.md](./user-stories/E1-S1.md) |
+| E1-S2 | user_story | As a team lead, I want TypeScript strict + lint + formatting configured, so that quality is enforced from day 1. | done | P1 | unassigned | E1-S1 | INV-5 | [E1-S2.md](./user-stories/E1-S2.md) |
+| E1-S3 | user_story | As an architect, I want dependency boundaries enforced, so that forbidden imports fail early. | done | P1 | unassigned | E1-S1 | INV-5 | [E1-S3.md](./user-stories/E1-S3.md) |
+| E1-S4 | user_story | As QA, I want test framework scaffolding ready, so that conformance can be added incrementally. | done | P1 | unassigned | E1-S1 | INV-5 | [E1-S4.md](./user-stories/E1-S4.md) |
+| E1-S5 | user_story | As a product owner, I want the blueprint used as initial start-state, so that teams have a shared and deterministic starting shape of the app. | done | P1 | unassigned | E1-S1 | INV-5 | [E1-S5.md](./user-stories/E1-S5.md) |
 | E2 | epic | Storyblok Model & Content Migration | backlog | P1 | unassigned | - | INV-5 | [E2.md](./epics/E2.md) |
 | E2-S1 | user_story | As a content admin, I want Storyblok schema v1 created, so that content maps to defined contracts. | ready | P1 | unassigned | - | INV-5 | [E2-S1.md](./user-stories/E2-S1.md) |
 | E2-S2 | user_story | As migration engineer, I want legacy Contentful types mapped to Storyblok model, so that no key content is lost. | ready | P1 | unassigned | E2-S1 | INV-5 | [E2-S2.md](./user-stories/E2-S2.md) |

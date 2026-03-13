@@ -1,43 +1,87 @@
 name: ci
 
 on:
-	pull_request:
-	push:
-		branches:
-			- main
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-	conformance:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Checkout
-			  uses: actions/checkout@v4
+  conformance:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+      STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
+      STORYBLOK_PREVIEW_TOKEN: ${{ secrets.STORYBLOK_PREVIEW_TOKEN }}
+      PREVIEW_SECRET: ${{ secrets.PREVIEW_SECRET }}
+      STORYBLOK_WEBHOOK_SECRET: ${{ secrets.STORYBLOK_WEBHOOK_SECRET }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-			- name: Setup pnpm
-			  uses: pnpm/action-setup@v4
-			  with:
-				version: 10.19.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.19.0
 
-			- name: Setup Node.js
-			  uses: actions/setup-node@v4
-			  with:
-				node-version: 22
-				cache: pnpm
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
 
-			- name: Install dependencies
-			  run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-			- name: Install Playwright browser
-			  run: pnpm exec playwright install --with-deps chromium
+      - name: Gate - Secrets Preflight
+        shell: bash
+        run: |
+          required_vars=(
+            NEXT_PUBLIC_SITE_URL
+            STORYBLOK_ACCESS_TOKEN
+            STORYBLOK_PREVIEW_TOKEN
+            PREVIEW_SECRET
+            STORYBLOK_WEBHOOK_SECRET
+          )
+          for required_var in "${required_vars[@]}"; do
+            if [[ -z "${!required_var}" ]]; then
+              echo "::error::Missing required GitHub Actions secret mapping: ${required_var}"
+              exit 1
+            fi
+          done
 
-			- name: Normative gate manifest
-			  run: |
-				pnpm cq:check
-				pnpm test:spec-consistency
-				pnpm test:unit
-				pnpm test:integration
-				pnpm test:contract
-				pnpm test:security
-				pnpm test:e2e
-				pnpm test:harness
-				pnpm tester-agent:run
+      - name: Install Playwright browser
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Gate - CQ Check
+        run: pnpm cq:check
+
+      - name: Gate - Lint
+        run: pnpm lint
+
+      - name: Gate - Typecheck
+        run: pnpm typecheck
+
+      - name: Gate - Spec Consistency
+        run: pnpm test:spec-consistency
+
+      - name: Gate - Unit Tests
+        run: pnpm test:unit
+
+      - name: Gate - Integration Tests
+        run: pnpm test:integration
+
+      - name: Gate - Contract Tests
+        run: pnpm test:contract
+
+      - name: Gate - Security Tests
+        run: pnpm test:security
+
+      - name: Gate - E2E Tests
+        run: pnpm test:e2e
+
+      - name: Gate - Harness Tests
+        run: pnpm test:harness
+
+      - name: Gate - Tester Agent
+        run: pnpm tester-agent:run

@@ -6,6 +6,9 @@
 	"scripts": {
 		"dev": "next dev",
 		"dev:https": "next dev --experimental-https",
+		"dev:tailscale:serve": "bash scripts/dev-tailscale-preview.sh serve",
+		"dev:tailscale:funnel": "bash scripts/dev-tailscale-preview.sh funnel",
+		"dev:tailscale:reset": "tailscale serve reset && tailscale funnel reset",
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint . --max-warnings=0",
@@ -22,6 +25,10 @@
 		"test:e2e": "playwright test --config=playwright.config.ts",
 		"test:harness": "vitest run --config vitest.config.ts tests/harness",
 		"tester-agent:run": "node scripts/tester-agent-run.mjs",
+		"storyblok:baseline-import": "node --experimental-strip-types scripts/build-storyblok-baseline-import.mjs",
+		"storyblok:baseline-push": "node scripts/storyblok-push-baseline-content.mjs",
+		"storyblok:baseline-push:dry": "node scripts/storyblok-push-baseline-content.mjs --dry-run",
+		"storyblok:types": "node scripts/storyblok-types-sync.mjs",
 		"tickets:fragment": "node scripts/spec-fragmenter.mjs",
 		"tickets:sync": "node scripts/tickets-sync.mjs",
 		"tickets:queue": "node scripts/tickets-to-queue.mjs",
@@ -33,23 +40,28 @@
 		"ralph:once:claude": "RALPH_ENGINE=claude RALPH_AGENT_CMD_TEMPLATE='bash scripts/ralph-agent-runner.sh \"{{TASK_PROMPT_FILE}}\"' pnpm run ralph:once",
 		"ralph:loop:claude": "RALPH_ENGINE=claude RALPH_AGENT_CMD_TEMPLATE='bash scripts/ralph-agent-runner.sh \"{{TASK_PROMPT_FILE}}\"' pnpm run ralph:loop",
 		"ralph:docker:build": "docker build -f docker/ralph-sandbox/Dockerfile -t my-portfolio-ralph:latest .",
-		"ralph:docker:loop": "bash scripts/ralph-docker-loop.sh"
+		"ralph:docker:loop": "RALPH_DOCKER_MODE=isolated bash scripts/ralph-docker-loop.sh",
+		"ralph:docker:loop:inplace": "RALPH_DOCKER_MODE=inplace bash scripts/ralph-docker-loop.sh",
+		"ralph:env:docker": "bash scripts/ralph-env.sh pnpm run ralph:docker:loop:inplace",
+		"ralph:env:docker:once": "bash scripts/ralph-env.sh env RALPH_LOOP_ARGS=--once pnpm run ralph:docker:loop:inplace",
+		"ralph:env:orchestrator": "bash scripts/ralph-env.sh bash scripts/ralph-orchestrator.sh"
 	},
 	"dependencies": {
 		"@storyblok/react": "^5.4.22",
 		"next": "16.1.6",
 		"react": "^19.2.4",
-		"react-dom": "^19.2.4"
+		"react-dom": "^19.2.4",
+		"zod": "^4.3.6"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.56.1",
-		"@vitest/coverage-v8": "^4.0.0-beta.12",
 		"@biomejs/biome": "^2.4.5",
 		"@eslint/eslintrc": "^3",
 		"@netlify/plugin-nextjs": "^5.15.8",
+		"@playwright/test": "^1.56.1",
 		"@types/node": "^24.3.0",
 		"@types/react": "^19.1.11",
 		"@types/react-dom": "^19.1.7",
+		"@vitest/coverage-v8": "^4.0.0-beta.12",
 		"eslint": "^9.26.0",
 		"eslint-config-next": "16.1.6",
 		"typescript": "^5.9.2",

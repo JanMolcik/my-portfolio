@@ -1,0 +1,132 @@
+{
+  "name": "Qapline",
+  "parent_id": 152164406559162,
+  "group_id": "31d3885d-0847-48ca-a95a-a912f96f3fb2",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:34.466Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:46.570Z",
+  "published_at": "2026-03-12T23:14:46.551Z",
+  "id": 152164411285953,
+  "uuid": "1091bd93-907f-4b08-b409-63bd59ec6b29",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "25fcdf1c-aaa4-e403-7e82-9f5fc08a251c",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
+        "component": "seo_meta",
+        "meta_title": "Qapline",
+        "meta_description": "Angular-based ERP frontend for logistics workflows, where I helped refactor decentralized state handling into a more structured Redux-based architecture."
+      }
+    ],
+    "_uid": "fcbe44fb-51e9-4269-8730-84726a738eb4",
+    "logo": "https://images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
+    "slug": "qapline",
+    "type": "Logistics ERP",
+    "stack": [
+      "Angular",
+      "Redux",
+      "Enterprise UI",
+      "State Management",
+      "B2B Workflows"
+    ],
+    "title": "Qapline",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Qapline was a web ERP system for a logistics company, focused on operational workflows rather than marketing presentation.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "My contribution centered on improving frontend structure by replacing fragmented two-way binding patterns with a more centralized state-management approach using Redux.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "This project shows the type of engineering work I bring to complex internal tools: untangling frontend state, improving predictability, and making the application easier to extend over time.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Angular-based ERP frontend for logistics workflows, where I helped refactor decentralized state handling into a more structured Redux-based architecture.",
+    "component": "page_project",
+    "project_url": "https://koala42.com/portfolio/qapline/",
+    "published_date": "2017-12-31T23:00:00.000Z"
+  },
+  "published": true,
+  "slug": "qapline",
+  "path": null,
+  "full_slug": "projects/qapline",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
+    "timestamp": "1773357289"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:45.716Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -50,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286831837512,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

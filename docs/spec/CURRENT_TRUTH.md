@@ -1,5 +1,78 @@
 # CURRENT_TRUTH.md
 
+## Active Bootstrap Waiver (Blueprint Starter UI)
+
+Status: Active
+Owner: Product Owner (`E1-S5`)
+Activated on: `2026-03-05`
+Expires on: `2026-03-19`
+Scope: First working UI still uses blueprint starter styling/components (`src/app/globals.css` imports `blueprint-blank.css`).
+
+Exit criteria:
+1. `E4-S1` replaces blueprint starter home composition with approved portfolio visual direction from `designs/design-1-terminal-noir.html`.
+2. `E4-S2` and `E4-S3` replace blueprint-first content rendering for projects/writing routes with portfolio-specific modules.
+3. `E7-S5` lands executable visual parity checks for `/`, `/projects/[slug]`, and `/writing/[slug]` against the approved design baseline.
+
+Backlog evolution tasks:
+- `E4-S1`
+- `E4-S2`
+- `E4-S3`
+- `E7-S5`
+
+## Tenth-Pass Visual Guard Enforcement (2026-03-06)
+
+Maturity: M3
+Confidence: High
+
+Findings:
+1. Ralph loop now runs a mandatory visual guard after each successful agent execution and before verify gates.
+2. Visual guard executes tester-agent in enforce mode with deterministic defaults (`TESTER_AGENT_ENFORCE=1`, explicit URL, inferred required routes).
+3. Tester-agent now emits deterministic evidence artifacts (`*-evidence.json`, per-route screenshots) and blocks when Playwright logs do not advance.
+4. Harness coverage now checks that visual guard wiring is present in runner scripts and enforce-mode URL contract remains active.
+
+Mode: Harden
+
+Planned edits:
+1. Extend route-inference mapping for visual guard as new public routes are added.
+2. Add a dedicated conformance check that validates screenshot artifacts for changed route groups in CI.
+3. Keep `.playwright-cli` ignored and clean from git status in both native and Docker workflows.
+
+Verification plan:
+1. Run `pnpm test:harness` to confirm executable contract checks for visual guard and tester-agent enforce behavior.
+2. Run full normative gate stack before merge (`cq:check`, `test:*`, `tester-agent:run`).
+3. Validate one end-to-end Ralph task run and confirm visual log + tester-agent report/evidence artifacts are generated.
+
+Remaining gaps:
+1. Route inference is heuristic-based and should be expanded for future route groups.
+2. CI does not yet parse screenshot image validity beyond file presence/size checks.
+
+## Ninth-Pass Launch Readiness Sign-Off (2026-03-05)
+
+Maturity: M3
+Confidence: High
+
+Findings:
+1. Launch readiness now has a canonical runbook and completed sign-off artifact (`docs/ops/launch-readiness-signoff.md`, `artifacts/release/launch-readiness-signoff.md`).
+2. `INV-5` deterministic delivery sign-off is enforced by executable harness guard `HARNESS-LAUNCH-001`.
+3. Final checklist contract now explicitly requires invariant coverage, green normative gates, docs/changelog delta, and rollback path in one artifact.
+
+Mode: Harden
+
+Planned edits:
+1. Keep launch sign-off artifact current for each production release candidate.
+2. Keep rollback command path aligned with Vercel operational workflow.
+3. Keep harness traceability mapping synchronized when launch-sign-off checks evolve.
+
+Verification plan:
+1. Run the full `INV-5` normative gate manifest for each launch candidate.
+2. Keep `pnpm test:harness` green with `HARNESS-LAUNCH-001` as release-readiness guard.
+3. Require changelog and truth-doc updates in the same iteration as sign-off updates.
+
+Remaining gaps:
+1. Production incident runbook drill automation is not yet implemented.
+2. Launch checklist currently records gate command status but not per-command duration trend.
+3. Rollback readiness remains command-validated and not yet covered by a live fire-drill in CI.
+
 ## Eighth-Pass Ralph Loop Enablement (2026-03-04)
 
 Maturity: M2
@@ -12,6 +85,7 @@ Findings:
 4. Architecture contract now includes `INV-A5` for sequential/canonical-prompt loop behavior, backed by harness test `HARNESS-RALPH-001`.
 5. `test:spec-consistency` now guards ralph contract drift (required scripts/files/package scripts when ralph protocol section is declared).
 6. Local markdown ticket scripts are implemented for spec fragmentation, matrix sync, and queue generation (`scripts/spec-fragmenter.mjs`, `scripts/tickets-sync.mjs`, `scripts/tickets-to-queue.mjs`).
+7. Ralph auto-commit now uses a structured commit-message contract (type/scope/imperative subject + body with task/why/changes/validation) instead of raw story-title copy.
 
 Mode: Bootstrap
 
@@ -28,7 +102,7 @@ Verification plan:
 4. Validate Docker loop path with real agent command template in sandboxed run.
 
 Remaining gaps:
-1. Docker image intentionally does not bundle specific agent CLI; runner command is provided via `RALPH_AGENT_CMD_TEMPLATE`.
+1. Claude Docker runs require valid host subscription session paths (`~/.claude`, `~/.claude.json`) or explicit overrides via `RALPH_DOCKER_CLAUDE_*`.
 2. Spec fragmenter currently uses create-if-missing mode; reconciliation mode for changed source stories is not implemented yet.
 3. Operational route handlers and portfolio schema v1 runtime mapping remain outstanding implementation priorities.
 

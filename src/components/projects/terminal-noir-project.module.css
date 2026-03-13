@@ -1,0 +1,214 @@
+.projectPage {
+	--bg: #0a0a0a;
+	--bg2: #0f0f0f;
+	--green: #00ff41;
+	--cyan: #00d4ff;
+	--white: #e8e8e8;
+	--dim: #555;
+	--border: #1a1a1a;
+	--glow-green: 0 0 10px #00ff4166, 0 0 30px #00ff4122;
+	--glow-cyan: 0 0 10px #00d4ff66, 0 0 30px #00d4ff22;
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--white);
+	font-family: "JetBrains Mono", "Share Tech Mono", monospace;
+	padding: 88px 40px 80px;
+}
+
+.projectPage::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background-image:
+		linear-gradient(rgb(0 255 65 / 3%) 1px, transparent 1px),
+		linear-gradient(90deg, rgb(0 255 65 / 3%) 1px, transparent 1px);
+	background-size: 40px 40px;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.projectPage > * {
+	position: relative;
+	z-index: 1;
+	max-width: 1040px;
+	margin: 0 auto;
+}
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 12px;
+	color: var(--dim);
+	margin-bottom: 28px;
+}
+
+.breadcrumbs a {
+	color: var(--cyan);
+	text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+	color: var(--green);
+}
+
+.hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 280px;
+	gap: 24px;
+	align-items: stretch;
+	background: rgb(15 15 15 / 94%);
+	border: 1px solid var(--border);
+	padding: 32px;
+}
+
+.prompt {
+	margin: 0 0 12px;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	color: var(--green);
+	text-shadow: var(--glow-green);
+}
+
+.title {
+	margin: 0;
+	font-size: clamp(34px, 6vw, 64px);
+	line-height: 0.98;
+}
+
+.summary {
+	margin: 16px 0 0;
+	color: #aaa;
+	line-height: 1.7;
+	font-size: 13px;
+	max-width: 680px;
+}
+
+.meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 16px;
+}
+
+.meta span {
+	border: 1px solid var(--border);
+	padding: 5px 11px;
+	font-size: 11px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--cyan);
+}
+
+.stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 16px;
+}
+
+.stackTag {
+	padding: 4px 10px;
+	border: 1px solid rgb(0 255 65 / 18%);
+	background: rgb(0 255 65 / 5%);
+	color: var(--green);
+	font-size: 10px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.links {
+	display: flex;
+	gap: 18px;
+	margin-top: 18px;
+}
+
+.links a {
+	color: var(--white);
+	text-decoration: none;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.links a::before {
+	content: ">";
+	color: var(--green);
+	margin-right: 6px;
+}
+
+.links a:hover {
+	color: var(--cyan);
+	text-shadow: var(--glow-cyan);
+}
+
+.mediaCard {
+	border: 1px solid var(--border);
+	background: var(--bg2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 22px;
+	min-height: 220px;
+}
+
+.logo {
+	width: 100%;
+	max-height: 220px;
+	object-fit: contain;
+	filter: contrast(1.08);
+}
+
+.mediaFallback {
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	color: var(--dim);
+	text-transform: uppercase;
+}
+
+.content {
+	margin-top: 24px;
+	background: rgb(15 15 15 / 94%);
+	border: 1px solid var(--border);
+	padding: 28px 32px;
+}
+
+.sectionLabel {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 11px;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--green);
+	margin-bottom: 18px;
+	text-shadow: var(--glow-green);
+}
+
+.sectionLabel::before {
+	content: "> ";
+	color: var(--cyan);
+}
+
+.body {
+	display: grid;
+	gap: 14px;
+}
+
+.body p {
+	margin: 0;
+	color: #adadad;
+	line-height: 1.9;
+	font-size: 13px;
+}
+
+@media (max-width: 900px) {
+	.projectPage {
+		padding: 80px 18px 56px;
+	}
+
+	.hero {
+		grid-template-columns: 1fr;
+		padding: 24px;
+	}
+}

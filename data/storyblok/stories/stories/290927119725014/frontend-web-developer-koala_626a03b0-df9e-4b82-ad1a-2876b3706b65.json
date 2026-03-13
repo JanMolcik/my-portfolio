@@ -1,0 +1,102 @@
+{
+  "name": "Frontend Web Developer - Koala · Koala42 · Part-time",
+  "parent_id": 152164407230907,
+  "group_id": "e51ee447-7825-4874-9dbb-3e9ce3548a4e",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:35.482Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:47.947Z",
+  "published_at": "2026-03-12T23:14:47.930Z",
+  "id": 152164415435206,
+  "uuid": "626a03b0-df9e-4b82-ad1a-2876b3706b65",
+  "is_folder": false,
+  "content": {
+    "_uid": "59cd2834-98d1-4be9-98e9-8ecd2ce9505a",
+    "image": "https://images.ctfassets.net/438qxelhyozd/29yX0dTepmPEu0MzZf7IHl/6275ca9fffbfc9d1f84f185aecb5aaa8/koala-logo.png",
+    "title": "Frontend Web Developer - Koala",
+    "skills": [
+      "Angular",
+      "Typescript",
+      "Redux",
+      "React",
+      "RxJS"
+    ],
+    "end_date": "2020-09-01T10:00:00.000Z",
+    "component": "item_experience",
+    "start_date": "2018-04-01T10:00:00.000Z",
+    "description": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I worked on an ERP system for truck transport management, helping shift frontend complexity toward more centralized state management while also contributing React work on a 3D configuration interface.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "company_name": "Koala42 · Part-time"
+  },
+  "published": true,
+  "slug": "frontend-web-developer-koala",
+  "path": null,
+  "full_slug": "experience/frontend-web-developer-koala",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164407230907,
+    "uuid": "e63908a5-9248-4011-b41c-e7be505c83bd",
+    "name": "Experience",
+    "slug": "experience",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
+    "timestamp": "1773357290"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164407230907,
+      "name": "Experience",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "experience",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:46.534Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -30,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286834991443,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

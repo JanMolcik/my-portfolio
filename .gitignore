@@ -13,13 +13,21 @@ playwright-report/
 
 # env files
 .env
-.env.*
+.env.local*
+.env.ralph*
 !.env.example
+!.env.ralph.example
 
 # local artifacts and agent metadata
 artifacts/
 .claude/
 .storyblok/
+data/storyblok/logs/
+data/storyblok/reports/
+data/storyblok/stories/[0-9]*/
+.pnpm-store/
+.playwright-cli/
 
 # system files
 .DS_Store
+.vercel

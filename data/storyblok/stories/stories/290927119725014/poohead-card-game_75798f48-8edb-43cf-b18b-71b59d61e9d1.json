@@ -1,0 +1,133 @@
+{
+  "name": "Poohead Card Game",
+  "parent_id": 152164406559162,
+  "group_id": "d9d4c1b7-75ec-4671-8920-76c723c6250d",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:34.319Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:46.425Z",
+  "published_at": "2026-03-12T23:14:46.404Z",
+  "id": 152164410679744,
+  "uuid": "75798f48-8edb-43cf-b18b-71b59d61e9d1",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "fc1207f4-6971-428a-e686-c6f263da2b73",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/5wFs1VB1EjFxBOSrM5J53k/f24ccafbfe1a503f89f7f263cacfbc11/card-game.png",
+        "component": "seo_meta",
+        "meta_title": "Poohead Card Game",
+        "meta_description": "Online multiplayer card game built with React on the client side and a Node-based game engine flow, focused on interactive frontend behavior."
+      }
+    ],
+    "_uid": "371c73a5-c18a-45cb-bcbf-b7989ad14564",
+    "logo": "https://images.ctfassets.net/438qxelhyozd/5wFs1VB1EjFxBOSrM5J53k/f24ccafbfe1a503f89f7f263cacfbc11/card-game.png",
+    "slug": "poohead-card-game",
+    "type": "Interactive Multiplayer App",
+    "stack": [
+      "React",
+      "Node.js",
+      "BoardGame.io",
+      "Interactive UI",
+      "Multiplayer Flows"
+    ],
+    "title": "Poohead Card Game",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Poohead Card Game was an online multiplayer card game, which made the frontend inherently interactive and state-driven.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I built the client in React while integrating with a server-side game engine workflow, creating a user experience built around multiplayer game interaction rather than static content.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "This project is useful proof of range: I am comfortable not only with product dashboards and fintech interfaces, but also with interaction-heavy frontend experiences.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Online multiplayer card game built with React on the client side and a Node-based game engine flow, focused on interactive frontend behavior.",
+    "component": "page_project",
+    "project_url": "http://www.poohead.uk/",
+    "published_date": "2020-11-11T07:00:00.000Z",
+    "repository_url": "https://gitlab.com/JanMolcik/dullhead"
+  },
+  "published": true,
+  "slug": "poohead-card-game",
+  "path": null,
+  "full_slug": "projects/poohead-card-game",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
+    "timestamp": "1773357289"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:45.542Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -40,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286831378757,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

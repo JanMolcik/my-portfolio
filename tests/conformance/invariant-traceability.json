@@ -1,20 +1,47 @@
 {
-	"version": "2026-03-04",
+	"version": "2026-03-05",
 	"invariants": {
 		"INV-1": {
-			"testIds": ["UNIT-VAL-001", "CONTRACT-SB-001"]
+			"testIds": ["UNIT-VAL-001", "UNIT-MAP-001", "CONTRACT-SB-001"]
 		},
 		"INV-2": {
-			"testIds": ["INT-ROUTE-001", "INT-ROUTE-002", "ARCH-ROUTE-001"]
+			"testIds": [
+				"INT-ROUTE-001",
+				"INT-ROUTE-002",
+				"ARCH-ROUTE-001",
+				"CONTRACT-SB-CLIENT-001",
+				"SEC-PUBLISHED-ONLY-001"
+			]
 		},
 		"INV-3": {
 			"testIds": ["INT-SEO-001", "INT-SEO-002"]
 		},
 		"INV-4": {
-			"testIds": ["CONTRACT-WEBHOOK-001", "INT-REVAL-001"]
+			"testIds": [
+				"CONTRACT-WEBHOOK-001",
+				"INT-REVAL-001",
+				"SEC-PREVIEW-MODE-001",
+				"SEC-PUBLISHED-ONLY-001"
+			]
 		},
 		"INV-5": {
-			"testIds": ["HARNESS-CI-001", "E2E-SMOKE-001"]
+			"testIds": [
+				"HARNESS-CI-001",
+				"E2E-SMOKE-001",
+				"EVAL-007",
+				"HARNESS-QUALITY-001",
+				"HARNESS-BOOTSTRAP-001",
+				"HARNESS-PERFORMANCE-001",
+				"HARNESS-TESTER-AGENT-001",
+				"HARNESS-VERCEL-001",
+				"HARNESS-SECRETS-001",
+				"HARNESS-LAUNCH-001",
+				"HARNESS-RALPH-002",
+				"CONTRACT-SB-SCHEMA-001",
+				"CONTRACT-SB-TYPES-001",
+				"CONTRACT-MIGRATION-001",
+				"CONTRACT-IMPORT-001"
+			]
 		},
 		"INV-6": {
 			"testIds": ["HARNESS-POLICY-001", "UNIT-VAL-001"]
@@ -29,10 +56,15 @@
 			"testIds": ["ARCH-SEO-001"]
 		},
 		"INV-A4": {
-			"testIds": ["ARCH-COVERAGE-001"]
+			"testIds": ["ARCH-COVERAGE-001", "ARCH-BOUNDARIES-001"]
 		},
 		"INV-A5": {
-			"testIds": ["HARNESS-RALPH-001", "HARNESS-TICKETING-001"]
+			"testIds": [
+				"HARNESS-RALPH-001",
+				"HARNESS-TICKETING-001",
+				"HARNESS-COMMIT-001",
+				"HARNESS-RALPH-002"
+			]
 		}
 	},
 	"tests": {
@@ -40,9 +72,17 @@
 			"invariants": ["INV-1", "INV-6"],
 			"path": "tests/unit/unit-val-001.spec.ts"
 		},
+		"UNIT-MAP-001": {
+			"invariants": ["INV-1"],
+			"path": "tests/unit/unit-map-001.spec.ts"
+		},
 		"CONTRACT-SB-001": {
 			"invariants": ["INV-1"],
 			"path": "tests/contract/contract-sb-001.spec.ts"
+		},
+		"CONTRACT-SB-CLIENT-001": {
+			"invariants": ["INV-2"],
+			"path": "tests/contract/contract-sb-client-001.spec.ts"
 		},
 		"INT-ROUTE-001": {
 			"invariants": ["INV-2"],
@@ -64,6 +104,22 @@
 			"invariants": ["INV-4"],
 			"path": "tests/contract/contract-webhook-001.spec.ts"
 		},
+		"CONTRACT-SB-SCHEMA-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/contract/contract-sb-schema-001.spec.ts"
+		},
+		"CONTRACT-SB-TYPES-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/contract/contract-sb-schema-001.spec.ts"
+		},
+		"CONTRACT-MIGRATION-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/contract/contract-migration-001.spec.ts"
+		},
+		"CONTRACT-IMPORT-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/contract/contract-content-import-001.spec.ts"
+		},
 		"INT-REVAL-001": {
 			"invariants": ["INV-4"],
 			"path": "tests/integration/int-reval-001.spec.ts"
@@ -76,9 +132,21 @@
 			"invariants": ["INV-5"],
 			"path": "tests/e2e/e2e-smoke-001.spec.ts"
 		},
+		"EVAL-007": {
+			"invariants": ["INV-5"],
+			"path": "tests/integration/int-visual-001.spec.ts"
+		},
 		"HARNESS-POLICY-001": {
 			"invariants": ["INV-6"],
 			"path": "tests/harness/harness-policy-001.spec.ts"
+		},
+		"SEC-PREVIEW-MODE-001": {
+			"invariants": ["INV-4"],
+			"path": "tests/security/security-preview-mode-001.spec.ts"
+		},
+		"SEC-PUBLISHED-ONLY-001": {
+			"invariants": ["INV-2", "INV-4"],
+			"path": "tests/security/security-published-only-001.spec.ts"
 		},
 		"ARCH-ROUTE-001": {
 			"invariants": ["INV-A1", "INV-2"],
@@ -96,6 +164,10 @@
 			"invariants": ["INV-A4"],
 			"path": "tests/harness/arch-coverage-001.spec.ts"
 		},
+		"ARCH-BOUNDARIES-001": {
+			"invariants": ["INV-A4"],
+			"path": "tests/harness/arch-boundaries-001.spec.ts"
+		},
 		"HARNESS-RALPH-001": {
 			"invariants": ["INV-A5"],
 			"path": "tests/harness/harness-ralph-001.spec.ts"
@@ -103,6 +175,42 @@
 		"HARNESS-TICKETING-001": {
 			"invariants": ["INV-A5"],
 			"path": "tests/harness/harness-ticketing-001.spec.ts"
+		},
+		"HARNESS-COMMIT-001": {
+			"invariants": ["INV-A5"],
+			"path": "tests/harness/harness-commit-001.spec.ts"
+		},
+		"HARNESS-RALPH-002": {
+			"invariants": ["INV-5", "INV-A5"],
+			"path": "tests/harness/harness-ralph-002.spec.ts"
+		},
+		"HARNESS-QUALITY-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-quality-001.spec.ts"
+		},
+		"HARNESS-BOOTSTRAP-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-bootstrap-001.spec.ts"
+		},
+		"HARNESS-PERFORMANCE-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-performance-001.spec.ts"
+		},
+		"HARNESS-TESTER-AGENT-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-tester-agent-001.spec.ts"
+		},
+		"HARNESS-VERCEL-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-vercel-001.spec.ts"
+		},
+		"HARNESS-SECRETS-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-secrets-001.spec.ts"
+		},
+		"HARNESS-LAUNCH-001": {
+			"invariants": ["INV-5"],
+			"path": "tests/harness/harness-launch-001.spec.ts"
 		}
 	}
 }

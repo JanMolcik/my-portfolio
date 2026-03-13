@@ -1,0 +1,150 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EVAL-007 > checks critical templates against terminal-noir baseline snapshot/assertion contract 1`] = `
+{
+  "root": {
+    "background": "var(--bg)",
+    "fontFamily": ""JetBrains Mono", "Share Tech Mono", monospace",
+    "fontSize": "14px",
+    "lineHeight": "1.7",
+    "variables": {
+      "--bg": "#0a0a0a",
+      "--border": "#1a1a1a",
+      "--cyan": "#00d4ff",
+      "--green": "#00ff41",
+      "--white": "#e8e8e8",
+    },
+  },
+  "route": "/",
+  "rules": {
+    ".btnPrimary": {
+      "background": "var(--green)",
+      "clip-path": "polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)",
+      "color": "var(--bg)",
+      "font-weight": "700",
+    },
+    ".heroName": {
+      "color": "var(--white)",
+      "font-size": "clamp(52px, 8vw, 96px)",
+      "font-weight": "800",
+      "letter-spacing": "-0.02em",
+      "line-height": "0.95",
+      "margin": "0 0 12px",
+    },
+    ".nav": {
+      "align-items": "center",
+      "backdrop-filter": "blur(8px)",
+      "background": "rgb(10 10 10 / 92%)",
+      "border-bottom": "1px solid var(--border)",
+      "display": "flex",
+      "justify-content": "space-between",
+      "left": "0",
+      "padding": "16px 48px",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+      "z-index": "80",
+    },
+    ".terminalNoir::before": {
+      "background-image": "linear-gradient(rgb(0 255 65 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(0 255 65 / 3%) 1px, transparent 1px)",
+      "background-size": "40px 40px",
+      "content": """",
+      "inset": "0",
+      "pointer-events": "none",
+      "position": "fixed",
+      "z-index": "0",
+    },
+  },
+  "testId": "terminal-noir-home",
+}
+`;
+
+exports[`EVAL-007 > checks critical templates against terminal-noir baseline snapshot/assertion contract 2`] = `
+{
+  "root": {
+    "background": "var(--bg)",
+    "fontFamily": ""JetBrains Mono", "Share Tech Mono", monospace",
+    "fontSize": undefined,
+    "lineHeight": undefined,
+    "variables": {
+      "--bg": "#0a0a0a",
+      "--border": "#1a1a1a",
+      "--cyan": "#00d4ff",
+      "--green": "#00ff41",
+      "--white": "#e8e8e8",
+    },
+  },
+  "route": "/projects/[slug]",
+  "rules": {
+    ".hero": {
+      "align-items": "stretch",
+      "background": "rgb(15 15 15 / 94%)",
+      "border": "1px solid var(--border)",
+      "display": "grid",
+      "gap": "24px",
+      "grid-template-columns": "minmax(0, 1fr) 280px",
+      "padding": "32px",
+    },
+    ".projectPage::before": {
+      "background-image": "linear-gradient(rgb(0 255 65 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(0 255 65 / 3%) 1px, transparent 1px)",
+      "background-size": "40px 40px",
+      "content": """",
+      "inset": "0",
+      "pointer-events": "none",
+      "position": "fixed",
+      "z-index": "0",
+    },
+    ".title": {
+      "font-size": "clamp(34px, 6vw, 64px)",
+      "line-height": "0.98",
+      "margin": "0",
+    },
+  },
+  "testId": "terminal-noir-project",
+}
+`;
+
+exports[`EVAL-007 > checks critical templates against terminal-noir baseline snapshot/assertion contract 3`] = `
+{
+  "root": {
+    "background": "var(--bg)",
+    "fontFamily": ""JetBrains Mono", "Share Tech Mono", monospace",
+    "fontSize": undefined,
+    "lineHeight": undefined,
+    "variables": {
+      "--bg": "#0a0a0a",
+      "--border": "#1a1a1a",
+      "--cyan": "#00d4ff",
+      "--green": "#00ff41",
+      "--white": "#e8e8e8",
+    },
+  },
+  "route": "/writing/[slug]",
+  "rules": {
+    ".hero": {
+      "align-items": "stretch",
+      "background": "rgb(15 15 15 / 94%)",
+      "border": "1px solid var(--border)",
+      "display": "grid",
+      "gap": "24px",
+      "grid-template-columns": "minmax(0, 1fr) 280px",
+      "padding": "32px",
+    },
+    ".title": {
+      "font-size": "clamp(34px, 6vw, 64px)",
+      "line-height": "0.98",
+      "margin": "0",
+    },
+    ".writingPage::before": {
+      "background-image": "linear-gradient(rgb(0 255 65 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(0 255 65 / 3%) 1px, transparent 1px)",
+      "background-size": "40px 40px",
+      "content": """",
+      "inset": "0",
+      "pointer-events": "none",
+      "position": "fixed",
+      "z-index": "0",
+    },
+  },
+  "testId": "terminal-noir-writing",
+}
+`;

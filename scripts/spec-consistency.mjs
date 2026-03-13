@@ -165,6 +165,7 @@ async function main() {
 			'ralph:loop:claude',
 			'ralph:docker:build',
 			'ralph:docker:loop',
+			'ralph:docker:loop:inplace',
 		];
 		for (const scriptName of requiredRalphScripts) {
 			if (!packageScripts[scriptName]) {
@@ -261,9 +262,20 @@ async function main() {
 		}
 
 		for (const testId of testIds) {
-			if (!traceTests[testId]) {
+			const testMapping = traceTests[testId];
+			if (!testMapping) {
 				errors.push(
 					`Invariant ${invariantId} references unknown testId ${testId}`,
+				);
+				continue;
+			}
+
+			if (
+				!Array.isArray(testMapping.invariants) ||
+				!testMapping.invariants.includes(invariantId)
+			) {
+				errors.push(
+					`Invariant ${invariantId} -> ${testId} is missing reverse link in tests.${testId}.invariants`,
 				);
 			}
 		}
@@ -277,9 +289,20 @@ async function main() {
 		}
 
 		for (const invariantId of invariants) {
-			if (!traceInvariants[invariantId]) {
+			const invariantMapping = traceInvariants[invariantId];
+			if (!invariantMapping) {
 				errors.push(
 					`Test ${testId} references unknown invariant ${invariantId}`,
+				);
+				continue;
+			}
+
+			if (
+				!Array.isArray(invariantMapping.testIds) ||
+				!invariantMapping.testIds.includes(testId)
+			) {
+				errors.push(
+					`Test ${testId} -> ${invariantId} is missing reverse link in invariants.${invariantId}.testIds`,
 				);
 			}
 		}

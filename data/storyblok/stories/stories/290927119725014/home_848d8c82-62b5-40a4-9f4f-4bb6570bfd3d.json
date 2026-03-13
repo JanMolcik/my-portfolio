@@ -1,83 +1,222 @@
 {
-	"name": "Home",
-	"parent_id": 0,
-	"group_id": "f6b13363-0ca6-44cc-9af7-b9c72019d41c",
-	"alternates": [],
-	"created_at": "2026-03-04T08:13:53.734Z",
-	"deleted_at": null,
-	"sort_by_date": null,
-	"tag_list": [],
-	"updated_at": "2026-03-04T08:13:53.734Z",
-	"published_at": null,
-	"id": 151234288602679,
-	"uuid": "848d8c82-62b5-40a4-9f4f-4bb6570bfd3d",
-	"is_folder": false,
-	"content": {
-		"_uid": "fe4f4043-938f-4195-98db-db29e1b23465",
-		"body": [
-			{
-				"_uid": "1740e736-e587-40ec-9df8-f1012a286986",
-				"headline": "Hello world!",
-				"component": "teaser"
-			},
-			{
-				"_uid": "41b706f5-ba2d-4504-847d-395c53fb0602",
-				"columns": [
-					{
-						"_uid": "b8a55ab5-afd4-462e-a5bd-c65a5a445816",
-						"name": "Feature 1",
-						"component": "feature"
-					},
-					{
-						"_uid": "1d3c77b6-668e-4cea-a372-7d31736c2006",
-						"name": "Feature 2",
-						"component": "feature"
-					},
-					{
-						"_uid": "c82ec957-6abf-4bfb-a75d-3bdcdc554c18",
-						"name": "Feature 3",
-						"component": "feature"
-					}
-				],
-				"component": "grid"
-			}
-		],
-		"component": "page"
-	},
-	"published": false,
-	"slug": "home",
-	"path": null,
-	"full_slug": "home",
-	"default_root": null,
-	"disble_fe_editor": false,
-	"disable_fe_editor": false,
-	"parent": null,
-	"is_startpage": false,
-	"unpublished_changes": false,
-	"meta_data": null,
-	"imported_at": null,
-	"preview_token": {
-		"token": "978ead8fc1353014ef7e985cd07d7b5053178fa5",
-		"timestamp": "1772628686"
-	},
-	"pinned": false,
-	"breadcrumbs": [],
-	"publish_at": null,
-	"expire_at": null,
-	"first_published_at": null,
-	"last_author": null,
-	"last_author_id": null,
-	"user_ids": [],
-	"space_role_ids": [],
-	"translated_slugs": [],
-	"localized_paths": [],
-	"position": 0,
-	"translated_stories": [],
-	"can_not_view": false,
-	"is_scheduled": null,
-	"scheduled_dates": null,
-	"ideas": [],
-	"current_version_id": null,
-	"stage": null,
-	"favourite_for_user_ids": []
+  "name": "Home",
+  "parent_id": 0,
+  "group_id": "f6b13363-0ca6-44cc-9af7-b9c72019d41c",
+  "alternates": [],
+  "created_at": "2026-03-04T08:13:53.734Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:44.713Z",
+  "published_at": "2026-03-12T23:14:44.694Z",
+  "id": 151234288602679,
+  "uuid": "848d8c82-62b5-40a4-9f4f-4bb6570bfd3d",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "80334f06-bcd1-d7fd-3d27-a60f0956738f",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/3xMVsymcZx0kTd6j89GczV/3e95b96f97e852001b97eae27b8be3c3/profile.jpeg",
+        "component": "seo_meta",
+        "meta_title": "Jan Molčík",
+        "meta_description": "Frontend engineer building React, Next.js, Storyblok, and platform-driven product interfaces across fintech, B2B systems, and multi-brand CMS initiatives."
+      }
+    ],
+    "_uid": "0d49ebd0-23c3-4aad-afe8-62ab8b57bd7f",
+    "role": "Frontend Engineer",
+    "intro": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph"
+        }
+      ]
+    },
+    "roles": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Angular",
+      "Redux",
+      "RxJS",
+      "Frontend Architecture",
+      "Design Systems",
+      "Responsive UI",
+      "State Management",
+      "SSR / SSG / ISR",
+      "Vercel",
+      "Storyblok",
+      "Monorepo"
+    ],
+    "headline": "Jan Molčík",
+    "component": "page_home",
+    "experience": [
+      "e43b8df7-65aa-49fe-8e0d-6ea7836c797d",
+      "672c3e7f-6f22-4023-b6c7-5b49d8b25c39",
+      "9048a698-0a28-4a5b-957a-2a405134d77d",
+      "f901b3b6-ae0b-48c4-9f26-2fba5f5a382c",
+      "5b6150c9-c685-4f67-8621-b7a77dc6e54c",
+      "626a03b0-df9e-4b82-ad1a-2876b3706b65"
+    ],
+    "hero_intro": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I build production web applications with React, Next.js, Storyblok, and modern frontend architecture.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Over the last 7+ years, I have worked across fintech, B2B platforms, internal tools, e-commerce foundations, and interactive products, delivering responsive interfaces, state-heavy applications, and maintainable frontend systems for real teams and clients.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I currently work on frontend platform development at Shopsys and recently moved onto an ABUGO migration initiative where I combine hands-on frontend work with ownership of a new multi-brand Storyblok monorepo platform.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "about_intro": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I am a frontend engineer with a background in Computer Science and a strong focus on modern web applications.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "My experience spans Angular, React, and Next.js projects where I worked on application architecture, centralized state management, responsive UI systems, CMS-driven delivery, and frontend foundations used by product teams.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "At Shopsys, I work on a shared Next.js Pages Router core/platform used as the base for project implementations. In ABUGO, I am helping lead a migration toward a Storyblok-based monorepo that aims to become the single source of truth for multiple brands through configurable apps and automation-heavy workflows.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I am especially effective in projects that need structured frontend ownership: turning product requirements into maintainable interfaces, improving messy state flows, and building UI systems that teams can extend without slowing down.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "social_links": [
+      {
+        "url": "https://github.com/JanMolcik",
+        "_uid": "051baae8-48e4-8115-aa12-3eafa7cbd7ac",
+        "icon": "github",
+        "name": "Github",
+        "component": "item_social_link"
+      },
+      {
+        "url": "https://molcikjan.typeform.com/to/gZDCGfgd",
+        "_uid": "025e2492-3c01-fd64-a994-91578f248bff",
+        "icon": "envelope",
+        "name": "Contact me",
+        "component": "item_social_link"
+      },
+      {
+        "url": "https://linkedin.com/in/jan-molcik",
+        "_uid": "44a9471f-3e40-facf-f146-ce56f8e45ec0",
+        "icon": "linkedin",
+        "name": "LinkedIn",
+        "component": "item_social_link"
+      },
+      {
+        "url": "https://gitlab.com/JanMolcik",
+        "_uid": "5c3297f6-ce78-f6c0-56ad-d92f409d5b1c",
+        "icon": "gitlab",
+        "name": "GitLab",
+        "component": "item_social_link"
+      }
+    ],
+    "availability_note": "Available for senior frontend roles, contract work, and product-focused collaborations. The best conversations for me are projects that need strong frontend ownership, clean implementation, and a product-minded engineering approach.",
+    "featured_projects": [
+      "88ea2047-1bcd-423e-b10f-7a7453f5f3bd",
+      "267948bb-d9da-4905-b35e-b91033037a80",
+      "0a58c9d6-c380-4171-8671-f0c1265520d9",
+      "9682aeb2-6503-4d73-9f80-5ecf70887243",
+      "6067a934-f942-4d12-a7aa-7c409472ee60",
+      "89b4f305-0f6c-4cf9-a44d-54b1f9e8819a",
+      "1091bd93-907f-4b08-b409-63bd59ec6b29",
+      "0db07901-1ffb-4e60-94fd-1785eb8ef391",
+      "75798f48-8edb-43cf-b18b-71b59d61e9d1",
+      "4689dbaa-be41-4ce3-8442-af8f537f05e1"
+    ],
+    "availability_status": "OPEN",
+    "availability_timezone": "Europe/Prague",
+    "availability_response_time": "within 48h"
+  },
+  "published": true,
+  "slug": "home",
+  "path": null,
+  "full_slug": "home",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": null,
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
+    "timestamp": "1773357291"
+  },
+  "pinned": false,
+  "breadcrumbs": [],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-06T08:51:43.117Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": 0,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286836068693,
+  "stage": null,
+  "favourite_for_user_ids": []
 }

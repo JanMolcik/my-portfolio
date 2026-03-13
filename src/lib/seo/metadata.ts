@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { StoryblokStory } from '@/lib/storyblok/content';
+import { mapSeoDtoToDomain } from '@/lib/storyblok/mappers';
 
 function normalizeSiteUrl(rawUrl?: string): string {
 	const fallback = 'http://localhost:3000';
@@ -7,12 +8,18 @@ function normalizeSiteUrl(rawUrl?: string): string {
 	return rawUrl.endsWith('/') ? rawUrl.slice(0, -1) : rawUrl;
 }
 
-function resolveOgImageUrl(
-	ogImage: string | { filename?: string } | undefined,
-): string | undefined {
-	if (!ogImage) return undefined;
-	if (typeof ogImage === 'string') return ogImage;
-	return ogImage.filename;
+function normalizePath(path: string): string {
+	if (!path) return '/';
+	return path.startsWith('/') ? path : `/${path}`;
+}
+
+function routeMetadataLabel(
+	path: string,
+): 'Home' | 'Project' | 'Writing' | 'Page' {
+	if (path === '/') return 'Home';
+	if (path.startsWith('/projects/')) return 'Project';
+	if (path.startsWith('/writing/')) return 'Writing';
+	return 'Page';
 }
 
 export function buildNotFoundMetadata(titlePrefix: string): Metadata {
@@ -25,17 +32,23 @@ export function buildNotFoundMetadata(titlePrefix: string): Metadata {
 	};
 }
 
+export type OpenGraphType = 'website' | 'article';
+
 export function buildStoryMetadata(
 	story: StoryblokStory,
 	path: string,
+	ogType: OpenGraphType = 'website',
 ): Metadata {
 	const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
-	const seo = story.content?.seo;
-	const canonicalUrl = seo?.canonical_url || `${siteUrl}${path}`;
-	const title = seo?.meta_title || story.name || 'Portfolio';
-	const description = seo?.meta_description || `${title} page`;
-	const ogImage = resolveOgImageUrl(seo?.og_image);
-	const isNoIndex = seo?.noindex ?? false;
+	const normalizedPath = normalizePath(path);
+	const label = routeMetadataLabel(normalizedPath);
+	const storyName = story.name?.trim() || 'Portfolio';
+	const seo = mapSeoDtoToDomain(story.content?.seo);
+	const canonicalUrl = seo.canonicalUrl || `${siteUrl}${normalizedPath}`;
+	const title = seo.metaTitle || `${storyName} | ${label}`;
+	const description = seo.metaDescription || `${label} page for ${storyName}.`;
+	const ogImage = seo.ogImageUrl || `${siteUrl}/favicon.ico`;
+	const isNoIndex = seo.noindex;
 
 	return {
 		title,
@@ -47,8 +60,8 @@ export function buildStoryMetadata(
 			title,
 			description,
 			url: canonicalUrl,
-			type: 'website',
-			images: ogImage ? [{ url: ogImage }] : undefined,
+			type: ogType,
+			images: [{ url: ogImage }],
 		},
 		robots: {
 			index: !isNoIndex,

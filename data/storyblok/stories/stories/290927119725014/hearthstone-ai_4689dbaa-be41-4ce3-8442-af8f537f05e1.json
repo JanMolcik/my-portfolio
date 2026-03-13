@@ -1,0 +1,132 @@
+{
+  "name": "Hearthstone AI",
+  "parent_id": 152164406559162,
+  "group_id": "73c29520-74b4-417e-94f7-fdc231c6ee5b",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:34.679Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:46.697Z",
+  "published_at": "2026-03-12T23:14:46.680Z",
+  "id": 152164412158402,
+  "uuid": "4689dbaa-be41-4ce3-8442-af8f537f05e1",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "a986fcd4-9c20-16cd-5383-2f4bef498493",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
+        "component": "seo_meta",
+        "meta_title": "Hearthstone AI",
+        "meta_description": "Master's thesis project focused on designing a Hearthstone AI agent using Monte Carlo Tree Search for game-state evaluation."
+      }
+    ],
+    "_uid": "60eddaf2-aafe-42f8-b9de-070646094ef9",
+    "logo": "https://images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
+    "slug": "hearthstone-ai",
+    "type": "AI / Research Project",
+    "stack": [
+      "C#",
+      "AI",
+      "Monte Carlo Tree Search",
+      "Game Systems"
+    ],
+    "title": "Hearthstone AI",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Hearthstone AI was developed as part of my master's thesis and stands apart from the commercial work in the portfolio.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The project focused on designing an AI agent for card-game decision making, using Monte Carlo Tree Search for evaluating game states.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "While it is not a frontend product case study, it adds useful depth to the portfolio by showing analytical thinking, systems reasoning, and long-form technical problem solving.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Master's thesis project focused on designing a Hearthstone AI agent using Monte Carlo Tree Search for game-state evaluation.",
+    "component": "page_project",
+    "project_url": "https://hearthstoneai.github.io/index.html",
+    "published_date": "2020-07-31T23:00:00.000Z",
+    "repository_url": "https://github.com/JanMolcik/HearthstoneAICompetition"
+  },
+  "published": true,
+  "slug": "hearthstone-ai",
+  "path": null,
+  "full_slug": "projects/hearthstone-ai",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
+    "timestamp": "1773357289"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:45.856Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -60,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286832333130,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

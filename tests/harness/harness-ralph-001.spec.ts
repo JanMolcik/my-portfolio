@@ -15,6 +15,7 @@ describe('HARNESS-RALPH-001', () => {
 		const [
 			loopScript,
 			dockerScript,
+			dockerImageDefinition,
 			engineScript,
 			packageJson,
 			claudeShim,
@@ -22,6 +23,7 @@ describe('HARNESS-RALPH-001', () => {
 		] = await Promise.all([
 			readFile('scripts/ralph-loop.mjs', 'utf8'),
 			readFile('scripts/ralph-docker-loop.sh', 'utf8'),
+			readFile('docker/ralph-sandbox/Dockerfile', 'utf8'),
 			readFile('scripts/ralph-agent-runner.sh', 'utf8'),
 			readFile('package.json', 'utf8'),
 			readFile('CLAUDE.md', 'utf8'),
@@ -32,6 +34,13 @@ describe('HARNESS-RALPH-001', () => {
 		expect(loopScript).toContain('RALPH_AGENT_CMD_TEMPLATE');
 		expect(loopScript).toContain('RALPH_PROMPT_TEMPLATE_PATH');
 		expect(loopScript).toContain('RALPH_REQUIRE_AGENTS_ACK');
+		expect(loopScript).toContain('RALPH_REQUIRE_VISUAL_GUARD');
+		expect(loopScript).toContain('runVisualGuardForTask');
+		expect(loopScript).toContain('TESTER_AGENT_ENFORCE=1');
+		expect(loopScript).toContain('TESTER_AGENT_REQUIRED_PATHS');
+		expect(loopScript).toContain('TESTER_AGENT_REQUIRE_PLAYWRIGHT_LOG_CHANGE');
+		expect(loopScript).toContain('TESTER_AGENT_PLAYWRIGHT_LOG_DIR');
+		expect(loopScript).toContain('visual guard failed');
 		expect(loopScript).toContain('AGENTS_ACK:');
 		expect(loopScript).toContain('docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md');
 		expect(loopScript).toContain('artifacts/task-briefs');
@@ -39,6 +48,19 @@ describe('HARNESS-RALPH-001', () => {
 		expect(dockerScript).toContain('docker/ralph-sandbox/Dockerfile');
 		expect(dockerScript).toContain('node scripts/ralph-loop.mjs');
 		expect(dockerScript).toContain('RALPH_REQUIRE_AGENTS_ACK');
+		expect(dockerScript).toContain('RALPH_DOCKER_MODE');
+		expect(dockerScript).toContain('isolated');
+		expect(dockerScript).toContain('RALPH_DOCKER_SYNC_BACK');
+		expect(dockerScript).toContain('RALPH_DOCKER_USER');
+		expect(dockerScript).toContain('RALPH_DOCKER_SHARE_CLAUDE_AUTH');
+		expect(dockerScript).toContain('RALPH_DOCKER_CLAUDE_DIR');
+		expect(dockerScript).toContain('RALPH_DOCKER_CLAUDE_STATE_FILE');
+		expect(dockerScript).toContain('RALPH_DOCKER_SHARE_CODEX_AUTH');
+		expect(dockerScript).toContain('RALPH_DOCKER_CODEX_HOME');
+		expect(dockerScript).toContain('/tmp/.claude');
+		expect(dockerScript).toContain('/tmp/.codex');
+		expect(dockerImageDefinition).toContain('@anthropic-ai/claude-code');
+		expect(dockerImageDefinition).toContain('@openai/codex');
 		expect(engineScript).toContain('RALPH_ENGINE');
 		expect(engineScript).toContain('codex');
 		expect(engineScript).toContain('claude');
@@ -52,5 +74,6 @@ describe('HARNESS-RALPH-001', () => {
 		expect(packageJson).toContain('"ralph:once:claude"');
 		expect(packageJson).toContain('"ralph:loop:claude"');
 		expect(packageJson).toContain('"ralph:docker:loop"');
+		expect(packageJson).toContain('"ralph:docker:loop:inplace"');
 	});
 });

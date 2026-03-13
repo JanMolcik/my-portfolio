@@ -1,29 +1,29 @@
 {
-  "name": "blueprint-core-nextjs-ts",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "dev:https": "next dev --experimental-https",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint . --max-warnings=0",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@storyblok/react": "^5.4.22",
-    "next": "16.1.6",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@netlify/plugin-nextjs": "^5.15.8",
-    "@types/node": "^24.3.0",
-    "@types/react": "^19.1.11",
-    "@types/react-dom": "^19.1.7",
-    "eslint": "^9.26.0",
-    "eslint-config-next": "16.1.6",
-    "typescript": "^5.9.2"
-  }
+	"name": "blueprint-core-nextjs-ts",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"dev:https": "next dev --experimental-https",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint . --max-warnings=0",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@storyblok/react": "^5.4.22",
+		"next": "16.1.6",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3",
+		"@netlify/plugin-nextjs": "^5.15.8",
+		"@types/node": "^24.3.0",
+		"@types/react": "^19.1.11",
+		"@types/react-dom": "^19.1.7",
+		"eslint": "^9.26.0",
+		"eslint-config-next": "16.1.6",
+		"typescript": "^5.9.2"
+	}
 }

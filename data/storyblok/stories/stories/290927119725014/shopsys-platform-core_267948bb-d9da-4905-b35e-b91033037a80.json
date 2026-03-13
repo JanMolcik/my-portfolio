@@ -1,0 +1,132 @@
+{
+  "name": "Shopsys Platform Core",
+  "parent_id": 152164406559162,
+  "group_id": "fca8ee8d-cdf1-4d8a-832f-261d49b5073d",
+  "alternates": [],
+  "created_at": "2026-03-12T23:10:39.182Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:45.583Z",
+  "published_at": "2026-03-12T23:14:45.565Z",
+  "id": 154285830931674,
+  "uuid": "267948bb-d9da-4905-b35e-b91033037a80",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "bef0b677-07c9-e060-b47f-645e083334de",
+        "noindex": false,
+        "component": "seo_meta",
+        "meta_title": "Shopsys Platform Core",
+        "meta_description": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows."
+      }
+    ],
+    "_uid": "1af72581-b1c7-4dc8-a46a-0835c616a7da",
+    "slug": "shopsys-platform-core",
+    "type": "E-commerce Frontend Platform",
+    "stack": [
+      "Next.js Pages Router",
+      "React",
+      "TypeScript",
+      "E-commerce Platform",
+      "Frontend Architecture",
+      "Reusable Core"
+    ],
+    "title": "Shopsys Platform Core",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "At Shopsys, I work on a shared frontend core/platform built on Next.js Pages Router that serves as the implementation base for client projects.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The work is less about isolated feature tickets and more about platform-level frontend delivery: reusable foundations, maintainable patterns, and implementation workflows that other project teams can build on top of.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "This project represents my day-to-day product engineering strength in a commercial setting: contributing inside a shared platform, improving the frontend baseline, and shipping work that has leverage beyond a single screen or campaign.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows.",
+    "component": "page_project",
+    "project_url": "https://docs.shopsys.com/en/18.0/",
+    "published_date": "2024-06-06T00:00:00.000Z",
+    "repository_url": "https://github.com/shopsys/shopsys"
+  },
+  "published": true,
+  "slug": "shopsys-platform-core",
+  "path": null,
+  "full_slug": "projects/shopsys-platform-core",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "26fe68f4c9c4be041dd5122bcbfc631f876c5391",
+    "timestamp": "1773357288"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-12T23:10:42.279Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -80,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286825886010,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

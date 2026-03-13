@@ -54,7 +54,7 @@ Install a deterministic harness loop that catches drift between specification, i
 | `INV-A2` Validated payload flow | Architecture/unit checks proving render path goes through validation layer | `ARCH-DATAFLOW-001` |
 | `INV-A3` Centralized SEO generation | Import/conformance check for reusable SEO module usage | `ARCH-SEO-001` |
 | `INV-A4` Critical module test coverage | Coverage/conformance check for critical module -> at least one conformance or contract test | `ARCH-COVERAGE-001` |
-| `INV-A5` Ralph/ticket loop architecture | Harness checks for queue-driven sequential runner, Docker wrapper, and local ticket/matrix wiring | `HARNESS-RALPH-001`, `HARNESS-TICKETING-001` |
+| `INV-A5` Ralph/ticket loop architecture | Harness checks for queue-driven sequential runner, Docker wrapper, local ticket/matrix wiring, and deterministic auto-commit contract | `HARNESS-RALPH-001`, `HARNESS-TICKETING-001`, `HARNESS-COMMIT-001` |
 
 - `Doc -> Code` gate: every invariant in docs must appear in the traceability artifact.
 - `Code -> Doc` gate: every critical conformance test must reference at least one invariant.
@@ -80,9 +80,11 @@ pnpm tester-agent:run
 ## Tester-Agent Implementation Contract
 
 - Runner script starts a browser session via `playwright-cli`.
-- It executes a scripted base journey, then allows exploratory actions.
-- It saves snapshots/screenshots plus markdown report.
-- It exits non-zero when blocking bugs are found.
+- In enforce mode (`TESTER_AGENT_ENFORCE=1`) it must fail if `TESTER_AGENT_URL` is not explicit.
+- It executes deterministic checks for every route listed in `TESTER_AGENT_REQUIRED_PATHS` (default `/`).
+- It saves per-route screenshots, markdown report, and evidence JSON (`*-evidence.json` with log metrics and findings).
+- It verifies that Playwright logs advanced in `TESTER_AGENT_PLAYWRIGHT_LOG_DIR` (default `.playwright-cli`) when enforce mode is active.
+- It exits non-zero when blocking bugs are found (`P0`/`P1`) or visual verification evidence is missing.
 
 Suggested command skeleton:
 
@@ -110,8 +112,12 @@ playwright-cli -s=tester close
   - process pending queue item(s) sequentially
   - generate per-item task brief/prompt/log artifacts
   - enforce AGENTS-read acknowledgement token in agent output (strict by default)
+  - enforce visual guard after each successful agent execution (`tester-agent:run` with `TESTER_AGENT_ENFORCE=1`) before verification gates
   - run verification command after each agent execution
+  - generate descriptive structured commit messages for auto-commits (not raw story-title copy)
   - persist status transitions (`pending` -> `in_progress` -> `done|failed`) in queue JSON
+  - Docker wrapper defaults to isolated workspace mode to separate container dependency writes from native environment
+  - Docker image bundles both supported CLIs (`codex`, `claude`) and Claude subscription auth mount is enforced by default when `RALPH_ENGINE=claude`
 
 ## Local Ticketing Contract (recommended)
 

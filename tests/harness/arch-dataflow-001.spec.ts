@@ -12,9 +12,11 @@ describe('ARCH-DATAFLOW-001', () => {
 			'src/app/writing/[slug]/page.tsx',
 			'utf8',
 		);
+		const sitemapRoute = await readFile('src/app/sitemap.ts', 'utf8');
 
 		expect(homeRoute).toContain("from '@/lib/storyblok/content'");
 		expect(projectRoute).toContain("from '@/lib/storyblok/content'");
 		expect(writingRoute).toContain("from '@/lib/storyblok/content'");
+		expect(sitemapRoute).toContain("from '@/lib/storyblok/content'");
 	});
 });

@@ -1,0 +1,132 @@
+{
+  "name": "aView",
+  "parent_id": 152164406559162,
+  "group_id": "9b44200b-14c6-44fe-aaa2-0bb70aa7c9d0",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:33.955Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:46.146Z",
+  "published_at": "2026-03-12T23:14:46.130Z",
+  "id": 152164409188798,
+  "uuid": "0db07901-1ffb-4e60-94fd-1785eb8ef391",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "3dcb55c2-9179-bb8c-1128-c6d62353c0d6",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
+        "component": "seo_meta",
+        "meta_title": "aView",
+        "meta_description": "Angular client for product data and digital catalogue management, using RxJS and redux-observable style patterns for structured async state handling."
+      }
+    ],
+    "_uid": "08bfd714-adc3-47a0-84d2-6cda13e657b7",
+    "logo": "https://images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
+    "slug": "aview",
+    "type": "Catalogue Management App",
+    "stack": [
+      "Angular",
+      "RxJS",
+      "redux-observable",
+      "TypeScript",
+      "Internal Tools"
+    ],
+    "title": "aView",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "aView was built for product data and digital catalogue management, which meant the frontend had to handle richer operational flows than a typical content site.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I worked on an Angular application using centralized state patterns and reactive tooling, including RxJS and Epics middleware.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The project reflects my strength in applications where frontend complexity comes from business workflows, asynchronous state, and the need for UI predictability.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Angular client for product data and digital catalogue management, using RxJS and redux-observable style patterns for structured async state handling.",
+    "component": "page_project",
+    "project_url": "https://harksolutions.co.uk/aview/",
+    "published_date": "2021-01-01T12:00:00.000Z"
+  },
+  "published": true,
+  "slug": "aview",
+  "path": null,
+  "full_slug": "projects/aview",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
+    "timestamp": "1773357290"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:45.149Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -20,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286828159298,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

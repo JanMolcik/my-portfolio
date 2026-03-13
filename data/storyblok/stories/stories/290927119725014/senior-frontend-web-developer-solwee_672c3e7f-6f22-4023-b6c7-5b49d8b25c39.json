@@ -1,0 +1,102 @@
+{
+  "name": "Senior Frontend Web Developer - Solwee · Solwee · Contract",
+  "parent_id": 152164407230907,
+  "group_id": "be6fcf4f-da51-404d-9774-57a43d0e6fd4",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:35.108Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:47.687Z",
+  "published_at": "2026-03-12T23:14:47.668Z",
+  "id": 152164413911492,
+  "uuid": "672c3e7f-6f22-4023-b6c7-5b49d8b25c39",
+  "is_folder": false,
+  "content": {
+    "_uid": "29357e39-bf15-4bf9-b0b8-e4e88e7ca4ee",
+    "image": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+    "title": "Senior Frontend Web Developer - Solwee",
+    "skills": [
+      "Git",
+      "Sass",
+      "Typescript",
+      "Vercel",
+      "Next.js"
+    ],
+    "end_date": "2024-01-15T00:00:00.000Z",
+    "component": "item_experience",
+    "start_date": "2023-11-01T00:00:00.000Z",
+    "description": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I led the frontend implementation of a prototype web application built with Next.js, TypeScript, and Sass, translating an existing visual direction into a structured, reusable UI system that stayed responsive across devices and easy for the client to evolve.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "company_name": "Solwee · Contract"
+  },
+  "published": true,
+  "slug": "senior-frontend-web-developer-solwee",
+  "path": null,
+  "full_slug": "experience/senior-frontend-web-developer-solwee",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164407230907,
+    "uuid": "e63908a5-9248-4011-b41c-e7be505c83bd",
+    "name": "Experience",
+    "slug": "experience",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
+    "timestamp": "1773357290"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164407230907,
+      "name": "Experience",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "experience",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:46.197Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -10,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286833766735,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

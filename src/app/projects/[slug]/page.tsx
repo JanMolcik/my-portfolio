@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
-import { StoryblokStory } from '@storyblok/react/rsc';
 import { notFound } from 'next/navigation';
+import TerminalNoirProject from '@/components/projects/terminal-noir-project';
+import { buildProjectJsonLd, serializeJsonLd } from '@/lib/seo/json-ld';
 import {
 	getPublishedRouteParamsByPrefix,
 	getPublishedStory,
 } from '@/lib/storyblok/content';
 import { buildNotFoundMetadata, buildStoryMetadata } from '@/lib/seo/metadata';
+import { mapProjectDtoToDomain } from '@/lib/storyblok/mappers';
+import { getStoryblokRequestMode } from '@/lib/storyblok/preview-mode';
 
 type ProjectPageProps = {
 	params: Promise<{ slug: string }>;
@@ -23,7 +26,8 @@ export async function generateMetadata({
 	params,
 }: ProjectPageProps): Promise<Metadata> {
 	const { slug } = await params;
-	const story = await getPublishedStory(`projects/${slug}`);
+	const mode = await getStoryblokRequestMode();
+	const story = await getPublishedStory(`projects/${slug}`, mode);
 	if (!story) {
 		return buildNotFoundMetadata('Project |');
 	}
@@ -32,10 +36,21 @@ export async function generateMetadata({
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
 	const { slug } = await params;
-	const story = await getPublishedStory(`projects/${slug}`);
+	const mode = await getStoryblokRequestMode();
+	const story = await getPublishedStory(`projects/${slug}`, mode);
 	if (!story) {
 		notFound();
 	}
 
-	return <StoryblokStory story={story} />;
+	const project = mapProjectDtoToDomain(story.content, slug);
+	const jsonLd = buildProjectJsonLd(project);
+	return (
+		<>
+			<script
+				dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+				type="application/ld+json"
+			/>
+			<TerminalNoirProject project={project} />
+		</>
+	);
 }

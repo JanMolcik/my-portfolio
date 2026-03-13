@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
-import { StoryblokStory } from '@storyblok/react/rsc';
 import { notFound } from 'next/navigation';
+import TerminalNoirWriting from '@/components/writing/terminal-noir-writing';
+import { buildWritingJsonLd, serializeJsonLd } from '@/lib/seo/json-ld';
 import {
 	getPublishedRouteParamsByPrefix,
 	getPublishedStory,
 } from '@/lib/storyblok/content';
 import { buildNotFoundMetadata, buildStoryMetadata } from '@/lib/seo/metadata';
+import { mapWritingDtoToDomain } from '@/lib/storyblok/mappers';
+import { getStoryblokRequestMode } from '@/lib/storyblok/preview-mode';
 
 type WritingPageProps = {
 	params: Promise<{ slug: string }>;
@@ -23,19 +26,31 @@ export async function generateMetadata({
 	params,
 }: WritingPageProps): Promise<Metadata> {
 	const { slug } = await params;
-	const story = await getPublishedStory(`writing/${slug}`);
+	const mode = await getStoryblokRequestMode();
+	const story = await getPublishedStory(`writing/${slug}`, mode);
 	if (!story) {
 		return buildNotFoundMetadata('Writing |');
 	}
-	return buildStoryMetadata(story, `/writing/${slug}`);
+	return buildStoryMetadata(story, `/writing/${slug}`, 'article');
 }
 
 export default async function WritingPage({ params }: WritingPageProps) {
 	const { slug } = await params;
-	const story = await getPublishedStory(`writing/${slug}`);
+	const mode = await getStoryblokRequestMode();
+	const story = await getPublishedStory(`writing/${slug}`, mode);
 	if (!story) {
 		notFound();
 	}
 
-	return <StoryblokStory story={story} />;
+	const writing = mapWritingDtoToDomain(story.content, slug);
+	const jsonLd = buildWritingJsonLd(writing);
+	return (
+		<>
+			<script
+				dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+				type="application/ld+json"
+			/>
+			<TerminalNoirWriting writing={writing} />
+		</>
+	);
 }

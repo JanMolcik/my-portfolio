@@ -43,6 +43,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Runtime content validation is mandatory.
 - No route may silently degrade to fully dynamic rendering without explicit architectural exception.
 - Tester-agent run is mandatory for every code change before merge.
+- Tester-agent enforce mode must produce evidence artifacts (`*-report.md`, `*-evidence.json`, per-route screenshots) and prove fresh Playwright log activity.
 - Fragmented local markdown tickets must be consumable via queue manifest for sequential ralph loop execution (`one agent after another`).
 - Local ticket scripts must support fragmentation (`spec -> tickets`), matrix sync, and queue generation workflow.
 - Dynamic rendering exceptions are limited to operational route handlers (`/api/preview`, `/api/exit-preview`, `/api/revalidate/storyblok`).
@@ -146,22 +147,26 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 
 - `page_home` (singleton):
   - `headline` (text, required), `role` (text, required), `intro` (richtext, required)
+  - `hero_intro` (richtext, required), `about_intro` (richtext, required)
   - `roles` (multi-option, required), `social_links` (blok list -> `item_social_link`, required)
+  - `availability_note` (textarea, required), `availability_status` (text, required)
+  - `availability_timezone` (text, required), `availability_response_time` (text, required)
   - `featured_projects` (stories -> `page_project`, required), `experience` (stories -> `item_experience`, required)
   - `seo` (blok -> `seo_meta`, required)
 - `page_project`:
-  - `title` (text, required), `slug` (slug, required unique under `projects/*`)
+  - `title` (text, required), `slug` (text, required; unique by workflow under `projects/*`)
   - `summary` (textarea, required), `content` (richtext, optional)
   - `published_date` (datetime, required), `project_url` (url, required), `repository_url` (url, optional)
-  - `type` (text, required), `logo` (asset image, optional), `seo` (blok -> `seo_meta`, required)
+  - `type` (text, required), `stack` (multi-option, optional), `logo` (asset image, optional), `seo` (blok -> `seo_meta`, required)
 - `page_writing`:
-  - `title` (text, required), `slug` (slug, required unique under `writing/*`)
+  - `title` (text, required), `slug` (text, required; unique by workflow under `writing/*`)
   - `excerpt` (textarea, required), `content` (richtext, required), `published_date` (datetime, required)
   - `cover_image` (asset image, optional), `tags` (multi-option, optional), `seo` (blok -> `seo_meta`, required)
 - `item_experience`:
   - `title` (text, required), `company_name` (text, required)
   - `description` (richtext, required), `start_date` (date, required), `end_date` (date, optional)
   - `skills` (multi-option, required), `image` (asset image, optional)
+  - stored as relationable Storyblok stories under `experience/*`
 - `item_social_link`:
   - `name` (text, required), `url` (url, required), `icon` (text, required)
 - `seo_meta` (reusable block):
@@ -215,7 +220,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Contract tests against recorded Storyblok payload fixtures (`INV-1`, `INV-4`).
 - Security tests for preview and webhook authorization, fail-closed behavior, and idempotency (`INV-4`, `INV-5`).
 - E2E tests for critical user journeys (`INV-2`, `INV-3`, `INV-5`).
-- Tester-agent exploratory run using `playwright-cli`, with markdown bug report artifact (`INV-5`).
+- Tester-agent exploratory run using `playwright-cli`, with markdown bug report, evidence JSON, and per-route screenshots (`INV-5`).
 - Ralph loop runner scripts and Docker wrapper must stay executable for queue-driven story execution.
 - Invariant traceability artifact is mandatory (`INV-* -> test IDs` and inverse mapping), missing links fail CI.
 - Visual parity checks (snapshot or targeted DOM/style assertions) against approved `designs/` proposal are required for critical templates (`/`, `/projects/[slug]`, `/writing/[slug]`).

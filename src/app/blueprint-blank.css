@@ -1,0 +1,29 @@
+:root {
+	color-scheme: dark;
+	--bg: #0a0a0a;
+	--bg2: #0f0f0f;
+	--green: #00ff41;
+	--cyan: #00d4ff;
+	--white: #e8e8e8;
+	--dim: #555;
+	--border: #1a1a1a;
+	--glow-green: 0 0 10px #00ff4166, 0 0 30px #00ff4122;
+	--glow-cyan: 0 0 10px #00d4ff66, 0 0 30px #00d4ff22;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+a {
+	color: inherit;
+}

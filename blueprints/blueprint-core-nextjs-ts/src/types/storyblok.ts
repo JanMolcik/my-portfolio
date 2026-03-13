@@ -3,17 +3,17 @@ import type { SbBlokData } from '@storyblok/react/rsc';
 export type StoryblokBlok = SbBlokData;
 
 export type PageBlok = StoryblokBlok & {
-  body?: StoryblokBlok[];
+	body?: StoryblokBlok[];
 };
 
 export type GridBlok = StoryblokBlok & {
-  columns: StoryblokBlok[];
+	columns: StoryblokBlok[];
 };
 
 export type FeatureBlok = StoryblokBlok & {
-  name?: string;
+	name?: string;
 };
 
 export type TeaserBlok = StoryblokBlok & {
-  headline?: string;
+	headline?: string;
 };

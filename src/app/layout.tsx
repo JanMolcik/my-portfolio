@@ -1,10 +1,29 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { JetBrains_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
 import './globals.css';
-import StoryblokProvider from '@/components/StoryblokProvider';
+
+const jetBrainsMono = JetBrains_Mono({
+	subsets: ['latin'],
+	weight: ['400', '700', '800'],
+	display: 'optional',
+	variable: '--font-jetbrains-mono',
+});
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 5,
+};
 
 export const metadata: Metadata = {
-	title: 'My Portfolio',
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+	),
+	title: {
+		template: '%s | Terminal Noir',
+		default: 'Terminal Noir',
+	},
 	description: 'Portfolio built with Next.js App Router and Storyblok.',
 };
 
@@ -13,14 +32,9 @@ type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
-	const currentYear = new Date().getFullYear();
-
 	return (
 		<html lang="en">
-			<body>
-				<StoryblokProvider>{children}</StoryblokProvider>
-				<footer>All rights reserved © {currentYear}</footer>
-			</body>
+			<body className={jetBrainsMono.variable}>{children}</body>
 		</html>
 	);
 }

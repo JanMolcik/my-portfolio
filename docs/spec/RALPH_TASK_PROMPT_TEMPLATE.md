@@ -48,8 +48,9 @@ Do not treat this prompt as a replacement for `AGENTS.md`; it is only task conte
 4. Keep changes deterministic and minimal.
 5. After each edit batch, run `pnpm run cq` (Biome format + lint + typecheck).
 6. Add/update regression or conformance coverage for changed behavior.
-7. Do not mark complete if acceptance criteria or invariants are unmet.
-8. Produce a concise completion summary with:
+7. Keep affected routes bootable and renderable; loop runner will execute enforced tester-agent visual guard before verification gates.
+8. Do not mark complete if acceptance criteria or invariants are unmet.
+9. Produce a concise completion summary with:
    - changed files
    - tests/commands run
    - residual risks or follow-up work

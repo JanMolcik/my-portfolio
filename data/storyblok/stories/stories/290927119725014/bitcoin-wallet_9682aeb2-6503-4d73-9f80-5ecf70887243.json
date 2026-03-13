@@ -1,0 +1,133 @@
+{
+  "name": "Bitcoin Wallet",
+  "parent_id": 152164406559162,
+  "group_id": "a70770f8-271a-40ce-b4cc-fa9fe17c5b8c",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:34.098Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:46.286Z",
+  "published_at": "2026-03-12T23:14:46.268Z",
+  "id": 152164409778623,
+  "uuid": "9682aeb2-6503-4d73-9f80-5ecf70887243",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "bc76ecd0-33b4-c7d1-3d7d-4a4fd7e92059",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+        "component": "seo_meta",
+        "meta_title": "Bitcoin Wallet",
+        "meta_description": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface."
+      }
+    ],
+    "_uid": "196ed55c-e826-4edb-804c-5d02ce32b248",
+    "logo": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+    "slug": "bitcoin-wallet",
+    "type": "Fintech Web App",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Context API",
+      "Tailwind CSS",
+      "Fintech UI"
+    ],
+    "title": "Bitcoin Wallet",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I worked on a Next.js web client for a Bitcoin wallet product, extending an existing frontend and shipping additional functionality on top of an already designed component system.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The work combined product delivery with frontend structure: React functional components, hooks, Context API, routing, page management, and integration with API-driven wallet flows.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "This project is strong evidence of my ability to work in fintech-grade frontend environments, contribute inside an existing product architecture, and keep complex UI flows maintainable as features grow.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface.",
+    "component": "page_project",
+    "project_url": "https://www.numbrs.com/",
+    "published_date": "2022-02-21T22:00:00.000Z"
+  },
+  "published": true,
+  "slug": "bitcoin-wallet",
+  "path": null,
+  "full_slug": "projects/bitcoin-wallet",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "046bf7838f77ecd74f0770a44973019be6556cf6",
+    "timestamp": "1773357290"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:45.354Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -30,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286828663107,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

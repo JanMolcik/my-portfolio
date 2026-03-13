@@ -1,0 +1,7 @@
+{
+	"story": {
+		"name": "Invalid Project",
+		"full_slug": "projects/invalid",
+		"content": "not-an-object"
+	}
+}

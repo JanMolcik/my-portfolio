@@ -1,0 +1,132 @@
+{
+  "name": "Lipa Waste Collection Calendar",
+  "parent_id": 152164406559162,
+  "group_id": "317b9540-a9b9-4d2c-8903-f0f21f452b0d",
+  "alternates": [],
+  "created_at": "2026-03-12T23:14:42.230Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:45.724Z",
+  "published_at": "2026-03-12T23:14:45.704Z",
+  "id": 154286826448179,
+  "uuid": "88ea2047-1bcd-423e-b10f-7a7453f5f3bd",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "6744be52-36fa-b4f7-49bd-92240350273a",
+        "noindex": false,
+        "component": "seo_meta",
+        "meta_title": "Lipa Waste Collection Calendar",
+        "meta_description": "Public-facing waste collection calendar for the municipality of Lipa, designed to make communal and sorted waste pickup dates clearer through focused calendar views and a simple annual data update workflow."
+      }
+    ],
+    "_uid": "7c64b47b-f02f-41a2-bc93-b54c4efac4de",
+    "slug": "lipa-waste-collection-calendar",
+    "type": "Municipal Service Web App",
+    "stack": [
+      "Next.js App Router",
+      "TypeScript",
+      "Static Deployment",
+      "Calendar UI",
+      "XLSX Parser",
+      "Civic Tech"
+    ],
+    "title": "Lipa Waste Collection Calendar",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I built this application for a municipal office to make waste collection schedules easier for residents to understand than the original spreadsheet-based format.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The product centers on practical clarity: a hero section showing the nearest pickup, plus day, week, and month calendar views that make upcoming communal and sorted waste collection dates easy to scan on desktop and mobile.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Under the hood, the project uses a local XLSX-to-JSON parser so the yearly schedule can be refreshed with a low-risk workflow and deployed as a static Next.js application without adding unnecessary operational complexity.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Public-facing waste collection calendar for the municipality of Lipa, designed to make communal and sorted waste pickup dates clearer through focused calendar views and a simple annual data update workflow.",
+    "component": "page_project",
+    "project_url": "https://www.odpady-lipa.cz/",
+    "published_date": "2026-03-01T00:00:00.000Z",
+    "repository_url": "https://github.com/JanMolcik/rubbish-collection"
+  },
+  "published": true,
+  "slug": "lipa-waste-collection-calendar",
+  "path": null,
+  "full_slug": "projects/lipa-waste-collection-calendar",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "26fe68f4c9c4be041dd5122bcbfc631f876c5391",
+    "timestamp": "1773357288"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-12T23:14:45.704Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -90,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286826512699,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

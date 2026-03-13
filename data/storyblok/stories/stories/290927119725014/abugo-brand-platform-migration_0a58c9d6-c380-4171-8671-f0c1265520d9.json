@@ -1,0 +1,131 @@
+{
+  "name": "ABUGO Brand Platform Migration",
+  "parent_id": 152164406559162,
+  "group_id": "f08e2e29-f99f-4d9c-80da-78a3b6aedc17",
+  "alternates": [],
+  "created_at": "2026-03-12T23:02:48.577Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:44.868Z",
+  "published_at": "2026-03-12T23:14:44.849Z",
+  "id": 154283903329341,
+  "uuid": "0a58c9d6-c380-4171-8671-f0c1265520d9",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "c46837be-2df4-6cf3-5488-fc5aa8ec96ca",
+        "noindex": false,
+        "component": "seo_meta",
+        "meta_title": "ABUGO Brand Platform Migration",
+        "meta_description": "Current ABUGO migration initiative focused on a shared Next.js and Storyblok monorepo platform intended to become the single source of truth for multiple brand homepages through configurable apps and automation-heavy delivery."
+      }
+    ],
+    "_uid": "a8595aa4-8e60-4b60-b1b7-666607237ece",
+    "slug": "abugo-brand-platform-migration",
+    "type": "Multi-brand CMS Platform",
+    "stack": [
+      "Next.js App Router",
+      "Storyblok",
+      "Turborepo",
+      "Platform Architecture",
+      "Multi-brand CMS",
+      "Agentic Workflow"
+    ],
+    "title": "ABUGO Brand Platform Migration",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "In ABUGO, I work on a new migration initiative that unifies homepage infrastructure for multiple brands into a shared monorepo built around Next.js and Storyblok.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I am not only contributing as a frontend developer, but also acting as the codebase owner for the migration direction: shared frontend architecture, Storyblok contracts, reusable blocks, and the overall technical shape of the platform.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The target model is a configurable core application that individual brands can adapt to their own needs while keeping one source of truth, shared delivery standards, and a heavily automated agent-oriented workflow.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Current ABUGO migration initiative focused on a shared Next.js and Storyblok monorepo platform intended to become the single source of truth for multiple brand homepages through configurable apps and automation-heavy delivery.",
+    "component": "page_project",
+    "project_url": "https://www.shopsys.cz/",
+    "published_date": "2026-02-20T00:00:00.000Z"
+  },
+  "published": true,
+  "slug": "abugo-brand-platform-migration",
+  "path": null,
+  "full_slug": "projects/abugo-brand-platform-migration",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "0334e8ada5b8047a28c2649b8510e519f61c0f30",
+    "timestamp": "1773357289"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-12T23:05:59.385Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -70,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286825378104,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

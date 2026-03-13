@@ -1,0 +1,1385 @@
+{
+  "version": "baseline-content-import-v1",
+  "source": {
+    "exported_at": "2026-03-04T08:09:32.474Z",
+    "entries_count": 17,
+    "assets_count": 18
+  },
+  "summary": {
+    "home_count": 1,
+    "project_count": 10,
+    "experience_count": 6,
+    "social_link_count": 4
+  },
+  "content": {
+    "home": {
+      "source_entry_id": "5lzMxuCX84uYqmgGmU8iKU",
+      "content_type": "page_home",
+      "slug": "home",
+      "content": {
+        "component": "page_home",
+        "headline": "Jan Molčík",
+        "role": "Frontend Engineer",
+        "hero_intro": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "I build production web applications with React, Next.js, Storyblok, and modern frontend architecture."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Over the last 7+ years, I have worked across fintech, B2B platforms, internal tools, e-commerce foundations, and interactive products, delivering responsive interfaces, state-heavy applications, and maintainable frontend systems for real teams and clients."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "I currently work on frontend platform development at Shopsys and recently moved onto an ABUGO migration initiative where I combine hands-on frontend work with ownership of a new multi-brand Storyblok monorepo platform."
+                }
+              ]
+            }
+          ]
+        },
+        "about_intro": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "I am a frontend engineer with a background in Computer Science and a strong focus on modern web applications."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "My experience spans Angular, React, and Next.js projects where I worked on application architecture, centralized state management, responsive UI systems, CMS-driven delivery, and frontend foundations used by product teams."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "At Shopsys, I work on a shared Next.js Pages Router core/platform used as the base for project implementations. In ABUGO, I am helping lead a migration toward a Storyblok-based monorepo that aims to become the single source of truth for multiple brands through configurable apps and automation-heavy workflows."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "I am especially effective in projects that need structured frontend ownership: turning product requirements into maintainable interfaces, improving messy state flows, and building UI systems that teams can extend without slowing down."
+                }
+              ]
+            }
+          ]
+        },
+        "roles": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Angular",
+          "Redux",
+          "RxJS",
+          "Frontend Architecture",
+          "Design Systems",
+          "Responsive UI",
+          "State Management",
+          "SSR / SSG / ISR",
+          "Vercel",
+          "Storyblok",
+          "Monorepo"
+        ],
+        "availability_note": "Available for senior frontend roles, contract work, and product-focused collaborations. The best conversations for me are projects that need strong frontend ownership, clean implementation, and a product-minded engineering approach.",
+        "availability_status": "OPEN",
+        "availability_timezone": "Europe/Prague",
+        "availability_response_time": "within 48h",
+        "social_links": [
+          {
+            "component": "item_social_link",
+            "name": "Github",
+            "url": "https://github.com/JanMolcik",
+            "icon": "github"
+          },
+          {
+            "component": "item_social_link",
+            "name": "Contact me",
+            "url": "https://molcikjan.typeform.com/to/gZDCGfgd",
+            "icon": "envelope"
+          },
+          {
+            "component": "item_social_link",
+            "name": "LinkedIn",
+            "url": "https://linkedin.com/in/jan-molcik",
+            "icon": "linkedin"
+          },
+          {
+            "component": "item_social_link",
+            "name": "GitLab",
+            "url": "https://gitlab.com/JanMolcik",
+            "icon": "gitlab"
+          }
+        ],
+        "featured_projects": [
+          "curated:project:lipa-waste-collection-calendar",
+          "curated:project:shopsys-platform-core",
+          "curated:project:abugo-brand-platform-migration",
+          "legacy:project:3K3B8rGeMpNIHlAXpcuOxc",
+          "legacy:project:1S8ST6kPWgL98MUE7BkNmV",
+          "legacy:project:6Y7EIx73nUCWuoIWcsuM00",
+          "legacy:project:5paxSRHbAkmgMc4WSW8S66",
+          "legacy:project:SzGET2EcNVB8Je8v7BsgL",
+          "legacy:project:6Eby5J7DzhAXIBO6ib832p",
+          "legacy:project:2GKNR2f4z6IwAg6a2MmKCc"
+        ],
+        "experience": [
+          "curated:experience:shopsys-2024",
+          "legacy:experience:WTEM9HEcF7AZirvfVU817",
+          "legacy:experience:QIw6MuDy41MvtsIFugnJY",
+          "legacy:experience:393oonzXZw8u1hVpnqndZO",
+          "legacy:experience:1jtJ7QaZUc9GhsZt7ndqqV",
+          "legacy:experience:1Rto3U1g3sTCzGLY8TDwLK"
+        ],
+        "seo": [
+          {
+            "component": "seo_meta",
+            "meta_title": "Jan Molčík",
+            "meta_description": "Frontend engineer building React, Next.js, Storyblok, and platform-driven product interfaces across fintech, B2B systems, and multi-brand CMS initiatives.",
+            "noindex": false,
+            "og_image": {
+              "id": "3xMVsymcZx0kTd6j89GczV",
+              "url": "https://images.ctfassets.net/438qxelhyozd/3xMVsymcZx0kTd6j89GczV/3e95b96f97e852001b97eae27b8be3c3/profile.jpeg",
+              "file_name": "profile.jpeg",
+              "content_type": "image/jpeg",
+              "title": "Profile Picture",
+              "description": "Profile picture"
+            }
+          }
+        ]
+      },
+      "diagnostics": {
+        "missing_social_links": [],
+        "missing_experience": [],
+        "missing_projects": []
+      }
+    },
+    "projects": [
+      {
+        "source_entry_id": "curated-project-abugo-brand-platform-migration",
+        "relation_key": "curated:project:abugo-brand-platform-migration",
+        "content_type": "page_project",
+        "slug": "abugo-brand-platform-migration",
+        "content": {
+          "component": "page_project",
+          "title": "ABUGO Brand Platform Migration",
+          "slug": "abugo-brand-platform-migration",
+          "summary": "Current ABUGO migration initiative focused on a shared Next.js and Storyblok monorepo platform intended to become the single source of truth for multiple brand homepages through configurable apps and automation-heavy delivery.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In ABUGO, I work on a new migration initiative that unifies homepage infrastructure for multiple brands into a shared monorepo built around Next.js and Storyblok."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I am not only contributing as a frontend developer, but also acting as the codebase owner for the migration direction: shared frontend architecture, Storyblok contracts, reusable blocks, and the overall technical shape of the platform."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The target model is a configurable core application that individual brands can adapt to their own needs while keeping one source of truth, shared delivery standards, and a heavily automated agent-oriented workflow."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2026-02-20T00:00:00.000Z",
+          "project_url": "https://www.shopsys.cz/",
+          "type": "Multi-brand CMS Platform",
+          "stack": [
+            "Next.js App Router",
+            "Storyblok",
+            "Turborepo",
+            "Platform Architecture",
+            "Multi-brand CMS",
+            "Agentic Workflow"
+          ],
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "ABUGO Brand Platform Migration",
+              "meta_description": "Current ABUGO migration initiative focused on a shared Next.js and Storyblok monorepo platform intended to become the single source of truth for multiple brand homepages through configurable apps and automation-heavy delivery.",
+              "noindex": false
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "curated-project-shopsys-platform-core",
+        "relation_key": "curated:project:shopsys-platform-core",
+        "content_type": "page_project",
+        "slug": "shopsys-platform-core",
+        "content": {
+          "component": "page_project",
+          "title": "Shopsys Platform Core",
+          "slug": "shopsys-platform-core",
+          "summary": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At Shopsys, I work on a shared frontend core/platform built on Next.js Pages Router that serves as the implementation base for client projects."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The work is less about isolated feature tickets and more about platform-level frontend delivery: reusable foundations, maintainable patterns, and implementation workflows that other project teams can build on top of."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "This project represents my day-to-day product engineering strength in a commercial setting: contributing inside a shared platform, improving the frontend baseline, and shipping work that has leverage beyond a single screen or campaign."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2024-06-06T00:00:00.000Z",
+          "project_url": "https://docs.shopsys.com/en/18.0/",
+          "repository_url": "https://github.com/shopsys/shopsys",
+          "type": "E-commerce Frontend Platform",
+          "stack": [
+            "Next.js Pages Router",
+            "React",
+            "TypeScript",
+            "E-commerce Platform",
+            "Frontend Architecture",
+            "Reusable Core"
+          ],
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Shopsys Platform Core",
+              "meta_description": "Shared Next.js Pages Router frontend core/platform at Shopsys, used as the foundation for project implementations and extended across reusable storefront and platform workflows.",
+              "noindex": false
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "curated-project-lipa-waste-collection-calendar",
+        "relation_key": "curated:project:lipa-waste-collection-calendar",
+        "content_type": "page_project",
+        "slug": "lipa-waste-collection-calendar",
+        "content": {
+          "component": "page_project",
+          "title": "Lipa Waste Collection Calendar",
+          "slug": "lipa-waste-collection-calendar",
+          "summary": "Public-facing waste collection calendar for the municipality of Lipa, designed to make communal and sorted waste pickup dates clearer through focused calendar views and a simple annual data update workflow.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I built this application for a municipal office to make waste collection schedules easier for residents to understand than the original spreadsheet-based format."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The product centers on practical clarity: a hero section showing the nearest pickup, plus day, week, and month calendar views that make upcoming communal and sorted waste collection dates easy to scan on desktop and mobile."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Under the hood, the project uses a local XLSX-to-JSON parser so the yearly schedule can be refreshed with a low-risk workflow and deployed as a static Next.js application without adding unnecessary operational complexity."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2026-03-01T00:00:00.000Z",
+          "project_url": "https://www.odpady-lipa.cz/",
+          "repository_url": "https://github.com/JanMolcik/rubbish-collection",
+          "type": "Municipal Service Web App",
+          "stack": [
+            "Next.js App Router",
+            "TypeScript",
+            "Static Deployment",
+            "Calendar UI",
+            "XLSX Parser",
+            "Civic Tech"
+          ],
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Lipa Waste Collection Calendar",
+              "meta_description": "Public-facing waste collection calendar for the municipality of Lipa, designed to make communal and sorted waste pickup dates clearer through focused calendar views and a simple annual data update workflow.",
+              "noindex": false
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "1S8ST6kPWgL98MUE7BkNmV",
+        "relation_key": "legacy:project:1S8ST6kPWgL98MUE7BkNmV",
+        "content_type": "page_project",
+        "slug": "photobank",
+        "content": {
+          "component": "page_project",
+          "title": "Photobank",
+          "slug": "photobank",
+          "summary": "Responsive Next.js prototype for a photo library application, built with TypeScript, Sass, and atomic design principles across multiple breakpoints.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Photobank was a frontend prototype focused on structured UI delivery: reusable components, responsive layouts, and a clean design-system approach."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The application was built with Next.js, TypeScript, and Sass, following atomic design principles and supporting a broad range of screen sizes."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "This project represents the kind of work I do well: taking visual direction, translating it into a component-driven frontend, and keeping the implementation scalable as the interface grows."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2024-01-01T12:00:00.000Z",
+          "project_url": "https://photobank-prototype.vercel.app/ctk",
+          "type": "Product UI Prototype",
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "Sass",
+            "Atomic Design",
+            "Responsive UI",
+            "Vercel"
+          ],
+          "logo": {
+            "id": "2t2k6RhmmPe58ES3d8R9Kg",
+            "url": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+            "file_name": "Solwee.png",
+            "content_type": "image/png",
+            "title": "Solwee",
+            "description": "Solwee logo"
+          },
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Photobank",
+              "meta_description": "Responsive Next.js prototype for a photo library application, built with TypeScript, Sass, and atomic design principles across multiple breakpoints.",
+              "noindex": false,
+              "og_image": {
+                "id": "2t2k6RhmmPe58ES3d8R9Kg",
+                "url": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+                "file_name": "Solwee.png",
+                "content_type": "image/png",
+                "title": "Solwee",
+                "description": "Solwee logo"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "6Y7EIx73nUCWuoIWcsuM00",
+        "relation_key": "legacy:project:6Y7EIx73nUCWuoIWcsuM00",
+        "content_type": "page_project",
+        "slug": "obytkujeme",
+        "content": {
+          "component": "page_project",
+          "title": "Obytkujeme",
+          "slug": "obytkujeme",
+          "summary": "Next.js motorhome booking website with landing pages, gallery, booking calendar, and admin-facing functionality, deployed with Vercel and built with ISR in mind.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Obytkujeme combined marketing pages with functional booking flows, making it a good example of product-oriented frontend work rather than a simple static site."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The application included landing pages, image-heavy presentation, booking calendar flows, and supporting administrative functionality."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "It also reflects my interest in frontend delivery that balances user experience, maintainability, and practical production concerns such as deployment and incremental updates."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2023-01-07T23:00:00.000Z",
+          "project_url": "https://www.obytkujeme.cz/",
+          "type": "Booking Platform",
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "ISR",
+            "Calendar UX",
+            "Responsive UI",
+            "Vercel"
+          ],
+          "logo": {
+            "id": "elfvmudtrgKIaAPhPlB5f",
+            "url": "https://images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
+            "file_name": "logo.png",
+            "content_type": "image/png",
+            "title": "Obytkujeme Logo",
+            "description": "Obytkujeme Logo icon"
+          },
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Obytkujeme",
+              "meta_description": "Next.js motorhome booking website with landing pages, gallery, booking calendar, and admin-facing functionality, deployed with Vercel and built with ISR in mind.",
+              "noindex": false,
+              "og_image": {
+                "id": "elfvmudtrgKIaAPhPlB5f",
+                "url": "https://images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
+                "file_name": "logo.png",
+                "content_type": "image/png",
+                "title": "Obytkujeme Logo",
+                "description": "Obytkujeme Logo icon"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "SzGET2EcNVB8Je8v7BsgL",
+        "relation_key": "legacy:project:SzGET2EcNVB8Je8v7BsgL",
+        "content_type": "page_project",
+        "slug": "aview",
+        "content": {
+          "component": "page_project",
+          "title": "aView",
+          "slug": "aview",
+          "summary": "Angular client for product data and digital catalogue management, using RxJS and redux-observable style patterns for structured async state handling.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "aView was built for product data and digital catalogue management, which meant the frontend had to handle richer operational flows than a typical content site."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I worked on an Angular application using centralized state patterns and reactive tooling, including RxJS and Epics middleware."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The project reflects my strength in applications where frontend complexity comes from business workflows, asynchronous state, and the need for UI predictability."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2021-01-01T12:00:00.000Z",
+          "project_url": "https://harksolutions.co.uk/aview/",
+          "type": "Catalogue Management App",
+          "stack": [
+            "Angular",
+            "RxJS",
+            "redux-observable",
+            "TypeScript",
+            "Internal Tools"
+          ],
+          "logo": {
+            "id": "1uBB3gpxCIuv5qjUX2vz3Z",
+            "url": "https://images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
+            "file_name": "aView-logo.png",
+            "content_type": "image/png",
+            "title": "aView-logo"
+          },
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "aView",
+              "meta_description": "Angular client for product data and digital catalogue management, using RxJS and redux-observable style patterns for structured async state handling.",
+              "noindex": false,
+              "og_image": {
+                "id": "1uBB3gpxCIuv5qjUX2vz3Z",
+                "url": "https://images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
+                "file_name": "aView-logo.png",
+                "content_type": "image/png",
+                "title": "aView-logo"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "3K3B8rGeMpNIHlAXpcuOxc",
+        "relation_key": "legacy:project:3K3B8rGeMpNIHlAXpcuOxc",
+        "content_type": "page_project",
+        "slug": "bitcoin-wallet",
+        "content": {
+          "component": "page_project",
+          "title": "Bitcoin Wallet",
+          "slug": "bitcoin-wallet",
+          "summary": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I worked on a Next.js web client for a Bitcoin wallet product, extending an existing frontend and shipping additional functionality on top of an already designed component system."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The work combined product delivery with frontend structure: React functional components, hooks, Context API, routing, page management, and integration with API-driven wallet flows."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "This project is strong evidence of my ability to work in fintech-grade frontend environments, contribute inside an existing product architecture, and keep complex UI flows maintainable as features grow."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2022-02-21T22:00:00.000Z",
+          "project_url": "https://www.numbrs.com/",
+          "type": "Fintech Web App",
+          "stack": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Context API",
+            "Tailwind CSS",
+            "Fintech UI"
+          ],
+          "logo": {
+            "id": "7MnhIdYQCSgKjw8UP7Kwc3",
+            "url": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+            "file_name": "numbrs-logo.jpeg",
+            "content_type": "image/jpeg",
+            "title": "Numbrs Logo",
+            "description": "Numbrs Web Client Logo"
+          },
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Bitcoin Wallet",
+              "meta_description": "Next.js web client for a Bitcoin wallet product, built with TypeScript, React hooks, and modern frontend patterns for a production-grade fintech interface.",
+              "noindex": false,
+              "og_image": {
+                "id": "7MnhIdYQCSgKjw8UP7Kwc3",
+                "url": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+                "file_name": "numbrs-logo.jpeg",
+                "content_type": "image/jpeg",
+                "title": "Numbrs Logo",
+                "description": "Numbrs Web Client Logo"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "6Eby5J7DzhAXIBO6ib832p",
+        "relation_key": "legacy:project:6Eby5J7DzhAXIBO6ib832p",
+        "content_type": "page_project",
+        "slug": "poohead-card-game",
+        "content": {
+          "component": "page_project",
+          "title": "Poohead Card Game",
+          "slug": "poohead-card-game",
+          "summary": "Online multiplayer card game built with React on the client side and a Node-based game engine flow, focused on interactive frontend behavior.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Poohead Card Game was an online multiplayer card game, which made the frontend inherently interactive and state-driven."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I built the client in React while integrating with a server-side game engine workflow, creating a user experience built around multiplayer game interaction rather than static content."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "This project is useful proof of range: I am comfortable not only with product dashboards and fintech interfaces, but also with interaction-heavy frontend experiences."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2020-11-11T07:00:00.000Z",
+          "project_url": "http://www.poohead.uk/",
+          "repository_url": "https://gitlab.com/JanMolcik/dullhead",
+          "type": "Interactive Multiplayer App",
+          "stack": [
+            "React",
+            "Node.js",
+            "BoardGame.io",
+            "Interactive UI",
+            "Multiplayer Flows"
+          ],
+          "logo": {
+            "id": "5wFs1VB1EjFxBOSrM5J53k",
+            "url": "https://images.ctfassets.net/438qxelhyozd/5wFs1VB1EjFxBOSrM5J53k/f24ccafbfe1a503f89f7f263cacfbc11/card-game.png",
+            "file_name": "card-game.png",
+            "content_type": "image/png",
+            "title": "Poohead Logo",
+            "description": "Poohead project asset"
+          },
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Poohead Card Game",
+              "meta_description": "Online multiplayer card game built with React on the client side and a Node-based game engine flow, focused on interactive frontend behavior.",
+              "noindex": false,
+              "og_image": {
+                "id": "5wFs1VB1EjFxBOSrM5J53k",
+                "url": "https://images.ctfassets.net/438qxelhyozd/5wFs1VB1EjFxBOSrM5J53k/f24ccafbfe1a503f89f7f263cacfbc11/card-game.png",
+                "file_name": "card-game.png",
+                "content_type": "image/png",
+                "title": "Poohead Logo",
+                "description": "Poohead project asset"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "5paxSRHbAkmgMc4WSW8S66",
+        "relation_key": "legacy:project:5paxSRHbAkmgMc4WSW8S66",
+        "content_type": "page_project",
+        "slug": "qapline",
+        "content": {
+          "component": "page_project",
+          "title": "Qapline",
+          "slug": "qapline",
+          "summary": "Angular-based ERP frontend for logistics workflows, where I helped refactor decentralized state handling into a more structured Redux-based architecture.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Qapline was a web ERP system for a logistics company, focused on operational workflows rather than marketing presentation."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "My contribution centered on improving frontend structure by replacing fragmented two-way binding patterns with a more centralized state-management approach using Redux."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "This project shows the type of engineering work I bring to complex internal tools: untangling frontend state, improving predictability, and making the application easier to extend over time."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2017-12-31T23:00:00.000Z",
+          "project_url": "https://koala42.com/portfolio/qapline/",
+          "type": "Logistics ERP",
+          "stack": [
+            "Angular",
+            "Redux",
+            "Enterprise UI",
+            "State Management",
+            "B2B Workflows"
+          ],
+          "logo": {
+            "id": "5PJrVXXOsRTMlEGUNkNs3G",
+            "url": "https://images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
+            "file_name": "qapline_logo.png",
+            "content_type": "image/png",
+            "title": "Qapline Logo",
+            "description": "Qapline Logo"
+          },
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Qapline",
+              "meta_description": "Angular-based ERP frontend for logistics workflows, where I helped refactor decentralized state handling into a more structured Redux-based architecture.",
+              "noindex": false,
+              "og_image": {
+                "id": "5PJrVXXOsRTMlEGUNkNs3G",
+                "url": "https://images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
+                "file_name": "qapline_logo.png",
+                "content_type": "image/png",
+                "title": "Qapline Logo",
+                "description": "Qapline Logo"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source_entry_id": "2GKNR2f4z6IwAg6a2MmKCc",
+        "relation_key": "legacy:project:2GKNR2f4z6IwAg6a2MmKCc",
+        "content_type": "page_project",
+        "slug": "hearthstone-ai",
+        "content": {
+          "component": "page_project",
+          "title": "Hearthstone AI",
+          "slug": "hearthstone-ai",
+          "summary": "Master's thesis project focused on designing a Hearthstone AI agent using Monte Carlo Tree Search for game-state evaluation.",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hearthstone AI was developed as part of my master's thesis and stands apart from the commercial work in the portfolio."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The project focused on designing an AI agent for card-game decision making, using Monte Carlo Tree Search for evaluating game states."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While it is not a frontend product case study, it adds useful depth to the portfolio by showing analytical thinking, systems reasoning, and long-form technical problem solving."
+                  }
+                ]
+              }
+            ]
+          },
+          "published_date": "2020-07-31T23:00:00.000Z",
+          "project_url": "https://hearthstoneai.github.io/index.html",
+          "repository_url": "https://github.com/JanMolcik/HearthstoneAICompetition",
+          "type": "AI / Research Project",
+          "stack": [
+            "C#",
+            "AI",
+            "Monte Carlo Tree Search",
+            "Game Systems"
+          ],
+          "logo": {
+            "id": "5eOzEytW0WMAP2uhYtRZiU",
+            "url": "https://images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
+            "file_name": "hearthstone_brain.png",
+            "content_type": "image/png",
+            "title": "HS Logo",
+            "description": "HS AI Competition Logo"
+          },
+          "seo": [
+            {
+              "component": "seo_meta",
+              "meta_title": "Hearthstone AI",
+              "meta_description": "Master's thesis project focused on designing a Hearthstone AI agent using Monte Carlo Tree Search for game-state evaluation.",
+              "noindex": false,
+              "og_image": {
+                "id": "5eOzEytW0WMAP2uhYtRZiU",
+                "url": "https://images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
+                "file_name": "hearthstone_brain.png",
+                "content_type": "image/png",
+                "title": "HS Logo",
+                "description": "HS AI Competition Logo"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "experience": [
+      {
+        "source_entry_id": "curated-experience-shopsys-2024",
+        "relation_key": "curated:experience:shopsys-2024",
+        "content_type": "item_experience",
+        "content": {
+          "component": "item_experience",
+          "title": "Frontend Developer - Shopsys",
+          "company_name": "Shopsys · Full-time",
+          "description": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Since June 6, 2024, I have worked as a frontend developer at Shopsys, contributing to a shared Next.js Pages Router core/platform used as the foundation for project implementations. More recently, I moved onto an ABUGO migration initiative where I stay hands-on in frontend development while also owning the codebase direction for a new Storyblok-based monorepo platform intended to become the single source of truth for multiple brands through configurable apps and automation-heavy workflows."
+                  }
+                ]
+              }
+            ]
+          },
+          "start_date": "2024-06-06T00:00:00.000Z",
+          "skills": [
+            "Next.js",
+            "Pages Router",
+            "Storyblok",
+            "Monorepo",
+            "Platform Architecture",
+            "Automation"
+          ]
+        }
+      },
+      {
+        "source_entry_id": "QIw6MuDy41MvtsIFugnJY",
+        "relation_key": "legacy:experience:QIw6MuDy41MvtsIFugnJY",
+        "content_type": "item_experience",
+        "content": {
+          "component": "item_experience",
+          "title": "Senior Frontend Web Developer - DEAP",
+          "company_name": "Digital Energy Advisory Platform (DEAP) · Contract",
+          "description": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I contributed to the first version of an energy-supplier comparison product, delivering React and TypeScript frontend work across state management, form flows, reusable UI integration, and fast-paced contract execution inside an active product team."
+                  }
+                ]
+              }
+            ]
+          },
+          "start_date": "2023-04-01T10:00:00.000Z",
+          "end_date": "2023-07-31T12:00:00.000Z",
+          "skills": [
+            "Typescript",
+            "Redux",
+            "React"
+          ],
+          "image": {
+            "id": "6SMh0pnpUevHb19rWDwglt",
+            "url": "https://images.ctfassets.net/438qxelhyozd/6SMh0pnpUevHb19rWDwglt/76e93cbe105eb89d5a96cf23925d7b75/photo.png",
+            "file_name": "photo.png",
+            "content_type": "image/png",
+            "title": "DEAP logo",
+            "description": "DEAP logo icon"
+          }
+        }
+      },
+      {
+        "source_entry_id": "WTEM9HEcF7AZirvfVU817",
+        "relation_key": "legacy:experience:WTEM9HEcF7AZirvfVU817",
+        "content_type": "item_experience",
+        "content": {
+          "component": "item_experience",
+          "title": "Senior Frontend Web Developer - Solwee",
+          "company_name": "Solwee · Contract",
+          "description": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I led the frontend implementation of a prototype web application built with Next.js, TypeScript, and Sass, translating an existing visual direction into a structured, reusable UI system that stayed responsive across devices and easy for the client to evolve."
+                  }
+                ]
+              }
+            ]
+          },
+          "start_date": "2023-11-01T00:00:00.000Z",
+          "end_date": "2024-01-15T00:00:00.000Z",
+          "skills": [
+            "Git",
+            "Sass",
+            "Typescript",
+            "Vercel",
+            "Next.js"
+          ],
+          "image": {
+            "id": "2t2k6RhmmPe58ES3d8R9Kg",
+            "url": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+            "file_name": "Solwee.png",
+            "content_type": "image/png",
+            "title": "Solwee",
+            "description": "Solwee logo"
+          }
+        }
+      },
+      {
+        "source_entry_id": "393oonzXZw8u1hVpnqndZO",
+        "relation_key": "legacy:experience:393oonzXZw8u1hVpnqndZO",
+        "content_type": "item_experience",
+        "content": {
+          "component": "item_experience",
+          "title": "Frontend Web Developer - Numbrs",
+          "company_name": "Numbrs Bitcoin Account · Remote",
+          "description": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I worked on a Next.js web client for a Bitcoin wallet product, taking over an existing codebase, extending it with new features, and keeping the frontend architecture coherent across hooks, Context API, routing, and API-driven product flows."
+                  }
+                ]
+              }
+            ]
+          },
+          "start_date": "2021-11-01T10:00:00.000Z",
+          "end_date": "2023-03-31T10:00:00.000Z",
+          "skills": [
+            "Next.js",
+            "Tailwind CSS",
+            "Typescript",
+            "React",
+            "Bitcoinjs-lib"
+          ],
+          "image": {
+            "id": "7MnhIdYQCSgKjw8UP7Kwc3",
+            "url": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+            "file_name": "numbrs-logo.jpeg",
+            "content_type": "image/jpeg",
+            "title": "Numbrs Logo",
+            "description": "Numbrs Web Client Logo"
+          }
+        }
+      },
+      {
+        "source_entry_id": "1Rto3U1g3sTCzGLY8TDwLK",
+        "relation_key": "legacy:experience:1Rto3U1g3sTCzGLY8TDwLK",
+        "content_type": "item_experience",
+        "content": {
+          "component": "item_experience",
+          "title": "Frontend Web Developer - Koala",
+          "company_name": "Koala42 · Part-time",
+          "description": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I worked on an ERP system for truck transport management, helping shift frontend complexity toward more centralized state management while also contributing React work on a 3D configuration interface."
+                  }
+                ]
+              }
+            ]
+          },
+          "start_date": "2018-04-01T10:00:00.000Z",
+          "end_date": "2020-09-01T10:00:00.000Z",
+          "skills": [
+            "Angular",
+            "Typescript",
+            "Redux",
+            "React",
+            "RxJS"
+          ],
+          "image": {
+            "id": "29yX0dTepmPEu0MzZf7IHl",
+            "url": "https://images.ctfassets.net/438qxelhyozd/29yX0dTepmPEu0MzZf7IHl/6275ca9fffbfc9d1f84f185aecb5aaa8/koala-logo.png",
+            "file_name": "koala-logo.png",
+            "content_type": "image/png",
+            "title": "Koala42",
+            "description": "Koala42 logo"
+          }
+        }
+      },
+      {
+        "source_entry_id": "1jtJ7QaZUc9GhsZt7ndqqV",
+        "relation_key": "legacy:experience:1jtJ7QaZUc9GhsZt7ndqqV",
+        "content_type": "item_experience",
+        "content": {
+          "component": "item_experience",
+          "title": "Frontend Web Developer - Hark",
+          "company_name": "Hark Solutions · Full-time",
+          "description": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I worked on Angular-based business applications for product data and digital catalogue management, contributing across frontend delivery, reactive state patterns, integrations, and supporting tooling where the product needed broader engineering coverage."
+                  }
+                ]
+              }
+            ]
+          },
+          "start_date": "2020-11-22T22:00:00.000Z",
+          "end_date": "2021-10-30T22:00:00.000Z",
+          "skills": [
+            "Angular",
+            "RxJS",
+            "Tailwind CSS",
+            "AWS",
+            "SVN"
+          ],
+          "image": {
+            "id": "4ONq9KgjDLevgnj05whr04",
+            "url": "https://images.ctfassets.net/438qxelhyozd/4ONq9KgjDLevgnj05whr04/23da771cea81b5507322c1c6f560f916/1646135333581",
+            "file_name": "1646135333581",
+            "content_type": "image/jpeg",
+            "title": "Hark",
+            "description": "Hark company image"
+          }
+        }
+      }
+    ],
+    "social_links": [
+      {
+        "source_entry_id": "4J6WFTjoMUCmQKuKAaOsqE",
+        "relation_key": "legacy:socialLink:4J6WFTjoMUCmQKuKAaOsqE",
+        "content_type": "item_social_link",
+        "content": {
+          "component": "item_social_link",
+          "name": "LinkedIn",
+          "url": "https://linkedin.com/in/jan-molcik",
+          "icon": "linkedin"
+        }
+      },
+      {
+        "source_entry_id": "114ApRkJZq640w8G2GwM8w",
+        "relation_key": "legacy:socialLink:114ApRkJZq640w8G2GwM8w",
+        "content_type": "item_social_link",
+        "content": {
+          "component": "item_social_link",
+          "name": "Contact me",
+          "url": "https://molcikjan.typeform.com/to/gZDCGfgd",
+          "icon": "envelope"
+        }
+      },
+      {
+        "source_entry_id": "4SrlLN9bt6Yew2UyGgM06a",
+        "relation_key": "legacy:socialLink:4SrlLN9bt6Yew2UyGgM06a",
+        "content_type": "item_social_link",
+        "content": {
+          "component": "item_social_link",
+          "name": "Github",
+          "url": "https://github.com/JanMolcik",
+          "icon": "github"
+        }
+      },
+      {
+        "source_entry_id": "2y6HqlOKN316pIUirqONBx",
+        "relation_key": "legacy:socialLink:2y6HqlOKN316pIUirqONBx",
+        "content_type": "item_social_link",
+        "content": {
+          "component": "item_social_link",
+          "name": "GitLab",
+          "url": "https://gitlab.com/JanMolcik",
+          "icon": "gitlab"
+        }
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "1QzZ3ij44juRqO26hnLxWg",
+      "url": "https://assets.ctfassets.net/438qxelhyozd/1QzZ3ij44juRqO26hnLxWg/a40b91c4dc17da56d3107cf4a1854484/Resume-Jan-Molcik.pdf",
+      "file_name": "Resume-Jan-Molcik.pdf",
+      "content_type": "application/pdf",
+      "title": "CV",
+      "description": "Curriculum vitae"
+    },
+    {
+      "id": "1tXbmpNZU2E8FraPOWhrMt",
+      "url": "https://images.ctfassets.net/438qxelhyozd/1tXbmpNZU2E8FraPOWhrMt/975871df4bb248506a6a0ab636b5df7b/android-chrome-512x512.png",
+      "file_name": "android-chrome-512x512.png",
+      "content_type": "image/png",
+      "title": "Icon",
+      "description": "Icon for web page."
+    },
+    {
+      "id": "1uBB3gpxCIuv5qjUX2vz3Z",
+      "url": "https://images.ctfassets.net/438qxelhyozd/1uBB3gpxCIuv5qjUX2vz3Z/711260c70548987400241eab8d9f0129/aView-logo.png",
+      "file_name": "aView-logo.png",
+      "content_type": "image/png",
+      "title": "aView-logo"
+    },
+    {
+      "id": "29yX0dTepmPEu0MzZf7IHl",
+      "url": "https://images.ctfassets.net/438qxelhyozd/29yX0dTepmPEu0MzZf7IHl/6275ca9fffbfc9d1f84f185aecb5aaa8/koala-logo.png",
+      "file_name": "koala-logo.png",
+      "content_type": "image/png",
+      "title": "Koala42",
+      "description": "Koala42 logo"
+    },
+    {
+      "id": "2t2k6RhmmPe58ES3d8R9Kg",
+      "url": "https://images.ctfassets.net/438qxelhyozd/2t2k6RhmmPe58ES3d8R9Kg/d6b5d035334cd519e1efe8b03100ea40/Solwee.png",
+      "file_name": "Solwee.png",
+      "content_type": "image/png",
+      "title": "Solwee",
+      "description": "Solwee logo"
+    },
+    {
+      "id": "3AorRmtWOsGQ4o8gK0YWKG",
+      "url": "https://images.ctfassets.net/438qxelhyozd/3AorRmtWOsGQ4o8gK0YWKG/eeb8efecf4cd0ec3c11d38a092c9ab91/google_PNG19630.png",
+      "file_name": "google_PNG19630.png",
+      "content_type": "image/png",
+      "title": "Google Logo",
+      "description": "Logo from Google"
+    },
+    {
+      "id": "3xMVsymcZx0kTd6j89GczV",
+      "url": "https://images.ctfassets.net/438qxelhyozd/3xMVsymcZx0kTd6j89GczV/3e95b96f97e852001b97eae27b8be3c3/profile.jpeg",
+      "file_name": "profile.jpeg",
+      "content_type": "image/jpeg",
+      "title": "Profile Picture",
+      "description": "Profile picture"
+    },
+    {
+      "id": "4ONq9KgjDLevgnj05whr04",
+      "url": "https://images.ctfassets.net/438qxelhyozd/4ONq9KgjDLevgnj05whr04/23da771cea81b5507322c1c6f560f916/1646135333581",
+      "file_name": "1646135333581",
+      "content_type": "image/jpeg",
+      "title": "Hark",
+      "description": "Hark company image"
+    },
+    {
+      "id": "5eOzEytW0WMAP2uhYtRZiU",
+      "url": "https://images.ctfassets.net/438qxelhyozd/5eOzEytW0WMAP2uhYtRZiU/47d4929e27527771237609c1dc6bd6ee/hearthstone_brain.png",
+      "file_name": "hearthstone_brain.png",
+      "content_type": "image/png",
+      "title": "HS Logo",
+      "description": "HS AI Competition Logo"
+    },
+    {
+      "id": "5PJrVXXOsRTMlEGUNkNs3G",
+      "url": "https://images.ctfassets.net/438qxelhyozd/5PJrVXXOsRTMlEGUNkNs3G/0a040e45501264c810b9774633dcf3f7/qapline_logo.png",
+      "file_name": "qapline_logo.png",
+      "content_type": "image/png",
+      "title": "Qapline Logo",
+      "description": "Qapline Logo"
+    },
+    {
+      "id": "5wFs1VB1EjFxBOSrM5J53k",
+      "url": "https://images.ctfassets.net/438qxelhyozd/5wFs1VB1EjFxBOSrM5J53k/f24ccafbfe1a503f89f7f263cacfbc11/card-game.png",
+      "file_name": "card-game.png",
+      "content_type": "image/png",
+      "title": "Poohead Logo",
+      "description": "Poohead project asset"
+    },
+    {
+      "id": "6nf3rNaaVaUqYcoAcciSeC",
+      "url": "https://images.ctfassets.net/438qxelhyozd/6nf3rNaaVaUqYcoAcciSeC/31956eda334587e4d8e8697ba34fb9c8/Mate_Logo.png",
+      "file_name": "Mate Logo.png",
+      "content_type": "image/png",
+      "title": "Mate Logo",
+      "description": "Mate Logo"
+    },
+    {
+      "id": "6rkOXCpyvuekYIgy6U6gGu",
+      "url": "https://images.ctfassets.net/438qxelhyozd/6rkOXCpyvuekYIgy6U6gGu/d447f86878f9394e23859b0e0131aea0/1_t5EnAu3eSWJA0rmZ9v3xuw.png",
+      "file_name": "1*t5EnAu3eSWJA0rmZ9v3xuw.png",
+      "content_type": "image/png",
+      "title": "Gatsby logo",
+      "description": "Gatsby logo"
+    },
+    {
+      "id": "6SMh0pnpUevHb19rWDwglt",
+      "url": "https://images.ctfassets.net/438qxelhyozd/6SMh0pnpUevHb19rWDwglt/76e93cbe105eb89d5a96cf23925d7b75/photo.png",
+      "file_name": "photo.png",
+      "content_type": "image/png",
+      "title": "DEAP logo",
+      "description": "DEAP logo icon"
+    },
+    {
+      "id": "7MnhIdYQCSgKjw8UP7Kwc3",
+      "url": "https://images.ctfassets.net/438qxelhyozd/7MnhIdYQCSgKjw8UP7Kwc3/acdac40cd46d8e16a31788324d188a1b/numbrs-logo.jpeg",
+      "file_name": "numbrs-logo.jpeg",
+      "content_type": "image/jpeg",
+      "title": "Numbrs Logo",
+      "description": "Numbrs Web Client Logo"
+    },
+    {
+      "id": "7nzWMoprChlkbHcSZo63eL",
+      "url": "https://assets.ctfassets.net/438qxelhyozd/7nzWMoprChlkbHcSZo63eL/d0363aed3bc672aca8b2d536a48972e3/JanMolcik_CV.pdf",
+      "file_name": "JanMolcik_CV.pdf",
+      "content_type": "application/pdf",
+      "title": "CV",
+      "description": "Curriculum vitae"
+    },
+    {
+      "id": "elfvmudtrgKIaAPhPlB5f",
+      "url": "https://images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
+      "file_name": "logo.png",
+      "content_type": "image/png",
+      "title": "Obytkujeme Logo",
+      "description": "Obytkujeme Logo icon"
+    },
+    {
+      "id": "u3Um4zkMrAaQioyq4oSIW",
+      "url": "https://images.ctfassets.net/438qxelhyozd/u3Um4zkMrAaQioyq4oSIW/b01e03902665ad0d52a2bf042350bdb8/600px-Facebook_logo__28square_29.png",
+      "file_name": "600px-Facebook_logo_%28square%29.png",
+      "content_type": "image/png",
+      "title": "Facebook logo",
+      "description": "Facebook logo"
+    }
+  ],
+  "diagnostics": {
+    "referenced_asset_ids": [
+      "1uBB3gpxCIuv5qjUX2vz3Z",
+      "29yX0dTepmPEu0MzZf7IHl",
+      "2t2k6RhmmPe58ES3d8R9Kg",
+      "3xMVsymcZx0kTd6j89GczV",
+      "4ONq9KgjDLevgnj05whr04",
+      "5PJrVXXOsRTMlEGUNkNs3G",
+      "5eOzEytW0WMAP2uhYtRZiU",
+      "5wFs1VB1EjFxBOSrM5J53k",
+      "6SMh0pnpUevHb19rWDwglt",
+      "7MnhIdYQCSgKjw8UP7Kwc3",
+      "elfvmudtrgKIaAPhPlB5f"
+    ],
+    "linked_asset_ids": [
+      "1uBB3gpxCIuv5qjUX2vz3Z",
+      "29yX0dTepmPEu0MzZf7IHl",
+      "2t2k6RhmmPe58ES3d8R9Kg",
+      "3xMVsymcZx0kTd6j89GczV",
+      "4ONq9KgjDLevgnj05whr04",
+      "5PJrVXXOsRTMlEGUNkNs3G",
+      "5eOzEytW0WMAP2uhYtRZiU",
+      "5wFs1VB1EjFxBOSrM5J53k",
+      "6SMh0pnpUevHb19rWDwglt",
+      "7MnhIdYQCSgKjw8UP7Kwc3",
+      "elfvmudtrgKIaAPhPlB5f"
+    ],
+    "missing_asset_ids": []
+  }
+}

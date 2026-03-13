@@ -1,0 +1,133 @@
+{
+  "name": "Obytkujeme",
+  "parent_id": 152164406559162,
+  "group_id": "55208bc5-225a-4f57-9a7e-c01938754eef",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:33.761Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:46.014Z",
+  "published_at": "2026-03-12T23:14:45.993Z",
+  "id": 152164408398269,
+  "uuid": "89b4f305-0f6c-4cf9-a44d-54b1f9e8819a",
+  "is_folder": false,
+  "content": {
+    "seo": [
+      {
+        "_uid": "fa629d26-9094-08fe-96ff-078c538548f4",
+        "noindex": false,
+        "og_image": "https://images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
+        "component": "seo_meta",
+        "meta_title": "Obytkujeme",
+        "meta_description": "Next.js motorhome booking website with landing pages, gallery, booking calendar, and admin-facing functionality, deployed with Vercel and built with ISR in mind."
+      }
+    ],
+    "_uid": "52e868aa-e8d9-41bc-ac57-da83a8b00204",
+    "logo": "https://images.ctfassets.net/438qxelhyozd/elfvmudtrgKIaAPhPlB5f/6d7394c199041a69c846c06ef080ad06/logo.png",
+    "slug": "obytkujeme",
+    "type": "Booking Platform",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "ISR",
+      "Calendar UX",
+      "Responsive UI",
+      "Vercel"
+    ],
+    "title": "Obytkujeme",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Obytkujeme combined marketing pages with functional booking flows, making it a good example of product-oriented frontend work rather than a simple static site.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The application included landing pages, image-heavy presentation, booking calendar flows, and supporting administrative functionality.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "It also reflects my interest in frontend delivery that balances user experience, maintainability, and practical production concerns such as deployment and incremental updates.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "Next.js motorhome booking website with landing pages, gallery, booking calendar, and admin-facing functionality, deployed with Vercel and built with ISR in mind.",
+    "component": "page_project",
+    "project_url": "https://www.obytkujeme.cz/",
+    "published_date": "2023-01-07T23:00:00.000Z"
+  },
+  "published": true,
+  "slug": "obytkujeme",
+  "path": null,
+  "full_slug": "projects/obytkujeme",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164406559162,
+    "uuid": "bf96e0c5-77d2-45a5-b951-50deed345b87",
+    "name": "Projects",
+    "slug": "projects",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
+    "timestamp": "1773357291"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164406559162,
+      "name": "Projects",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "projects",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:44.952Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -10,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286827639105,
+  "stage": null,
+  "favourite_for_user_ids": []
+}

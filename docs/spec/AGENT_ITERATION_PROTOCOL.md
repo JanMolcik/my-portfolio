@@ -51,16 +51,55 @@ Task-brief artifact contract:
   - `RALPH_CODEX_ARGS` and `RALPH_CLAUDE_ARGS` allow engine-specific CLI flags.
   - `RALPH_PROMPT_TEMPLATE_PATH` defaults to `docs/spec/RALPH_TASK_PROMPT_TEMPLATE.md`.
   - `RALPH_REQUIRE_AGENTS_ACK` defaults to `1`; if enabled, agent output must include per-task `AGENTS_ACK:<task-id>:<stamp>` token.
+  - `RALPH_REQUIRE_VISUAL_GUARD` defaults to `1`; if enabled, every successful agent run must pass tester-agent visual guard before verify gates.
+  - Visual guard environment defaults:
+    - `TESTER_AGENT_ENFORCE=1`
+    - `TESTER_AGENT_URL=${TESTER_AGENT_URL:-http://127.0.0.1:3000}`
+    - `TESTER_AGENT_REQUIRED_PATHS` inferred from changed files (fallback `/`)
+    - `TESTER_AGENT_REQUIRE_PLAYWRIGHT_LOG_CHANGE=1`
+    - `TESTER_AGENT_PLAYWRIGHT_LOG_DIR=${RALPH_PLAYWRIGHT_LOG_DIR:-.playwright-cli}`
   - Template placeholders: `{{TASK_ID}}`, `{{TASK_TITLE}}`, `{{TASK_PROMPT_FILE}}`, `{{TASK_BRIEF_FILE}}`, `{{TASK_JSON_FILE}}`.
   - Prompt placeholders available in `RALPH_TASK_PROMPT_TEMPLATE.md`:
     - `{{TASK_ID}}`, `{{TASK_TYPE}}`, `{{TASK_TITLE}}`, `{{TASK_GOAL}}`
     - `{{TASK_SCOPE_BULLETS}}`, `{{TASK_NON_GOALS_BULLETS}}`, `{{TASK_INVARIANTS_BULLETS}}`, `{{TASK_ACCEPTANCE_BULLETS}}`
     - `{{TASK_PROMPT_FILE}}`, `{{TASK_BRIEF_FILE}}`, `{{TASK_JSON_FILE}}`, `{{RALPH_QUEUE_FILE}}`, `{{RALPH_PROMPT_TEMPLATE_FILE}}`, `{{AGENTS_ACK_TOKEN}}`
   - Verification command defaults to deterministic gate subset, override via `RALPH_VERIFY_CMD`.
+
+### Commit Message Contract (Ralph Auto-Commit)
+
+Ralph-generated commits must follow a deterministic, descriptive format aligned with established guidance:
+- [Git project submitting guidelines](https://git-scm.com/docs/SubmittingPatches)
+- [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)
+- [How to Write a Git Commit Message](https://cbea.ms/git-commit/)
+
+Contract:
+- Subject format: `<type>(<scope>): <imperative summary> (<TASK_ID>)`
+- Allowed `type`: `feat|fix|docs|test|chore`
+- `scope` must reflect primary changed area (`app`, `storyblok`, `harness`, `ralph`, `docs`, `tickets`, ...)
+- Subject must be concise (`<=72` chars), imperative, and MUST NOT copy raw user-story prose (`As a ... I want ...`)
+- Body is required and must include:
+  - `Task: <TASK_ID>`
+  - `Goal: <single-line goal>`
+  - `Why: <outcome>` when available
+  - `Changes:` bullet list of touched files
+  - `Validation:` executed verify command/gates
+- Ralph loop must stage with `git add -A` and commit with separate subject/body paragraphs.
+- If commit contract cannot be satisfied (or commit fails), task status remains `failed`.
 - Docker sandbox execution:
   - Build image: `pnpm ralph:docker:build`
-  - Run loop in container: `pnpm ralph:docker:loop`
+  - Run loop in isolated container workspace (default): `pnpm ralph:docker:loop`
+  - Run loop directly against current repository workspace: `pnpm ralph:docker:loop:inplace`
   - Docker wrapper fails fast on missing queue file or missing `RALPH_AGENT_CMD_TEMPLATE`.
+  - Docker image must include both `codex` and `claude` CLIs for deterministic engine switching.
+  - `RALPH_DOCKER_MODE=isolated` is default and keeps native/dev workspace separate from container dependency writes.
+  - `RALPH_DOCKER_SANDBOX_ROOT` defaults to `/tmp/my-portfolio-ralph-workspaces` to avoid polluting repository tree with full sandbox copies.
+  - `RALPH_DOCKER_USER` controls container execution user (default host UID:GID; set explicitly when required).
+  - In `inplace` mode, container `node_modules` and `.pnpm-store` are mounted as anonymous volumes to avoid host pollution.
+  - In `isolated` mode, dependencies are installed inside isolated workspace copy under `RALPH_DOCKER_SANDBOX_ROOT`.
+  - `RALPH_DOCKER_SYNC_BACK=1` can be used to copy isolated workspace changes back to repository root (disabled by default).
+  - `RALPH_DOCKER_SHARE_CLAUDE_AUTH=1` (default) mounts host Claude subscription session into container (`~/.claude`, `~/.claude.json`) when `RALPH_ENGINE=claude`; missing auth paths must fail fast.
+  - `RALPH_DOCKER_CLAUDE_DIR` and `RALPH_DOCKER_CLAUDE_STATE_FILE` allow explicit auth path override for Claude subscription mode.
+  - `RALPH_DOCKER_SHARE_CODEX_AUTH=1` optionally mounts host Codex home into container (`RALPH_DOCKER_CODEX_HOME`, default `${CODEX_HOME:-~/.codex}`).
   - Example local shortcuts:
     - `pnpm ralph:once:codex`
     - `pnpm ralph:once:claude`
@@ -114,10 +153,13 @@ Run:
 
 Output artifact:
 - `artifacts/tester-agent/<timestamp>-report.md`
+- `artifacts/tester-agent/<timestamp>-evidence.json`
+- `artifacts/tester-agent/<timestamp>-<route>.png` for each required route
 - Required sections: `Scope`, `Steps`, `Findings`, `Severity`, `Reproduction`, `Suggested guard test`.
 
 Merge rule:
 - Any open P0/P1 finding blocks merge.
+- Missing/unchanged Playwright CLI logs in enforce mode blocks merge (guard treated as not executed).
 
 ## Failure Taxonomy
 

@@ -1,0 +1,100 @@
+{
+  "name": "Senior Frontend Web Developer - DEAP · Digital Energy Advisory Platform (DEAP) · Contract",
+  "parent_id": 152164407230907,
+  "group_id": "c72363c8-94d1-4685-b741-2a83197a2551",
+  "alternates": [],
+  "created_at": "2026-03-06T23:18:34.837Z",
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "updated_at": "2026-03-12T23:14:47.563Z",
+  "published_at": "2026-03-12T23:14:47.547Z",
+  "id": 152164412793283,
+  "uuid": "9048a698-0a28-4a5b-957a-2a405134d77d",
+  "is_folder": false,
+  "content": {
+    "_uid": "10f5d189-6912-473e-bc91-776d49fb3050",
+    "image": "https://images.ctfassets.net/438qxelhyozd/6SMh0pnpUevHb19rWDwglt/76e93cbe105eb89d5a96cf23925d7b75/photo.png",
+    "title": "Senior Frontend Web Developer - DEAP",
+    "skills": [
+      "Typescript",
+      "Redux",
+      "React"
+    ],
+    "end_date": "2023-07-31T12:00:00.000Z",
+    "component": "item_experience",
+    "start_date": "2023-04-01T10:00:00.000Z",
+    "description": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "I contributed to the first version of an energy-supplier comparison product, delivering React and TypeScript frontend work across state management, form flows, reusable UI integration, and fast-paced contract execution inside an active product team.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "company_name": "Digital Energy Advisory Platform (DEAP) · Contract"
+  },
+  "published": true,
+  "slug": "senior-frontend-web-developer-deap",
+  "path": null,
+  "full_slug": "experience/senior-frontend-web-developer-deap",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 152164407230907,
+    "uuid": "e63908a5-9248-4011-b41c-e7be505c83bd",
+    "name": "Experience",
+    "slug": "experience",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "preview_token": {
+    "token": "f991a3dae7623546d9549c39cfbf4ea6fd3afd67",
+    "timestamp": "1773357291"
+  },
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 152164407230907,
+      "name": "Experience",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "experience",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "first_published_at": "2026-03-07T08:22:46.051Z",
+  "last_author": {
+    "id": 149154938651357,
+    "userid": "JanMolcik",
+    "friendly_name": "Jan Molčík"
+  },
+  "last_author_id": 149154938651357,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": 0,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "current_version_id": 154286833267021,
+  "stage": null,
+  "favourite_for_user_ids": []
+}
