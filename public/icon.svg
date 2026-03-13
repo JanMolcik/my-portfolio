@@ -1,0 +1,57 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="c5-bg" x1="0" y1="0" x2="512" y2="512">
+      <stop offset="0%" stop-color="#121212"/>
+      <stop offset="55%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#0a120a"/>
+    </linearGradient>
+    <filter id="c5-glow">
+      <feGaussianBlur stdDeviation="4" result="b1"/>
+      <feGaussianBlur stdDeviation="12" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#c5-bg)"/>
+  <rect x="44" y="44" width="424" height="424" rx="4" fill="none" stroke="#1AF25B" stroke-width="2" opacity="0.3"/>
+  <line x1="44" y1="82" x2="468" y2="82" stroke="#1AF25B" stroke-width="2" opacity="0.3"/>
+  <text x="56" y="72" fill="#1AF25B" font-family="'Courier New', monospace" font-size="22" opacity="0.5">term://jm-portfolio</text>
+
+  <!-- ASCII art JM from # using &#160; (nbsp) for spacing -->
+  <!-- Glow layer -->
+  <g fill="#1AF25B" font-family="'Courier New', 'Courier', monospace" font-size="38" filter="url(#c5-glow)" opacity="0.6">
+    <text x="88" y="148">&#160;&#160;###&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+    <text x="88" y="182">&#160;&#160;&#160;&#160;#&#160;&#160;##&#160;&#160;&#160;##</text>
+    <text x="88" y="216">&#160;&#160;&#160;&#160;#&#160;&#160;#&#160;#&#160;#&#160;#</text>
+    <text x="88" y="250">&#160;&#160;&#160;&#160;#&#160;&#160;#&#160;&#160;#&#160;&#160;#</text>
+    <text x="88" y="284">&#160;&#160;&#160;&#160;#&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+    <text x="88" y="318">#&#160;&#160;&#160;#&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+    <text x="88" y="352">&#160;###&#160;&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+  </g>
+  <!-- Sharp layer -->
+  <g fill="#1AF25B" font-family="'Courier New', 'Courier', monospace" font-size="38">
+    <text x="88" y="148">&#160;&#160;###&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+    <text x="88" y="182">&#160;&#160;&#160;&#160;#&#160;&#160;##&#160;&#160;&#160;##</text>
+    <text x="88" y="216">&#160;&#160;&#160;&#160;#&#160;&#160;#&#160;#&#160;#&#160;#</text>
+    <text x="88" y="250">&#160;&#160;&#160;&#160;#&#160;&#160;#&#160;&#160;#&#160;&#160;#</text>
+    <text x="88" y="284">&#160;&#160;&#160;&#160;#&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+    <text x="88" y="318">#&#160;&#160;&#160;#&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+    <text x="88" y="352">&#160;###&#160;&#160;&#160;#&#160;&#160;&#160;&#160;&#160;#</text>
+  </g>
+
+  <!-- Prompt -->
+  <line x1="68" y1="378" x2="444" y2="378" stroke="#1AF25B" stroke-width="1" opacity="0.2"/>
+  <text x="68" y="414" fill="#1AF25B" font-family="'Courier New', monospace" font-size="26" opacity="0.7">janmo@dev:~$</text>
+  <rect x="270" y="396" width="16" height="24" fill="#1AF25B" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Status bar -->
+  <text x="56" y="454" fill="#1AF25B" font-family="'Courier New', monospace" font-size="18" opacity="0.3">NORMAL  utf-8  LF  1:1</text>
+  <!-- Scanlines -->
+  <g opacity="0.05">
+    <line x1="44" y1="96" x2="468" y2="96" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="124" x2="468" y2="124" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="152" x2="468" y2="152" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="180" x2="468" y2="180" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="208" x2="468" y2="208" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="236" x2="468" y2="236" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="264" x2="468" y2="264" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="292" x2="468" y2="292" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="320" x2="468" y2="320" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="348" x2="468" y2="348" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="376" x2="468" y2="376" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="404" x2="468" y2="404" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="432" x2="468" y2="432" stroke="#1AF25B" stroke-width="0.5"/><line x1="44" y1="460" x2="468" y2="460" stroke="#1AF25B" stroke-width="0.5"/>
+  </g>
+</svg>

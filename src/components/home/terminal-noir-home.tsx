@@ -24,6 +24,14 @@ function initialsFromHeadline(headline: string): string {
 	return initials || 'TN';
 }
 
+function terminalHandleFromHeadline(headline: string): string {
+	return headline
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '')
+		.toLowerCase()
+		.replace(/\s+/g, '');
+}
+
 function formatDateLabel(value?: string): string {
 	if (!value) {
 		return 'present';
@@ -180,7 +188,7 @@ export default function TerminalNoirHome({
 		<main className={styles.terminalNoir} data-testid="terminal-noir-home">
 			<nav className={styles.nav}>
 				<div className={styles.navLogo}>
-					{model.headline.toLowerCase().replace(/\s+/g, '')}
+					{terminalHandleFromHeadline(model.headline)}
 					<span>@</span>terminal:~$
 				</div>
 				<ul className={styles.navList}>
