@@ -19,7 +19,10 @@ playwright-report/
 !.env.ralph.example
 
 # local artifacts and agent metadata
-artifacts/
+artifacts/*
+!artifacts/release/
+artifacts/release/*
+!artifacts/release/launch-readiness-signoff.md
 .claude/
 .storyblok/
 data/storyblok/logs/
