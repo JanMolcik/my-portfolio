@@ -1,6 +1,22 @@
-import { readFile } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
+import path from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { GET as uptimeCheck } from '@/app/api/uptime/route';
+
+async function listSourceFiles(rootDir: string): Promise<string[]> {
+	const entries = await readdir(rootDir, { withFileTypes: true });
+	const nestedPaths = await Promise.all(
+		entries.map(async (entry) => {
+			const entryPath = path.join(rootDir, entry.name);
+			if (entry.isDirectory()) {
+				return listSourceFiles(entryPath);
+			}
+			return [entryPath];
+		}),
+	);
+
+	return nestedPaths.flat();
+}
 
 describe('SEC-PUBLISHED-ONLY-001', () => {
 	afterEach(() => {
@@ -34,8 +50,34 @@ describe('SEC-PUBLISHED-ONLY-001', () => {
 		expect(config).toContain('Referrer-Policy');
 		expect(config).toContain('Permissions-Policy');
 		expect(config).toContain('frame-ancestors');
+		expect(config).toContain("object-src 'none'");
+		expect(config).toContain("script-src-attr 'none'");
 		expect(config).toContain('https://challenges.cloudflare.com');
 		expect(config).toContain('https://app.storyblok.com');
+	});
+
+	it('limits custom inline script sinks to serialized JSON-LD route scripts', async () => {
+		const sourceFiles = (await listSourceFiles('src')).filter((filePath) =>
+			filePath.endsWith('.ts') || filePath.endsWith('.tsx'),
+		);
+		const filesWithInlineHtml: string[] = [];
+
+		for (const filePath of sourceFiles) {
+			const source = await readFile(filePath, 'utf8');
+			if (!source.includes('dangerouslySetInnerHTML')) {
+				continue;
+			}
+
+			filesWithInlineHtml.push(filePath);
+			expect(source).toContain('type="application/ld+json"');
+			expect(source).toContain('serializeJsonLd(');
+		}
+
+		expect(filesWithInlineHtml.sort()).toEqual([
+			'src/app/page.tsx',
+			'src/app/projects/[slug]/page.tsx',
+			'src/app/writing/[slug]/page.tsx',
+		]);
 	});
 
 	it('exposes an uptime endpoint for basic external monitoring checks', async () => {

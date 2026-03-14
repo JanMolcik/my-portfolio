@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { cache } from 'react';
 import TerminalNoirWriting from '@/components/writing/terminal-noir-writing';
 import { buildWritingJsonLd, serializeJsonLd } from '@/lib/seo/json-ld';
 import {
@@ -18,6 +19,13 @@ export const revalidate = 3600;
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 
+const loadWritingStory = cache(
+	async (
+		slug: string,
+		mode: Awaited<ReturnType<typeof getStoryblokRequestMode>>,
+	) => getPublishedStory(`writing/${slug}`, mode),
+);
+
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
 	return getPublishedRouteParamsByPrefix('writing/');
 }
@@ -27,7 +35,7 @@ export async function generateMetadata({
 }: WritingPageProps): Promise<Metadata> {
 	const { slug } = await params;
 	const mode = await getStoryblokRequestMode();
-	const story = await getPublishedStory(`writing/${slug}`, mode);
+	const story = await loadWritingStory(slug, mode);
 	if (!story) {
 		return buildNotFoundMetadata('Writing |');
 	}
@@ -37,7 +45,7 @@ export async function generateMetadata({
 export default async function WritingPage({ params }: WritingPageProps) {
 	const { slug } = await params;
 	const mode = await getStoryblokRequestMode();
-	const story = await getPublishedStory(`writing/${slug}`, mode);
+	const story = await loadWritingStory(slug, mode);
 	if (!story) {
 		notFound();
 	}

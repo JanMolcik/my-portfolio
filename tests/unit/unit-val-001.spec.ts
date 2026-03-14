@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { buildNotFoundMetadata, buildStoryMetadata } from '@/lib/seo/metadata';
+import {
+	getAbsoluteSiteUrl,
+	getMetadataBaseUrl,
+	getSiteUrl,
+} from '@/lib/seo/site-url';
 import type { StoryblokStory } from '@/lib/storyblok/content';
 
 describe('UNIT-VAL-001', () => {
@@ -82,5 +87,34 @@ describe('UNIT-VAL-001', () => {
 		]);
 
 		process.env.NEXT_PUBLIC_SITE_URL = previous;
+	});
+
+	it('normalizes absolute site URLs through central helper', () => {
+		const previous = process.env.NEXT_PUBLIC_SITE_URL;
+		process.env.NEXT_PUBLIC_SITE_URL = 'https://example.com/';
+
+		expect(getSiteUrl()).toBe('https://example.com');
+		expect(getAbsoluteSiteUrl('/projects/alpha')).toBe(
+			'https://example.com/projects/alpha',
+		);
+		expect(getMetadataBaseUrl().toString()).toBe('https://example.com/');
+
+		process.env.NEXT_PUBLIC_SITE_URL = previous;
+	});
+
+	it('fails closed in production when NEXT_PUBLIC_SITE_URL is missing', () => {
+		const previousSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+		const previousNodeEnv = process.env.NODE_ENV;
+		const env = process.env as Record<string, string | undefined>;
+
+		delete process.env.NEXT_PUBLIC_SITE_URL;
+		env.NODE_ENV = 'production';
+
+		expect(() => getSiteUrl()).toThrow(
+			/NEXT_PUBLIC_SITE_URL is required in production/,
+		);
+
+		env.NODE_ENV = previousNodeEnv;
+		process.env.NEXT_PUBLIC_SITE_URL = previousSiteUrl;
 	});
 });

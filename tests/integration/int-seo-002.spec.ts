@@ -35,6 +35,17 @@ describe('INT-SEO-002', () => {
 		}
 	});
 
+	it('keeps top-level homepage sections in sequential heading order', async () => {
+		const source = await readFile(
+			'src/components/home/terminal-noir-home.tsx',
+			'utf8',
+		);
+		expect(source).toContain('<h2 className={styles.srOnly}>About</h2>');
+		expect(source).toContain('<h2 className={styles.srOnly}>Projects</h2>');
+		expect(source).toContain('<h2 className={styles.srOnly}>Experience</h2>');
+		expect(source).toContain('<h2 className={styles.srOnly}>Contact</h2>');
+	});
+
 	it('builds sitemap entries with canonical base URL from public site env', async () => {
 		const previous = process.env.NEXT_PUBLIC_SITE_URL;
 		process.env.NEXT_PUBLIC_SITE_URL = 'https://example.com/';
@@ -78,6 +89,7 @@ describe('INT-SEO-002', () => {
 					'/api/preview',
 					'/api/exit-preview',
 					'/api/revalidate/storyblok',
+					'/api/contact',
 					'/api/uptime',
 				],
 			},

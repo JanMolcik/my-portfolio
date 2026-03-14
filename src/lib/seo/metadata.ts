@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
 import type { StoryblokStory } from '@/lib/storyblok/content';
+import { getAbsoluteSiteUrl, getSiteUrl } from '@/lib/seo/site-url';
 import { mapSeoDtoToDomain } from '@/lib/storyblok/mappers';
-
-function normalizeSiteUrl(rawUrl?: string): string {
-	const fallback = 'http://localhost:3000';
-	if (!rawUrl) return fallback;
-	return rawUrl.endsWith('/') ? rawUrl.slice(0, -1) : rawUrl;
-}
 
 function normalizePath(path: string): string {
 	if (!path) return '/';
@@ -39,12 +34,12 @@ export function buildStoryMetadata(
 	path: string,
 	ogType: OpenGraphType = 'website',
 ): Metadata {
-	const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+	const siteUrl = getSiteUrl();
 	const normalizedPath = normalizePath(path);
 	const label = routeMetadataLabel(normalizedPath);
 	const storyName = story.name?.trim() || 'Portfolio';
 	const seo = mapSeoDtoToDomain(story.content?.seo);
-	const canonicalUrl = seo.canonicalUrl || `${siteUrl}${normalizedPath}`;
+	const canonicalUrl = seo.canonicalUrl || getAbsoluteSiteUrl(normalizedPath);
 	const title = seo.metaTitle || `${storyName} | ${label}`;
 	const description = seo.metaDescription || `${label} page for ${storyName}.`;
 	const ogImage = seo.ogImageUrl || `${siteUrl}/favicon.ico`;

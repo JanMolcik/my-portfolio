@@ -6,6 +6,7 @@ import {
 } from '@storyblok/react/rsc';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { cache } from 'react';
 import TerminalNoirHome from '@/components/home/terminal-noir-home';
 import { buildHomeJsonLd, serializeJsonLd } from '@/lib/seo/json-ld';
 import { buildNotFoundMetadata, buildStoryMetadata } from '@/lib/seo/metadata';
@@ -77,66 +78,57 @@ function getSocialLinkBloks(story: HomeStory): SbBlokData[] {
 	);
 }
 
-async function resolveHomeStory(mode: StoryblokContentMode): Promise<{
-	mode: StoryblokContentMode;
-	story: HomeStory | null;
-	rels: StoryblokResolvedRelationStory[];
-}> {
-	const payload = await getPublishedHomeStory(mode);
-	if (payload) {
+const resolveHomeStory = cache(
+	async (
+		mode: StoryblokContentMode,
+	): Promise<{
+		mode: StoryblokContentMode;
+		story: HomeStory | null;
+		rels: StoryblokResolvedRelationStory[];
+	}> => {
+		const payload = await getPublishedHomeStory(mode);
+		if (payload) {
+			return {
+				mode,
+				story: payload.story,
+				rels: payload.rels,
+			};
+		}
+
+		if (!shouldUseLocalDraftFallback(mode)) {
+			return {
+				mode,
+				story: null,
+				rels: [],
+			};
+		}
+
+		const fallbackPayload = await getPublishedHomeStory(
+			STORYBLOK_DRAFT_VERSION,
+		);
+		if (!fallbackPayload) {
+			return {
+				mode,
+				story: null,
+				rels: [],
+			};
+		}
+
 		return {
-			mode,
-			story: payload.story,
-			rels: payload.rels,
+			mode: STORYBLOK_DRAFT_VERSION,
+			story: fallbackPayload.story,
+			rels: fallbackPayload.rels,
 		};
-	}
-
-	if (!shouldUseLocalDraftFallback(mode)) {
-		return {
-			mode,
-			story: null,
-			rels: [],
-		};
-	}
-
-	const fallbackPayload = await getPublishedHomeStory(STORYBLOK_DRAFT_VERSION);
-	if (!fallbackPayload) {
-		return {
-			mode,
-			story: null,
-			rels: [],
-		};
-	}
-
-	return {
-		mode: STORYBLOK_DRAFT_VERSION,
-		story: fallbackPayload.story,
-		rels: fallbackPayload.rels,
-	};
-}
-
-async function resolveHomeStoryForMetadata(
-	mode: StoryblokContentMode,
-): Promise<HomeStory | null> {
-	const story = await getPublishedStory('home', mode);
-	if (story) {
-		return story;
-	}
-
-	if (!shouldUseLocalDraftFallback(mode)) {
-		return null;
-	}
-
-	return getPublishedStory('home', STORYBLOK_DRAFT_VERSION);
-}
+	},
+);
 
 export async function generateMetadata(): Promise<Metadata> {
 	const mode = await getStoryblokRequestMode();
-	const story = await resolveHomeStoryForMetadata(mode);
-	if (!story) {
+	const resolved = await resolveHomeStory(mode);
+	if (!resolved.story) {
 		return buildNotFoundMetadata('Home |');
 	}
-	return buildStoryMetadata(story, '/');
+	return buildStoryMetadata(resolved.story, '/');
 }
 
 export default async function HomePage() {

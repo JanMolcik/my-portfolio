@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { cache } from 'react';
 import TerminalNoirProject from '@/components/projects/terminal-noir-project';
 import { buildProjectJsonLd, serializeJsonLd } from '@/lib/seo/json-ld';
 import {
@@ -18,6 +19,13 @@ export const revalidate = 3600;
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 
+const loadProjectStory = cache(
+	async (
+		slug: string,
+		mode: Awaited<ReturnType<typeof getStoryblokRequestMode>>,
+	) => getPublishedStory(`projects/${slug}`, mode),
+);
+
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
 	return getPublishedRouteParamsByPrefix('projects/');
 }
@@ -27,7 +35,7 @@ export async function generateMetadata({
 }: ProjectPageProps): Promise<Metadata> {
 	const { slug } = await params;
 	const mode = await getStoryblokRequestMode();
-	const story = await getPublishedStory(`projects/${slug}`, mode);
+	const story = await loadProjectStory(slug, mode);
 	if (!story) {
 		return buildNotFoundMetadata('Project |');
 	}
@@ -37,7 +45,7 @@ export async function generateMetadata({
 export default async function ProjectPage({ params }: ProjectPageProps) {
 	const { slug } = await params;
 	const mode = await getStoryblokRequestMode();
-	const story = await getPublishedStory(`projects/${slug}`, mode);
+	const story = await loadProjectStory(slug, mode);
 	if (!story) {
 		notFound();
 	}

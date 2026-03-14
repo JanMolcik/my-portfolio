@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getProjectExternalLinks } from '@/lib/projects/project-links';
 import { parseStoryblokDate } from '@/lib/storyblok/dates';
@@ -70,14 +71,18 @@ export default function TerminalNoirProject({
 	});
 
 	return (
-		<main className={styles.projectPage} data-testid="terminal-noir-project">
-			<nav className={styles.breadcrumbs}>
-				<Link href="/">~/</Link>
-				<span>/</span>
-				<Link href="/#projects">projects</Link>
-				<span>/</span>
-				<strong>{project.slug || 'project'}</strong>
-			</nav>
+			<main className={styles.projectPage} data-testid="terminal-noir-project">
+				<nav className={styles.breadcrumbs}>
+					<Link href="/" prefetch={false}>
+						~/
+					</Link>
+					<span>/</span>
+					<Link href="/#projects" prefetch={false}>
+						projects
+					</Link>
+					<span>/</span>
+					<strong>{project.slug || 'project'}</strong>
+				</nav>
 
 			<section className={styles.hero}>
 				<div>
@@ -118,13 +123,12 @@ export default function TerminalNoirProject({
 
 				<div className={styles.mediaCard}>
 					{project.logoUrl ? (
-						/* eslint-disable-next-line @next/next/no-img-element */
-						<img
+						<Image
 							alt={`${title} logo`}
 							className={styles.logo}
-							decoding="async"
 							height={220}
-							loading="lazy"
+							priority
+							sizes="(max-width: 900px) 100vw, 280px"
 							src={project.logoUrl}
 							width={280}
 						/>

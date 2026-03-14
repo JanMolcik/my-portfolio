@@ -249,6 +249,7 @@ export default function TerminalNoirHome({
 
 			<section className={styles.aboutSection} id="about">
 				<div className={styles.container}>
+					<h2 className={styles.srOnly}>About</h2>
 					<div className={styles.sectionLabel}>about.md</div>
 					<div className={styles.aboutGrid}>
 						<div className={styles.aboutAvatar}>
@@ -279,6 +280,7 @@ export default function TerminalNoirHome({
 
 			<section className={styles.projectsSection} id="projects">
 				<div className={styles.container}>
+					<h2 className={styles.srOnly}>Projects</h2>
 					<div className={styles.sectionLabel}>ls ./projects</div>
 					<div className={styles.projectsIntro}>
 						<p className={styles.projectsLead}>selected case studies</p>
@@ -321,6 +323,7 @@ export default function TerminalNoirHome({
 
 			<section className={styles.experienceSection} id="experience">
 				<div className={styles.container}>
+					<h2 className={styles.srOnly}>Experience</h2>
 					<div className={styles.sectionLabel}>git log --oneline</div>
 					<div className={styles.experienceIntro}>
 						<p className={styles.projectsLead}>current role</p>
@@ -431,6 +434,7 @@ export default function TerminalNoirHome({
 
 			<section className={styles.contactSection} id="contact">
 				<div className={styles.container}>
+					<h2 className={styles.srOnly}>Contact</h2>
 					<div className={styles.sectionLabel}>ping --me</div>
 					<div className={styles.contactGrid}>
 						<div>

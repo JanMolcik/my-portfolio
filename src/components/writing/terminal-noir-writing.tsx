@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { RichTextDomain, WritingDomain } from '@/lib/storyblok/mappers';
 import { parseStoryblokDate } from '@/lib/storyblok/dates';
@@ -60,14 +61,18 @@ export default function TerminalNoirWriting({
 	const body = paragraphs.length > 0 ? paragraphs : [writing.excerpt];
 
 	return (
-		<main className={styles.writingPage} data-testid="terminal-noir-writing">
-			<nav className={styles.breadcrumbs}>
-				<Link href="/">~/</Link>
-				<span>/</span>
-				<Link href="/#writing">writing</Link>
-				<span>/</span>
-				<strong>{writing.slug || 'entry'}</strong>
-			</nav>
+			<main className={styles.writingPage} data-testid="terminal-noir-writing">
+				<nav className={styles.breadcrumbs}>
+					<Link href="/" prefetch={false}>
+						~/
+					</Link>
+					<span>/</span>
+					<Link href="/#writing" prefetch={false}>
+						writing
+					</Link>
+					<span>/</span>
+					<strong>{writing.slug || 'entry'}</strong>
+				</nav>
 
 			<section className={styles.hero}>
 				<div>
@@ -84,13 +89,12 @@ export default function TerminalNoirWriting({
 
 				<div className={styles.mediaCard}>
 					{writing.coverImageUrl ? (
-						/* eslint-disable-next-line @next/next/no-img-element */
-						<img
+						<Image
 							alt={`${title} cover`}
 							className={styles.coverImage}
-							decoding="async"
 							height={220}
-							loading="lazy"
+							priority
+							sizes="(max-width: 900px) 100vw, 280px"
 							src={writing.coverImageUrl}
 							width={280}
 						/>

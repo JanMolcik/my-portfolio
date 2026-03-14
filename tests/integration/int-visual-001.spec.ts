@@ -35,15 +35,15 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 		rootSelector: '.terminalNoir',
 		requiredRules: [
 			{
-				selector: '.terminalNoir::before',
+				selector: '.terminalNoir',
 				property: 'background-size',
-				value: '40px 40px',
+				value: 'auto, 40px 40px, 40px 40px',
 			},
-			{
-				selector: '.nav',
-				property: 'position',
-				value: 'fixed',
-			},
+				{
+					selector: '.nav',
+					property: 'position',
+					value: 'fixed',
+				},
 			{
 				selector: '.heroName',
 				property: 'font-size',
@@ -66,9 +66,9 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 		rootSelector: '.projectPage',
 		requiredRules: [
 			{
-				selector: '.projectPage::before',
+				selector: '.projectPage',
 				property: 'background-size',
-				value: '40px 40px',
+				value: 'auto, 40px 40px, 40px 40px',
 			},
 			{
 				selector: '.hero',
@@ -97,9 +97,9 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 		rootSelector: '.writingPage',
 		requiredRules: [
 			{
-				selector: '.writingPage::before',
+				selector: '.writingPage',
 				property: 'background-size',
-				value: '40px 40px',
+				value: 'auto, 40px 40px, 40px 40px',
 			},
 			{
 				selector: '.hero',
@@ -210,7 +210,9 @@ describe('EVAL-007', () => {
 
 			expect(rootDeclarations['font-family']).toContain('"JetBrains Mono"');
 			expect(rootDeclarations['font-family']).toContain('"Share Tech Mono"');
-			expect(rootDeclarations['background']).toBe('var(--bg)');
+			expect(
+				rootDeclarations['background'] ?? rootDeclarations['background-color'],
+			).toBe('var(--bg)');
 
 			const ruleSnapshot: Record<string, Record<string, string>> = {};
 			for (const rule of contract.requiredRules) {
@@ -223,7 +225,8 @@ describe('EVAL-007', () => {
 				route: contract.route,
 				testId: contract.testId,
 				root: {
-					background: rootDeclarations.background,
+					background:
+						rootDeclarations.background ?? rootDeclarations['background-color'],
 					fontFamily: rootDeclarations['font-family'],
 					fontSize: rootDeclarations['font-size'],
 					lineHeight: rootDeclarations['line-height'],

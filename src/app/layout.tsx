@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { JetBrains_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/next';
+import { getMetadataBaseUrl } from '@/lib/seo/site-url';
 import './globals.css';
 
 const jetBrainsMono = JetBrains_Mono({
@@ -18,9 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	metadataBase: new URL(
-		process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-	),
+	metadataBase: getMetadataBaseUrl(),
 	applicationName: 'Jan Molcik | Terminal Noir',
 	manifest: '/site.webmanifest',
 	title: {
@@ -43,6 +42,8 @@ export const metadata: Metadata = {
 	},
 };
 
+const shouldEnableVercelAnalytics = process.env.VERCEL === '1';
+
 type RootLayoutProps = {
 	children: ReactNode;
 };
@@ -52,7 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 		<html lang="en">
 			<body className={jetBrainsMono.variable}>
 				{children}
-				<Analytics />
+				{shouldEnableVercelAnalytics ? <Analytics /> : null}
 			</body>
 		</html>
 	);

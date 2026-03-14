@@ -4,55 +4,41 @@
 	--green: #00ff41;
 	--cyan: #00d4ff;
 	--white: #e8e8e8;
-	--dim: #555;
+	--dim: #8a8a8a;
 	--border: #1a1a1a;
 	--glow-green: 0 0 10px #00ff4166, 0 0 30px #00ff4122;
 	--glow-cyan: 0 0 10px #00d4ff66, 0 0 30px #00d4ff22;
 	position: relative;
-	background: var(--bg);
+	background-color: var(--bg);
+	background-image:
+		repeating-linear-gradient(
+			0deg,
+			transparent,
+			transparent 2px,
+			rgb(0 0 0 / 12%) 2px,
+			rgb(0 0 0 / 12%) 4px
+		),
+		linear-gradient(rgb(0 255 65 / 3%) 1px, transparent 1px),
+		linear-gradient(90deg, rgb(0 255 65 / 3%) 1px, transparent 1px);
+	background-size:
+		auto,
+		40px 40px,
+		40px 40px;
 	color: var(--white);
 	font-family: "JetBrains Mono", "Share Tech Mono", monospace;
 	font-size: 14px;
 	line-height: 1.7;
 	overflow-x: hidden;
 	min-height: 100vh;
+	isolation: isolate;
 }
 
 :global(html) {
-	scroll-behavior: smooth;
 	scroll-padding-top: 96px;
 }
 
 .terminalNoir :global(section[id]) {
 	scroll-margin-top: 96px;
-}
-
-.terminalNoir::before {
-	content: "";
-	position: fixed;
-	inset: 0;
-	background-image:
-		linear-gradient(rgb(0 255 65 / 3%) 1px, transparent 1px),
-		linear-gradient(90deg, rgb(0 255 65 / 3%) 1px, transparent 1px);
-	background-size: 40px 40px;
-	pointer-events: none;
-	z-index: 0;
-}
-
-.terminalNoir::after {
-	content: "";
-	position: fixed;
-	inset: 0;
-	background: repeating-linear-gradient(
-		0deg,
-		transparent,
-		transparent 2px,
-		rgb(0 0 0 / 15%) 2px,
-		rgb(0 0 0 / 15%) 4px
-	);
-	pointer-events: none;
-	z-index: 70;
-	will-change: transform;
 }
 
 .nav {
@@ -65,8 +51,7 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 16px 48px;
-	background: rgb(10 10 10 / 92%);
-	backdrop-filter: blur(8px);
+	background: rgb(10 10 10 / 97%);
 	border-bottom: 1px solid var(--border);
 }
 
@@ -121,6 +106,19 @@
 	padding: 0 48px;
 	position: relative;
 	z-index: 10;
+}
+
+.srOnly {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
 }
 
 .heroSection {
@@ -1138,7 +1136,6 @@
 @media (max-width: 768px) {
 	.nav {
 		padding: 16px 24px;
-		backdrop-filter: none;
 		background: rgb(10 10 10 / 97%);
 	}
 
@@ -1194,9 +1191,5 @@
 		flex-direction: column;
 		gap: 8px;
 		text-align: center;
-	}
-
-	.terminalNoir::after {
-		display: none;
 	}
 }

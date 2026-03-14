@@ -1,14 +1,9 @@
 import type { HomePageModel } from '@/lib/storyblok/home-page';
+import { getAbsoluteSiteUrl } from '@/lib/seo/site-url';
 import type { ProjectDomain, WritingDomain } from '@/lib/storyblok/mappers';
 import { parseStoryblokDate } from '@/lib/storyblok/dates';
 
 type JsonLdNode = Record<string, unknown>;
-
-function normalizeSiteUrl(rawUrl?: string): string {
-	const fallback = 'http://localhost:3000';
-	if (!rawUrl) return fallback;
-	return rawUrl.endsWith('/') ? rawUrl.slice(0, -1) : rawUrl;
-}
 
 function normalizePath(path: string): string {
 	if (!path) return '/';
@@ -16,7 +11,6 @@ function normalizePath(path: string): string {
 }
 
 function asCanonicalUrl(path: string, canonicalOverride?: string): string {
-	const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 	const override = canonicalOverride?.trim();
 
 	if (override) {
@@ -24,12 +18,12 @@ function asCanonicalUrl(path: string, canonicalOverride?: string): string {
 			return override;
 		}
 		if (override.startsWith('/')) {
-			return `${siteUrl}${override}`;
+			return getAbsoluteSiteUrl(override);
 		}
 	}
 
 	const normalizedPath = normalizePath(path);
-	return normalizedPath === '/' ? `${siteUrl}/` : `${siteUrl}${normalizedPath}`;
+	return getAbsoluteSiteUrl(normalizedPath);
 }
 
 function asIsoDate(value: string): string | undefined {
