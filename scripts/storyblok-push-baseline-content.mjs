@@ -150,6 +150,25 @@ function toAssetUrl(value) {
 	);
 }
 
+function toStringList(value) {
+	if (Array.isArray(value)) {
+		return value.map((item) => asString(item)).filter(Boolean);
+	}
+
+	if (typeof value === 'string') {
+		return value
+			.split(',')
+			.map((item) => item.trim())
+			.filter(Boolean);
+	}
+
+	if (value && typeof value === 'object' && !Array.isArray(value)) {
+		return toStringList(value.value);
+	}
+
+	return [];
+}
+
 function sanitizeRichText(value) {
 	if (!value || typeof value !== 'object' || Array.isArray(value)) {
 		return { type: 'doc', content: [{ type: 'paragraph' }] };
@@ -230,6 +249,13 @@ function sanitizeSocialLinks(blocks) {
 			};
 		})
 		.filter(Boolean);
+}
+
+function sanitizeTechStack(value) {
+	return {
+		plugin: 'storyblok-tags',
+		value: toStringList(value),
+	};
 }
 
 function padDatePart(value) {
@@ -675,6 +701,7 @@ async function main() {
 		hero_intro: sanitizeRichText(homeBundle.content?.hero_intro),
 		about_intro: sanitizeRichText(homeBundle.content?.about_intro),
 		profile_image: toAssetUrl(homeBundle.content?.profile_image),
+		tech_stack: sanitizeTechStack(homeBundle.content?.tech_stack),
 		availability_note:
 			asString(homeBundle.content?.availability_note) ||
 			'Available for frontend collaborations.',

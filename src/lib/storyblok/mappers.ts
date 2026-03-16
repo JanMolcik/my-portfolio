@@ -59,6 +59,7 @@ export type HomeDomain = {
 	heroIntro: RichTextDomain;
 	aboutIntro: RichTextDomain;
 	profileImageUrl?: string;
+	techStack: string[];
 	availabilityNote: string;
 	availabilityStatus: string;
 	availabilityTimezone: string;
@@ -135,6 +136,15 @@ function toStringList(value: unknown): string[] {
 			.filter((item) => item.length > 0);
 	}
 	return [];
+}
+
+function toTagPluginList(value: unknown): string[] {
+	if (Array.isArray(value) || typeof value === 'string') {
+		return toStringList(value);
+	}
+
+	const record = asRecord(value);
+	return toStringList(record.value);
 }
 
 function toRichTextDomain(value: unknown): RichTextDomain {
@@ -270,6 +280,7 @@ export function mapHomeDtoToDomain(dto: unknown): HomeDomain {
 		heroIntro: toRichTextDomain(source.hero_intro),
 		aboutIntro: toRichTextDomain(source.about_intro),
 		profileImageUrl: toAssetUrl(source.profile_image),
+		techStack: toTagPluginList(source.tech_stack),
 		availabilityNote:
 			asString(source.availability_note) ??
 			'Available for senior frontend roles, contract work, and product-focused collaborations.',

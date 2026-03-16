@@ -25,6 +25,11 @@
 				"type": "asset",
 				"filetypes": ["images"]
 			},
+			"tech_stack": {
+				"type": "custom",
+				"field_type": "storyblok-tags",
+				"options": []
+			},
 			"availability_note": {
 				"type": "textarea",
 				"required": true

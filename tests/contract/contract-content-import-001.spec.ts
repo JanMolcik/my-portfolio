@@ -69,6 +69,25 @@ describe('CONTRACT-IMPORT-001', () => {
 		expect(bundle.content.home?.content.profile_image?.url).toMatch(
 			/^https:\/\//,
 		);
+		expect(bundle.content.home?.content.tech_stack).toEqual({
+			plugin: 'storyblok-tags',
+			value: [
+				'React',
+				'Next.js',
+				'TypeScript',
+				'Angular',
+				'Redux',
+				'RxJS',
+				'Frontend Architecture',
+				'Design Systems',
+				'Responsive UI',
+				'State Management',
+				'SSR / SSG / ISR',
+				'Vercel',
+				'Storyblok',
+				'Monorepo',
+			],
+		});
 		expect('roles' in (bundle.content.home?.content ?? {})).toBe(false);
 		expect(bundle.content.projects).toHaveLength(10);
 		expect(bundle.content.experience).toHaveLength(6);

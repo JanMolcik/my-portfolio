@@ -8,6 +8,7 @@ export interface PageHome {
   hero_intro: StoryblokRichtext;
   about_intro: StoryblokRichtext;
   profile_image?: StoryblokAsset;
+  tech_stack?: unknown;
   availability_note: string;
   availability_status: string;
   availability_timezone: string;

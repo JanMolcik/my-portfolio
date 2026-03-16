@@ -17,6 +17,7 @@ export type HomePageModel = {
 	heroParagraphs: string[];
 	aboutParagraphs: string[];
 	profileImageUrl?: string;
+	techStack: string[];
 	contactIntro: string;
 	contactStatus: string;
 	contactTimezone: string;
@@ -178,6 +179,7 @@ export function buildHomePageModel(
 		heroParagraphs: richTextToParagraphs(home.heroIntro),
 		aboutParagraphs: richTextToParagraphs(home.aboutIntro),
 		profileImageUrl: home.profileImageUrl,
+		techStack: home.techStack,
 		contactIntro: home.availabilityNote,
 		contactStatus: home.availabilityStatus,
 		contactTimezone: home.availabilityTimezone,

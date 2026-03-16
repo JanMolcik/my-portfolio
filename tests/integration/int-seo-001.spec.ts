@@ -126,6 +126,7 @@ describe('INT-SEO-001', () => {
 			role: 'Frontend Engineer',
 			heroParagraphs: [],
 			aboutParagraphs: [],
+			techStack: ['TypeScript', 'Next.js'],
 			contactIntro: 'Available for frontend work.',
 			contactStatus: 'OPEN',
 			contactTimezone: 'Europe',
@@ -143,6 +144,7 @@ describe('INT-SEO-001', () => {
 			'@type': 'Person',
 			name: 'Alex Doe',
 			url: 'https://example.com/',
+			knowsAbout: ['TypeScript', 'Next.js'],
 		});
 		expect(jsonLd.sameAs).toEqual(['https://github.com/alex']);
 

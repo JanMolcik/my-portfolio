@@ -17,6 +17,7 @@ const SCHEMA_HASH_PREFIX = '// schema-sha256: ';
 
 type StoryblokField = {
 	type?: string;
+	field_type?: string;
 	required?: boolean;
 	unique?: boolean;
 	restrict_components?: boolean;
@@ -45,6 +46,7 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 		hero_intro: { type: 'richtext', required: true },
 		about_intro: { type: 'richtext', required: true },
 		profile_image: { type: 'asset', required: false },
+		tech_stack: { type: 'custom', required: false },
 		availability_note: { type: 'textarea', required: true },
 		availability_status: { type: 'text', required: true },
 		availability_timezone: { type: 'text', required: true },
@@ -172,11 +174,16 @@ describe('CONTRACT-SB-SCHEMA-001', () => {
 		expect(seoMeta?.schema?.meta_description?.required).toBe(true);
 	});
 
-	it('keeps multi-select editor fields aligned with array-backed content values', async () => {
+	it('keeps editor fields aligned with runtime-backed content values', async () => {
 		const raw = await readFile(SCHEMA_PATH, 'utf8');
 		const components = JSON.parse(raw) as StoryblokComponent[];
 		const byName = new Map(
 			components.map((component) => [component.name, component]),
+		);
+
+		expect(byName.get('page_home')?.schema?.tech_stack?.type).toBe('custom');
+		expect(byName.get('page_home')?.schema?.tech_stack?.field_type).toBe(
+			'storyblok-tags',
 		);
 
 		expect(byName.get('page_project')?.schema?.stack?.type).toBe('options');

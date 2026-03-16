@@ -17,6 +17,10 @@ describe('UNIT-HOME-PAGE-001', () => {
 				profile_image: {
 					filename: 'https://cdn.example.com/profile.png',
 				},
+				tech_stack: {
+					plugin: 'storyblok-tags',
+					value: ['React', 'Next.js'],
+				},
 				availability_note: 'Available',
 				availability_status: 'OPEN',
 				availability_timezone: 'Europe/Prague',
@@ -85,6 +89,7 @@ describe('UNIT-HOME-PAGE-001', () => {
 		const model = buildHomePageModel(story, rels);
 
 		expect(model.profileImageUrl).toBe('https://cdn.example.com/profile.png');
+		expect(model.techStack).toEqual(['React', 'Next.js']);
 		expect(model.projects.map((project) => project.slug)).toEqual([
 			'project-b',
 			'project-a',

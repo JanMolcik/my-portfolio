@@ -366,6 +366,27 @@
 	margin: 0;
 }
 
+.skillsGrid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.skillTag {
+	padding: 4px 12px;
+	border: 1px solid var(--border);
+	font-size: 11px;
+	color: var(--cyan);
+	letter-spacing: 0.05em;
+	transition: all 0.2s;
+}
+
+.skillTag:hover {
+	border-color: var(--cyan);
+	background: rgb(0 212 255 / 8%);
+	box-shadow: var(--glow-cyan);
+}
+
 .projectsSection {
 	padding: 120px 0;
 	position: relative;

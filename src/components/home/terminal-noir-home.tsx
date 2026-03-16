@@ -277,6 +277,18 @@ export default function TerminalNoirHome({
 									<p key={paragraph}>{paragraph}</p>
 								))}
 							</div>
+							{model.techStack.length > 0 ? (
+								<>
+									<h3 className={styles.blockTitle}>tech.json</h3>
+									<div className={styles.skillsGrid}>
+										{model.techStack.map((skill) => (
+											<span className={styles.skillTag} key={skill}>
+												{skill}
+											</span>
+										))}
+									</div>
+								</>
+							) : null}
 						</div>
 					</div>
 				</div>

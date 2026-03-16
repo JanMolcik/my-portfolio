@@ -31,7 +31,7 @@ pnpm run storyblok:baseline-import -- --space "$STORYBLOK_SPACE_ID"
 - `content.projects[]` (`page_project`) populated from legacy `project`
 - `content.experience[]` (`item_experience`) populated from legacy `experience`
 - `content.social_links[]` (`item_social_link`) populated from legacy `socialLink`
-- curated home fields for `hero_intro`, `about_intro`, and availability copy
+- curated home fields for `hero_intro`, `about_intro`, `tech_stack`, and availability copy
 - curated project fields for hiring-facing summaries, case-study content, per-project `stack[]`, and deterministic `portfolio_priority`
 - linked assets resolved to absolute URLs under `profile_image`, `logo`, `image`, and `seo[*].og_image`
 - zero unresolved asset references (`diagnostics.missing_asset_ids = []`)

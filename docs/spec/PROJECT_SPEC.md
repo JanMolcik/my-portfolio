@@ -139,7 +139,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 ## Storyblok Content Model Contract
 
 - Story structure:
-  - `home` singleton story (`/`) with sections for hero copy, about copy, social links, projects, and experience.
+- `home` singleton story (`/`) with sections for hero copy, about copy, tech stack tags, social links, projects, and experience.
   - `projects/*` folder for project detail stories.
   - `writing/*` folder for writing detail stories.
 - Required fields for indexable stories:
@@ -165,6 +165,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
   - `headline` (text, required), `role` (text, required)
   - `hero_intro` (richtext, required), `about_intro` (richtext, required)
   - `profile_image` (asset image, optional)
+  - `tech_stack` (plugin tag list, optional; freeform string tags)
   - `social_links` (blok list -> `item_social_link`, required)
   - `availability_note` (textarea, required), `availability_status` (text, required)
   - `availability_timezone` (text, required), `availability_response_time` (text, required)

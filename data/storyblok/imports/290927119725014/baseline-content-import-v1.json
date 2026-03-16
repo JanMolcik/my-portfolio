@@ -101,6 +101,25 @@
 					"title": "Profile Picture",
 					"description": "Profile picture"
 				},
+				"tech_stack": {
+					"plugin": "storyblok-tags",
+					"value": [
+						"React",
+						"Next.js",
+						"TypeScript",
+						"Angular",
+						"Redux",
+						"RxJS",
+						"Frontend Architecture",
+						"Design Systems",
+						"Responsive UI",
+						"State Management",
+						"SSR / SSG / ISR",
+						"Vercel",
+						"Storyblok",
+						"Monorepo"
+					]
+				},
 				"availability_note": "Available for senior frontend roles, contract work, and product-focused collaborations. The best conversations for me are projects that need strong frontend ownership, clean implementation, and a product-minded engineering approach.",
 				"availability_status": "OPEN",
 				"availability_timezone": "Europe/Prague",

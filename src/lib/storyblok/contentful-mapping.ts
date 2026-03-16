@@ -44,6 +44,11 @@ export type StoryblokSeoMeta = {
 	og_image?: string;
 };
 
+export type StoryblokTagPlugin = {
+	plugin: 'storyblok-tags';
+	value: string[];
+};
+
 export type StoryblokSocialLinkRecord = {
 	source_entry_id: string;
 	relation_key: string;
@@ -105,6 +110,7 @@ export type StoryblokHomeStory = {
 		hero_intro: StoryblokRichText;
 		about_intro: StoryblokRichText;
 		profile_image?: string;
+		tech_stack?: StoryblokTagPlugin;
 		availability_note: string;
 		availability_status: string;
 		availability_timezone: string;
@@ -424,6 +430,10 @@ export function mapLegacyAboutToHome(
 			hero_intro: toRichText(aboutMe),
 			about_intro: toRichText(aboutMe),
 			profile_image: profileImage,
+			tech_stack: {
+				plugin: 'storyblok-tags',
+				value: getStringArray(fields, 'roles'),
+			},
 			availability_note:
 				'Available for senior frontend roles, contract work, and product-focused collaborations.',
 			availability_status: 'OPEN',
