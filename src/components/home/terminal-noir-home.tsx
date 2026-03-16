@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { HomePageModel } from '@/lib/storyblok/home-page';
 import { getContactPublicConfig } from '@/lib/contact/config';
 import { getProjectCardLinks } from '@/lib/projects/project-links';
@@ -253,7 +254,18 @@ export default function TerminalNoirHome({
 					<div className={styles.sectionLabel}>about.md</div>
 					<div className={styles.aboutGrid}>
 						<div className={styles.aboutAvatar}>
-							<span>{initialsFromHeadline(model.headline)}</span>
+							{model.profileImageUrl ? (
+								<Image
+									alt={`${model.headline} profile picture`}
+									className={styles.aboutAvatarImage}
+									fill
+									priority
+									sizes="(max-width: 900px) 100vw, 320px"
+									src={model.profileImageUrl}
+								/>
+							) : (
+								<span>{initialsFromHeadline(model.headline)}</span>
+							)}
 							<span className={styles.aboutAvatarLabel}>
 								{'// profile_pic.jpg'}
 							</span>

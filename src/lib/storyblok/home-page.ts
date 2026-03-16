@@ -16,6 +16,7 @@ export type HomePageModel = {
 	role: string;
 	heroParagraphs: string[];
 	aboutParagraphs: string[];
+	profileImageUrl?: string;
 	skills: string[];
 	contactIntro: string;
 	contactStatus: string;
@@ -177,6 +178,7 @@ export function buildHomePageModel(
 		role: home.role || 'Frontend Developer',
 		heroParagraphs: richTextToParagraphs(home.heroIntro),
 		aboutParagraphs: richTextToParagraphs(home.aboutIntro),
+		profileImageUrl: home.profileImageUrl,
 		skills: home.roles,
 		contactIntro: home.availabilityNote,
 		contactStatus: home.availabilityStatus,

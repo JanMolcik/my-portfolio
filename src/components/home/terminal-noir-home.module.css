@@ -326,6 +326,12 @@
 	position: absolute;
 	inset: 8px;
 	border: 1px dashed rgb(0 255 65 / 20%);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.aboutAvatarImage {
+	object-fit: cover;
 }
 
 .aboutAvatarLabel {
@@ -336,6 +342,7 @@
 	color: var(--green);
 	letter-spacing: 0.1em;
 	opacity: 0.6;
+	z-index: 2;
 }
 
 .blockTitle {

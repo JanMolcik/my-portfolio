@@ -197,6 +197,9 @@ describe('UNIT-MAP-001', () => {
 				type: 'doc',
 				content: [],
 			},
+			profile_image: {
+				filename: 'https://cdn.example.com/profile.png',
+			},
 			roles: ['Engineer', 'Writer'],
 			social_links: [
 				{
@@ -226,6 +229,7 @@ describe('UNIT-MAP-001', () => {
 				type: 'doc',
 				content: [],
 			},
+			profileImageUrl: 'https://cdn.example.com/profile.png',
 			roles: ['Engineer', 'Writer'],
 			availabilityNote:
 				'Available for senior frontend roles, contract work, and product-focused collaborations.',

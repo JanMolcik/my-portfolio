@@ -44,6 +44,7 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 		role: { type: 'text', required: true },
 		hero_intro: { type: 'richtext', required: true },
 		about_intro: { type: 'richtext', required: true },
+		profile_image: { type: 'asset', required: false },
 		roles: { type: 'options', required: true },
 		availability_note: { type: 'textarea', required: true },
 		availability_status: { type: 'text', required: true },

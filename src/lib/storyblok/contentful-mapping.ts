@@ -104,6 +104,7 @@ export type StoryblokHomeStory = {
 		role: string;
 		hero_intro: StoryblokRichText;
 		about_intro: StoryblokRichText;
+		profile_image?: string;
 		roles: string[];
 		availability_note: string;
 		availability_status: string;
@@ -379,6 +380,7 @@ export function mapLegacyAboutToHome(
 	const headline = getString(fields, 'name', 'Home');
 	const role = getString(fields, 'description', headline);
 	const aboutMe = getString(fields, 'aboutMe', role);
+	const profileImage = getAssetId(fields, 'profile');
 	const roleList = getStringArray(fields, 'roles');
 	const socialIds = getLinkIds(fields, 'socialLinks');
 	const experienceIds = getLinkIds(fields, 'experience');
@@ -423,6 +425,7 @@ export function mapLegacyAboutToHome(
 			role,
 			hero_intro: toRichText(aboutMe),
 			about_intro: toRichText(aboutMe),
+			profile_image: profileImage,
 			roles: roleList,
 			availability_note:
 				'Available for senior frontend roles, contract work, and product-focused collaborations.',

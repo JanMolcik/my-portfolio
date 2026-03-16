@@ -58,6 +58,7 @@ export type HomeDomain = {
 	role: string;
 	heroIntro: RichTextDomain;
 	aboutIntro: RichTextDomain;
+	profileImageUrl?: string;
 	roles: string[];
 	availabilityNote: string;
 	availabilityStatus: string;
@@ -269,6 +270,7 @@ export function mapHomeDtoToDomain(dto: unknown): HomeDomain {
 		role: asString(source.role) ?? '',
 		heroIntro: toRichTextDomain(source.hero_intro),
 		aboutIntro: toRichTextDomain(source.about_intro),
+		profileImageUrl: toAssetUrl(source.profile_image),
 		roles: toStringList(source.roles),
 		availabilityNote:
 			asString(source.availability_note) ??

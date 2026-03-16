@@ -21,6 +21,10 @@
 				"type": "richtext",
 				"required": true
 			},
+			"profile_image": {
+				"type": "asset",
+				"filetypes": ["images"]
+			},
 			"roles": {
 				"type": "options",
 				"required": true,

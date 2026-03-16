@@ -22,6 +22,18 @@ export default function migratePageHome(block) {
 		'availabilityResponseTime',
 		'availability_response_time',
 	);
+	moveLegacyField(block, 'profileImage', 'profile_image');
+
+	if (block.profile_image === undefined && Array.isArray(block.seo)) {
+		const primarySeo = block.seo.find(
+			(item) => item && typeof item === 'object' && !Array.isArray(item),
+		);
+		const ogImage =
+			primarySeo && typeof primarySeo === 'object' ? primarySeo.og_image : undefined;
+		if (ogImage !== undefined) {
+			block.profile_image = ogImage;
+		}
+	}
 
 	return block;
 }

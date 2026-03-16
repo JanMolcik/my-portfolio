@@ -14,6 +14,9 @@ describe('UNIT-HOME-PAGE-001', () => {
 				role: 'Frontend Engineer',
 				hero_intro: { type: 'doc', content: [] },
 				about_intro: { type: 'doc', content: [] },
+				profile_image: {
+					filename: 'https://cdn.example.com/profile.png',
+				},
 				roles: [],
 				availability_note: 'Available',
 				availability_status: 'OPEN',
@@ -82,6 +85,7 @@ describe('UNIT-HOME-PAGE-001', () => {
 
 		const model = buildHomePageModel(story, rels);
 
+		expect(model.profileImageUrl).toBe('https://cdn.example.com/profile.png');
 		expect(model.projects.map((project) => project.slug)).toEqual([
 			'project-b',
 			'project-a',

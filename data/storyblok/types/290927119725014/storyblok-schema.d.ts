@@ -7,6 +7,7 @@ export interface PageHome {
   role: string;
   hero_intro: StoryblokRichtext;
   about_intro: StoryblokRichtext;
+  profile_image?: StoryblokAsset;
   roles: (
     | "Angular"
     | "Design Systems"

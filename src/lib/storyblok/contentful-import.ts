@@ -51,7 +51,8 @@ type LinkedExperienceRecord = Omit<StoryblokExperienceRecord, 'content'> & {
 };
 
 type LinkedHomeStory = Omit<StoryblokHomeStory, 'content'> & {
-	content: Omit<StoryblokHomeStory['content'], 'seo'> & {
+	content: Omit<StoryblokHomeStory['content'], 'profile_image' | 'seo'> & {
+		profile_image?: StoryblokLinkedAsset;
 		seo: LinkedSeoMeta[];
 	};
 };
@@ -188,6 +189,10 @@ export function buildStoryblokBaselineImportBundle(input: {
 				...mapped.home,
 				content: {
 					...mapped.home.content,
+					profile_image:
+						typeof mapped.home.content.profile_image === 'string'
+							? linkAsset(mapped.home.content.profile_image)
+							: undefined,
 					seo: linkSeoMeta(mapped.home.content.seo, linkAsset),
 				},
 			}

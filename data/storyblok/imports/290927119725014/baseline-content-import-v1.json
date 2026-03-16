@@ -93,6 +93,14 @@
 						}
 					]
 				},
+				"profile_image": {
+					"id": "3xMVsymcZx0kTd6j89GczV",
+					"url": "https://images.ctfassets.net/438qxelhyozd/3xMVsymcZx0kTd6j89GczV/3e95b96f97e852001b97eae27b8be3c3/profile.jpeg",
+					"file_name": "profile.jpeg",
+					"content_type": "image/jpeg",
+					"title": "Profile Picture",
+					"description": "Profile picture"
+				},
 				"roles": [
 					"React",
 					"Next.js",

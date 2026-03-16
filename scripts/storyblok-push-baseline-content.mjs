@@ -678,6 +678,7 @@ async function main() {
 		role: asString(homeBundle.content?.role) || '',
 		hero_intro: sanitizeRichText(homeBundle.content?.hero_intro),
 		about_intro: sanitizeRichText(homeBundle.content?.about_intro),
+		profile_image: toAssetUrl(homeBundle.content?.profile_image),
 		roles,
 		availability_note:
 			asString(homeBundle.content?.availability_note) ||

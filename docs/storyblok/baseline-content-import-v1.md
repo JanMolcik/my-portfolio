@@ -33,7 +33,7 @@ pnpm run storyblok:baseline-import -- --space "$STORYBLOK_SPACE_ID"
 - `content.social_links[]` (`item_social_link`) populated from legacy `socialLink`
 - curated home fields for `hero_intro`, `about_intro`, and availability copy
 - curated project fields for hiring-facing summaries, case-study content, per-project `stack[]`, and deterministic `portfolio_priority`
-- linked assets resolved to absolute URLs under `logo`, `image`, and `seo[*].og_image`
+- linked assets resolved to absolute URLs under `profile_image`, `logo`, `image`, and `seo[*].og_image`
 - zero unresolved asset references (`diagnostics.missing_asset_ids = []`)
 
 ## Verification

@@ -164,6 +164,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - `page_home` (singleton):
   - `headline` (text, required), `role` (text, required)
   - `hero_intro` (richtext, required), `about_intro` (richtext, required)
+  - `profile_image` (asset image, optional)
   - `roles` (multi-option, required), `social_links` (blok list -> `item_social_link`, required)
   - `availability_note` (textarea, required), `availability_status` (text, required)
   - `availability_timezone` (text, required), `availability_response_time` (text, required)

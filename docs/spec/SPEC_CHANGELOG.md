@@ -1,5 +1,10 @@
 # SPEC_CHANGELOG.md
 
+## 2026-03-16
+
+- Extended `page_home` schema with optional `profile_image` so the Storyblok editor can manage the homepage portrait directly instead of relying on SEO media or local placeholders.
+- Hardened `page_home` migration/import/push flow to preserve homepage profile media and seed it from the existing SEO OG image when upgrading older stories.
+
 ## 2026-03-13
 
 - Added first-party contact intake contract with `/api/contact`, including Turnstile server-side verification, rate limiting, honeypot/timing bot traps, and Resend-backed delivery requirements.
