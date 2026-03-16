@@ -25,28 +25,6 @@
 				"type": "asset",
 				"filetypes": ["images"]
 			},
-			"roles": {
-				"type": "options",
-				"required": true,
-				"source": "internal",
-				"exclude_empty_option": true,
-				"options": [
-					{ "name": "Angular", "value": "Angular" },
-					{ "name": "Design Systems", "value": "Design Systems" },
-					{ "name": "Frontend Architecture", "value": "Frontend Architecture" },
-					{ "name": "Monorepo", "value": "Monorepo" },
-					{ "name": "Next.js", "value": "Next.js" },
-					{ "name": "React", "value": "React" },
-					{ "name": "Redux", "value": "Redux" },
-					{ "name": "Responsive UI", "value": "Responsive UI" },
-					{ "name": "RxJS", "value": "RxJS" },
-					{ "name": "SSR / SSG / ISR", "value": "SSR / SSG / ISR" },
-					{ "name": "State Management", "value": "State Management" },
-					{ "name": "Storyblok", "value": "Storyblok" },
-					{ "name": "TypeScript", "value": "TypeScript" },
-					{ "name": "Vercel", "value": "Vercel" }
-				]
-			},
 			"availability_note": {
 				"type": "textarea",
 				"required": true

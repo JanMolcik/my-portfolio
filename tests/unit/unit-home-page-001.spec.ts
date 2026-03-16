@@ -17,7 +17,6 @@ describe('UNIT-HOME-PAGE-001', () => {
 				profile_image: {
 					filename: 'https://cdn.example.com/profile.png',
 				},
-				roles: [],
 				availability_note: 'Available',
 				availability_status: 'OPEN',
 				availability_timezone: 'Europe/Prague',

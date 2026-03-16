@@ -668,10 +668,6 @@ async function main() {
 				.filter(Boolean)
 		: [];
 	const socialLinks = sanitizeSocialLinks(homeBundle.content?.social_links);
-	const roles = Array.isArray(homeBundle.content?.roles)
-		? homeBundle.content.roles.map((item) => asString(item)).filter(Boolean)
-		: [];
-
 	const homePayload = {
 		component: 'page_home',
 		headline: asString(homeBundle.content?.headline) || 'Portfolio',
@@ -679,7 +675,6 @@ async function main() {
 		hero_intro: sanitizeRichText(homeBundle.content?.hero_intro),
 		about_intro: sanitizeRichText(homeBundle.content?.about_intro),
 		profile_image: toAssetUrl(homeBundle.content?.profile_image),
-		roles,
 		availability_note:
 			asString(homeBundle.content?.availability_note) ||
 			'Available for frontend collaborations.',

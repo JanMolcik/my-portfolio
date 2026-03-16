@@ -33,6 +33,7 @@ describe('CONTRACT-MIGRATION-001', () => {
 		expect(result.home?.content.headline).toBe(about?.fields?.name);
 		expect(result.home?.content.role).toBe(about?.fields?.description);
 		expect(result.home?.content.profile_image).toBeDefined();
+		expect('roles' in (result.home?.content ?? {})).toBe(false);
 		expect(result.home?.diagnostics).toEqual({
 			missing_social_links: [],
 			missing_experience: [],

@@ -126,7 +126,6 @@ describe('INT-SEO-001', () => {
 			role: 'Frontend Engineer',
 			heroParagraphs: [],
 			aboutParagraphs: [],
-			skills: ['TypeScript', 'Next.js'],
 			contactIntro: 'Available for frontend work.',
 			contactStatus: 'OPEN',
 			contactTimezone: 'Europe',

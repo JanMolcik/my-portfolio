@@ -277,14 +277,6 @@ export default function TerminalNoirHome({
 									<p key={paragraph}>{paragraph}</p>
 								))}
 							</div>
-							<h3 className={styles.blockTitle}>tech.json</h3>
-							<div className={styles.skillsGrid}>
-								{model.skills.map((skill) => (
-									<span className={styles.skillTag} key={skill}>
-										{skill}
-									</span>
-								))}
-							</div>
 						</div>
 					</div>
 				</div>

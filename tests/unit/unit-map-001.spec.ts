@@ -200,7 +200,6 @@ describe('UNIT-MAP-001', () => {
 			profile_image: {
 				filename: 'https://cdn.example.com/profile.png',
 			},
-			roles: ['Engineer', 'Writer'],
 			social_links: [
 				{
 					name: 'GitHub',
@@ -230,7 +229,6 @@ describe('UNIT-MAP-001', () => {
 				content: [],
 			},
 			profileImageUrl: 'https://cdn.example.com/profile.png',
-			roles: ['Engineer', 'Writer'],
 			availabilityNote:
 				'Available for senior frontend roles, contract work, and product-focused collaborations.',
 			availabilityStatus: 'OPEN',

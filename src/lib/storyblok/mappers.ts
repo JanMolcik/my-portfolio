@@ -59,7 +59,6 @@ export type HomeDomain = {
 	heroIntro: RichTextDomain;
 	aboutIntro: RichTextDomain;
 	profileImageUrl?: string;
-	roles: string[];
 	availabilityNote: string;
 	availabilityStatus: string;
 	availabilityTimezone: string;
@@ -271,7 +270,6 @@ export function mapHomeDtoToDomain(dto: unknown): HomeDomain {
 		heroIntro: toRichTextDomain(source.hero_intro),
 		aboutIntro: toRichTextDomain(source.about_intro),
 		profileImageUrl: toAssetUrl(source.profile_image),
-		roles: toStringList(source.roles),
 		availabilityNote:
 			asString(source.availability_note) ??
 			'Available for senior frontend roles, contract work, and product-focused collaborations.',

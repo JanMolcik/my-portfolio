@@ -69,6 +69,7 @@ describe('CONTRACT-IMPORT-001', () => {
 		expect(bundle.content.home?.content.profile_image?.url).toMatch(
 			/^https:\/\//,
 		);
+		expect('roles' in (bundle.content.home?.content ?? {})).toBe(false);
 		expect(bundle.content.projects).toHaveLength(10);
 		expect(bundle.content.experience).toHaveLength(6);
 		expect(bundle.content.social_links).toHaveLength(3);

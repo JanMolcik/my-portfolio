@@ -59,9 +59,6 @@ export function buildHomeJsonLd(model: HomePageModel): JsonLdNode {
 	const sameAs = [...new Set(model.socialLinks.map((item) => item.url))].filter(
 		(url) => url.trim().length > 0,
 	);
-	const knowsAbout = [...new Set(model.skills)].filter(
-		(skill) => skill.trim().length > 0,
-	);
 
 	return compactJsonLd({
 		'@context': 'https://schema.org',
@@ -70,7 +67,6 @@ export function buildHomeJsonLd(model: HomePageModel): JsonLdNode {
 		jobTitle: model.role || undefined,
 		url: asCanonicalUrl('/'),
 		sameAs: sameAs.length > 0 ? sameAs : undefined,
-		knowsAbout: knowsAbout.length > 0 ? knowsAbout : undefined,
 	});
 }
 

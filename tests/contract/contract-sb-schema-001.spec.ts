@@ -45,7 +45,6 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 		hero_intro: { type: 'richtext', required: true },
 		about_intro: { type: 'richtext', required: true },
 		profile_image: { type: 'asset', required: false },
-		roles: { type: 'options', required: true },
 		availability_note: { type: 'textarea', required: true },
 		availability_status: { type: 'text', required: true },
 		availability_timezone: { type: 'text', required: true },
@@ -179,11 +178,6 @@ describe('CONTRACT-SB-SCHEMA-001', () => {
 		const byName = new Map(
 			components.map((component) => [component.name, component]),
 		);
-
-		expect(byName.get('page_home')?.schema?.roles?.type).toBe('options');
-		expect(
-			(byName.get('page_home')?.schema?.roles?.options ?? []).length,
-		).toBeGreaterThan(0);
 
 		expect(byName.get('page_project')?.schema?.stack?.type).toBe('options');
 		expect(

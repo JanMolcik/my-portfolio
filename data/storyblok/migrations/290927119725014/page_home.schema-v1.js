@@ -35,5 +35,7 @@ export default function migratePageHome(block) {
 		}
 	}
 
+	delete block.roles;
+
 	return block;
 }

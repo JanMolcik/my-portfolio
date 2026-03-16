@@ -8,22 +8,6 @@ export interface PageHome {
   hero_intro: StoryblokRichtext;
   about_intro: StoryblokRichtext;
   profile_image?: StoryblokAsset;
-  roles: (
-    | "Angular"
-    | "Design Systems"
-    | "Frontend Architecture"
-    | "Monorepo"
-    | "Next.js"
-    | "React"
-    | "Redux"
-    | "Responsive UI"
-    | "RxJS"
-    | "SSR / SSG / ISR"
-    | "State Management"
-    | "Storyblok"
-    | "TypeScript"
-    | "Vercel"
-  )[];
   availability_note: string;
   availability_status: string;
   availability_timezone: string;

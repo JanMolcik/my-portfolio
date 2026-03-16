@@ -4,6 +4,7 @@
 
 - Extended `page_home` schema with optional `profile_image` so the Storyblok editor can manage the homepage portrait directly instead of relying on SEO media or local placeholders.
 - Hardened `page_home` migration/import/push flow to preserve homepage profile media and seed it from the existing SEO OG image when upgrading older stories.
+- Removed `page_home.roles` from the schema and homepage rendering because it only powered the `tech.json` tag strip and was blocking Storyblok publish in staging.
 
 ## 2026-03-13
 

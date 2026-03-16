@@ -24,22 +24,6 @@ const curatedHome = {
 		'At Shopsys, I work on a shared Next.js Pages Router core/platform used as the base for project implementations. In ABUGO, I am helping lead a migration toward a Storyblok-based monorepo that aims to become the single source of truth for multiple brands through configurable apps and automation-heavy workflows.',
 		'I am especially effective in projects that need structured frontend ownership: turning product requirements into maintainable interfaces, improving messy state flows, and building UI systems that teams can extend without slowing down.',
 	]),
-	roles: [
-		'React',
-		'Next.js',
-		'TypeScript',
-		'Angular',
-		'Redux',
-		'RxJS',
-		'Frontend Architecture',
-		'Design Systems',
-		'Responsive UI',
-		'State Management',
-		'SSR / SSG / ISR',
-		'Vercel',
-		'Storyblok',
-		'Monorepo',
-	],
 	availabilityNote:
 		'Available for senior frontend roles, contract work, and product-focused collaborations. The best conversations for me are projects that need strong frontend ownership, clean implementation, and a product-minded engineering approach.',
 	availabilityStatus: 'OPEN',
@@ -441,7 +425,6 @@ export function applyBaselineContentCuration(
 		home.content.role = curatedHome.role;
 		home.content.hero_intro = curatedHome.heroIntro;
 		home.content.about_intro = curatedHome.aboutIntro;
-		home.content.roles = curatedHome.roles;
 		home.content.availability_note = curatedHome.availabilityNote;
 		home.content.availability_status = curatedHome.availabilityStatus;
 		home.content.availability_timezone = curatedHome.availabilityTimezone;
