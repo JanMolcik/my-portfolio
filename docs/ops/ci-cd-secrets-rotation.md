@@ -39,7 +39,7 @@ gh secret set STORYBLOK_WEBHOOK_SECRET --body "<long-random-secret>"
 gh secret set NEXT_PUBLIC_TURNSTILE_SITE_KEY --body "<turnstile-site-key>"
 gh secret set TURNSTILE_SECRET_KEY --body "<turnstile-secret-key>"
 gh secret set RESEND_API_KEY --body "<resend-api-key>"
-gh secret set CONTACT_FROM_EMAIL --body "Portfolio <portfolio@your-domain>"
+gh secret set CONTACT_FROM_EMAIL --body "Portfolio <portfolio@verified-mail.your-domain>"
 gh secret set CONTACT_TO_EMAIL --body "<your-inbox@your-domain>"
 ```
 
@@ -71,6 +71,8 @@ vercel env add CONTACT_TO_EMAIL production
 ```
 
 After updates, redeploy both environments or trigger fresh deployments.
+
+`CONTACT_FROM_EMAIL` must use a sender on a domain or subdomain that is explicitly verified in Resend. If Resend is verified on a subdomain such as `notifications.your-domain`, the sender must also use that subdomain, for example `portfolio@notifications.your-domain`. Using `portfolio@your-domain` will fail delivery even when the parent domain looks related.
 
 Optional but recommended for distributed rate limiting on serverless deployments:
 
