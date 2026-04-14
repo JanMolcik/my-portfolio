@@ -24,6 +24,7 @@ export default function TerminalNoirWriting({
 	writing,
 }: TerminalNoirWritingProps) {
 	const title = writing.title || writing.slug || 'Writing';
+	const hasCover = Boolean(writing.coverImageUrl);
 	const coverAlt = writing.coverImageAlt ?? `Cover image for ${title}`;
 
 	return (
@@ -40,8 +41,10 @@ export default function TerminalNoirWriting({
 				<strong>{writing.slug || 'entry'}</strong>
 			</nav>
 
-			<section className={styles.hero}>
-				<div>
+			<section
+				className={`${styles.hero} ${!hasCover ? styles.heroNoMedia : ''}`.trim()}
+			>
+				<div className={styles.heroContent}>
 					<p className={styles.prompt}>~/writing $ cat article.md</p>
 					<h1 className={styles.title}>{title}</h1>
 					<p className={styles.excerpt}>{writing.excerpt}</p>
@@ -53,21 +56,19 @@ export default function TerminalNoirWriting({
 					</div>
 				</div>
 
-				<div className={styles.mediaCard}>
-					{writing.coverImageUrl ? (
+				{hasCover ? (
+					<div className={styles.mediaCard}>
 						<Image
 							alt={coverAlt}
 							className={styles.coverImage}
-							height={220}
+							height={320}
 							priority
-							sizes="(max-width: 900px) 100vw, 280px"
-							src={writing.coverImageUrl}
-							width={280}
+							sizes="(max-width: 900px) 100vw, 360px"
+							src={writing.coverImageUrl!}
+							width={360}
 						/>
-					) : (
-						<div className={styles.mediaFallback}>cover pending</div>
-					)}
-				</div>
+					</div>
+				) : null}
 			</section>
 
 			<article className={styles.content}>

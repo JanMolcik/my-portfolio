@@ -113,6 +113,70 @@ export const longWritingRichTextFixture: RichTextDomain = {
 			],
 		},
 		{
+			type: 'table',
+			content: [
+				{
+					type: 'table_head',
+					content: [
+						{
+							type: 'table_row',
+							content: [
+								{
+									type: 'table_header',
+									content: [{ type: 'text', text: 'Pattern' }],
+								},
+								{
+									type: 'table_header',
+									content: [{ type: 'text', text: 'Why it matters' }],
+								},
+							],
+						},
+					],
+				},
+				{
+					type: 'table_body',
+					content: [
+						{
+							type: 'table_row',
+							content: [
+								{
+									type: 'table_cell',
+									content: [{ type: 'text', text: 'RAG' }],
+								},
+								{
+									type: 'table_cell',
+									content: [
+										{
+											type: 'text',
+											text: 'Grounds an answer in source material instead of memory alone.',
+										},
+									],
+								},
+							],
+						},
+						{
+							type: 'table_row',
+							content: [
+								{
+									type: 'table_cell',
+									content: [{ type: 'text', text: 'Evals' }],
+								},
+								{
+									type: 'table_cell',
+									content: [
+										{
+											type: 'text',
+											text: 'Makes the workflow observable and easier to trust or correct.',
+										},
+									],
+								},
+							],
+						},
+					],
+				},
+			],
+		},
+		{
 			type: 'blockquote',
 			content: [
 				{

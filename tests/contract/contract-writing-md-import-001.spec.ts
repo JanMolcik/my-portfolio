@@ -70,9 +70,7 @@ agent -> retrieve -> answer
 		expect(output.target).toBe(
 			'writing/beyond-llm-agentni-workflow-prompty-a-rag',
 		);
-		expect(output.warnings).toContain(
-			'Markdown table converted to text code_block fallback',
-		);
+		expect(output.warnings).toEqual([]);
 		expect(output.story.content).toMatchObject({
 			component: 'page_writing',
 			source_type: 'youtube-summary',
@@ -88,6 +86,7 @@ agent -> retrieve -> answer
 				expect.objectContaining({ type: 'bullet_list' }),
 				expect.objectContaining({ type: 'ordered_list' }),
 				expect.objectContaining({ type: 'blockquote' }),
+				expect.objectContaining({ type: 'table' }),
 				expect.objectContaining({ type: 'code_block' }),
 			]),
 		);

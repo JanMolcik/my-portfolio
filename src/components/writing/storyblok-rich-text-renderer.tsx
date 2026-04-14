@@ -64,6 +64,11 @@ function getChildren(node: RichTextNode, keyPrefix: string): ReactNode[] {
 	);
 }
 
+function getCellChildren(node: RichTextNode, keyPrefix: string): ReactNode[] {
+	const children = getChildren(node, keyPrefix);
+	return children.length > 0 ? children : [<span key={`${keyPrefix}-empty`} />];
+}
+
 function getPlainText(node: RichTextNode): string {
 	if (node.text) {
 		return node.text;
@@ -71,6 +76,75 @@ function getPlainText(node: RichTextNode): string {
 	return (Array.isArray(node.content) ? node.content : [])
 		.map((child) => getPlainText(asNode(child)))
 		.join('');
+}
+
+function splitMarkdownTableColumns(line: string): string[] {
+	return line
+		.trim()
+		.replace(/^\||\|$/g, '')
+		.split('|')
+		.map((part) => part.trim());
+}
+
+function isMarkdownTableDelimiter(line: string): boolean {
+	const columns = splitMarkdownTableColumns(line);
+	return (
+		columns.length > 0 && columns.every((column) => /^:?-{3,}:?$/.test(column))
+	);
+}
+
+function parseLegacyMarkdownTable(text: string) {
+	const lines = text
+		.split(/\r?\n/)
+		.map((line) => line.trim())
+		.filter(Boolean);
+	if (
+		lines.length < 2 ||
+		!/^\|.*\|$/.test(lines[0]) ||
+		!isMarkdownTableDelimiter(lines[1])
+	) {
+		return null;
+	}
+
+	const header = splitMarkdownTableColumns(lines[0]);
+	const body = lines
+		.slice(2)
+		.filter((line) => /^\|.*\|$/.test(line))
+		.map(splitMarkdownTableColumns);
+	if (header.length === 0) {
+		return null;
+	}
+	return { header, body };
+}
+
+function renderTableMarkup(
+	table: { header: string[]; body: string[][] },
+	key: string,
+): ReactNode {
+	return (
+		<div className={styles.tableWrap} key={key}>
+			<table className={styles.table}>
+				<thead>
+					<tr>
+						{table.header.map((cell, index) => (
+							<th key={`${key}-head-${index}`}>{cell}</th>
+						))}
+					</tr>
+				</thead>
+				{table.body.length > 0 ? (
+					<tbody>
+						{table.body.map((row, rowIndex) => (
+							<tr key={`${key}-row-${rowIndex}`}>
+								{row.map((cell, cellIndex) => (
+									<td key={`${key}-cell-${rowIndex}-${cellIndex}`}>{cell}</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				) : null}
+			</table>
+		</div>
+	);
 }
 
 function normalizeHeadingLevel(value: unknown): 2 | 3 | 4 {
@@ -164,12 +238,33 @@ function renderNode(value: unknown, key: string): ReactNode {
 			return <li key={key}>{getChildren(node, key)}</li>;
 		case 'blockquote':
 			return <blockquote key={key}>{getChildren(node, key)}</blockquote>;
+		case 'table':
+			return (
+				<div className={styles.tableWrap} key={key}>
+					<table className={styles.table}>{getChildren(node, key)}</table>
+				</div>
+			);
+		case 'table_head':
+			return <thead key={key}>{getChildren(node, key)}</thead>;
+		case 'table_body':
+			return <tbody key={key}>{getChildren(node, key)}</tbody>;
+		case 'table_row':
+			return <tr key={key}>{getChildren(node, key)}</tr>;
+		case 'table_header':
+			return <th key={key}>{getCellChildren(node, key)}</th>;
+		case 'table_cell':
+			return <td key={key}>{getCellChildren(node, key)}</td>;
 		case 'code_block': {
 			const language =
 				asString(node.attrs?.class) ?? asString(node.attrs?.language);
+			const plainText = getPlainText(node);
+			const legacyTable = parseLegacyMarkdownTable(plainText);
+			if (legacyTable) {
+				return renderTableMarkup(legacyTable, key);
+			}
 			return (
 				<pre className={styles.codeBlock} data-language={language} key={key}>
-					<code>{getPlainText(node)}</code>
+					<code>{plainText}</code>
 				</pre>
 			);
 		}
