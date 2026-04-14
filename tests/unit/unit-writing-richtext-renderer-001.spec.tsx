@@ -20,6 +20,9 @@ describe('UNIT-WRITING-RICHTEXT-RENDERER-001', () => {
 		expect(markup).toContain('<ul>');
 		expect(markup).toContain('<ol>');
 		expect(markup).toContain('<blockquote>');
+		expect(markup).toContain('<table');
+		expect(markup).toContain('<thead>');
+		expect(markup).toContain('<tbody>');
 		expect(markup).toContain('<pre');
 		expect(markup).toContain('<code');
 		expect(markup).toContain('<strong>');
@@ -38,6 +41,33 @@ describe('UNIT-WRITING-RICHTEXT-RENDERER-001', () => {
 		);
 
 		expect(markup).toBe('<p>Fallback excerpt</p>');
+	});
+
+	it('renders legacy markdown-table code block fallbacks as tables', () => {
+		const markup = renderToStaticMarkup(
+			<StoryblokRichTextRenderer
+				value={{
+					type: 'doc',
+					content: [
+						{
+							type: 'code_block',
+							attrs: { language: 'text' },
+							content: [
+								{
+									type: 'text',
+									text: '| Krok | Význam |\n| --- | --- |\n| RAG | Uzemnění |',
+								},
+							],
+						},
+					],
+				}}
+			/>,
+		);
+
+		expect(markup).toContain('<table');
+		expect(markup).toContain('<th>Krok</th>');
+		expect(markup).toContain('<td>Uzemnění</td>');
+		expect(markup).not.toContain('<pre');
 	});
 
 	it('does not render unsafe link protocols from CMS richtext marks', () => {

@@ -280,6 +280,49 @@ function paragraphNode(lines) {
 	return { type: 'paragraph', content: parseInline(lines.join(' ').trim()) };
 }
 
+function splitTableColumns(line) {
+	return line
+		.trim()
+		.replace(/^\||\|$/g, '')
+		.split('|')
+		.map((part) => part.trim());
+}
+
+function isMarkdownTableDelimiter(line) {
+	const columns = splitTableColumns(line);
+	return (
+		columns.length > 0 && columns.every((column) => /^:?-{3,}:?$/.test(column))
+	);
+}
+
+function buildTableSection(type, rows) {
+	return {
+		type,
+		content: rows.map((row) => ({
+			type: 'table_row',
+			content: row.map((cell) => ({
+				type: type === 'table_head' ? 'table_header' : 'table_cell',
+				content: parseInline(cell || '\u00a0'),
+			})),
+		})),
+	};
+}
+
+function tableNode(lines) {
+	const [headerLine, , ...bodyLines] = lines;
+	const header = splitTableColumns(headerLine);
+	const bodyRows = bodyLines.map(splitTableColumns);
+	return {
+		type: 'table',
+		content: [
+			buildTableSection('table_head', [header]),
+			...(bodyRows.length > 0
+				? [buildTableSection('table_body', bodyRows)]
+				: []),
+		],
+	};
+}
+
 function convertMarkdownToStoryblokRichtext(body) {
 	if (hasRawHtml(body)) {
 		throw new Error('Raw HTML is not allowed in writing Markdown');
@@ -311,12 +354,18 @@ function convertMarkdownToStoryblokRichtext(body) {
 				index += 1;
 				tableLines.push(lines[index] ?? '');
 			}
-			warnings.push('Markdown table converted to text code_block fallback');
-			content.push({
-				type: 'code_block',
-				attrs: { language: 'text' },
-				content: [textNode(tableLines.join('\n'))],
-			});
+			if (tableLines.length >= 2 && isMarkdownTableDelimiter(tableLines[1])) {
+				content.push(tableNode(tableLines));
+			} else {
+				warnings.push(
+					'Unsupported markdown table shape converted to text code_block fallback',
+				);
+				content.push({
+					type: 'code_block',
+					attrs: { language: 'text' },
+					content: [textNode(tableLines.join('\n'))],
+				});
+			}
 			continue;
 		}
 		const heading = line.match(/^(#{1,4})\s+(.+)$/);
