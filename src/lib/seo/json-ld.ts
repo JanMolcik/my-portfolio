@@ -113,7 +113,16 @@ export function buildWritingJsonLd(writing: WritingDomain): JsonLdNode {
 		url: canonicalUrl,
 		mainEntityOfPage: canonicalUrl,
 		datePublished: asIsoDate(writing.publishedDate),
+		dateModified: asIsoDate(writing.updatedDate ?? writing.publishedDate),
 		image: writing.coverImageUrl,
 		keywords: writing.tags.length > 0 ? writing.tags : undefined,
+		author: {
+			'@type': 'Person',
+			name: 'Jan Molcik',
+		},
+		publisher: {
+			'@type': 'Person',
+			name: 'Jan Molcik',
+		},
 	});
 }

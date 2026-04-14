@@ -2,10 +2,17 @@ import { readFile } from 'node:fs/promises';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const getPublishedSitemapPathsMock = vi.hoisted(() => vi.fn());
+const getPublishedWritingListMock = vi.hoisted(() => vi.fn());
 
 vi.mock('@/lib/storyblok/content', () => {
 	return {
 		getPublishedSitemapPaths: getPublishedSitemapPathsMock,
+	};
+});
+
+vi.mock('@/lib/storyblok/writing', () => {
+	return {
+		getPublishedWritingList: getPublishedWritingListMock,
 	};
 });
 
@@ -15,6 +22,14 @@ import sitemap from '@/app/sitemap';
 describe('INT-SEO-002', () => {
 	beforeEach(() => {
 		getPublishedSitemapPathsMock.mockReset();
+		getPublishedWritingListMock.mockReset();
+		getPublishedWritingListMock.mockResolvedValue({
+			items: [],
+			total: 0,
+			page: 1,
+			perPage: 9,
+			totalPages: 0,
+		});
 	});
 
 	it('centralizes route metadata and JSON-LD building through src/lib/seo/*', async () => {
@@ -32,6 +47,15 @@ describe('INT-SEO-002', () => {
 			expect(source).toContain('buildStoryMetadata');
 			expect(source).toContain('type="application/ld+json"');
 			expect(source).toContain('serializeJsonLd');
+		}
+
+		for (const routeFile of [
+			'src/app/writing/page.tsx',
+			'src/app/writing/page/[page]/page.tsx',
+		]) {
+			const source = await readFile(routeFile, 'utf8');
+			expect(source).toContain("from '@/lib/seo/metadata'");
+			expect(source).toContain('buildRouteMetadata');
 		}
 	});
 
@@ -54,24 +78,36 @@ describe('INT-SEO-002', () => {
 			'/projects/alpha',
 			'/writing/notes',
 		]);
+		getPublishedWritingListMock.mockResolvedValueOnce({
+			items: [],
+			total: 18,
+			page: 1,
+			perPage: 9,
+			totalPages: 2,
+		});
 
 		const entries = await sitemap();
 		expect(entries).toEqual([
 			{ url: 'https://example.com/' },
 			{ url: 'https://example.com/projects/alpha' },
+			{ url: 'https://example.com/writing' },
 			{ url: 'https://example.com/writing/notes' },
+			{ url: 'https://example.com/writing/page/2' },
 		]);
 
 		process.env.NEXT_PUBLIC_SITE_URL = previous;
 	});
 
-	it('falls back to home-only sitemap entry when Storyblok links fail closed', async () => {
+	it('falls back to local index sitemap entries when Storyblok links fail closed', async () => {
 		const previous = process.env.NEXT_PUBLIC_SITE_URL;
 		process.env.NEXT_PUBLIC_SITE_URL = 'https://example.com';
 		getPublishedSitemapPathsMock.mockResolvedValueOnce([]);
 
 		const entries = await sitemap();
-		expect(entries).toEqual([{ url: 'https://example.com/' }]);
+		expect(entries).toEqual([
+			{ url: 'https://example.com/' },
+			{ url: 'https://example.com/writing' },
+		]);
 
 		process.env.NEXT_PUBLIC_SITE_URL = previous;
 	});

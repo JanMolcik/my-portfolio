@@ -177,11 +177,60 @@ describe('UNIT-MAP-001', () => {
 			publishedDate: '2026-02-01',
 			coverImageUrl: 'https://cdn.example.com/cover.png',
 			tags: ['ai', 'engineering'],
+			featured: false,
 			seo: {
 				metaTitle: 'Writing notes',
 				metaDescription: 'Writing details',
 				noindex: false,
 			},
+		});
+	});
+
+	it('maps optional writing editorial and provenance fields when present', () => {
+		const writing = mapWritingDtoToDomain(
+			{
+				title: 'Agent notes',
+				excerpt: 'A sourced summary.',
+				content: {
+					type: 'doc',
+					content: [],
+				},
+				published_date: '2026-04-13 09:00',
+				updated_date: '2026-04-14 10:30',
+				cover_image: { filename: 'https://cdn.example.com/agent-cover.png' },
+				cover_image_alt: '',
+				tags: ['ai', 'rag'],
+				source_type: 'youtube-summary',
+				source_url: 'https://www.youtube.com/watch?v=example',
+				source_title: 'Stanford CS230 Lecture 8',
+				content_origin: 'summary',
+				language: 'cs',
+				reading_time_minutes: '20',
+				featured: true,
+				seo: [
+					{
+						meta_title: 'Agent notes',
+						meta_description: 'Summary of agent workflow ideas',
+					},
+				],
+			},
+			'agent-notes',
+		);
+
+		expect(writing).toMatchObject({
+			title: 'Agent notes',
+			slug: 'agent-notes',
+			updatedDate: '2026-04-14 10:30',
+			coverImageUrl: 'https://cdn.example.com/agent-cover.png',
+			coverImageAlt: '',
+			sourceType: 'youtube-summary',
+			sourceUrl: 'https://www.youtube.com/watch?v=example',
+			sourceTitle: 'Stanford CS230 Lecture 8',
+			contentOrigin: 'summary',
+			language: 'cs',
+			readingTimeMinutes: 20,
+			featured: true,
+			tags: ['ai', 'rag'],
 		});
 	});
 

@@ -141,8 +141,68 @@ exports[`EVAL-007 > checks critical templates against terminal-noir baseline sna
       "--white": "#e8e8e8",
     },
   },
+  "route": "/writing",
+  "rules": {
+    ".card": {
+      "display": "grid",
+      "gap": "18px",
+      "grid-template-columns": "minmax(0, 1fr) 180px",
+      "overflow": "hidden",
+      "padding": "22px",
+      "position": "relative",
+    },
+    ".layout": {
+      "display": "grid",
+      "gap": "24px",
+      "grid-template-columns": "280px minmax(0, 1fr)",
+      "margin-top": "24px",
+    },
+    ".writingIndex": {
+      "--bg": "#0a0a0a",
+      "--bg2": "#111",
+      "--border": "#1a1a1a",
+      "--cyan": "#00d4ff",
+      "--dim": "#8a8a8a",
+      "--glow-green": "0 0 10px #00ff4166",
+      "--green": "#00ff41",
+      "--white": "#e8e8e8",
+      "background-color": "var(--bg)",
+      "background-image": "repeating-linear-gradient( 0deg, transparent, transparent 2px, rgb(0 0 0 / 12%) 2px, rgb(0 0 0 / 12%) 4px ), linear-gradient(rgb(0 255 65 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(0 255 65 / 3%) 1px, transparent 1px)",
+      "background-size": "auto, 40px 40px, 40px 40px",
+      "color": "var(--white)",
+      "font-family": ""JetBrains Mono", "Share Tech Mono", monospace",
+      "isolation": "isolate",
+      "min-height": "100vh",
+      "padding": "88px 40px 80px",
+    },
+  },
+  "testId": "terminal-noir-writing-index",
+}
+`;
+
+exports[`EVAL-007 > checks critical templates against terminal-noir baseline snapshot/assertion contract 4`] = `
+{
+  "root": {
+    "background": "var(--bg)",
+    "fontFamily": ""JetBrains Mono", "Share Tech Mono", monospace",
+    "fontSize": undefined,
+    "lineHeight": undefined,
+    "variables": {
+      "--bg": "#0a0a0a",
+      "--border": "#1a1a1a",
+      "--cyan": "#00d4ff",
+      "--green": "#00ff41",
+      "--white": "#e8e8e8",
+    },
+  },
   "route": "/writing/[slug]",
   "rules": {
+    ".body p": {
+      "color": "#c8c8c8",
+      "font-size": "13px",
+      "line-height": "2",
+      "margin": "0",
+    },
     ".hero": {
       "align-items": "stretch",
       "background": "rgb(15 15 15 / 94%)",

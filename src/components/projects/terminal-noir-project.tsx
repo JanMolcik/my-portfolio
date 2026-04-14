@@ -71,18 +71,18 @@ export default function TerminalNoirProject({
 	});
 
 	return (
-			<main className={styles.projectPage} data-testid="terminal-noir-project">
-				<nav className={styles.breadcrumbs}>
-					<Link href="/" prefetch={false}>
-						~/
-					</Link>
-					<span>/</span>
-					<Link href="/#projects" prefetch={false}>
-						projects
-					</Link>
-					<span>/</span>
-					<strong>{project.slug || 'project'}</strong>
-				</nav>
+		<main className={styles.projectPage} data-testid="terminal-noir-project">
+			<nav className={styles.breadcrumbs}>
+				<Link href="/" prefetch={false}>
+					~/
+				</Link>
+				<span>/</span>
+				<Link href="/#projects" prefetch={false}>
+					projects
+				</Link>
+				<span>/</span>
+				<strong>{project.slug || 'project'}</strong>
+			</nav>
 
 			<section className={styles.hero}>
 				<div>

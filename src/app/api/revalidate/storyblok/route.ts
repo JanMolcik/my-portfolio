@@ -14,6 +14,10 @@ const processedWebhookSignatures = new Set<string>();
 const processedWebhookSignatureOrder: string[] = [];
 
 type WebhookDecision = 'accepted' | 'rejected' | 'ignored';
+type RevalidationScope = {
+	path: string;
+	type?: 'page' | 'layout';
+};
 
 type StoryblokWebhookPayload = {
 	action?: string;
@@ -202,26 +206,35 @@ export function resetWebhookIdempotencyStateForTests() {
 	);
 }
 
-function getRouteScopeForSlug(storySlug: string): string[] {
+function getRouteScopeForSlug(storySlug: string): RevalidationScope[] {
 	if (storySlug === 'home') {
-		return ['/', '/sitemap.xml'];
+		return [{ path: '/' }, { path: '/sitemap.xml' }];
 	}
 
 	if (storySlug.startsWith(STORY_ROUTE_PREFIXES[0])) {
 		const detailSlug = storySlug.slice(STORY_ROUTE_PREFIXES[0].length);
 		if (detailSlug.length > 0 && !detailSlug.includes('/')) {
-			return [`/projects/${detailSlug}`, '/', '/sitemap.xml'];
+			return [
+				{ path: `/projects/${detailSlug}` },
+				{ path: '/' },
+				{ path: '/sitemap.xml' },
+			];
 		}
 	}
 
 	if (storySlug.startsWith(STORY_ROUTE_PREFIXES[1])) {
 		const detailSlug = storySlug.slice(STORY_ROUTE_PREFIXES[1].length);
 		if (detailSlug.length > 0 && !detailSlug.includes('/')) {
-			return [`/writing/${detailSlug}`, '/sitemap.xml'];
+			return [
+				{ path: `/writing/${detailSlug}` },
+				{ path: '/writing' },
+				{ path: '/sitemap.xml' },
+				{ path: '/writing/page/[page]', type: 'page' },
+			];
 		}
 	}
 
-	return ['/sitemap.xml'];
+	return [{ path: '/sitemap.xml' }];
 }
 
 export async function POST(request: Request) {
@@ -305,8 +318,12 @@ export async function POST(request: Request) {
 		}
 
 		const scopePaths = getRouteScopeForSlug(storySlug);
-		for (const scopePath of scopePaths) {
-			revalidatePath(scopePath);
+		for (const scope of scopePaths) {
+			if (scope.type) {
+				revalidatePath(scope.path, scope.type);
+			} else {
+				revalidatePath(scope.path);
+			}
 		}
 		markWebhookSignatureProcessed(signature);
 
@@ -317,14 +334,14 @@ export async function POST(request: Request) {
 			publishedAt,
 			event: normalizedEvent,
 			scopeCount: scopePaths.length,
-			scope: scopePaths.join(','),
+			scope: scopePaths.map((scope) => scope.path).join(','),
 		});
 
 		return NextResponse.json({
 			revalidated: true,
 			event: normalizedEvent,
 			storySlug,
-			scope: scopePaths,
+			scope: scopePaths.map((scope) => scope.path),
 		});
 	} catch (error) {
 		logServerError('storyblok_revalidate_failed', error, {

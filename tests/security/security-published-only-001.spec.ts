@@ -57,8 +57,8 @@ describe('SEC-PUBLISHED-ONLY-001', () => {
 	});
 
 	it('limits custom inline script sinks to serialized JSON-LD route scripts', async () => {
-		const sourceFiles = (await listSourceFiles('src')).filter((filePath) =>
-			filePath.endsWith('.ts') || filePath.endsWith('.tsx'),
+		const sourceFiles = (await listSourceFiles('src')).filter(
+			(filePath) => filePath.endsWith('.ts') || filePath.endsWith('.tsx'),
 		);
 		const filesWithInlineHtml: string[] = [];
 

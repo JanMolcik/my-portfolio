@@ -23,6 +23,18 @@ const staticRoutePolicyMatrix: StaticRoutePolicy[] = [
 		requiresStaticParamsGenerator: true,
 	},
 	{
+		filePath: 'src/app/writing/page.tsx',
+		revalidate: 3600,
+		requiresDynamicParams: false,
+		requiresStaticParamsGenerator: false,
+	},
+	{
+		filePath: 'src/app/writing/page/[page]/page.tsx',
+		revalidate: 3600,
+		requiresDynamicParams: true,
+		requiresStaticParamsGenerator: true,
+	},
+	{
 		filePath: 'src/app/writing/[slug]/page.tsx',
 		revalidate: 3600,
 		requiresDynamicParams: true,

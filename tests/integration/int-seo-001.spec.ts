@@ -5,7 +5,7 @@ import {
 	buildWritingJsonLd,
 	serializeJsonLd,
 } from '@/lib/seo/json-ld';
-import { buildStoryMetadata } from '@/lib/seo/metadata';
+import { buildRouteMetadata, buildStoryMetadata } from '@/lib/seo/metadata';
 import type { HomePageModel } from '@/lib/storyblok/home-page';
 import type { ProjectDomain, WritingDomain } from '@/lib/storyblok/mappers';
 import type { StoryblokStory } from '@/lib/storyblok/content';
@@ -88,6 +88,35 @@ describe('INT-SEO-001', () => {
 		);
 		const og = metadata.openGraph as { type?: string };
 		expect(og.type).toBe('article');
+
+		process.env.NEXT_PUBLIC_SITE_URL = previous;
+	});
+
+	it('builds deterministic metadata for writing index and paginated routes', () => {
+		const previous = process.env.NEXT_PUBLIC_SITE_URL;
+		process.env.NEXT_PUBLIC_SITE_URL = 'https://example.com';
+
+		const indexMetadata = buildRouteMetadata({
+			title: 'Writing / notes',
+			description: 'Engineering notes.',
+			path: '/writing',
+		});
+		const paginatedMetadata = buildRouteMetadata({
+			title: 'Writing / notes — page 2',
+			description: 'Engineering notes page 2.',
+			path: '/writing/page/2',
+		});
+
+		expect(indexMetadata.alternates?.canonical).toBe(
+			'https://example.com/writing',
+		);
+		expect(paginatedMetadata.alternates?.canonical).toBe(
+			'https://example.com/writing/page/2',
+		);
+		expect(indexMetadata.openGraph).toMatchObject({
+			url: 'https://example.com/writing',
+			type: 'website',
+		});
 
 		process.env.NEXT_PUBLIC_SITE_URL = previous;
 	});
@@ -178,7 +207,10 @@ describe('INT-SEO-001', () => {
 			excerpt: 'Writing excerpt',
 			content: { type: 'doc', content: [] },
 			publishedDate: '2025-02-15T00:00:00.000Z',
+			updatedDate: '2025-03-15T00:00:00.000Z',
+			coverImageUrl: 'https://cdn.example.com/writing.png',
 			tags: ['seo', 'nextjs'],
+			featured: false,
 			seo: {
 				metaTitle: '',
 				metaDescription: 'Writing SEO description',
@@ -197,6 +229,17 @@ describe('INT-SEO-001', () => {
 		expect(writingJsonLd).toMatchObject({
 			'@type': 'Article',
 			url: 'https://example.com/writing/writing-note',
+			dateModified: '2025-03-15T00:00:00.000Z',
+			image: 'https://cdn.example.com/writing.png',
+			keywords: ['seo', 'nextjs'],
+			author: {
+				'@type': 'Person',
+				name: 'Jan Molcik',
+			},
+			publisher: {
+				'@type': 'Person',
+				name: 'Jan Molcik',
+			},
 		});
 
 		process.env.NEXT_PUBLIC_SITE_URL = previous;

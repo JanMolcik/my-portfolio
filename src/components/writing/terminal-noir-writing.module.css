@@ -55,6 +55,13 @@
 	color: var(--green);
 }
 
+.breadcrumbs a:focus-visible,
+.richLink:focus-visible {
+	outline: 1px solid var(--green);
+	outline-offset: 4px;
+	color: var(--green);
+}
+
 .hero {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) 280px;
@@ -153,14 +160,111 @@
 
 .body {
 	display: grid;
-	gap: 14px;
+	gap: 18px;
+	max-width: 760px;
 }
 
 .body p {
 	margin: 0;
-	color: #adadad;
-	line-height: 1.9;
+	color: #c8c8c8;
+	line-height: 2;
 	font-size: 13px;
+}
+
+.body h2,
+.body h3,
+.body h4 {
+	margin: 20px 0 0;
+	color: var(--white);
+	line-height: 1.35;
+	letter-spacing: 0.04em;
+}
+
+.headingPrefix {
+	display: inline-block;
+	margin-right: 10px;
+	color: var(--green);
+	text-shadow: var(--glow-green);
+}
+
+.body ul,
+.body ol {
+	display: grid;
+	gap: 10px;
+	margin: 0;
+	padding-left: 24px;
+	color: #c8c8c8;
+	line-height: 2;
+}
+
+.body li > p {
+	display: inline;
+}
+
+.body blockquote {
+	margin: 4px 0;
+	padding: 14px 18px;
+	border-left: 2px solid var(--cyan);
+	background: rgb(0 212 255 / 4%);
+	color: #c8c8c8;
+}
+
+.body blockquote p {
+	color: #d6d6d6;
+}
+
+.richLink {
+	color: var(--cyan);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+}
+
+.richLink:hover {
+	color: var(--green);
+	text-shadow: var(--glow-green);
+}
+
+.richLink[target="_blank"]::after {
+	content: " ↗";
+	color: var(--green);
+}
+
+.inlineCode {
+	border: 1px solid rgb(0 255 65 / 20%);
+	background: rgb(0 255 65 / 7%);
+	padding: 2px 5px;
+	color: var(--green);
+	font-size: 0.95em;
+}
+
+.codeBlock {
+	position: relative;
+	overflow-x: auto;
+	margin: 4px 0;
+	border: 1px solid var(--border);
+	background: #080808;
+	padding: 18px;
+	color: #d6d6d6;
+	line-height: 1.8;
+}
+
+.codeBlock::before {
+	content: attr(data-language);
+	display: block;
+	margin-bottom: 10px;
+	color: var(--cyan);
+	font-size: 11px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.codeBlock:not([data-language])::before {
+	content: "code";
+}
+
+.codeBlock code {
+	font-family: inherit;
 }
 
 @media (max-width: 900px) {
@@ -171,5 +275,17 @@
 	.hero {
 		grid-template-columns: 1fr;
 		padding: 24px;
+	}
+
+	.body p,
+	.body ul,
+	.body ol {
+		line-height: 2.1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.richLink:hover {
+		text-shadow: none;
 	}
 }

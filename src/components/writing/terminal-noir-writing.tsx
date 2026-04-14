@@ -1,46 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type { RichTextDomain, WritingDomain } from '@/lib/storyblok/mappers';
+import type { WritingDomain } from '@/lib/storyblok/mappers';
 import { parseStoryblokDate } from '@/lib/storyblok/dates';
+import { StoryblokRichTextRenderer } from './storyblok-rich-text-renderer';
 import styles from './terminal-noir-writing.module.css';
 
 type TerminalNoirWritingProps = {
 	writing: WritingDomain;
 };
-
-function asRecord(value: unknown): Record<string, unknown> {
-	if (!value || typeof value !== 'object' || Array.isArray(value)) {
-		return {};
-	}
-	return value as Record<string, unknown>;
-}
-
-function extractText(value: unknown): string {
-	if (!value) {
-		return '';
-	}
-	if (typeof value === 'string') {
-		return value;
-	}
-	if (Array.isArray(value)) {
-		return value
-			.map((item) => extractText(item))
-			.join(' ')
-			.trim();
-	}
-	const source = asRecord(value);
-	if (typeof source.text === 'string') {
-		return source.text;
-	}
-	return extractText(source.content);
-}
-
-function richTextToParagraphs(value: RichTextDomain): string[] {
-	const blocks = Array.isArray(value.content) ? value.content : [];
-	return blocks
-		.map((item) => extractText(item).replace(/\s+/g, ' ').trim())
-		.filter((item) => item.length > 0);
-}
 
 function formatDateLabel(value: string): string {
 	const parsed = parseStoryblokDate(value);
@@ -57,22 +24,21 @@ export default function TerminalNoirWriting({
 	writing,
 }: TerminalNoirWritingProps) {
 	const title = writing.title || writing.slug || 'Writing';
-	const paragraphs = richTextToParagraphs(writing.content);
-	const body = paragraphs.length > 0 ? paragraphs : [writing.excerpt];
+	const coverAlt = writing.coverImageAlt ?? `Cover image for ${title}`;
 
 	return (
-			<main className={styles.writingPage} data-testid="terminal-noir-writing">
-				<nav className={styles.breadcrumbs}>
-					<Link href="/" prefetch={false}>
-						~/
-					</Link>
-					<span>/</span>
-					<Link href="/#writing" prefetch={false}>
-						writing
-					</Link>
-					<span>/</span>
-					<strong>{writing.slug || 'entry'}</strong>
-				</nav>
+		<main className={styles.writingPage} data-testid="terminal-noir-writing">
+			<nav className={styles.breadcrumbs}>
+				<Link href="/" prefetch={false}>
+					~/
+				</Link>
+				<span>/</span>
+				<Link href="/writing" prefetch={false}>
+					writing
+				</Link>
+				<span>/</span>
+				<strong>{writing.slug || 'entry'}</strong>
+			</nav>
 
 			<section className={styles.hero}>
 				<div>
@@ -90,7 +56,7 @@ export default function TerminalNoirWriting({
 				<div className={styles.mediaCard}>
 					{writing.coverImageUrl ? (
 						<Image
-							alt={`${title} cover`}
+							alt={coverAlt}
 							className={styles.coverImage}
 							height={220}
 							priority
@@ -104,14 +70,15 @@ export default function TerminalNoirWriting({
 				</div>
 			</section>
 
-			<section className={styles.content}>
+			<article className={styles.content}>
 				<div className={styles.sectionLabel}>cat ./article.md</div>
 				<div className={styles.body}>
-					{body.map((paragraph, index) => (
-						<p key={`${paragraph}-${index}`}>{paragraph}</p>
-					))}
+					<StoryblokRichTextRenderer
+						fallback={writing.excerpt}
+						value={writing.content}
+					/>
 				</div>
-			</section>
+			</article>
 		</main>
 	);
 }

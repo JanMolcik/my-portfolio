@@ -11,6 +11,10 @@ describe('INT-ROUTE-002', () => {
 			'src/app/writing/[slug]/page.tsx',
 			'utf8',
 		);
+		const writingPaginatedRoute = await readFile(
+			'src/app/writing/page/[page]/page.tsx',
+			'utf8',
+		);
 
 		expect(projectRoute).toContain('export const dynamicParams = true;');
 		expect(projectRoute).toContain(
@@ -21,5 +25,13 @@ describe('INT-ROUTE-002', () => {
 		expect(writingRoute).toContain(
 			'export async function generateStaticParams',
 		);
+
+		expect(writingPaginatedRoute).toContain(
+			'export const dynamicParams = true;',
+		);
+		expect(writingPaginatedRoute).toContain(
+			'export async function generateStaticParams',
+		);
+		expect(writingPaginatedRoute).toContain("redirect('/writing')");
 	});
 });
