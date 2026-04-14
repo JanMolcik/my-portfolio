@@ -29,6 +29,46 @@ export function buildNotFoundMetadata(titlePrefix: string): Metadata {
 
 export type OpenGraphType = 'website' | 'article';
 
+export type StaticRouteMetadataInput = {
+	title: string;
+	description: string;
+	path: string;
+	ogType?: OpenGraphType;
+	noindex?: boolean;
+};
+
+export function buildRouteMetadata({
+	title,
+	description,
+	path,
+	ogType = 'website',
+	noindex = false,
+}: StaticRouteMetadataInput): Metadata {
+	const siteUrl = getSiteUrl();
+	const normalizedPath = normalizePath(path);
+	const canonicalUrl = getAbsoluteSiteUrl(normalizedPath);
+	const ogImage = `${siteUrl}/favicon.ico`;
+
+	return {
+		title,
+		description,
+		alternates: {
+			canonical: canonicalUrl,
+		},
+		openGraph: {
+			title,
+			description,
+			url: canonicalUrl,
+			type: ogType,
+			images: [{ url: ogImage }],
+		},
+		robots: {
+			index: !noindex,
+			follow: !noindex,
+		},
+	};
+}
+
 export function buildStoryMetadata(
 	story: StoryblokStory,
 	path: string,

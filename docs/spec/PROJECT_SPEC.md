@@ -85,7 +85,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 
 - Approved proposal: `designs/design-1-terminal-noir.html`.
 - Effective date: `2026-03-03`.
-- Deployment rule: route templates (`/`, `/projects/[slug]`, `/writing/[slug]`) must preserve this proposal's typography hierarchy, color system, spacing rhythm, and interaction language.
+- Deployment rule: route templates (`/`, `/projects/[slug]`, `/writing`, `/writing/page/[page]`, `/writing/[slug]`) must preserve this proposal's typography hierarchy, color system, spacing rhythm, and interaction language.
 - Change rule: replacing this design requires a new committed proposal file in `designs/` plus `PROJECT_SPEC.md` + `SPEC_CHANGELOG.md` update in the same PR.
 
 ## Reference Model
@@ -98,7 +98,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Define cache key map:
   - `storyblok:page:{slug}`
   - `storyblok:list:projects`
-  - `storyblok:list:writing`
+  - `storyblok:list:writing` (published `writing/*` listing for `/writing` and `/writing/page/[page]`)
 
 ## Route Policy Matrix (App Router)
 
@@ -106,8 +106,10 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 | --- | --- | --- | --- | --- |
 | `/` | Story `home` singleton | Static + ISR | `revalidate=3600` | Must satisfy `INV-2`, `INV-3` |
 | `/projects/[slug]` | Stories under `projects/*` | Pre-render with `generateStaticParams` + ISR for new slugs | `revalidate=3600` | Unknown slug must return `404` + non-indexable metadata |
-| `/writing/[slug]` | Stories under `writing/*` | Pre-render with `generateStaticParams` + ISR for new slugs | `revalidate=3600` | Unknown slug must return `404` + non-indexable metadata |
-| `/sitemap.xml` | Derived from Storyblok links index | Static metadata route | `revalidate=86400` | Must include only indexable routes |
+| `/writing` | Published stories under `writing/*` with content type `page_writing` | Static + ISR server-rendered listing | `revalidate=3600` | Canonical page 1 for writing/blog notes; queries `version=published` outside preview |
+| `/writing/page/[page]` | Published paginated `writing/*` listing | Pre-render known pages with ISR fallback only if tested | `revalidate=3600` | Page 2+ uses crawlable links and self-canonical metadata; `/writing/page/1` redirects to `/writing` |
+| `/writing/[slug]` | Stories under `writing/*` | Pre-render with `generateStaticParams` + ISR for new slugs | `revalidate=3600` | Unknown slug must return `404` + non-indexable metadata; body renders Storyblok richtext semantically |
+| `/sitemap.xml` | Derived from Storyblok links index plus local index routes | Static metadata route | `revalidate=86400` | Must include only indexable routes, including `/writing` and published writing details |
 | `/robots.txt` | Static policy + sitemap URL | Static metadata route | `revalidate=86400` | Must disallow preview and operational paths |
 | `/api/preview` | Storyblok Visual Editor preview action | Dynamic route handler (allowed exception) | `no-store` | Enables `draftMode` only after secret validation |
 | `/api/exit-preview` | Internal preview toggle | Dynamic route handler (allowed exception) | `no-store` | Disables `draftMode` |
@@ -123,6 +125,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Webhook handler accepts only publish/unpublish/delete events and ignores unsupported event types.
 - Webhook handler must be idempotent by event signature (`story_id + event_type + published_at`).
 - Revalidation scope must be minimal: affected story route and dependent listing routes only.
+- For `writing/*` publish/unpublish/delete events, revalidate the affected `/writing/{slug}` detail, `/writing`, `/sitemap.xml`, and the `/writing/page/[page]` route pattern so paginated listing caches cannot remain stale.
 - All preview/webhook invocations must emit structured logs with decision (`accepted`, `rejected`, `ignored`).
 
 ## Contact Intake Security Contract
@@ -141,7 +144,7 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Story structure:
 - `home` singleton story (`/`) with sections for hero copy, about copy, tech stack tags, social links, projects, and experience.
   - `projects/*` folder for project detail stories.
-  - `writing/*` folder for writing detail stories.
+  - `writing/*` folder for writing detail stories and the published writing index/listing.
 - Required fields for indexable stories:
   - `slug` (unique per folder scope).
   - `title` and `description` (used by metadata fallback).
@@ -150,10 +153,12 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Relation policy:
   - `home` references `projects` and `experience` by UUID relations.
   - Listing queries must use deterministic sort (`published_at:desc` or explicit order field).
-  - API queries must explicitly declare `resolve_relations` and `starts_with`.
+  - Writing listing queries must use a dedicated helper boundary with `starts_with=writing/`, `content_type=page_writing`, `page`, `per_page`, and deterministic sort such as `content.published_date:desc,slug:asc`; listing view models must stay narrow and must not pass raw Storyblok payloads into UI components.
+  - API queries must explicitly declare `resolve_relations` and `starts_with` where applicable.
 - Runtime contract:
   - Every fetched story payload is validated by Zod (`INV-1`) before render.
   - Any schema mismatch fails closed (error boundary + non-indexable fallback where applicable).
+  - Storyblok remains the runtime source of truth for writing/blog pages; local Markdown files are authoring/import inputs only and must not be imported by runtime `src/*` modules as content source.
 - Legacy migration baseline (Contentful export `2026-03-03T20:26:35.593Z`):
   - Content types: `about`, `project`, `experience`, `socialLink`.
   - Counts: `17` entries, `18` assets, `1` locale.
@@ -180,7 +185,10 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - `page_writing`:
   - `title` (text, required), `slug` (text, required; unique by workflow under `writing/*`)
   - `excerpt` (textarea, required), `content` (richtext, required), `published_date` (datetime, required)
-  - `cover_image` (asset image, optional), `tags` (multi-option, optional), `seo` (blok -> `seo_meta`, required)
+  - `updated_date` (datetime, optional), `cover_image` (asset image, optional), `cover_image_alt` (text, optional)
+  - `tags` (multi-option, optional), `source_type` (single option, optional), `source_url` (url, optional), `source_title` (text, optional)
+  - `content_origin` (single option, optional), `language` (single option, optional), `reading_time_minutes` (number, optional), `featured` (boolean, optional)
+  - `seo` (blok -> `seo_meta`, required)
 - `item_experience`:
   - `title` (text, required), `company_name` (text, required)
   - `description` (richtext, required), `start_date` (date, required), `end_date` (date, optional)
@@ -249,7 +257,8 @@ Greenfield replacement of legacy Gatsby + Contentful portfolio with a new reposi
 - Tester-agent exploratory run using `playwright-cli`, with markdown bug report, evidence JSON, and per-route screenshots (`INV-5`).
 - Ralph loop runner scripts and Docker wrapper must stay executable for queue-driven story execution.
 - Invariant traceability artifact is mandatory (`INV-* -> test IDs` and inverse mapping), missing links fail CI.
-- Visual parity checks (snapshot or targeted DOM/style assertions) against approved `designs/` proposal are required for critical templates (`/`, `/projects/[slug]`, `/writing/[slug]`).
+- Visual parity checks (snapshot or targeted DOM/style assertions) against approved `designs/` proposal are required for critical templates (`/`, `/projects/[slug]`, `/writing`, `/writing/page/[page]`, `/writing/[slug]`).
+- Writing/blog conformance must cover static/ISR route policy for index, pagination, and detail; published-only non-preview delivery; metadata/canonical/JSON-LD and sitemap behavior; webhook revalidation for index/detail/pagination; semantic richtext rendering; Markdown import dry-run behavior; and the runtime boundary that forbids `src/*` from importing `scripts/*` or local authoring Markdown as source of truth.
 - `test:spec-consistency` is mandatory and must fail on precedence mismatch, missing traceability artifact, missing hidden-set fixtures, or unresolved invariant/test references.
 - `CQ` guard is mandatory after each edit batch and must include Biome formatting; merge/CI must run `cq:check`.
 

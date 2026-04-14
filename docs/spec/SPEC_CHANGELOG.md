@@ -1,5 +1,17 @@
 # SPEC_CHANGELOG.md
 
+## 2026-04-13
+
+- Promoted the blog/writing Markdown-to-Storyblok plan into canonical docs while preserving `writing` as the public domain and Storyblok `page_writing` as the runtime source of truth.
+- Added `/writing` and `/writing/page/[page]` to the route, SEO, sitemap, revalidation, tester-agent, and visual parity contracts, with `/writing/page/1` redirecting to `/writing`.
+- Extended the `page_writing` contract with optional editorial/provenance fields for Markdown-imported notes and summaries without introducing a separate blog content type.
+- Updated local `page_writing` schema/type artifacts, migration alias normalization, mapper output, and regression tests for the optional editorial/provenance fields.
+- Replaced writing detail paragraph flattening with a server-safe richtext renderer for headings, lists, blockquotes, links, inline code, code blocks, bold, and italic, backed by long-form terminal-noir readability tests.
+- Added the `/writing` index and `/writing/page/[page]` static/ISR routes with a dedicated Storyblok `page_writing` list helper, terminal-noir listing UI, crawlable pagination, and route/visual/contract tests.
+- Added deterministic writing index/pagination metadata, explicit sitemap entries for `/writing` and indexable paginated pages, enriched writing detail JSON-LD, and Storyblok webhook revalidation for writing detail/index/pagination/sitemap caches.
+- Added a dry-run-first Markdown authoring import script for `page_writing`, including frontmatter/provenance validation, raw HTML rejection, CommonMark-to-Storyblok-richtext conversion, table fallback warnings, publish credential guard, and CS230 pilot dry-run evidence.
+- Added local-ticket backlog coverage for writing schema mapping, semantic richtext rendering, index/pagination UI, SEO/revalidation, Markdown import tooling, and final visual/normative verification.
+
 ## 2026-03-16
 
 - Extended `page_home` schema with optional `profile_image` so the Storyblok editor can manage the homepage portrait directly instead of relying on SEO media or local placeholders.

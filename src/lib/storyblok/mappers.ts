@@ -48,8 +48,17 @@ export type WritingDomain = {
 	excerpt: string;
 	content: RichTextDomain;
 	publishedDate: string;
+	updatedDate?: string;
 	coverImageUrl?: string;
+	coverImageAlt?: string;
 	tags: string[];
+	sourceType?: string;
+	sourceUrl?: string;
+	sourceTitle?: string;
+	contentOrigin?: string;
+	language?: string;
+	readingTimeMinutes?: number;
+	featured: boolean;
 	seo: SeoDomain;
 };
 
@@ -88,6 +97,13 @@ function asString(value: unknown): string | undefined {
 	}
 	const trimmed = value.trim();
 	return trimmed.length > 0 ? trimmed : undefined;
+}
+
+function asStringAllowEmpty(value: unknown): string | undefined {
+	if (typeof value !== 'string') {
+		return undefined;
+	}
+	return value.trim();
 }
 
 function asBoolean(value: unknown, fallback: boolean): boolean {
@@ -256,7 +272,7 @@ export function mapWritingDtoToDomain(
 	fallbackSlug = '',
 ): WritingDomain {
 	const source = asRecord(dto);
-	return {
+	const writing: WritingDomain = {
 		title: asString(source.title) ?? '',
 		slug: toRelationRef(source.slug) ?? fallbackSlug,
 		excerpt: asString(source.excerpt) ?? '',
@@ -264,8 +280,28 @@ export function mapWritingDtoToDomain(
 		publishedDate: asString(source.published_date) ?? '',
 		coverImageUrl: toAssetUrl(source.cover_image),
 		tags: toStringList(source.tags),
+		featured: asBoolean(source.featured, false),
 		seo: mapSeoDtoToDomain(source.seo),
 	};
+
+	const optionalFields = {
+		updatedDate: asString(source.updated_date),
+		coverImageAlt: asStringAllowEmpty(source.cover_image_alt),
+		sourceType: asString(source.source_type),
+		sourceUrl: asString(source.source_url),
+		sourceTitle: asString(source.source_title),
+		contentOrigin: asString(source.content_origin),
+		language: asString(source.language),
+		readingTimeMinutes: asNumber(source.reading_time_minutes),
+	} satisfies Partial<WritingDomain>;
+
+	for (const [key, value] of Object.entries(optionalFields)) {
+		if (value !== undefined) {
+			(writing as Record<string, unknown>)[key] = value;
+		}
+	}
+
+	return writing;
 }
 
 export function mapHomeDtoToDomain(dto: unknown): HomeDomain {

@@ -66,12 +66,18 @@ describe('INT-REVAL-001', () => {
 		);
 
 		expect(response.status).toBe(200);
-		expect(revalidatePathMock).toHaveBeenCalledTimes(2);
+		expect(revalidatePathMock).toHaveBeenCalledTimes(4);
 		expect(revalidatePathMock).toHaveBeenNthCalledWith(
 			1,
 			'/writing/hello-world',
 		);
-		expect(revalidatePathMock).toHaveBeenNthCalledWith(2, '/sitemap.xml');
+		expect(revalidatePathMock).toHaveBeenNthCalledWith(2, '/writing');
+		expect(revalidatePathMock).toHaveBeenNthCalledWith(3, '/sitemap.xml');
+		expect(revalidatePathMock).toHaveBeenNthCalledWith(
+			4,
+			'/writing/page/[page]',
+			'page',
+		);
 	});
 
 	it('revalidates only home and sitemap for home story updates', async () => {

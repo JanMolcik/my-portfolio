@@ -254,9 +254,10 @@ async function main() {
 	);
 	const hasPlaywrightCli = hasCommand('playwright-cli');
 	const startCommand = process.env.TESTER_AGENT_START_CMD?.trim() || '';
-	const sessionName =
+	const rawSessionName =
 		process.env.TESTER_AGENT_SESSION?.trim() ||
 		`${DEFAULT_PLAYWRIGHT_SESSION}-${reportStamp}`;
+	const sessionName = rawSessionName.slice(0, 18);
 
 	const playwrightLogDir = await detectPlaywrightLogDir(
 		process.env.TESTER_AGENT_PLAYWRIGHT_LOG_DIR?.trim(),
@@ -317,18 +318,25 @@ async function main() {
 			});
 			reproduction.push(`curl -I ${targetUrl}`);
 		} else {
-			openSessionProcess = spawn(
+			const openResult = runCommand(
 				'playwright-cli',
 				['-s=' + sessionName, 'open', targetUrl],
-				{
-					stdio: 'ignore',
-					env: process.env,
-				},
+				timeoutMs,
 			);
+			steps.push(
+				`open ${targetUrl} -> ${openResult.ok ? 'ok' : `failed (${openResult.status})`}`,
+			);
+			if (!openResult.ok) {
+				findings.push({
+					severity: 'P1',
+					detail: `Unable to open playwright-cli session: ${openResult.stderr || 'unknown error'}`,
+				});
+				reproduction.push(`playwright-cli -s=${sessionName} open ${targetUrl}`);
+			}
 
 			const waitStartedAt = Date.now();
-			let sessionReady = false;
-			while (Date.now() - waitStartedAt < timeoutMs) {
+			let sessionReady = openResult.ok;
+			while (sessionReady && Date.now() - waitStartedAt < timeoutMs) {
 				const snapshotProbe = runCommand(
 					'playwright-cli',
 					['-s=' + sessionName, 'snapshot'],

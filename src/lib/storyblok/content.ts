@@ -121,7 +121,7 @@ type StoryblokSingleWithRelationsResponse = StoryblokSingleResponse & {
 	rels?: StoryblokResolvedRelationStory[];
 };
 
-type StoryblokRequestParams = Record<string, string | number>;
+export type StoryblokRequestParams = Record<string, string | number>;
 
 function mapLinkSlugToRoutePath(slug: string): string | null {
 	if (slug === 'home') {
@@ -181,7 +181,7 @@ function shouldForcePublishedCvInDev(): boolean {
 	return ['1', 'true', 'yes', 'on'].includes(normalized);
 }
 
-function getRequestParamsByMode(
+export function getStoryblokRequestParamsByMode(
 	params: StoryblokRequestParams,
 	mode: StoryblokContentMode,
 ): StoryblokRequestParams | null {
@@ -213,7 +213,10 @@ export async function getPublishedStory(
 	mode: StoryblokContentMode = STORYBLOK_PUBLISHED_VERSION,
 ): Promise<StoryblokStory | null> {
 	const storyblokApi = getStoryblokApi();
-	const params = getRequestParamsByMode(getPublishedStoryParams(), mode);
+	const params = getStoryblokRequestParamsByMode(
+		getPublishedStoryParams(),
+		mode,
+	);
 	if (!params) {
 		return null;
 	}
@@ -239,7 +242,7 @@ export async function getPublishedHomeStory(
 	rels: StoryblokResolvedRelationStory[];
 } | null> {
 	const storyblokApi = getStoryblokApi();
-	const params = getRequestParamsByMode(
+	const params = getStoryblokRequestParamsByMode(
 		getPublishedStoryWithRelationsParams(STORYBLOK_HOME_RESOLVE_RELATIONS),
 		mode,
 	);

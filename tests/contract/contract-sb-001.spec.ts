@@ -18,6 +18,7 @@ import {
 	getPublishedStoriesByPrefix,
 	getPublishedStory,
 } from '@/lib/storyblok/content';
+import { getPublishedWritingList } from '@/lib/storyblok/writing';
 
 describe('CONTRACT-SB-001', () => {
 	const originalPreviewToken = process.env.STORYBLOK_PREVIEW_TOKEN;
@@ -86,6 +87,62 @@ describe('CONTRACT-SB-001', () => {
 			resolve_relations: 'page_home.featured_projects,page_home.experience',
 			per_page: 100,
 			sort_by: 'published_at:desc',
+		});
+	});
+
+	it('fetches published writing list through the dedicated page_writing boundary', async () => {
+		getMock.mockResolvedValueOnce({
+			data: {
+				stories: [
+					{
+						full_slug: 'writing/agent-notes',
+						content: {
+							component: 'page_writing',
+							title: 'Agent Notes',
+							excerpt: 'A sourced note.',
+							published_date: '2026-04-13 09:00',
+							source_type: 'youtube-summary',
+							reading_time_minutes: '12',
+							tags: ['ai'],
+							seo: [
+								{
+									meta_title: 'Agent Notes',
+									meta_description: 'A sourced note.',
+								},
+							],
+						},
+					},
+				],
+			},
+			headers: {
+				total: '12',
+				'per-page': '9',
+			},
+		});
+
+		const result = await getPublishedWritingList({ page: 2 });
+		expect(result).toMatchObject({
+			total: 12,
+			page: 2,
+			perPage: 9,
+			totalPages: 2,
+			items: [
+				expect.objectContaining({
+					title: 'Agent Notes',
+					slug: 'agent-notes',
+					sourceType: 'youtube-summary',
+					readingTimeMinutes: 12,
+				}),
+			],
+		});
+		expect(getMock).toHaveBeenCalledWith('cdn/stories', {
+			version: 'published',
+			starts_with: 'writing/',
+			content_type: 'page_writing',
+			page: 2,
+			per_page: 9,
+			sort_by: 'content.published_date:desc,slug:asc',
+			excluding_fields: 'content',
 		});
 	});
 

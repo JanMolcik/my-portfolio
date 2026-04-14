@@ -1,6 +1,6 @@
 # Ticket Matrix
 
-Generated at: 2026-03-05T09:24:23.682Z
+Generated at: 2026-04-13T15:04:28.731Z
 
 | ID | Type | Title | Status | Priority | Owner | Depends On | Invariants | File |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -16,6 +16,8 @@ Generated at: 2026-03-05T09:24:23.682Z
 | E2-S3 | user_story | As editor, I want baseline content imported, so that portfolio has complete initial content. | ready | P1 | unassigned | E2-S2 | INV-5 | [E2-S3.md](./user-stories/E2-S3.md) |
 | E2-S4 | user_story | As product owner, I want slug and SEO governance rules applied, so that publishing remains consistent. | ready | P1 | unassigned | E2-S1 | INV-5 | [E2-S4.md](./user-stories/E2-S4.md) |
 | E2-S5 | user_story | As developer, I want Storyblok types regenerated after schema changes, so that app code stays type-safe. | ready | P1 | unassigned | E2-S1 | INV-5 | [E2-S5.md](./user-stories/E2-S5.md) |
+| E2-S6 | user_story | As content admin, I want `page_writing` extended with provenance and editorial fields, so that blog/notes content can be credited and listed without a new content type. | ready | P1 | unassigned | E2-S1, E2-S5 | INV-1, INV-3, INV-5, INV-A2 | [E2-S6.md](./user-stories/E2-S6.md) |
+| E2-S7 | user_story | As author, I want Markdown drafts imported into Storyblok richtext, so that local writing workflow feeds the CMS source of truth. | ready | P1 | unassigned | E2-S6, E3-S2 | INV-1, INV-5, INV-A2, INV-A5 | [E2-S7.md](./user-stories/E2-S7.md) |
 | E3 | epic | Data Access, Mapping, Validation | backlog | P1 | unassigned | - | INV-5 | [E3.md](./epics/E3.md) |
 | E3-S1 | user_story | As developer, I want a typed Storyblok client abstraction, so that API usage is centralized. | ready | P1 | unassigned | E1-S1 | INV-5 | [E3-S1.md](./user-stories/E3-S1.md) |
 | E3-S2 | user_story | As developer, I want DTO-to-domain mappers, so that UI never consumes raw CMS payloads directly. | ready | P1 | unassigned | E3-S1`, `E2-S1 | INV-5 | [E3-S2.md](./user-stories/E3-S2.md) |
@@ -26,14 +28,18 @@ Generated at: 2026-03-05T09:24:23.682Z
 | E4-S2 | user_story | As visitor, I want project detail pages, so that I can inspect past work quickly. | ready | P1 | unassigned | E3-S2`, `E2-S3 | INV-5 | [E4-S2.md](./user-stories/E4-S2.md) |
 | E4-S3 | user_story | As visitor, I want writing detail pages, so that portfolio supports long-form content. | ready | P1 | unassigned | E3-S2`, `E2-S1 | INV-5 | [E4-S3.md](./user-stories/E4-S3.md) |
 | E4-S4 | user_story | As product owner, I want route policy matrix enforced in code, so that no accidental dynamic rendering occurs. | ready | P1 | unassigned | E4-S1`, `E4-S2`, `E4-S3 | INV-5 | [E4-S4.md](./user-stories/E4-S4.md) |
+| E4-S5 | user_story | As reader, I want writing detail richtext rendered semantically, so that long-form articles preserve headings, lists, quotes, links, inline code, code blocks, bold, and italic. | ready | P1 | unassigned | E4-S3, E2-S6 | INV-1, INV-2, INV-3, INV-5, INV-A2 | [E4-S5.md](./user-stories/E4-S5.md) |
+| E4-S6 | user_story | As reader, I want a crawlable `/writing` index with pagination, so that I can discover older notes and summaries. | ready | P1 | unassigned | E4-S3, E3-S4, E2-S6 | INV-1, INV-2, INV-3, INV-5, INV-A1, INV-A3 | [E4-S6.md](./user-stories/E4-S6.md) |
 | E5 | epic | SEO & Discoverability | backlog | P1 | unassigned | - | INV-5 | [E5.md](./epics/E5.md) |
 | E5-S1 | user_story | As search user, I want unique metadata for every indexable page, so that snippets are accurate. | ready | P1 | unassigned | E4-S1`, `E4-S2`, `E4-S3 | INV-5 | [E5-S1.md](./user-stories/E5-S1.md) |
 | E5-S2 | user_story | As search engine, I want sitemap and robots endpoints, so that crawl behavior is correct. | ready | P1 | unassigned | E4-S2`, `E4-S3 | INV-5 | [E5-S2.md](./user-stories/E5-S2.md) |
 | E5-S3 | user_story | As SEO owner, I want JSON-LD emitted consistently, so that structured data is machine-readable. | ready | P1 | unassigned | E5-S1 | INV-5 | [E5-S3.md](./user-stories/E5-S3.md) |
+| E5-S4 | user_story | As search user, I want writing index, pagination, and details to have deterministic metadata and sitemap coverage, so that blog/notes pages are discoverable. | ready | P1 | unassigned | E4-S5, E4-S6, E5-S3 | INV-2, INV-3, INV-4, INV-5, INV-A1, INV-A3 | [E5-S4.md](./user-stories/E5-S4.md) |
 | E6 | epic | Preview, Webhook, Revalidation Security | backlog | P1 | unassigned | - | INV-5 | [E6.md](./epics/E6.md) |
 | E6-S1 | user_story | As editor, I want secure preview mode for drafts, so that unpublished changes are reviewable safely. | ready | P1 | unassigned | E3-S1`, `E4-S1 | INV-5 | [E6-S1.md](./user-stories/E6-S1.md) |
 | E6-S2 | user_story | As platform, I want webhook-driven revalidation, so that published updates appear quickly without full rebuild. | ready | P1 | unassigned | E3-S1`, `E4-S2 | INV-5 | [E6-S2.md](./user-stories/E6-S2.md) |
 | E6-S3 | user_story | As security owner, I want idempotent webhook handling and decision logging, so that duplicate/replayed events are safe. | ready | P1 | unassigned | E6-S2 | INV-5 | [E6-S3.md](./user-stories/E6-S3.md) |
+| E6-S4 | user_story | As platform, I want writing publish events to revalidate detail, index, pagination, and sitemap caches, so that listing pages do not stay stale after Storyblok changes. | ready | P1 | unassigned | E6-S2, E4-S6 | INV-2, INV-3, INV-4, INV-5, INV-A1, INV-A3 | [E6-S4.md](./user-stories/E6-S4.md) |
 | E7 | epic | Conformance, E2E, Tester-Agent | backlog | P1 | unassigned | - | INV-5 | [E7.md](./epics/E7.md) |
 | E7-S1 | user_story | As QA, I want invariant traceability artifact, so that every invariant has executable coverage. | ready | P1 | unassigned | E1-S4 | INV-5 | [E7-S1.md](./user-stories/E7-S1.md) |
 | E7-S2 | user_story | As QA, I want unit/integration/contract/security suites, so that regressions are caught before merge. | ready | P1 | unassigned | E3-S3`, `E5-S2`, `E6-S3 | INV-5 | [E7-S2.md](./user-stories/E7-S2.md) |
@@ -41,6 +47,7 @@ Generated at: 2026-03-05T09:24:23.682Z
 | E7-S4 | user_story | As release manager, I want tester-agent artifacts on each change, so that exploratory findings are visible and enforceable. | ready | P1 | unassigned | E7-S3 | INV-5 | [E7-S4.md](./user-stories/E7-S4.md) |
 | E7-S5 | user_story | As UI owner, I want visual parity checks against terminal-noir baseline, so that design drift is prevented. | ready | P1 | unassigned | E4-S1`, `E4-S2 | INV-5 | [E7-S5.md](./user-stories/E7-S5.md) |
 | E7-S6 | user_story | As platform owner, I want queue-driven ralph loop orchestration for locally fragmented markdown tickets, so that one agent can run after another inside Docker sandbox with deterministic verification. | ready | P1 | unassigned | E7-S2`, `E8-S1 | INV-5 | [E7-S6.md](./user-stories/E7-S6.md) |
+| E7-S7 | user_story | As QA, I want blog/writing visual and normative evidence, so that the Markdown to Storyblok flow is shippable. | ready | P1 | unassigned | E4-S5, E4-S6, E5-S4, E6-S4 | INV-2, INV-3, INV-5, INV-6, INV-A1, INV-A3 | [E7-S7.md](./user-stories/E7-S7.md) |
 | E8 | epic | CI/CD, Environments, Secrets | backlog | P1 | unassigned | - | INV-5 | [E8.md](./epics/E8.md) |
 | E8-S1 | user_story | As engineer, I want CI pipeline with mandatory gates, so that only conformant code can merge. | ready | P1 | unassigned | E7-S2`, `E7-S4 | INV-5 | [E8-S1.md](./user-stories/E8-S1.md) |
 | E8-S2 | user_story | As ops, I want Vercel environments connected, so that preview and production deploys are controlled. | ready | P1 | unassigned | E1-S1 | INV-5 | [E8-S2.md](./user-stories/E8-S2.md) |

@@ -44,7 +44,8 @@
 		"ralph:docker:loop:inplace": "RALPH_DOCKER_MODE=inplace bash scripts/ralph-docker-loop.sh",
 		"ralph:env:docker": "bash scripts/ralph-env.sh pnpm run ralph:docker:loop:inplace",
 		"ralph:env:docker:once": "bash scripts/ralph-env.sh env RALPH_LOOP_ARGS=--once pnpm run ralph:docker:loop:inplace",
-		"ralph:env:orchestrator": "bash scripts/ralph-env.sh bash scripts/ralph-orchestrator.sh"
+		"ralph:env:orchestrator": "bash scripts/ralph-env.sh bash scripts/ralph-orchestrator.sh",
+		"storyblok:writing:import": "node scripts/storyblok-import-writing-md.mjs"
 	},
 	"dependencies": {
 		"@storyblok/react": "^5.4.22",

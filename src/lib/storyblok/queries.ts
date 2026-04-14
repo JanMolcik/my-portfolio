@@ -3,12 +3,14 @@ export const STORYBLOK_LINKS_ENDPOINT = 'cdn/links';
 export const STORYBLOK_PUBLISHED_VERSION = 'published';
 export const STORYBLOK_DRAFT_VERSION = 'draft';
 export const STORYBLOK_PUBLISHED_SORT = 'published_at:desc';
+export const STORYBLOK_WRITING_SORT = 'content.published_date:desc,slug:asc';
 export const STORYBLOK_HOME_RESOLVE_RELATIONS =
 	'page_home.featured_projects,page_home.experience';
 export const STORYBLOK_LIST_RESOLVE_RELATIONS =
 	STORYBLOK_HOME_RESOLVE_RELATIONS;
 export const STORYBLOK_LIST_PAGE_SIZE = 100;
 export const STORYBLOK_LINKS_PAGE_SIZE = 1000;
+export const STORYBLOK_WRITING_PAGE_SIZE = 9;
 
 export type StoryblokContentMode =
 	| typeof STORYBLOK_PUBLISHED_VERSION

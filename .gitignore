@@ -34,3 +34,5 @@ data/storyblok/stories/[0-9]*/
 # system files
 .DS_Store
 .vercel
+.omx/
+.omc/

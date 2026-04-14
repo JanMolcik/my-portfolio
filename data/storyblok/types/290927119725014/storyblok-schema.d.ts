@@ -89,8 +89,17 @@ export interface PageWriting {
   excerpt: string;
   content: StoryblokRichtext;
   published_date: string;
+  updated_date?: string;
   cover_image?: StoryblokAsset;
+  cover_image_alt?: string;
   tags?: (number | string)[];
+  source_type?: "work-note" | "twitter-thread" | "youtube-summary" | "article-summary" | "translation" | "experiment";
+  source_url?: string;
+  source_title?: string;
+  content_origin?: "original" | "summary" | "translation" | "annotated-notes";
+  language?: "cs" | "en";
+  reading_time_minutes?: string;
+  featured?: boolean;
   seo: SeoMeta[];
   component: "page_writing";
   _uid: string;

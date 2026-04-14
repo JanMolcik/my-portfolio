@@ -65,7 +65,7 @@ describe('CONTRACT-WEBHOOK-001', () => {
 			);
 			expect(response.status).toBe(200);
 		}
-		expect(revalidatePathMock).toHaveBeenCalledTimes(events.length * 2);
+		expect(revalidatePathMock).toHaveBeenCalledTimes(events.length * 4);
 	});
 
 	it('ignores unsupported webhook events without revalidation', async () => {

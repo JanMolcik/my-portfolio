@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 
 type TemplateContract = {
-	route: '/' | '/projects/[slug]' | '/writing/[slug]';
+	route: '/' | '/projects/[slug]' | '/writing' | '/writing/[slug]';
 	routeFile: string;
 	componentFile: string;
 	cssFile: string;
@@ -39,11 +39,11 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 				property: 'background-size',
 				value: 'auto, 40px 40px, 40px 40px',
 			},
-				{
-					selector: '.nav',
-					property: 'position',
-					value: 'fixed',
-				},
+			{
+				selector: '.nav',
+				property: 'position',
+				value: 'fixed',
+			},
 			{
 				selector: '.heroName',
 				property: 'font-size',
@@ -88,6 +88,37 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 		],
 	},
 	{
+		route: '/writing',
+		routeFile: 'src/app/writing/page.tsx',
+		componentFile: 'src/components/writing/terminal-noir-writing-index.tsx',
+		cssFile: 'src/components/writing/terminal-noir-writing-index.module.css',
+		componentSymbol: 'TerminalNoirWritingIndex',
+		testId: 'terminal-noir-writing-index',
+		rootSelector: '.writingIndex',
+		requiredRules: [
+			{
+				selector: '.writingIndex',
+				property: 'background-size',
+				value: 'auto, 40px 40px, 40px 40px',
+			},
+			{
+				selector: '.layout',
+				property: 'display',
+				value: 'grid',
+			},
+			{
+				selector: '.layout',
+				property: 'grid-template-columns',
+				value: '280px minmax(0, 1fr)',
+			},
+			{
+				selector: '.card',
+				property: 'display',
+				value: 'grid',
+			},
+		],
+	},
+	{
 		route: '/writing/[slug]',
 		routeFile: 'src/app/writing/[slug]/page.tsx',
 		componentFile: 'src/components/writing/terminal-noir-writing.tsx',
@@ -115,6 +146,16 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 				selector: '.title',
 				property: 'font-size',
 				value: 'clamp(34px, 6vw, 64px)',
+			},
+			{
+				selector: '.body p',
+				property: 'color',
+				value: '#c8c8c8',
+			},
+			{
+				selector: '.body p',
+				property: 'line-height',
+				value: '2',
 			},
 		],
 	},

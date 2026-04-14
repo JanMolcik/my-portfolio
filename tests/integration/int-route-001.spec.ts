@@ -4,6 +4,8 @@ import { describe, expect, it } from 'vitest';
 const routeFiles = [
 	'src/app/page.tsx',
 	'src/app/projects/[slug]/page.tsx',
+	'src/app/writing/page.tsx',
+	'src/app/writing/page/[page]/page.tsx',
 	'src/app/writing/[slug]/page.tsx',
 ];
 
@@ -26,12 +28,28 @@ describe('INT-ROUTE-001', () => {
 			'src/app/writing/[slug]/page.tsx',
 			'utf8',
 		);
+		const writingIndexRoute = await readFile(
+			'src/app/writing/page.tsx',
+			'utf8',
+		);
+		const writingPaginatedRoute = await readFile(
+			'src/app/writing/page/[page]/page.tsx',
+			'utf8',
+		);
 		const homeComponent = await readFile(
 			'src/components/home/terminal-noir-home.tsx',
 			'utf8',
 		);
+		const writingIndexComponent = await readFile(
+			'src/components/writing/terminal-noir-writing-index.tsx',
+			'utf8',
+		);
 		const writingComponent = await readFile(
 			'src/components/writing/terminal-noir-writing.tsx',
+			'utf8',
+		);
+		const writingRichTextRenderer = await readFile(
+			'src/components/writing/storyblok-rich-text-renderer.tsx',
 			'utf8',
 		);
 
@@ -55,7 +73,21 @@ describe('INT-ROUTE-001', () => {
 		expect(writingRoute).toContain('notFound()');
 		expect(writingRoute).not.toContain('StoryblokStory');
 
+		expect(writingIndexRoute).toContain('TerminalNoirWritingIndex');
+		expect(writingIndexRoute).toContain('getPublishedWritingList');
+		expect(writingPaginatedRoute).toContain('getPublishedWritingPageParams');
+		expect(writingPaginatedRoute).toContain("redirect('/writing')");
+		expect(writingPaginatedRoute).toContain('notFound()');
+		expect(writingIndexComponent).toContain(
+			'data-testid="terminal-noir-writing-index"',
+		);
+		expect(writingIndexComponent).toContain('Writing pagination');
+		expect(writingIndexComponent).not.toContain('rw-r--');
+
 		expect(writingComponent).toContain('data-testid="terminal-noir-writing"');
 		expect(writingComponent).toContain('cat article.md');
+		expect(writingComponent).toContain('StoryblokRichTextRenderer');
+		expect(writingComponent).not.toContain('dangerouslySetInnerHTML');
+		expect(writingRichTextRenderer).not.toContain('dangerouslySetInnerHTML');
 	});
 });

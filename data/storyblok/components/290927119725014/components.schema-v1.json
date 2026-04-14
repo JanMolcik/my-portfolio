@@ -208,15 +208,104 @@
 				"type": "datetime",
 				"required": true
 			},
+			"updated_date": {
+				"type": "datetime"
+			},
 			"cover_image": {
 				"type": "asset",
 				"filetypes": ["images"]
+			},
+			"cover_image_alt": {
+				"type": "text"
 			},
 			"tags": {
 				"type": "options",
 				"source": "internal",
 				"exclude_empty_option": true,
 				"options": []
+			},
+			"source_type": {
+				"type": "option",
+				"source": "internal",
+				"exclude_empty_option": true,
+				"options": [
+					{
+						"name": "Work note",
+						"value": "work-note"
+					},
+					{
+						"name": "Twitter thread",
+						"value": "twitter-thread"
+					},
+					{
+						"name": "YouTube summary",
+						"value": "youtube-summary"
+					},
+					{
+						"name": "Article summary",
+						"value": "article-summary"
+					},
+					{
+						"name": "Translation",
+						"value": "translation"
+					},
+					{
+						"name": "Experiment",
+						"value": "experiment"
+					}
+				]
+			},
+			"source_url": {
+				"type": "text"
+			},
+			"source_title": {
+				"type": "text"
+			},
+			"content_origin": {
+				"type": "option",
+				"source": "internal",
+				"exclude_empty_option": true,
+				"options": [
+					{
+						"name": "Original",
+						"value": "original"
+					},
+					{
+						"name": "Summary",
+						"value": "summary"
+					},
+					{
+						"name": "Translation",
+						"value": "translation"
+					},
+					{
+						"name": "Annotated notes",
+						"value": "annotated-notes"
+					}
+				]
+			},
+			"language": {
+				"type": "option",
+				"source": "internal",
+				"exclude_empty_option": true,
+				"default_value": "cs",
+				"options": [
+					{
+						"name": "Czech",
+						"value": "cs"
+					},
+					{
+						"name": "English",
+						"value": "en"
+					}
+				]
+			},
+			"reading_time_minutes": {
+				"type": "number"
+			},
+			"featured": {
+				"type": "boolean",
+				"default_value": false
 			},
 			"seo": {
 				"type": "bloks",

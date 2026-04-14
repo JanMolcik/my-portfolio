@@ -23,6 +23,7 @@ type StoryblokField = {
 	restrict_components?: boolean;
 	component_whitelist?: string[];
 	maximum?: number;
+	default_value?: unknown;
 	options?: Array<{ name?: string; value?: string }>;
 };
 
@@ -76,8 +77,17 @@ const REQUIRED_COMPONENT_FIELDS: Record<
 		excerpt: { type: 'textarea', required: true },
 		content: { type: 'richtext', required: true },
 		published_date: { type: 'datetime', required: true },
+		updated_date: { type: 'datetime', required: false },
 		cover_image: { type: 'asset', required: false },
+		cover_image_alt: { type: 'text', required: false },
 		tags: { type: 'options', required: false },
+		source_type: { type: 'option', required: false },
+		source_url: { type: 'text', required: false },
+		source_title: { type: 'text', required: false },
+		content_origin: { type: 'option', required: false },
+		language: { type: 'option', required: false },
+		reading_time_minutes: { type: 'number', required: false },
+		featured: { type: 'boolean', required: false },
 		seo: { type: 'bloks', required: true },
 	},
 	item_experience: {
@@ -197,6 +207,49 @@ describe('CONTRACT-SB-SCHEMA-001', () => {
 		).toBeGreaterThan(0);
 	});
 
+	it('keeps page_writing provenance fields optional and editor-constrained', async () => {
+		const raw = await readFile(SCHEMA_PATH, 'utf8');
+		const components = JSON.parse(raw) as StoryblokComponent[];
+		const byName = new Map(
+			components.map((component) => [component.name, component]),
+		);
+		const writingSchema = byName.get('page_writing')?.schema;
+
+		expect(writingSchema?.source_type?.type).toBe('option');
+		expect(
+			writingSchema?.source_type?.options?.map((option) => option.value),
+		).toEqual([
+			'work-note',
+			'twitter-thread',
+			'youtube-summary',
+			'article-summary',
+			'translation',
+			'experiment',
+		]);
+		expect(
+			writingSchema?.content_origin?.options?.map((option) => option.value),
+		).toEqual(['original', 'summary', 'translation', 'annotated-notes']);
+		expect(writingSchema?.language?.default_value).toBe('cs');
+		expect(
+			writingSchema?.language?.options?.map((option) => option.value),
+		).toEqual(['cs', 'en']);
+		expect(writingSchema?.featured?.default_value).toBe(false);
+
+		for (const fieldName of [
+			'updated_date',
+			'cover_image_alt',
+			'source_type',
+			'source_url',
+			'source_title',
+			'content_origin',
+			'language',
+			'reading_time_minutes',
+			'featured',
+		]) {
+			expect(writingSchema?.[fieldName]?.required ?? false).toBe(false);
+		}
+	});
+
 	it('keeps Storyblok components/migrations workflow artifacts executable by contract', async () => {
 		const workflow = await readFile(WORKFLOW_PATH, 'utf8');
 		expect(workflow).toContain('storyblok components push');
@@ -241,6 +294,16 @@ describe('CONTRACT-SB-SCHEMA-001', () => {
 		expect(generatedTypes).toContain('export interface PageHome');
 		expect(generatedTypes).toContain('export interface PageProject');
 		expect(generatedTypes).toContain('export interface PageWriting');
+		expect(generatedTypes).toContain('updated_date?: string');
+		expect(generatedTypes).toContain('cover_image_alt?: string');
+		expect(generatedTypes).toContain('source_type?:');
+		expect(generatedTypes).toContain("| 'youtube-summary'");
+		expect(generatedTypes).toContain(
+			"content_origin?: 'original' | 'summary' | 'translation' | 'annotated-notes'",
+		);
+		expect(generatedTypes).toContain("language?: 'cs' | 'en'");
+		expect(generatedTypes).toContain('reading_time_minutes?: string');
+		expect(generatedTypes).toContain('featured?: boolean');
 		expect(generatedTypes).toContain('export interface ItemExperience');
 		expect(generatedTypes).toContain(
 			'export type ContentType = PageHome | PageProject | PageWriting | ItemExperience;',
