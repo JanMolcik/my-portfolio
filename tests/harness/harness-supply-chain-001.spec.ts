@@ -12,7 +12,7 @@ describe('HARNESS-SUPPLY-CHAIN-001', () => {
 		expect(workflow).toContain('--frozen-lockfile');
 	});
 
-	it('reports no critical or high severity vulnerabilities in the dependency tree', () => {
+	it('reports no critical or high severity vulnerabilities in the dependency tree', { timeout: 30_000 }, () => {
 		let auditJson: string;
 		try {
 			// --prod: dev dependency advisories are acceptable (see R6 in SECURITY_AUDIT_2026-04-14.md)
