@@ -181,3 +181,73 @@ describe('SEC-CONTACT-001', () => {
 		});
 	});
 });
+
+describe('SEC-CONTACT-001: Turnstile production guard (T5)', () => {
+	it('shouldUseDevelopmentFallbacks is false in production — test keys cannot activate', async () => {
+		const { getContactServerConfig, getContactPublicConfig } =
+			await vi.importActual<typeof import('@/lib/contact/config')>(
+				'@/lib/contact/config',
+			);
+
+		const savedNodeEnv = process.env.NODE_ENV;
+		const savedTurnstileKey = process.env.TURNSTILE_SECRET_KEY;
+		const savedPublicKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+		try {
+			(process.env as Record<string, string | undefined>).NODE_ENV = 'production';
+			delete process.env.TURNSTILE_SECRET_KEY;
+			delete process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+			const serverConfig = getContactServerConfig();
+			// In production without real env vars, Turnstile test keys must NOT be used
+			expect(serverConfig.turnstileSecretKey).toBeNull();
+			expect(serverConfig.allowsMockDelivery).toBe(false);
+
+			const publicConfig = getContactPublicConfig();
+			expect(publicConfig.turnstileSiteKey).toBeNull();
+			expect(publicConfig.isFormAvailable).toBe(false);
+		} finally {
+			(process.env as Record<string, string | undefined>).NODE_ENV = savedNodeEnv;
+			if (savedTurnstileKey !== undefined) {
+				process.env.TURNSTILE_SECRET_KEY = savedTurnstileKey;
+			} else {
+				delete process.env.TURNSTILE_SECRET_KEY;
+			}
+			if (savedPublicKey !== undefined) {
+				process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY = savedPublicKey;
+			} else {
+				delete process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+			}
+		}
+	});
+});
+
+describe('SEC-CONTACT-001: Email subject CRLF injection (T8)', () => {
+	it('documents that Zod trim() does not strip mid-string CRLF from name field', async () => {
+		// CRLF in name passes Zod validation — trim() only strips leading/trailing whitespace.
+		// The subject line would be: "Portfolio contact: Jan\r\nBcc: victim@evil.test"
+		// Defense relies on Resend SDK sanitizing outbound email headers (see R5).
+		const { parseContactSubmission } =
+			await vi.importActual<typeof import('@/lib/contact/schema')>(
+				'@/lib/contact/schema',
+			);
+
+		const crlfName = 'Jan\r\nBcc: victim@evil.test';
+		const result = parseContactSubmission({
+			name: crlfName,
+			email: 'jan@example.com',
+			company: 'Test Corp',
+			message:
+				'I need help with a frontend platform migration and shared architecture.',
+			website: '',
+			renderedAt: Date.now() - 10_000,
+			turnstileToken: 'some-token',
+		});
+
+		// Zod trim() does NOT strip \r\n from middle of name — document this finding.
+		expect(result.success).toBe(true);
+		if (result.success) {
+			expect(result.data.name).toContain('\r\n');
+		}
+	});
+});

@@ -135,6 +135,56 @@ describe('SEC-PREVIEW-MODE-001', () => {
 		expect(draftDisableMock).toHaveBeenCalledTimes(1);
 	});
 
+	describe('getSafePreviewRedirectPath edge cases (T9)', () => {
+		it('returns safe default for null byte in path', () => {
+			// %00 in a multi-segment path doesn't match any known route → defaults to /
+			expect(getSafePreviewRedirectPath('/projects/%00/evil', null)).toBe('/');
+		});
+
+		it('returns safe path for encoded slash injection', () => {
+			// %2F%2F does not produce a protocol-relative path at the routing level
+			expect(getSafePreviewRedirectPath('/%2F%2Fevil.com', null)).toBe('/');
+		});
+
+		it('returns safe path for double-encoded slash', () => {
+			// %252F is double-encoded; URL parser treats it as an opaque slug segment
+			const result = getSafePreviewRedirectPath('/projects/%252Fevil', null);
+			expect(result).not.toMatch(/^https?:/);
+			if (result !== null) {
+				expect(result.startsWith('/')).toBe(true);
+			}
+		});
+
+		it('rejects backslash paths', () => {
+			expect(getSafePreviewRedirectPath('/projects\\evil', null)).toBeNull();
+		});
+
+		it('returns home for empty string', () => {
+			expect(getSafePreviewRedirectPath('', null)).toBe('/');
+		});
+
+		it('returns home for whitespace-only path', () => {
+			expect(getSafePreviewRedirectPath('   ', null)).toBe('/');
+		});
+
+		it('handles unicode path components safely', () => {
+			const result = getSafePreviewRedirectPath('/projects/caf\u00e9', null);
+			expect(result).not.toMatch(/^https?:/);
+			if (result !== null) {
+				expect(result.startsWith('/')).toBe(true);
+			}
+		});
+
+		it('handles very long paths safely', () => {
+			const longSlug = 'a'.repeat(1000);
+			const result = getSafePreviewRedirectPath(`/projects/${longSlug}`, null);
+			expect(result).not.toMatch(/^https?:/);
+			if (result !== null) {
+				expect(result.startsWith('/')).toBe(true);
+			}
+		});
+	});
+
 	afterAll(() => {
 		if (originalPreviewSecret) {
 			process.env.PREVIEW_SECRET = originalPreviewSecret;
