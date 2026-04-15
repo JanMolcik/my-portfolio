@@ -53,6 +53,12 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	// Next.js 16.2 blocks cross-origin HMR requests by default. Playwright E2E
+	// connects to the dev server via 127.0.0.1 while dev bind defaults to
+	// 0.0.0.0; without this allowlist, HMR is rejected and client components
+	// (notably the Turnstile widget on the contact form) fail to hydrate.
+	// Ignored outside dev.
+	allowedDevOrigins: ['127.0.0.1', 'localhost'],
 	// The following environment variables can be safely exposed to the public bundle.
 	// The Storyblok public access token is required for features like live preview.
 	env: {
