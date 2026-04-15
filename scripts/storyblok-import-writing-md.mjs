@@ -20,7 +20,13 @@ const SUPPORTED_CONTENT_ORIGINS = new Set([
 ]);
 
 function parseArgs(argv) {
-	const args = { dryRun: true, publish: false, file: '' };
+	const args = {
+		dryRun: true,
+		publish: false,
+		file: '',
+		sawDryRun: false,
+		sawPublish: false,
+	};
 	for (let index = 0; index < argv.length; index += 1) {
 		const arg = argv[index];
 		if (arg === '--file') {
@@ -29,17 +35,25 @@ function parseArgs(argv) {
 			continue;
 		}
 		if (arg === '--dry-run') {
-			args.dryRun = true;
+			args.sawDryRun = true;
 			continue;
 		}
 		if (arg === '--publish') {
-			args.publish = true;
-			args.dryRun = false;
+			args.sawPublish = true;
 			continue;
 		}
 		if (!args.file && !arg.startsWith('--')) {
 			args.file = arg;
 		}
+	}
+	// Safety: --dry-run always wins over --publish regardless of flag order.
+	// This guarantees the dry-run contract cannot be bypassed by argument order.
+	if (args.sawDryRun) {
+		args.dryRun = true;
+		args.publish = false;
+	} else if (args.sawPublish) {
+		args.dryRun = false;
+		args.publish = true;
 	}
 	return args;
 }
@@ -444,21 +458,26 @@ function buildStoryPayload(fields, richtext) {
 	};
 }
 
-async function storyblokManagementRequest(endpoint, token, body) {
+async function storyblokManagementRequest(
+	endpoint,
+	token,
+	body,
+	method = 'POST',
+) {
 	const baseUrl =
 		process.env.STORYBLOK_MANAGEMENT_API_BASE_URL?.replace(/\/+$/, '') ??
 		'https://mapi.storyblok.com/v1';
 	const response = await fetch(`${baseUrl}${endpoint}`, {
-		method: 'POST',
+		method,
 		headers: {
 			Authorization: token,
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(body),
+		body: body === undefined ? undefined : JSON.stringify(body),
 	});
 	if (!response.ok) {
 		throw new Error(
-			`Storyblok Management API request failed: ${response.status}`,
+			`Storyblok Management API ${method} ${endpoint} failed: ${response.status}`,
 		);
 	}
 	return response.json();
@@ -484,11 +503,22 @@ async function publishPayload(output) {
 		publish: 1,
 	};
 	if (storyId) {
-		return storyblokManagementRequest(
+		// Existing story: Storyblok Management API requires PUT to update, then
+		// POST to the /publish endpoint to publish. A bare POST to /stories/:id
+		// would not update the story and --publish would silently fail.
+		const updateResult = await storyblokManagementRequest(
 			`/spaces/${spaceId}/stories/${storyId}`,
 			token,
 			storyPayload,
+			'PUT',
 		);
+		await storyblokManagementRequest(
+			`/spaces/${spaceId}/stories/${storyId}/publish`,
+			token,
+			undefined,
+			'POST',
+		);
+		return updateResult;
 	}
 	if (!parentId) {
 		throw new Error(
@@ -499,6 +529,7 @@ async function publishPayload(output) {
 		`/spaces/${spaceId}/stories`,
 		token,
 		storyPayload,
+		'POST',
 	);
 }
 
