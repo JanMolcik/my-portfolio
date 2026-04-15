@@ -257,13 +257,20 @@ function renderNode(value: unknown, key: string): ReactNode {
 		case 'code_block': {
 			const language =
 				asString(node.attrs?.class) ?? asString(node.attrs?.language);
+			// Defense-in-depth: React JSX escapes attributes, but restrict to safe chars
+			const sanitizedLanguage =
+				language?.replace(/[^a-zA-Z0-9-]/g, '') || undefined;
 			const plainText = getPlainText(node);
 			const legacyTable = parseLegacyMarkdownTable(plainText);
 			if (legacyTable) {
 				return renderTableMarkup(legacyTable, key);
 			}
 			return (
-				<pre className={styles.codeBlock} data-language={language} key={key}>
+				<pre
+					className={styles.codeBlock}
+					data-language={sanitizedLanguage}
+					key={key}
+				>
 					<code>{plainText}</code>
 				</pre>
 			);
