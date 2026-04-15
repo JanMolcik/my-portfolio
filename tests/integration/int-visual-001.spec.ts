@@ -140,12 +140,12 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 			{
 				selector: '.hero',
 				property: 'grid-template-columns',
-				value: 'minmax(0, 1fr) 280px',
+				value: 'minmax(0, 1.3fr) 360px',
 			},
 			{
 				selector: '.title',
 				property: 'font-size',
-				value: 'clamp(34px, 6vw, 64px)',
+				value: 'clamp(42px, 7vw, 72px)',
 			},
 			{
 				selector: '.body p',
@@ -155,7 +155,7 @@ const CRITICAL_TEMPLATE_CONTRACTS: TemplateContract[] = [
 			{
 				selector: '.body p',
 				property: 'line-height',
-				value: '2',
+				value: '2.05',
 			},
 		],
 	},
