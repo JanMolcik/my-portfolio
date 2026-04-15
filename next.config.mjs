@@ -25,6 +25,8 @@ const contentSecurityPolicyDirectives = [
 	"font-src 'self' data: https://fonts.gstatic.com",
 	"connect-src 'self' https://api.storyblok.com https://*.storyblok.com https://challenges.cloudflare.com",
 	"frame-src 'self' https://challenges.cloudflare.com",
+	"worker-src 'none'",
+	"manifest-src 'self'",
 	'upgrade-insecure-requests',
 ];
 
@@ -33,6 +35,9 @@ const securityHeaders = [
 		key: 'Content-Security-Policy',
 		value: contentSecurityPolicyDirectives.join('; '),
 	},
+	// X-Frame-Options intentionally omitted: it conflicts with the CSP
+	// `frame-ancestors https://app.storyblok.com` allowance required for the
+	// Storyblok visual editor. Rely on `frame-ancestors` for framing control.
 	{ key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
 	{ key: 'X-Content-Type-Options', value: 'nosniff' },
 	{ key: 'X-DNS-Prefetch-Control', value: 'off' },
