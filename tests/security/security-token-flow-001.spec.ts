@@ -17,6 +17,13 @@ describe('SEC-TOKEN-FLOW-001', () => {
 	beforeEach(() => {
 		vi.resetModules();
 		storyblokInitMock.mockReset();
+		// Clear all three tokens before each test so that CI-injected secrets
+		// (e.g., STORYBLOK_ACCESS_TOKEN from GitHub Actions) cannot leak into
+		// the fallback chain and override the test fixture. Each test then
+		// stubs only the variables it wants to exercise.
+		vi.stubEnv('STORYBLOK_ACCESS_TOKEN', '');
+		vi.stubEnv('STORYBLOK_DELIVERY_API_TOKEN', '');
+		vi.stubEnv('STORYBLOK_PREVIEW_TOKEN', '');
 	});
 
 	afterEach(() => {
