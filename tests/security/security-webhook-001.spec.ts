@@ -130,7 +130,9 @@ describe('SEC-WEBHOOK-001: Webhook secret multi-source validation', () => {
 		);
 		const response = await POST(request);
 		expect(response.status).toBe(401);
-		await expect(response.json()).resolves.toMatchObject({ error: 'Unauthorized' });
+		await expect(response.json()).resolves.toMatchObject({
+			error: 'Unauthorized',
+		});
 	});
 
 	// No secret → 401

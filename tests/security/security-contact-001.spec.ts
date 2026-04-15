@@ -194,7 +194,8 @@ describe('SEC-CONTACT-001: Turnstile production guard (T5)', () => {
 		const savedPublicKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 		try {
-			(process.env as Record<string, string | undefined>).NODE_ENV = 'production';
+			(process.env as Record<string, string | undefined>).NODE_ENV =
+				'production';
 			delete process.env.TURNSTILE_SECRET_KEY;
 			delete process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -207,7 +208,8 @@ describe('SEC-CONTACT-001: Turnstile production guard (T5)', () => {
 			expect(publicConfig.turnstileSiteKey).toBeNull();
 			expect(publicConfig.isFormAvailable).toBe(false);
 		} finally {
-			(process.env as Record<string, string | undefined>).NODE_ENV = savedNodeEnv;
+			(process.env as Record<string, string | undefined>).NODE_ENV =
+				savedNodeEnv;
 			if (savedTurnstileKey !== undefined) {
 				process.env.TURNSTILE_SECRET_KEY = savedTurnstileKey;
 			} else {
@@ -227,10 +229,9 @@ describe('SEC-CONTACT-001: Email subject CRLF injection (T8)', () => {
 		// CRLF in name passes Zod validation — trim() only strips leading/trailing whitespace.
 		// The subject line would be: "Portfolio contact: Jan\r\nBcc: victim@evil.test"
 		// Defense relies on Resend SDK sanitizing outbound email headers (see R5).
-		const { parseContactSubmission } =
-			await vi.importActual<typeof import('@/lib/contact/schema')>(
-				'@/lib/contact/schema',
-			);
+		const { parseContactSubmission } = await vi.importActual<
+			typeof import('@/lib/contact/schema')
+		>('@/lib/contact/schema');
 
 		const crlfName = 'Jan\r\nBcc: victim@evil.test';
 		const result = parseContactSubmission({

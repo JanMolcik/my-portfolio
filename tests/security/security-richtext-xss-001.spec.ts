@@ -68,7 +68,9 @@ function docWithCodeBlock(language: string): RichTextDomain {
 }
 
 function renderDoc(doc: RichTextDomain): string {
-	return renderToString(createElement(StoryblokRichTextRenderer, { value: doc }));
+	return renderToString(
+		createElement(StoryblokRichTextRenderer, { value: doc }),
+	);
 }
 
 describe('SEC-RICHTEXT-XSS-001', () => {

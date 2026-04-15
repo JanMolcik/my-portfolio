@@ -21,7 +21,9 @@ describe('SEC-HEADERS-001: CSP and security headers', () => {
 		];
 
 		for (const directive of requiredDirectives) {
-			expect(config, `missing CSP directive: ${directive}`).toContain(directive);
+			expect(config, `missing CSP directive: ${directive}`).toContain(
+				directive,
+			);
 		}
 	});
 
@@ -73,7 +75,10 @@ describe('SEC-HEADERS-001: CSP and security headers', () => {
 		// This bounds any env var injection to within the frame-ancestors directive value.
 		// The env var itself must be validated at deploy time; it is not user-controlled.
 		const envValue = 'https://app.storyblok.com,https://editor.storyblok.com';
-		const origins = envValue.split(',').map((o) => o.trim()).filter(Boolean);
+		const origins = envValue
+			.split(',')
+			.map((o) => o.trim())
+			.filter(Boolean);
 		const directive = ["'self'", ...origins].join(' ');
 
 		expect(directive).toBe(
@@ -86,7 +91,10 @@ describe('SEC-HEADERS-001: CSP and security headers', () => {
 	it('defaults frame-ancestors to self + app.storyblok.com when env var is absent', () => {
 		// Replicate the builder logic to verify the default is safe
 		const envValue = 'https://app.storyblok.com'; // default from next.config.mjs
-		const origins = envValue.split(',').map((o) => o.trim()).filter(Boolean);
+		const origins = envValue
+			.split(',')
+			.map((o) => o.trim())
+			.filter(Boolean);
 		const directive = ["'self'", ...origins].join(' ');
 
 		expect(directive).toBe("'self' https://app.storyblok.com");

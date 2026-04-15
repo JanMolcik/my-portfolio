@@ -64,7 +64,10 @@ describe('HARNESS-SECRETS-001', () => {
 	it('T4: does not expose STORYBLOK_PREVIEW_TOKEN in next.config.mjs public env block', async () => {
 		const config = await readFile('next.config.mjs', 'utf8');
 		const envBlockMatch = config.match(/\benv:\s*\{[^}]+\}/s);
-		expect(envBlockMatch, 'env block not found in next.config.mjs').not.toBeNull();
+		expect(
+			envBlockMatch,
+			'env block not found in next.config.mjs',
+		).not.toBeNull();
 		const envBlock = envBlockMatch![0];
 		expect(envBlock).not.toContain('STORYBLOK_PREVIEW_TOKEN');
 	});
@@ -72,7 +75,10 @@ describe('HARNESS-SECRETS-001', () => {
 	it('T4b: does not expose any of the 4 sensitive tokens in next.config.mjs public env block', async () => {
 		const config = await readFile('next.config.mjs', 'utf8');
 		const envBlockMatch = config.match(/\benv:\s*\{[^}]+\}/s);
-		expect(envBlockMatch, 'env block not found in next.config.mjs').not.toBeNull();
+		expect(
+			envBlockMatch,
+			'env block not found in next.config.mjs',
+		).not.toBeNull();
 		const envBlock = envBlockMatch![0];
 
 		const sensitiveKeys = [

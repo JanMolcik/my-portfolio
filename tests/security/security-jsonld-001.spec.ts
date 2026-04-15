@@ -30,7 +30,9 @@ describe('SEC-JSONLD-001: serializeJsonLd prevents script tag breakout', () => {
 	});
 
 	it('encodes every < in the serialized output, not just the first', () => {
-		const result = serializeJsonLd({ description: '<b>text</b> and <i>more</i>' });
+		const result = serializeJsonLd({
+			description: '<b>text</b> and <i>more</i>',
+		});
 		expect(result).not.toContain('<');
 		expect(result).toContain('\\u003c');
 	});
